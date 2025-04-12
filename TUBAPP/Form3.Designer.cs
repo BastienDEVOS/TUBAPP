@@ -1,14 +1,14 @@
 ﻿namespace TUBAPP
 {
-    partial class frmAcceuil
+    partial class frmNouvelUtilisateur
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,71 +23,27 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAcceuil));
-            btnInvité = new Button();
-            btnNvCompt = new Button();
-            btnConnexion = new Button();
-            lblBienvenue = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNouvelUtilisateur));
             flpNavbarre = new FlowLayoutPanel();
             picUndergroudLogo = new PictureBox();
             lblTUBAPP = new Label();
             picIconeContact = new PictureBox();
+            lblBienvenue = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            checkBox1 = new CheckBox();
+            txtAdresseMail = new TextBox();
+            txtMDP = new TextBox();
+            txtConfirmMDP = new TextBox();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             SuspendLayout();
-            // 
-            // btnInvité
-            // 
-            btnInvité.BackColor = Color.FromArgb(209, 66, 54);
-            btnInvité.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnInvité.ForeColor = Color.White;
-            btnInvité.Location = new Point(82, 929);
-            btnInvité.Name = "btnInvité";
-            btnInvité.Size = new Size(561, 91);
-            btnInvité.TabIndex = 0;
-            btnInvité.Text = "Invité";
-            btnInvité.UseVisualStyleBackColor = false;
-            // 
-            // btnNvCompt
-            // 
-            btnNvCompt.BackColor = Color.FromArgb(209, 66, 54);
-            btnNvCompt.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnNvCompt.ForeColor = Color.White;
-            btnNvCompt.Location = new Point(82, 757);
-            btnNvCompt.Name = "btnNvCompt";
-            btnNvCompt.Size = new Size(561, 91);
-            btnNvCompt.TabIndex = 1;
-            btnNvCompt.Text = "Nouveau compte";
-            btnNvCompt.UseVisualStyleBackColor = false;
-            // 
-            // btnConnexion
-            // 
-            btnConnexion.BackColor = Color.FromArgb(209, 66, 54);
-            btnConnexion.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnConnexion.ForeColor = Color.White;
-            btnConnexion.Location = new Point(82, 569);
-            btnConnexion.Name = "btnConnexion";
-            btnConnexion.Size = new Size(561, 91);
-            btnConnexion.TabIndex = 2;
-            btnConnexion.Text = "Connexion";
-            btnConnexion.UseVisualStyleBackColor = false;
-            btnConnexion.MouseClick += btnConnexion_MouseClick;
-            // 
-            // lblBienvenue
-            // 
-            lblBienvenue.AutoSize = true;
-            lblBienvenue.Font = new Font("Segoe UI", 34.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBienvenue.Location = new Point(0, 0);
-            lblBienvenue.Name = "lblBienvenue";
-            lblBienvenue.Size = new Size(561, 124);
-            lblBienvenue.TabIndex = 3;
-            lblBienvenue.Text = "Bienvenue !";
             // 
             // flpNavbarre
             // 
@@ -98,7 +54,7 @@
             flpNavbarre.Location = new Point(0, 0);
             flpNavbarre.Name = "flpNavbarre";
             flpNavbarre.Size = new Size(725, 152);
-            flpNavbarre.TabIndex = 4;
+            flpNavbarre.TabIndex = 6;
             // 
             // picUndergroudLogo
             // 
@@ -136,22 +92,87 @@
             picIconeContact.TabIndex = 2;
             picIconeContact.TabStop = false;
             // 
-            // frmAcceuil
+            // lblBienvenue
+            // 
+            lblBienvenue.AutoSize = true;
+            lblBienvenue.Font = new Font("Segoe UI", 26F, FontStyle.Bold);
+            lblBienvenue.Location = new Point(34, 269);
+            lblBienvenue.Name = "lblBienvenue";
+            lblBienvenue.Size = new Size(656, 93);
+            lblBienvenue.TabIndex = 7;
+            lblBienvenue.Text = "Nouvel Uitilisateur";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(270, 1003);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 46);
+            button1.TabIndex = 8;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(292, 1145);
+            button2.Name = "button2";
+            button2.Size = new Size(150, 46);
+            button2.TabIndex = 9;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(34, 734);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(159, 36);
+            checkBox1.TabIndex = 10;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // txtAdresseMail
+            // 
+            txtAdresseMail.Font = new Font("Segoe UI", 15F);
+            txtAdresseMail.Location = new Point(34, 447);
+            txtAdresseMail.Name = "txtAdresseMail";
+            txtAdresseMail.PlaceholderText = "Adresse mail";
+            txtAdresseMail.Size = new Size(656, 61);
+            txtAdresseMail.TabIndex = 11;
+            // 
+            // txtMDP
+            // 
+            txtMDP.Font = new Font("Segoe UI", 15F);
+            txtMDP.Location = new Point(34, 545);
+            txtMDP.Name = "txtMDP";
+            txtMDP.PlaceholderText = "Mot de passe";
+            txtMDP.Size = new Size(656, 61);
+            txtMDP.TabIndex = 12;
+            // 
+            // txtConfirmMDP
+            // 
+            txtConfirmMDP.Font = new Font("Segoe UI", 15F);
+            txtConfirmMDP.Location = new Point(34, 643);
+            txtConfirmMDP.Name = "txtConfirmMDP";
+            txtConfirmMDP.PlaceholderText = "Confirmer le mot de passe";
+            txtConfirmMDP.Size = new Size(656, 61);
+            txtConfirmMDP.TabIndex = 13;
+            // 
+            // frmNouvelUtilisateur
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             ClientSize = new Size(724, 1429);
-            Controls.Add(flpNavbarre);
+            Controls.Add(txtConfirmMDP);
+            Controls.Add(txtMDP);
+            Controls.Add(txtAdresseMail);
+            Controls.Add(checkBox1);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(lblBienvenue);
-            Controls.Add(btnConnexion);
-            Controls.Add(btnNvCompt);
-            Controls.Add(btnInvité);
+            Controls.Add(flpNavbarre);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "frmAcceuil";
-            Text = "TUBAPP";
-            Load += frmAcceuil_Load;
+            Name = "frmNouvelUtilisateur";
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).EndInit();
@@ -162,13 +183,16 @@
 
         #endregion
 
-        private Button btnInvité;
-        private Button btnNvCompt;
-        private Button btnConnexion;
-        private Label lblBienvenue;
         private FlowLayoutPanel flpNavbarre;
-        private Label lblTUBAPP;
         private PictureBox picUndergroudLogo;
+        private Label lblTUBAPP;
         private PictureBox picIconeContact;
+        private Label lblBienvenue;
+        private Button button1;
+        private Button button2;
+        private CheckBox checkBox1;
+        private TextBox txtAdresseMail;
+        private TextBox txtMDP;
+        private TextBox txtConfirmMDP;
     }
 }

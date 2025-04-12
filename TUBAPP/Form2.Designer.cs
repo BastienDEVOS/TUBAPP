@@ -1,14 +1,14 @@
 ﻿namespace TUBAPP
 {
-    partial class frmAcceuil
+    partial class frmConnexion
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,71 +23,26 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAcceuil));
-            btnInvité = new Button();
-            btnNvCompt = new Button();
-            btnConnexion = new Button();
-            lblBienvenue = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConnexion));
             flpNavbarre = new FlowLayoutPanel();
             picUndergroudLogo = new PictureBox();
             lblTUBAPP = new Label();
             picIconeContact = new PictureBox();
+            lblBienvenue = new Label();
+            btnRetour = new Button();
+            txtIdentifiant = new TextBox();
+            txtMDP = new TextBox();
+            btnConnexion = new Button();
+            llbMDPOublié = new LinkLabel();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             SuspendLayout();
-            // 
-            // btnInvité
-            // 
-            btnInvité.BackColor = Color.FromArgb(209, 66, 54);
-            btnInvité.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnInvité.ForeColor = Color.White;
-            btnInvité.Location = new Point(82, 929);
-            btnInvité.Name = "btnInvité";
-            btnInvité.Size = new Size(561, 91);
-            btnInvité.TabIndex = 0;
-            btnInvité.Text = "Invité";
-            btnInvité.UseVisualStyleBackColor = false;
-            // 
-            // btnNvCompt
-            // 
-            btnNvCompt.BackColor = Color.FromArgb(209, 66, 54);
-            btnNvCompt.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnNvCompt.ForeColor = Color.White;
-            btnNvCompt.Location = new Point(82, 757);
-            btnNvCompt.Name = "btnNvCompt";
-            btnNvCompt.Size = new Size(561, 91);
-            btnNvCompt.TabIndex = 1;
-            btnNvCompt.Text = "Nouveau compte";
-            btnNvCompt.UseVisualStyleBackColor = false;
-            // 
-            // btnConnexion
-            // 
-            btnConnexion.BackColor = Color.FromArgb(209, 66, 54);
-            btnConnexion.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnConnexion.ForeColor = Color.White;
-            btnConnexion.Location = new Point(82, 569);
-            btnConnexion.Name = "btnConnexion";
-            btnConnexion.Size = new Size(561, 91);
-            btnConnexion.TabIndex = 2;
-            btnConnexion.Text = "Connexion";
-            btnConnexion.UseVisualStyleBackColor = false;
-            btnConnexion.MouseClick += btnConnexion_MouseClick;
-            // 
-            // lblBienvenue
-            // 
-            lblBienvenue.AutoSize = true;
-            lblBienvenue.Font = new Font("Segoe UI", 34.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBienvenue.Location = new Point(0, 0);
-            lblBienvenue.Name = "lblBienvenue";
-            lblBienvenue.Size = new Size(561, 124);
-            lblBienvenue.TabIndex = 3;
-            lblBienvenue.Text = "Bienvenue !";
             // 
             // flpNavbarre
             // 
@@ -98,7 +53,7 @@
             flpNavbarre.Location = new Point(0, 0);
             flpNavbarre.Name = "flpNavbarre";
             flpNavbarre.Size = new Size(725, 152);
-            flpNavbarre.TabIndex = 4;
+            flpNavbarre.TabIndex = 5;
             // 
             // picUndergroudLogo
             // 
@@ -136,22 +91,84 @@
             picIconeContact.TabIndex = 2;
             picIconeContact.TabStop = false;
             // 
-            // frmAcceuil
+            // lblBienvenue
+            // 
+            lblBienvenue.AutoSize = true;
+            lblBienvenue.Font = new Font("Segoe UI", 34.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBienvenue.Location = new Point(82, 269);
+            lblBienvenue.Name = "lblBienvenue";
+            lblBienvenue.Size = new Size(519, 124);
+            lblBienvenue.TabIndex = 6;
+            lblBienvenue.Text = "Connexion";
+            // 
+            // btnRetour
+            // 
+            btnRetour.Font = new Font("Segoe UI", 15F);
+            btnRetour.Location = new Point(82, 1185);
+            btnRetour.Name = "btnRetour";
+            btnRetour.Size = new Size(522, 80);
+            btnRetour.TabIndex = 7;
+            btnRetour.Text = "Retour";
+            btnRetour.UseVisualStyleBackColor = true;
+            btnRetour.MouseClick += btnRetour_MouseClick;
+            // 
+            // txtIdentifiant
+            // 
+            txtIdentifiant.Font = new Font("Segoe UI", 15F);
+            txtIdentifiant.Location = new Point(85, 497);
+            txtIdentifiant.Name = "txtIdentifiant";
+            txtIdentifiant.PlaceholderText = "Identifaint";
+            txtIdentifiant.Size = new Size(522, 61);
+            txtIdentifiant.TabIndex = 8;
+            txtIdentifiant.TextChanged += txtIdentifiant_TextChanged;
+            // 
+            // txtMDP
+            // 
+            txtMDP.Font = new Font("Segoe UI", 15F);
+            txtMDP.Location = new Point(82, 640);
+            txtMDP.Name = "txtMDP";
+            txtMDP.PlaceholderText = "Mot de passe";
+            txtMDP.Size = new Size(525, 61);
+            txtMDP.TabIndex = 9;
+            // 
+            // btnConnexion
+            // 
+            btnConnexion.Font = new Font("Segoe UI", 15F);
+            btnConnexion.Location = new Point(85, 817);
+            btnConnexion.Name = "btnConnexion";
+            btnConnexion.Size = new Size(522, 80);
+            btnConnexion.TabIndex = 10;
+            btnConnexion.Text = "Connexion";
+            btnConnexion.UseVisualStyleBackColor = true;
+            // 
+            // llbMDPOublié
+            // 
+            llbMDPOublié.AutoSize = true;
+            llbMDPOublié.Location = new Point(82, 706);
+            llbMDPOublié.Name = "llbMDPOublié";
+            llbMDPOublié.Size = new Size(250, 32);
+            llbMDPOublié.TabIndex = 11;
+            llbMDPOublié.TabStop = true;
+            llbMDPOublié.Text = "Mot de passe oublié ?";
+            // 
+            // frmConnexion
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(724, 1429);
-            Controls.Add(flpNavbarre);
-            Controls.Add(lblBienvenue);
+            Controls.Add(llbMDPOublié);
             Controls.Add(btnConnexion);
-            Controls.Add(btnNvCompt);
-            Controls.Add(btnInvité);
+            Controls.Add(txtMDP);
+            Controls.Add(txtIdentifiant);
+            Controls.Add(btnRetour);
+            Controls.Add(lblBienvenue);
+            Controls.Add(flpNavbarre);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "frmAcceuil";
+            Name = "frmConnexion";
             Text = "TUBAPP";
-            Load += frmAcceuil_Load;
+            Load += Form2_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).EndInit();
@@ -162,13 +179,15 @@
 
         #endregion
 
-        private Button btnInvité;
-        private Button btnNvCompt;
-        private Button btnConnexion;
-        private Label lblBienvenue;
         private FlowLayoutPanel flpNavbarre;
-        private Label lblTUBAPP;
         private PictureBox picUndergroudLogo;
+        private Label lblTUBAPP;
         private PictureBox picIconeContact;
+        private Label lblBienvenue;
+        private Button btnRetour;
+        private TextBox txtIdentifiant;
+        private TextBox txtMDP;
+        private Button btnConnexion;
+        private LinkLabel llbMDPOublié;
     }
 }
