@@ -45,49 +45,32 @@
             // btnInvité
             // 
             btnInvité.BackColor = Color.FromArgb(209, 66, 54);
-            btnInvité.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            resources.ApplyResources(btnInvité, "btnInvité");
             btnInvité.ForeColor = Color.White;
-            btnInvité.Location = new Point(82, 929);
             btnInvité.Name = "btnInvité";
-            btnInvité.Size = new Size(561, 91);
-            btnInvité.TabIndex = 0;
-            btnInvité.Text = "Invité";
             btnInvité.UseVisualStyleBackColor = false;
             // 
             // btnNvCompt
             // 
             btnNvCompt.BackColor = Color.FromArgb(209, 66, 54);
-            btnNvCompt.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            resources.ApplyResources(btnNvCompt, "btnNvCompt");
             btnNvCompt.ForeColor = Color.White;
-            btnNvCompt.Location = new Point(82, 757);
             btnNvCompt.Name = "btnNvCompt";
-            btnNvCompt.Size = new Size(561, 91);
-            btnNvCompt.TabIndex = 1;
-            btnNvCompt.Text = "Nouveau compte";
             btnNvCompt.UseVisualStyleBackColor = false;
             // 
             // btnConnexion
             // 
+            resources.ApplyResources(btnConnexion, "btnConnexion");
             btnConnexion.BackColor = Color.FromArgb(209, 66, 54);
-            btnConnexion.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             btnConnexion.ForeColor = Color.White;
-            btnConnexion.Location = new Point(82, 569);
             btnConnexion.Name = "btnConnexion";
-            btnConnexion.Size = new Size(561, 91);
-            btnConnexion.TabIndex = 2;
-            btnConnexion.Text = "Connexion";
             btnConnexion.UseVisualStyleBackColor = false;
             btnConnexion.MouseClick += btnConnexion_MouseClick;
             // 
             // lblBienvenue
             // 
-            lblBienvenue.AutoSize = true;
-            lblBienvenue.Font = new Font("Segoe UI", 34.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBienvenue.Location = new Point(0, 0);
+            resources.ApplyResources(lblBienvenue, "lblBienvenue");
             lblBienvenue.Name = "lblBienvenue";
-            lblBienvenue.Size = new Size(561, 124);
-            lblBienvenue.TabIndex = 3;
-            lblBienvenue.Text = "Bienvenue !";
             // 
             // flpNavbarre
             // 
@@ -95,53 +78,33 @@
             flpNavbarre.Controls.Add(picUndergroudLogo);
             flpNavbarre.Controls.Add(lblTUBAPP);
             flpNavbarre.Controls.Add(picIconeContact);
-            flpNavbarre.Location = new Point(0, 0);
+            resources.ApplyResources(flpNavbarre, "flpNavbarre");
             flpNavbarre.Name = "flpNavbarre";
-            flpNavbarre.Size = new Size(725, 152);
-            flpNavbarre.TabIndex = 4;
             // 
             // picUndergroudLogo
             // 
-            picUndergroudLogo.Image = (Image)resources.GetObject("picUndergroudLogo.Image");
-            picUndergroudLogo.Location = new Point(0, 0);
-            picUndergroudLogo.Margin = new Padding(0);
+            resources.ApplyResources(picUndergroudLogo, "picUndergroudLogo");
             picUndergroudLogo.Name = "picUndergroudLogo";
-            picUndergroudLogo.Size = new Size(154, 149);
-            picUndergroudLogo.SizeMode = PictureBoxSizeMode.Zoom;
-            picUndergroudLogo.TabIndex = 1;
             picUndergroudLogo.TabStop = false;
             // 
             // lblTUBAPP
             // 
-            lblTUBAPP.Anchor = AnchorStyles.None;
-            lblTUBAPP.AutoSize = true;
-            lblTUBAPP.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            resources.ApplyResources(lblTUBAPP, "lblTUBAPP");
             lblTUBAPP.ForeColor = Color.White;
-            lblTUBAPP.Location = new Point(214, 30);
-            lblTUBAPP.Margin = new Padding(60, 0, 60, 0);
             lblTUBAPP.Name = "lblTUBAPP";
-            lblTUBAPP.Size = new Size(297, 89);
-            lblTUBAPP.TabIndex = 0;
-            lblTUBAPP.Text = "TUBAPP";
-            lblTUBAPP.TextAlign = ContentAlignment.TopCenter;
             // 
             // picIconeContact
             // 
             picIconeContact.Image = Properties.Resources.icone_profil;
-            picIconeContact.Location = new Point(571, 0);
-            picIconeContact.Margin = new Padding(0);
+            resources.ApplyResources(picIconeContact, "picIconeContact");
             picIconeContact.Name = "picIconeContact";
-            picIconeContact.Size = new Size(151, 149);
-            picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
-            picIconeContact.TabIndex = 2;
             picIconeContact.TabStop = false;
             // 
             // frmAcceuil
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(724, 1429);
             Controls.Add(flpNavbarre);
             Controls.Add(lblBienvenue);
             Controls.Add(btnConnexion);
@@ -150,7 +113,6 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmAcceuil";
-            Text = "TUBAPP";
             Load += frmAcceuil_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();

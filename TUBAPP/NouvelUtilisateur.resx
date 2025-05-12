@@ -478,4 +478,358 @@
         dK34+PiP9u7d+wF9PyUlZdSFCxd6m83mGreamlAShFSUoxw3Iv4fSigSIMweWLYAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="picUndergroudLogo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="picUndergroudLogo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="picUndergroudLogo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 93</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="picUndergroudLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="picUndergroudLogo.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;picUndergroudLogo.Name" xml:space="preserve">
+    <value>picUndergroudLogo</value>
+  </data>
+  <data name="&gt;&gt;picUndergroudLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picUndergroudLogo.Parent" xml:space="preserve">
+    <value>flpNavbarre</value>
+  </data>
+  <data name="&gt;&gt;picUndergroudLogo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblTUBAPP.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblTUBAPP.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTUBAPP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 25pt, style=Bold</value>
+  </data>
+  <data name="lblTUBAPP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 18</value>
+  </data>
+  <data name="lblTUBAPP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>37, 0, 37, 0</value>
+  </data>
+  <data name="lblTUBAPP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 57</value>
+  </data>
+  <data name="lblTUBAPP.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblTUBAPP.Text" xml:space="preserve">
+    <value>TUBAPP</value>
+  </data>
+  <data name="lblTUBAPP.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;lblTUBAPP.Name" xml:space="preserve">
+    <value>lblTUBAPP</value>
+  </data>
+  <data name="&gt;&gt;lblTUBAPP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTUBAPP.Parent" xml:space="preserve">
+    <value>flpNavbarre</value>
+  </data>
+  <data name="&gt;&gt;lblTUBAPP.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="picIconeContact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 93</value>
+  </data>
+  <data name="picIconeContact.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="picIconeContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 93</value>
+  </data>
+  <data name="picIconeContact.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="picIconeContact.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;picIconeContact.Name" xml:space="preserve">
+    <value>picIconeContact</value>
+  </data>
+  <data name="&gt;&gt;picIconeContact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picIconeContact.Parent" xml:space="preserve">
+    <value>flpNavbarre</value>
+  </data>
+  <data name="&gt;&gt;picIconeContact.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flpNavbarre.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="flpNavbarre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="flpNavbarre.Size" type="System.Drawing.Size, System.Drawing">
+    <value>446, 95</value>
+  </data>
+  <data name="flpNavbarre.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.Name" xml:space="preserve">
+    <value>flpNavbarre</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblBienvenue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBienvenue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 26pt, style=Bold</value>
+  </data>
+  <data name="lblBienvenue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 168</value>
+  </data>
+  <data name="lblBienvenue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="lblBienvenue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>417, 60</value>
+  </data>
+  <data name="lblBienvenue.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblBienvenue.Text" xml:space="preserve">
+    <value>Nouvel Uitilisateur</value>
+  </data>
+  <data name="&gt;&gt;lblBienvenue.Name" xml:space="preserve">
+    <value>lblBienvenue</value>
+  </data>
+  <data name="&gt;&gt;lblBienvenue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBienvenue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblBienvenue.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 627</value>
+  </data>
+  <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 29</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 716</value>
+  </data>
+  <data name="button2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 29</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 459</value>
+  </data>
+  <data name="checkBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 24</value>
+  </data>
+  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>checkBox1</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
+    <value>checkBox1</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtAdresseMail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15pt</value>
+  </data>
+  <data name="txtAdresseMail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 279</value>
+  </data>
+  <data name="txtAdresseMail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="txtAdresseMail.PlaceholderText" xml:space="preserve">
+    <value>Adresse mail</value>
+  </data>
+  <data name="txtAdresseMail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 41</value>
+  </data>
+  <data name="txtAdresseMail.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtAdresseMail.Name" xml:space="preserve">
+    <value>txtAdresseMail</value>
+  </data>
+  <data name="&gt;&gt;txtAdresseMail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAdresseMail.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtAdresseMail.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtMDP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15pt</value>
+  </data>
+  <data name="txtMDP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 341</value>
+  </data>
+  <data name="txtMDP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="txtMDP.PlaceholderText" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="txtMDP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 41</value>
+  </data>
+  <data name="txtMDP.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtMDP.Name" xml:space="preserve">
+    <value>txtMDP</value>
+  </data>
+  <data name="&gt;&gt;txtMDP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMDP.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtMDP.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtConfirmMDP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15pt</value>
+  </data>
+  <data name="txtConfirmMDP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 402</value>
+  </data>
+  <data name="txtConfirmMDP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="txtConfirmMDP.PlaceholderText" xml:space="preserve">
+    <value>Confirmer le mot de passe</value>
+  </data>
+  <data name="txtConfirmMDP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 41</value>
+  </data>
+  <data name="txtConfirmMDP.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtConfirmMDP.Name" xml:space="preserve">
+    <value>txtConfirmMDP</value>
+  </data>
+  <data name="&gt;&gt;txtConfirmMDP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtConfirmMDP.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtConfirmMDP.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>fr</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>446, 659</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Nouvel Utilisateur</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmNouvelUtilisateur</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
