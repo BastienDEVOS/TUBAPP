@@ -145,13 +145,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
+  </data>
+  <data name="btn_Connecter.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="btn_Connecter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="btn_Connecter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 528</value>
+    <value>57, 497</value>
   </data>
   <data name="btn_Connecter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -175,13 +178,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_Connecter.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="Btn_Retour.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="Btn_Retour.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 596</value>
+    <value>57, 581</value>
   </data>
   <data name="Btn_Retour.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -205,13 +208,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Btn_Retour.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtConfirmMDP.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="txtConfirmMDP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 415</value>
+    <value>20, 384</value>
   </data>
   <data name="txtConfirmMDP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -235,13 +238,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtConfirmMDP.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtMDP.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="txtMDP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 354</value>
+    <value>20, 322</value>
   </data>
   <data name="txtMDP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -265,13 +268,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtMDP.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="txtAdresseMail.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="txtAdresseMail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 292</value>
+    <value>20, 249</value>
   </data>
   <data name="txtAdresseMail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -295,37 +298,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtAdresseMail.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="ConditionUtilisation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 472</value>
+  <data name="ConditionUtilisation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Underline</value>
   </data>
-  <data name="checkBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="ConditionUtilisation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 457</value>
+  </data>
+  <data name="ConditionUtilisation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 24</value>
+  <data name="ConditionUtilisation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 24</value>
   </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="ConditionUtilisation.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>checkBox1</value>
+  <data name="ConditionUtilisation.Text" xml:space="preserve">
+    <value>Condition d'utilisation</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
+  <data name="&gt;&gt;ConditionUtilisation.Name" xml:space="preserve">
+    <value>ConditionUtilisation</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ConditionUtilisation.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ConditionUtilisation.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;ConditionUtilisation.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="lblBienvenue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -334,7 +340,7 @@
     <value>Segoe UI, 26pt, style=Bold</value>
   </data>
   <data name="lblBienvenue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 181</value>
+    <value>18, 156</value>
   </data>
   <data name="lblBienvenue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -358,66 +364,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblBienvenue.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;picUndergroudLogo.Name" xml:space="preserve">
-    <value>picUndergroudLogo</value>
-  </data>
-  <data name="&gt;&gt;picUndergroudLogo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;picUndergroudLogo.Parent" xml:space="preserve">
-    <value>flpNavbarre</value>
-  </data>
-  <data name="&gt;&gt;picUndergroudLogo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblTUBAPP.Name" xml:space="preserve">
-    <value>lblTUBAPP</value>
-  </data>
-  <data name="&gt;&gt;lblTUBAPP.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTUBAPP.Parent" xml:space="preserve">
-    <value>flpNavbarre</value>
-  </data>
-  <data name="&gt;&gt;lblTUBAPP.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;picIconeContact.Name" xml:space="preserve">
-    <value>picIconeContact</value>
-  </data>
-  <data name="&gt;&gt;picIconeContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;picIconeContact.Parent" xml:space="preserve">
-    <value>flpNavbarre</value>
-  </data>
-  <data name="&gt;&gt;picIconeContact.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="flpNavbarre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="flpNavbarre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="flpNavbarre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>446, 95</value>
-  </data>
-  <data name="flpNavbarre.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;flpNavbarre.Name" xml:space="preserve">
-    <value>flpNavbarre</value>
-  </data>
-  <data name="&gt;&gt;flpNavbarre.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpNavbarre.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;flpNavbarre.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="picUndergroudLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -873,6 +819,259 @@
   </data>
   <data name="&gt;&gt;picIconeContact.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="flpNavbarre.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="flpNavbarre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="flpNavbarre.Size" type="System.Drawing.Size, System.Drawing">
+    <value>446, 95</value>
+  </data>
+  <data name="flpNavbarre.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.Name" xml:space="preserve">
+    <value>flpNavbarre</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Refuser.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15pt, style=Bold</value>
+  </data>
+  <data name="Refuser.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Refuser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 328</value>
+  </data>
+  <data name="Refuser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 45</value>
+  </data>
+  <data name="Refuser.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="Refuser.Text" xml:space="preserve">
+    <value>Refuser</value>
+  </data>
+  <data name="&gt;&gt;Refuser.Name" xml:space="preserve">
+    <value>Refuser</value>
+  </data>
+  <data name="&gt;&gt;Refuser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Refuser.Parent" xml:space="preserve">
+    <value>PopupCondition</value>
+  </data>
+  <data name="&gt;&gt;Refuser.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Accepter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15pt, style=Bold</value>
+  </data>
+  <data name="Accepter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Accepter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 328</value>
+  </data>
+  <data name="Accepter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 45</value>
+  </data>
+  <data name="Accepter.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="Accepter.Text" xml:space="preserve">
+    <value>Accepter</value>
+  </data>
+  <data name="&gt;&gt;Accepter.Name" xml:space="preserve">
+    <value>Accepter</value>
+  </data>
+  <data name="&gt;&gt;Accepter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Accepter.Parent" xml:space="preserve">
+    <value>PopupCondition</value>
+  </data>
+  <data name="&gt;&gt;Accepter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="richTextBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 49</value>
+  </data>
+  <data name="richTextBox1.ScrollBars" type="System.Windows.Forms.RichTextBoxScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 254</value>
+  </data>
+  <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>1. Objet
+Les présentes conditions d'utilisation TUBAPP régissent l'accès et l'utilisation de l'application mobile TUBAPP permettant aux utilisateurs de consulter les horaires, itinéraires  et services relatifs au réseau de transport en commun du métro.
+2. Acceptation des conditions
+L'utilisation de l'Application implique l'acceptation sans réserve des présentes Conditions. Si l'utilisateur n'accepte pas ces Conditions, il doit cesser d'utiliser l'Application.
+</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
+    <value>richTextBox1</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
+    <value>PopupCondition</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 20pt, style=Bold</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 2</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>390, 44</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Condition d'utilisation</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>PopupCondition</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PopupCondition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 229</value>
+  </data>
+  <data name="PopupCondition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 402</value>
+  </data>
+  <data name="PopupCondition.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="PopupCondition.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.Name" xml:space="preserve">
+    <value>PopupCondition</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="msg_erreurMail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="msg_erreurMail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt, style=Italic</value>
+  </data>
+  <data name="msg_erreurMail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="msg_erreurMail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 292</value>
+  </data>
+  <data name="msg_erreurMail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="msg_erreurMail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 19</value>
+  </data>
+  <data name="msg_erreurMail.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="msg_erreurMail.Text" xml:space="preserve">
+    <value>Adresse Mail Incorrect</value>
+  </data>
+  <data name="msg_erreurMail.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;msg_erreurMail.Name" xml:space="preserve">
+    <value>msg_erreurMail</value>
+  </data>
+  <data name="&gt;&gt;msg_erreurMail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;msg_erreurMail.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;msg_erreurMail.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="msg_erreurMdp.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="msg_erreurMdp.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt, style=Italic</value>
+  </data>
+  <data name="msg_erreurMdp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="msg_erreurMdp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 427</value>
+  </data>
+  <data name="msg_erreurMdp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="msg_erreurMdp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 19</value>
+  </data>
+  <data name="msg_erreurMdp.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="msg_erreurMdp.Text" xml:space="preserve">
+    <value>Vos mot de passe ne sont pas identique</value>
+  </data>
+  <data name="msg_erreurMdp.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;msg_erreurMdp.Name" xml:space="preserve">
+    <value>msg_erreurMdp</value>
+  </data>
+  <data name="&gt;&gt;msg_erreurMdp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;msg_erreurMdp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;msg_erreurMdp.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

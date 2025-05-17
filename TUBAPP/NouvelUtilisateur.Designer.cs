@@ -35,15 +35,23 @@
             txtConfirmMDP = new TextBox();
             txtMDP = new TextBox();
             txtAdresseMail = new TextBox();
-            checkBox1 = new CheckBox();
+            ConditionUtilisation = new CheckBox();
             lblBienvenue = new Label();
             flpNavbarre = new FlowLayoutPanel();
             picUndergroudLogo = new PictureBox();
             lblTUBAPP = new Label();
             picIconeContact = new PictureBox();
+            PopupCondition = new Panel();
+            Refuser = new Button();
+            Accepter = new Button();
+            richTextBox1 = new RichTextBox();
+            label1 = new Label();
+            msg_erreurMail = new Label();
+            msg_erreurMdp = new Label();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
+            PopupCondition.SuspendLayout();
             SuspendLayout();
             // 
             // button2
@@ -69,22 +77,28 @@
             // 
             resources.ApplyResources(txtConfirmMDP, "txtConfirmMDP");
             txtConfirmMDP.Name = "txtConfirmMDP";
+            txtConfirmMDP.TextChanged += txtConfirmMDP_TextChanged;
             // 
             // txtMDP
             // 
             resources.ApplyResources(txtMDP, "txtMDP");
             txtMDP.Name = "txtMDP";
+            txtMDP.TextChanged += txtMDP_TextChanged;
             // 
             // txtAdresseMail
             // 
             resources.ApplyResources(txtAdresseMail, "txtAdresseMail");
             txtAdresseMail.Name = "txtAdresseMail";
+            txtAdresseMail.TextChanged += txtAdresseMail_TextChanged;
             // 
-            // checkBox1
+            // ConditionUtilisation
             // 
-            resources.ApplyResources(checkBox1, "checkBox1");
-            checkBox1.Name = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(ConditionUtilisation, "ConditionUtilisation");
+            ConditionUtilisation.ForeColor = SystemColors.HotTrack;
+            ConditionUtilisation.Name = "ConditionUtilisation";
+            ConditionUtilisation.UseVisualStyleBackColor = true;
+            ConditionUtilisation.CheckedChanged += ConditionUtilisation_CheckedChanged;
+            ConditionUtilisation.Click += ConditionUtilisation_Click;
             // 
             // lblBienvenue
             // 
@@ -119,19 +133,73 @@
             picIconeContact.Name = "picIconeContact";
             picIconeContact.TabStop = false;
             // 
+            // PopupCondition
+            // 
+            PopupCondition.BorderStyle = BorderStyle.Fixed3D;
+            PopupCondition.Controls.Add(Refuser);
+            PopupCondition.Controls.Add(Accepter);
+            PopupCondition.Controls.Add(richTextBox1);
+            PopupCondition.Controls.Add(label1);
+            resources.ApplyResources(PopupCondition, "PopupCondition");
+            PopupCondition.Name = "PopupCondition";
+            // 
+            // Refuser
+            // 
+            Refuser.BackColor = Color.Red;
+            resources.ApplyResources(Refuser, "Refuser");
+            Refuser.Name = "Refuser";
+            Refuser.UseVisualStyleBackColor = false;
+            Refuser.Click += Refuser_Click;
+            // 
+            // Accepter
+            // 
+            Accepter.BackColor = Color.Lime;
+            resources.ApplyResources(Accepter, "Accepter");
+            Accepter.Name = "Accepter";
+            Accepter.UseVisualStyleBackColor = false;
+            Accepter.Click += Accepter_Click;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.BackColor = Color.Red;
+            richTextBox1.ForeColor = Color.White;
+            resources.ApplyResources(richTextBox1, "richTextBox1");
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
+            // 
+            // msg_erreurMail
+            // 
+            resources.ApplyResources(msg_erreurMail, "msg_erreurMail");
+            msg_erreurMail.BackColor = Color.Red;
+            msg_erreurMail.Name = "msg_erreurMail";
+            // 
+            // msg_erreurMdp
+            // 
+            resources.ApplyResources(msg_erreurMdp, "msg_erreurMdp");
+            msg_erreurMdp.BackColor = Color.Red;
+            msg_erreurMdp.Name = "msg_erreurMdp";
+            // 
             // frmNouvelUtilisateur
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(PopupCondition);
             Controls.Add(btn_Connecter);
             Controls.Add(Btn_Retour);
             Controls.Add(txtConfirmMDP);
             Controls.Add(txtMDP);
             Controls.Add(txtAdresseMail);
-            Controls.Add(checkBox1);
+            Controls.Add(ConditionUtilisation);
             Controls.Add(lblBienvenue);
             Controls.Add(flpNavbarre);
             Controls.Add(button2);
+            Controls.Add(msg_erreurMail);
+            Controls.Add(msg_erreurMdp);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmNouvelUtilisateur";
@@ -139,6 +207,7 @@
             flpNavbarre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
+            PopupCondition.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -150,11 +219,18 @@
         private TextBox txtConfirmMDP;
         private TextBox txtMDP;
         private TextBox txtAdresseMail;
-        private CheckBox checkBox1;
+        private CheckBox ConditionUtilisation;
         private Label lblBienvenue;
         private FlowLayoutPanel flpNavbarre;
         private PictureBox picUndergroudLogo;
         private Label lblTUBAPP;
         private PictureBox picIconeContact;
+        private Panel PopupCondition;
+        private Button Refuser;
+        private Button Accepter;
+        private RichTextBox richTextBox1;
+        private Label label1;
+        private Label msg_erreurMail;
+        private Label msg_erreurMdp;
     }
 }
