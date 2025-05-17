@@ -49,6 +49,7 @@
             btnInvité.ForeColor = Color.White;
             btnInvité.Name = "btnInvité";
             btnInvité.UseVisualStyleBackColor = false;
+            btnInvité.Click += btnInvité_Click;
             // 
             // btnNvCompt
             // 
@@ -57,6 +58,7 @@
             btnNvCompt.ForeColor = Color.White;
             btnNvCompt.Name = "btnNvCompt";
             btnNvCompt.UseVisualStyleBackColor = false;
+            btnNvCompt.Click += btnNvCompt_Click;
             // 
             // btnConnexion
             // 

@@ -34,5 +34,13 @@ namespace TUBAPP
 
             this.Hide();
         }
+
+        private void btnConnexion_Click(object sender, EventArgs e)
+        {
+            frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
+            FrmMenuPrincipal.Show();
+
+            this.Close();
+        }
     }
 }

@@ -24,5 +24,21 @@ namespace TUBAPP
 
             this.Hide();
         }
+
+        private void btnNvCompt_Click(object sender, EventArgs e)
+        {
+            frmNouvelUtilisateur FrmNouvelUtilisateur = new frmNouvelUtilisateur();
+            FrmNouvelUtilisateur.Show();
+
+            this.Hide();
+        }
+
+        private void btnInvité_Click(object sender, EventArgs e)
+        {
+            frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
+            FrmMenuPrincipal.Show();
+
+            this.Hide();
+        }
     }
 }

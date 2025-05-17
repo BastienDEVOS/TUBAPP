@@ -1,0 +1,214 @@
+﻿namespace TUBAPP
+{
+    partial class frmMenuPricipal
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPricipal));
+            InfoImportantes = new FlowLayoutPanel();
+            label3 = new Label();
+            VoirItineraire = new Button();
+            label2 = new Label();
+            label1 = new Label();
+            StationArrivee = new ComboBox();
+            StationDepart = new ComboBox();
+            flpNavbarre = new FlowLayoutPanel();
+            picUndergroudLogo = new PictureBox();
+            lblTUBAPP = new Label();
+            IconeProfil = new PictureBox();
+            picIconeContact = new PictureBox();
+            flpNavbarre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)IconeProfil).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
+            SuspendLayout();
+            // 
+            // InfoImportantes
+            // 
+            InfoImportantes.Location = new Point(96, 382);
+            InfoImportantes.Name = "InfoImportantes";
+            InfoImportantes.Size = new Size(250, 263);
+            InfoImportantes.TabIndex = 21;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
+            label3.Location = new Point(36, 335);
+            label3.Name = "label3";
+            label3.Size = new Size(376, 44);
+            label3.TabIndex = 20;
+            label3.Text = "Informations importantes";
+            // 
+            // VoirItineraire
+            // 
+            VoirItineraire.BackColor = SystemColors.ControlLight;
+            VoirItineraire.Enabled = false;
+            VoirItineraire.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            VoirItineraire.ForeColor = SystemColors.ControlText;
+            VoirItineraire.Location = new Point(118, 278);
+            VoirItineraire.Name = "VoirItineraire";
+            VoirItineraire.Size = new Size(203, 38);
+            VoirItineraire.TabIndex = 19;
+            VoirItineraire.Text = "Voir les itinéraire";
+            VoirItineraire.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label2.Location = new Point(96, 123);
+            label2.Name = "label2";
+            label2.Size = new Size(251, 31);
+            label2.TabIndex = 18;
+            label2.Text = "Station de départ :";
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label1.Location = new Point(96, 199);
+            label1.Name = "label1";
+            label1.Size = new Size(225, 31);
+            label1.TabIndex = 17;
+            label1.Text = "Station d'arrivée :";
+            // 
+            // StationArrivee
+            // 
+            StationArrivee.Anchor = AnchorStyles.Top;
+            StationArrivee.FormattingEnabled = true;
+            StationArrivee.ItemHeight = 20;
+            StationArrivee.Location = new Point(96, 234);
+            StationArrivee.Name = "StationArrivee";
+            StationArrivee.Size = new Size(251, 28);
+            StationArrivee.TabIndex = 16;
+            // 
+            // StationDepart
+            // 
+            StationDepart.FormattingEnabled = true;
+            StationDepart.Location = new Point(96, 157);
+            StationDepart.Name = "StationDepart";
+            StationDepart.Size = new Size(251, 28);
+            StationDepart.TabIndex = 15;
+            // 
+            // flpNavbarre
+            // 
+            flpNavbarre.BackColor = Color.FromArgb(234, 99, 93);
+            flpNavbarre.Controls.Add(picUndergroudLogo);
+            flpNavbarre.Controls.Add(lblTUBAPP);
+            flpNavbarre.Controls.Add(IconeProfil);
+            flpNavbarre.Controls.Add(picIconeContact);
+            flpNavbarre.Location = new Point(0, 13);
+            flpNavbarre.Margin = new Padding(2);
+            flpNavbarre.Name = "flpNavbarre";
+            flpNavbarre.Size = new Size(446, 95);
+            flpNavbarre.TabIndex = 14;
+            // 
+            // picUndergroudLogo
+            // 
+            picUndergroudLogo.Image = (Image)resources.GetObject("picUndergroudLogo.Image");
+            picUndergroudLogo.Location = new Point(0, 0);
+            picUndergroudLogo.Margin = new Padding(0);
+            picUndergroudLogo.Name = "picUndergroudLogo";
+            picUndergroudLogo.Size = new Size(95, 93);
+            picUndergroudLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picUndergroudLogo.TabIndex = 1;
+            picUndergroudLogo.TabStop = false;
+            // 
+            // lblTUBAPP
+            // 
+            lblTUBAPP.Anchor = AnchorStyles.None;
+            lblTUBAPP.AutoSize = true;
+            lblTUBAPP.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblTUBAPP.ForeColor = Color.White;
+            lblTUBAPP.Location = new Point(132, 18);
+            lblTUBAPP.Margin = new Padding(37, 0, 37, 0);
+            lblTUBAPP.Name = "lblTUBAPP";
+            lblTUBAPP.Size = new Size(189, 57);
+            lblTUBAPP.TabIndex = 0;
+            lblTUBAPP.Text = "TUBAPP";
+            lblTUBAPP.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // IconeProfil
+            // 
+            IconeProfil.Image = Properties.Resources.icone_profil;
+            IconeProfil.Location = new Point(358, 0);
+            IconeProfil.Margin = new Padding(0);
+            IconeProfil.Name = "IconeProfil";
+            IconeProfil.Size = new Size(79, 89);
+            IconeProfil.SizeMode = PictureBoxSizeMode.Zoom;
+            IconeProfil.TabIndex = 3;
+            IconeProfil.TabStop = false;
+            // 
+            // picIconeContact
+            // 
+            picIconeContact.Image = Properties.Resources.icone_profil;
+            picIconeContact.Location = new Point(0, 93);
+            picIconeContact.Margin = new Padding(0);
+            picIconeContact.Name = "picIconeContact";
+            picIconeContact.Size = new Size(93, 93);
+            picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
+            picIconeContact.TabIndex = 2;
+            picIconeContact.TabStop = false;
+            // 
+            // frmMenuPricipal
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(446, 659);
+            Controls.Add(InfoImportantes);
+            Controls.Add(label3);
+            Controls.Add(VoirItineraire);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(StationArrivee);
+            Controls.Add(StationDepart);
+            Controls.Add(flpNavbarre);
+            Name = "frmMenuPricipal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmMenuPricipal";
+            flpNavbarre.ResumeLayout(false);
+            flpNavbarre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)IconeProfil).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private FlowLayoutPanel InfoImportantes;
+        private Label label3;
+        private Button VoirItineraire;
+        private Label label2;
+        private Label label1;
+        private ComboBox StationArrivee;
+        private ComboBox StationDepart;
+        private FlowLayoutPanel flpNavbarre;
+        private PictureBox picUndergroudLogo;
+        private Label lblTUBAPP;
+        private PictureBox IconeProfil;
+        private PictureBox picIconeContact;
+    }
+}

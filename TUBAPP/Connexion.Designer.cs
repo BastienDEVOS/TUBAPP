@@ -101,6 +101,7 @@
             resources.ApplyResources(btnConnexion, "btnConnexion");
             btnConnexion.Name = "btnConnexion";
             btnConnexion.UseVisualStyleBackColor = true;
+            btnConnexion.Click += btnConnexion_Click;
             // 
             // llbMDPOublié
             // 

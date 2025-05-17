@@ -29,21 +29,67 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNouvelUtilisateur));
+            button2 = new Button();
+            btn_Connecter = new Button();
+            Btn_Retour = new Button();
+            txtConfirmMDP = new TextBox();
+            txtMDP = new TextBox();
+            txtAdresseMail = new TextBox();
+            checkBox1 = new CheckBox();
+            lblBienvenue = new Label();
             flpNavbarre = new FlowLayoutPanel();
             picUndergroudLogo = new PictureBox();
             lblTUBAPP = new Label();
             picIconeContact = new PictureBox();
-            lblBienvenue = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            checkBox1 = new CheckBox();
-            txtAdresseMail = new TextBox();
-            txtMDP = new TextBox();
-            txtConfirmMDP = new TextBox();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             SuspendLayout();
+            // 
+            // button2
+            // 
+            resources.ApplyResources(button2, "button2");
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // btn_Connecter
+            // 
+            resources.ApplyResources(btn_Connecter, "btn_Connecter");
+            btn_Connecter.Name = "btn_Connecter";
+            btn_Connecter.UseVisualStyleBackColor = true;
+            btn_Connecter.Click += btn_Connecter_Click;
+            // 
+            // Btn_Retour
+            // 
+            resources.ApplyResources(Btn_Retour, "Btn_Retour");
+            Btn_Retour.Name = "Btn_Retour";
+            Btn_Retour.UseVisualStyleBackColor = true;
+            // 
+            // txtConfirmMDP
+            // 
+            resources.ApplyResources(txtConfirmMDP, "txtConfirmMDP");
+            txtConfirmMDP.Name = "txtConfirmMDP";
+            // 
+            // txtMDP
+            // 
+            resources.ApplyResources(txtMDP, "txtMDP");
+            txtMDP.Name = "txtMDP";
+            // 
+            // txtAdresseMail
+            // 
+            resources.ApplyResources(txtAdresseMail, "txtAdresseMail");
+            txtAdresseMail.Name = "txtAdresseMail";
+            // 
+            // checkBox1
+            // 
+            resources.ApplyResources(checkBox1, "checkBox1");
+            checkBox1.Name = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // lblBienvenue
+            // 
+            resources.ApplyResources(lblBienvenue, "lblBienvenue");
+            lblBienvenue.Name = "lblBienvenue";
             // 
             // flpNavbarre
             // 
@@ -73,56 +119,19 @@
             picIconeContact.Name = "picIconeContact";
             picIconeContact.TabStop = false;
             // 
-            // lblBienvenue
-            // 
-            resources.ApplyResources(lblBienvenue, "lblBienvenue");
-            lblBienvenue.Name = "lblBienvenue";
-            // 
-            // button1
-            // 
-            resources.ApplyResources(button1, "button1");
-            button1.Name = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            resources.ApplyResources(button2, "button2");
-            button2.Name = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            resources.ApplyResources(checkBox1, "checkBox1");
-            checkBox1.Name = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // txtAdresseMail
-            // 
-            resources.ApplyResources(txtAdresseMail, "txtAdresseMail");
-            txtAdresseMail.Name = "txtAdresseMail";
-            // 
-            // txtMDP
-            // 
-            resources.ApplyResources(txtMDP, "txtMDP");
-            txtMDP.Name = "txtMDP";
-            // 
-            // txtConfirmMDP
-            // 
-            resources.ApplyResources(txtConfirmMDP, "txtConfirmMDP");
-            txtConfirmMDP.Name = "txtConfirmMDP";
-            // 
             // frmNouvelUtilisateur
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btn_Connecter);
+            Controls.Add(Btn_Retour);
             Controls.Add(txtConfirmMDP);
             Controls.Add(txtMDP);
             Controls.Add(txtAdresseMail);
             Controls.Add(checkBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(lblBienvenue);
             Controls.Add(flpNavbarre);
+            Controls.Add(button2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmNouvelUtilisateur";
@@ -135,17 +144,17 @@
         }
 
         #endregion
-
+        private Button button2;
+        private Button btn_Connecter;
+        private Button Btn_Retour;
+        private TextBox txtConfirmMDP;
+        private TextBox txtMDP;
+        private TextBox txtAdresseMail;
+        private CheckBox checkBox1;
+        private Label lblBienvenue;
         private FlowLayoutPanel flpNavbarre;
         private PictureBox picUndergroudLogo;
         private Label lblTUBAPP;
         private PictureBox picIconeContact;
-        private Label lblBienvenue;
-        private Button button1;
-        private Button button2;
-        private CheckBox checkBox1;
-        private TextBox txtAdresseMail;
-        private TextBox txtMDP;
-        private TextBox txtConfirmMDP;
     }
 }

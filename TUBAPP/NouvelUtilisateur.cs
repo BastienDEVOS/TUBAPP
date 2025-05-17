@@ -16,5 +16,13 @@ namespace TUBAPP
         {
             InitializeComponent();
         }
+
+        private void btn_Connecter_Click(object sender, EventArgs e)
+        {
+            frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
+            FrmMenuPrincipal.Show();
+
+            this.Close();
+        }
     }
 }
