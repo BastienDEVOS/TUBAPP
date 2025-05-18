@@ -63,6 +63,46 @@ namespace TUBAPP.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GPS {
+            get {
+                object obj = ResourceManager.GetObject("GPS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GPSSelectionner {
+            get {
+                object obj = ResourceManager.GetObject("GPSSelectionner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap homepng {
+            get {
+                object obj = ResourceManager.GetObject("homepng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap homeSelectionnerpng {
+            get {
+                object obj = ResourceManager.GetObject("homeSelectionnerpng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icone_profil {
             get {
                 object obj = ResourceManager.GetObject("icone profil", resourceCulture);
@@ -76,6 +116,26 @@ namespace TUBAPP.Properties {
         internal static System.Drawing.Bitmap logo_underground {
             get {
                 object obj = ResourceManager.GetObject("logo underground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap network {
+            get {
+                object obj = ResourceManager.GetObject("network", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap networkSelectionner {
+            get {
+                object obj = ResourceManager.GetObject("networkSelectionner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

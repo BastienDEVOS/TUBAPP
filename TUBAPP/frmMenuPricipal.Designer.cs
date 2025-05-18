@@ -41,17 +41,25 @@
             lblTUBAPP = new Label();
             IconeProfil = new PictureBox();
             picIconeContact = new PictureBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)IconeProfil).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
+            flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // InfoImportantes
             // 
             InfoImportantes.Location = new Point(96, 382);
             InfoImportantes.Name = "InfoImportantes";
-            InfoImportantes.Size = new Size(250, 263);
+            InfoImportantes.Size = new Size(250, 183);
             InfoImportantes.TabIndex = 21;
             // 
             // label3
@@ -172,11 +180,58 @@
             picIconeContact.TabIndex = 2;
             picIconeContact.TabStop = false;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.FromArgb(234, 99, 93);
+            flowLayoutPanel1.Controls.Add(pictureBox1);
+            flowLayoutPanel1.Controls.Add(pictureBox2);
+            flowLayoutPanel1.Controls.Add(pictureBox3);
+            flowLayoutPanel1.Location = new Point(0, 594);
+            flowLayoutPanel1.Margin = new Padding(2);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(446, 65);
+            flowLayoutPanel1.TabIndex = 22;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = Properties.Resources.GPS;
+            pictureBox1.Location = new Point(70, 5);
+            pictureBox1.Margin = new Padding(70, 0, 15, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(45, 56);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.homeSelectionnerpng;
+            pictureBox2.Location = new Point(185, 0);
+            pictureBox2.Margin = new Padding(55, 0, 35, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(79, 65);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.network;
+            pictureBox3.Location = new Point(329, 3);
+            pictureBox3.Margin = new Padding(30, 3, 15, 5);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(59, 58);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
+            // 
             // frmMenuPricipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(InfoImportantes);
             Controls.Add(label3);
             Controls.Add(VoirItineraire);
@@ -193,6 +248,10 @@
             ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)IconeProfil).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
+            flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -210,5 +269,9 @@
         private Label lblTUBAPP;
         private PictureBox IconeProfil;
         private PictureBox picIconeContact;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
     }
 }
