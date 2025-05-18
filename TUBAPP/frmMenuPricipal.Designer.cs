@@ -77,12 +77,13 @@
             VoirItineraire.Enabled = false;
             VoirItineraire.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             VoirItineraire.ForeColor = SystemColors.ControlText;
-            VoirItineraire.Location = new Point(118, 278);
+            VoirItineraire.Location = new Point(109, 268);
             VoirItineraire.Name = "VoirItineraire";
-            VoirItineraire.Size = new Size(203, 38);
+            VoirItineraire.Size = new Size(228, 38);
             VoirItineraire.TabIndex = 19;
-            VoirItineraire.Text = "Voir les itinéraire";
+            VoirItineraire.Text = "Voir les itinéraires";
             VoirItineraire.UseVisualStyleBackColor = false;
+            VoirItineraire.Click += VoirItineraire_Click;
             // 
             // label2
             // 
