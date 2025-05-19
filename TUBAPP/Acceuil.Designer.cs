@@ -88,6 +88,7 @@
             resources.ApplyResources(picUndergroudLogo, "picUndergroudLogo");
             picUndergroudLogo.Name = "picUndergroudLogo";
             picUndergroudLogo.TabStop = false;
+            picUndergroudLogo.Click += picUndergroudLogo_Click;
             // 
             // lblTUBAPP
             // 

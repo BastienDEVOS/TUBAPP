@@ -57,17 +57,19 @@
             // 
             // InfoImportantes
             // 
-            InfoImportantes.Location = new Point(96, 382);
+            InfoImportantes.Location = new Point(156, 611);
+            InfoImportantes.Margin = new Padding(5, 5, 5, 5);
             InfoImportantes.Name = "InfoImportantes";
-            InfoImportantes.Size = new Size(250, 183);
+            InfoImportantes.Size = new Size(406, 293);
             InfoImportantes.TabIndex = 21;
             // 
             // label3
             // 
             label3.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
-            label3.Location = new Point(36, 335);
+            label3.Location = new Point(58, 536);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(376, 44);
+            label3.Size = new Size(611, 70);
             label3.TabIndex = 20;
             label3.Text = "Informations importantes";
             // 
@@ -77,9 +79,10 @@
             VoirItineraire.Enabled = false;
             VoirItineraire.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             VoirItineraire.ForeColor = SystemColors.ControlText;
-            VoirItineraire.Location = new Point(109, 268);
+            VoirItineraire.Location = new Point(177, 429);
+            VoirItineraire.Margin = new Padding(5, 5, 5, 5);
             VoirItineraire.Name = "VoirItineraire";
-            VoirItineraire.Size = new Size(228, 38);
+            VoirItineraire.Size = new Size(370, 61);
             VoirItineraire.TabIndex = 19;
             VoirItineraire.Text = "Voir les itinéraires";
             VoirItineraire.UseVisualStyleBackColor = false;
@@ -88,18 +91,20 @@
             // label2
             // 
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label2.Location = new Point(96, 123);
+            label2.Location = new Point(156, 197);
+            label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(251, 31);
+            label2.Size = new Size(408, 50);
             label2.TabIndex = 18;
             label2.Text = "Station de départ :";
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label1.Location = new Point(96, 199);
+            label1.Location = new Point(156, 318);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(225, 31);
+            label1.Size = new Size(366, 50);
             label1.TabIndex = 17;
             label1.Text = "Station d'arrivée :";
             // 
@@ -107,18 +112,20 @@
             // 
             StationArrivee.Anchor = AnchorStyles.Top;
             StationArrivee.FormattingEnabled = true;
-            StationArrivee.ItemHeight = 20;
-            StationArrivee.Location = new Point(96, 234);
+            StationArrivee.ItemHeight = 32;
+            StationArrivee.Location = new Point(156, 374);
+            StationArrivee.Margin = new Padding(5, 5, 5, 5);
             StationArrivee.Name = "StationArrivee";
-            StationArrivee.Size = new Size(251, 28);
+            StationArrivee.Size = new Size(405, 40);
             StationArrivee.TabIndex = 16;
             // 
             // StationDepart
             // 
             StationDepart.FormattingEnabled = true;
-            StationDepart.Location = new Point(96, 157);
+            StationDepart.Location = new Point(156, 251);
+            StationDepart.Margin = new Padding(5, 5, 5, 5);
             StationDepart.Name = "StationDepart";
-            StationDepart.Size = new Size(251, 28);
+            StationDepart.Size = new Size(405, 40);
             StationDepart.TabIndex = 15;
             // 
             // flpNavbarre
@@ -128,10 +135,9 @@
             flpNavbarre.Controls.Add(lblTUBAPP);
             flpNavbarre.Controls.Add(IconeProfil);
             flpNavbarre.Controls.Add(picIconeContact);
-            flpNavbarre.Location = new Point(0, 13);
-            flpNavbarre.Margin = new Padding(2);
+            flpNavbarre.Location = new Point(0, 21);
             flpNavbarre.Name = "flpNavbarre";
-            flpNavbarre.Size = new Size(446, 95);
+            flpNavbarre.Size = new Size(725, 152);
             flpNavbarre.TabIndex = 14;
             // 
             // picUndergroudLogo
@@ -140,7 +146,7 @@
             picUndergroudLogo.Location = new Point(0, 0);
             picUndergroudLogo.Margin = new Padding(0);
             picUndergroudLogo.Name = "picUndergroudLogo";
-            picUndergroudLogo.Size = new Size(95, 93);
+            picUndergroudLogo.Size = new Size(154, 149);
             picUndergroudLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picUndergroudLogo.TabIndex = 1;
             picUndergroudLogo.TabStop = false;
@@ -151,10 +157,10 @@
             lblTUBAPP.AutoSize = true;
             lblTUBAPP.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             lblTUBAPP.ForeColor = Color.White;
-            lblTUBAPP.Location = new Point(132, 18);
-            lblTUBAPP.Margin = new Padding(37, 0, 37, 0);
+            lblTUBAPP.Location = new Point(214, 30);
+            lblTUBAPP.Margin = new Padding(60, 0, 60, 0);
             lblTUBAPP.Name = "lblTUBAPP";
-            lblTUBAPP.Size = new Size(189, 57);
+            lblTUBAPP.Size = new Size(297, 89);
             lblTUBAPP.TabIndex = 0;
             lblTUBAPP.Text = "TUBAPP";
             lblTUBAPP.TextAlign = ContentAlignment.TopCenter;
@@ -162,10 +168,10 @@
             // IconeProfil
             // 
             IconeProfil.Image = Properties.Resources.icone_profil;
-            IconeProfil.Location = new Point(358, 0);
+            IconeProfil.Location = new Point(571, 0);
             IconeProfil.Margin = new Padding(0);
             IconeProfil.Name = "IconeProfil";
-            IconeProfil.Size = new Size(79, 89);
+            IconeProfil.Size = new Size(128, 142);
             IconeProfil.SizeMode = PictureBoxSizeMode.Zoom;
             IconeProfil.TabIndex = 3;
             IconeProfil.TabStop = false;
@@ -173,10 +179,10 @@
             // picIconeContact
             // 
             picIconeContact.Image = Properties.Resources.icone_profil;
-            picIconeContact.Location = new Point(0, 93);
+            picIconeContact.Location = new Point(0, 149);
             picIconeContact.Margin = new Padding(0);
             picIconeContact.Name = "picIconeContact";
-            picIconeContact.Size = new Size(93, 93);
+            picIconeContact.Size = new Size(151, 149);
             picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
             picIconeContact.TabIndex = 2;
             picIconeContact.TabStop = false;
@@ -187,20 +193,19 @@
             flowLayoutPanel1.Controls.Add(pictureBox1);
             flowLayoutPanel1.Controls.Add(pictureBox2);
             flowLayoutPanel1.Controls.Add(pictureBox3);
-            flowLayoutPanel1.Location = new Point(0, 594);
-            flowLayoutPanel1.Margin = new Padding(2);
+            flowLayoutPanel1.Location = new Point(0, 950);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(446, 65);
+            flowLayoutPanel1.Size = new Size(725, 104);
             flowLayoutPanel1.TabIndex = 22;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.GPS;
-            pictureBox1.Location = new Point(70, 5);
-            pictureBox1.Margin = new Padding(70, 0, 15, 0);
+            pictureBox1.Location = new Point(114, 8);
+            pictureBox1.Margin = new Padding(114, 0, 24, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(45, 56);
+            pictureBox1.Size = new Size(73, 90);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -208,10 +213,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.homeSelectionnerpng;
-            pictureBox2.Location = new Point(185, 0);
-            pictureBox2.Margin = new Padding(55, 0, 35, 0);
+            pictureBox2.Location = new Point(300, 0);
+            pictureBox2.Margin = new Padding(89, 0, 57, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(79, 65);
+            pictureBox2.Size = new Size(128, 104);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
@@ -219,19 +224,19 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.network;
-            pictureBox3.Location = new Point(329, 3);
-            pictureBox3.Margin = new Padding(30, 3, 15, 5);
+            pictureBox3.Location = new Point(534, 5);
+            pictureBox3.Margin = new Padding(49, 5, 24, 8);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(59, 58);
+            pictureBox3.Size = new Size(96, 93);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
             // frmMenuPricipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(446, 659);
+            ClientSize = new Size(725, 1054);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(InfoImportantes);
             Controls.Add(label3);
@@ -241,6 +246,7 @@
             Controls.Add(StationArrivee);
             Controls.Add(StationDepart);
             Controls.Add(flpNavbarre);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "frmMenuPricipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmMenuPricipal";
