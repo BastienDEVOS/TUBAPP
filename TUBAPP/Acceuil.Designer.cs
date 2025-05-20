@@ -34,12 +34,12 @@
             btnConnexion = new Button();
             lblBienvenue = new Label();
             flpNavbarre = new FlowLayoutPanel();
-            picUndergroudLogo = new PictureBox();
             lblTUBAPP = new Label();
             picIconeContact = new PictureBox();
+            pictureBox1 = new PictureBox();
             flpNavbarre.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnInvité
@@ -77,18 +77,11 @@
             // flpNavbarre
             // 
             flpNavbarre.BackColor = Color.FromArgb(234, 99, 93);
-            flpNavbarre.Controls.Add(picUndergroudLogo);
+            flpNavbarre.Controls.Add(pictureBox1);
             flpNavbarre.Controls.Add(lblTUBAPP);
             flpNavbarre.Controls.Add(picIconeContact);
             resources.ApplyResources(flpNavbarre, "flpNavbarre");
             flpNavbarre.Name = "flpNavbarre";
-            // 
-            // picUndergroudLogo
-            // 
-            resources.ApplyResources(picUndergroudLogo, "picUndergroudLogo");
-            picUndergroudLogo.Name = "picUndergroudLogo";
-            picUndergroudLogo.TabStop = false;
-            picUndergroudLogo.Click += picUndergroudLogo_Click;
             // 
             // lblTUBAPP
             // 
@@ -102,6 +95,13 @@
             resources.ApplyResources(picIconeContact, "picIconeContact");
             picIconeContact.Name = "picIconeContact";
             picIconeContact.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
             // 
             // frmAcceuil
             // 
@@ -119,8 +119,8 @@
             Load += frmAcceuil_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,7 +133,7 @@
         private Label lblBienvenue;
         private FlowLayoutPanel flpNavbarre;
         private Label lblTUBAPP;
-        private PictureBox picUndergroudLogo;
         private PictureBox picIconeContact;
+        private PictureBox pictureBox1;
     }
 }

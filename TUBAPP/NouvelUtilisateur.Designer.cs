@@ -38,7 +38,6 @@
             ConditionUtilisation = new CheckBox();
             lblBienvenue = new Label();
             flpNavbarre = new FlowLayoutPanel();
-            picUndergroudLogo = new PictureBox();
             lblTUBAPP = new Label();
             picIconeContact = new PictureBox();
             PopupCondition = new Panel();
@@ -48,10 +47,11 @@
             label1 = new Label();
             msg_erreurMail = new Label();
             msg_erreurMdp = new Label();
+            pictureBox1 = new PictureBox();
             flpNavbarre.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             PopupCondition.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button2
@@ -108,17 +108,11 @@
             // flpNavbarre
             // 
             flpNavbarre.BackColor = Color.FromArgb(234, 99, 93);
-            flpNavbarre.Controls.Add(picUndergroudLogo);
+            flpNavbarre.Controls.Add(pictureBox1);
             flpNavbarre.Controls.Add(lblTUBAPP);
             flpNavbarre.Controls.Add(picIconeContact);
             resources.ApplyResources(flpNavbarre, "flpNavbarre");
             flpNavbarre.Name = "flpNavbarre";
-            // 
-            // picUndergroudLogo
-            // 
-            resources.ApplyResources(picUndergroudLogo, "picUndergroudLogo");
-            picUndergroudLogo.Name = "picUndergroudLogo";
-            picUndergroudLogo.TabStop = false;
             // 
             // lblTUBAPP
             // 
@@ -184,6 +178,13 @@
             msg_erreurMdp.BackColor = Color.Red;
             msg_erreurMdp.Name = "msg_erreurMdp";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo1;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
+            // 
             // frmNouvelUtilisateur
             // 
             resources.ApplyResources(this, "$this");
@@ -205,9 +206,9 @@
             Name = "frmNouvelUtilisateur";
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             PopupCondition.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -222,7 +223,6 @@
         private CheckBox ConditionUtilisation;
         private Label lblBienvenue;
         private FlowLayoutPanel flpNavbarre;
-        private PictureBox picUndergroudLogo;
         private Label lblTUBAPP;
         private PictureBox picIconeContact;
         private Panel PopupCondition;
@@ -232,5 +232,6 @@
         private Label label1;
         private Label msg_erreurMail;
         private Label msg_erreurMdp;
+        private PictureBox pictureBox1;
     }
 }

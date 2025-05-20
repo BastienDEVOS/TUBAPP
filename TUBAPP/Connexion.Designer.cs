@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConnexion));
             flpNavbarre = new FlowLayoutPanel();
-            picUndergroudLogo = new PictureBox();
             lblTUBAPP = new Label();
             picIconeContact = new PictureBox();
             lblBienvenue = new Label();
@@ -40,25 +39,20 @@
             btnConnexion = new Button();
             llbMDPOublié = new LinkLabel();
             btn_retour = new Button();
+            pictureBox1 = new PictureBox();
             flpNavbarre.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // flpNavbarre
             // 
             flpNavbarre.BackColor = Color.FromArgb(234, 99, 93);
-            flpNavbarre.Controls.Add(picUndergroudLogo);
+            flpNavbarre.Controls.Add(pictureBox1);
             flpNavbarre.Controls.Add(lblTUBAPP);
             flpNavbarre.Controls.Add(picIconeContact);
             resources.ApplyResources(flpNavbarre, "flpNavbarre");
             flpNavbarre.Name = "flpNavbarre";
-            // 
-            // picUndergroudLogo
-            // 
-            resources.ApplyResources(picUndergroudLogo, "picUndergroudLogo");
-            picUndergroudLogo.Name = "picUndergroudLogo";
-            picUndergroudLogo.TabStop = false;
             // 
             // lblTUBAPP
             // 
@@ -116,6 +110,13 @@
             btn_retour.UseVisualStyleBackColor = true;
             btn_retour.MouseClick += btnRetour_MouseClick;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo1;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
+            // 
             // frmConnexion
             // 
             resources.ApplyResources(this, "$this");
@@ -135,8 +136,8 @@
             Load += Form2_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picUndergroudLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -154,5 +155,6 @@
         private Button btnConnexion;
         private LinkLabel llbMDPOublié;
         private Button btn_retour;
+        private PictureBox pictureBox1;
     }
 }
