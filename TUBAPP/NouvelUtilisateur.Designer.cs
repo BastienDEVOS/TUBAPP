@@ -62,16 +62,20 @@
             // 
             // btn_Connecter
             // 
+            btn_Connecter.BackColor = Color.FromArgb(209, 66, 54);
             resources.ApplyResources(btn_Connecter, "btn_Connecter");
+            btn_Connecter.ForeColor = SystemColors.Control;
             btn_Connecter.Name = "btn_Connecter";
-            btn_Connecter.UseVisualStyleBackColor = true;
+            btn_Connecter.UseVisualStyleBackColor = false;
             btn_Connecter.Click += btn_Connecter_Click;
             // 
             // Btn_Retour
             // 
+            Btn_Retour.BackColor = Color.FromArgb(209, 66, 54);
             resources.ApplyResources(Btn_Retour, "Btn_Retour");
+            Btn_Retour.ForeColor = SystemColors.Control;
             Btn_Retour.Name = "Btn_Retour";
-            Btn_Retour.UseVisualStyleBackColor = true;
+            Btn_Retour.UseVisualStyleBackColor = false;
             // 
             // txtConfirmMDP
             // 

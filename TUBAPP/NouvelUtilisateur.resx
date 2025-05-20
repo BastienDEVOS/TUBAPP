@@ -487,78 +487,6 @@
   <data name="&gt;&gt;flpNavbarre.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;Refuser.Name" xml:space="preserve">
-    <value>Refuser</value>
-  </data>
-  <data name="&gt;&gt;Refuser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Refuser.Parent" xml:space="preserve">
-    <value>PopupCondition</value>
-  </data>
-  <data name="&gt;&gt;Refuser.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Accepter.Name" xml:space="preserve">
-    <value>Accepter</value>
-  </data>
-  <data name="&gt;&gt;Accepter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Accepter.Parent" xml:space="preserve">
-    <value>PopupCondition</value>
-  </data>
-  <data name="&gt;&gt;Accepter.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
-    <value>richTextBox1</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
-    <value>PopupCondition</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>PopupCondition</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="PopupCondition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 229</value>
-  </data>
-  <data name="PopupCondition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>405, 402</value>
-  </data>
-  <data name="PopupCondition.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="PopupCondition.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;PopupCondition.Name" xml:space="preserve">
-    <value>PopupCondition</value>
-  </data>
-  <data name="&gt;&gt;PopupCondition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PopupCondition.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PopupCondition.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="Refuser.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 15pt, style=Bold</value>
   </data>
@@ -685,6 +613,30 @@ L'utilisation de l'Application implique l'acceptation sans réserve des présent
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="PopupCondition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 229</value>
+  </data>
+  <data name="PopupCondition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 402</value>
+  </data>
+  <data name="PopupCondition.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="PopupCondition.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.Name" xml:space="preserve">
+    <value>PopupCondition</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="msg_erreurMail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
