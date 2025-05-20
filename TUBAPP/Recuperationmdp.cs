@@ -25,7 +25,7 @@ namespace TUBAPP
             isNouveauMdpVisible = !isNouveauMdpVisible;
             txtNouveauMdp.UseSystemPasswordChar = !isNouveauMdpVisible;
             btnVoirMdp.Image = isNouveauMdpVisible
-                ? Properties.Resources.eye 
+                ? Properties.Resources.eye
                 : Properties.Resources.eye_crossed;
         }
 
@@ -61,7 +61,20 @@ namespace TUBAPP
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
+            frmConnexion FrmConnexion = new frmConnexion();
+            FrmConnexion.Show();
+
             this.Close();
+        }
+
+        private void lblTitre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Recuperationmdp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

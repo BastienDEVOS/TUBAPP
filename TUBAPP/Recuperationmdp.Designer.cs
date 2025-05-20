@@ -51,7 +51,7 @@
             flpNavbarre.Controls.Add(lblTUBAPP);
             flpNavbarre.Controls.Add(picIconeContact);
             flpNavbarre.Location = new Point(0, 0);
-            flpNavbarre.Margin = new Padding(4, 4, 4, 4);
+            flpNavbarre.Margin = new Padding(4);
             flpNavbarre.Name = "flpNavbarre";
             flpNavbarre.Size = new Size(445, 75);
             flpNavbarre.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             pictureBoxLogo.Image = Properties.Resources.logo;
             pictureBoxLogo.Location = new Point(6, 6);
-            pictureBoxLogo.Margin = new Padding(6, 6, 6, 6);
+            pictureBoxLogo.Margin = new Padding(6);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(62, 62);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -103,6 +103,7 @@
             lblTitre.TabIndex = 1;
             lblTitre.Text = "Récupération de\nMot de passe";
             lblTitre.TextAlign = ContentAlignment.MiddleCenter;
+            lblTitre.Click += lblTitre_Click;
             // 
             // txtEmail
             // 
@@ -111,7 +112,7 @@
             txtEmail.Font = new Font("Segoe UI", 12F);
             txtEmail.ForeColor = Color.Gray;
             txtEmail.Location = new Point(61, 209);
-            txtEmail.Margin = new Padding(4, 4, 4, 4);
+            txtEmail.Margin = new Padding(4);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Adresse mail";
             txtEmail.Size = new Size(312, 39);
@@ -124,7 +125,7 @@
             txtCode.Font = new Font("Segoe UI", 12F);
             txtCode.ForeColor = Color.Gray;
             txtCode.Location = new Point(61, 280);
-            txtCode.Margin = new Padding(4, 4, 4, 4);
+            txtCode.Margin = new Padding(4);
             txtCode.Name = "txtCode";
             txtCode.PlaceholderText = "Code de vérification";
             txtCode.Size = new Size(312, 39);
@@ -137,7 +138,7 @@
             txtNouveauMdp.Font = new Font("Segoe UI", 12F);
             txtNouveauMdp.ForeColor = Color.Gray;
             txtNouveauMdp.Location = new Point(61, 350);
-            txtNouveauMdp.Margin = new Padding(4, 4, 4, 4);
+            txtNouveauMdp.Margin = new Padding(4);
             txtNouveauMdp.Name = "txtNouveauMdp";
             txtNouveauMdp.PlaceholderText = "Nouveau Mot de passe";
             txtNouveauMdp.Size = new Size(312, 39);
@@ -151,7 +152,7 @@
             txtConfirmerMdp.Font = new Font("Segoe UI", 12F);
             txtConfirmerMdp.ForeColor = Color.Gray;
             txtConfirmerMdp.Location = new Point(61, 428);
-            txtConfirmerMdp.Margin = new Padding(4, 4, 4, 4);
+            txtConfirmerMdp.Margin = new Padding(4);
             txtConfirmerMdp.Name = "txtConfirmerMdp";
             txtConfirmerMdp.PlaceholderText = "Confirmation Mot de passe";
             txtConfirmerMdp.Size = new Size(312, 39);
@@ -163,7 +164,7 @@
             btnVoirMdp.FlatAppearance.BorderSize = 0;
             btnVoirMdp.FlatStyle = FlatStyle.Flat;
             btnVoirMdp.Location = new Point(312, 300);
-            btnVoirMdp.Margin = new Padding(4, 4, 4, 4);
+            btnVoirMdp.Margin = new Padding(4);
             btnVoirMdp.Name = "btnVoirMdp";
             btnVoirMdp.Size = new Size(44, 42);
             btnVoirMdp.TabIndex = 5;
@@ -174,7 +175,7 @@
             btnVoirConfirmerMdp.FlatAppearance.BorderSize = 0;
             btnVoirConfirmerMdp.FlatStyle = FlatStyle.Flat;
             btnVoirConfirmerMdp.Location = new Point(312, 362);
-            btnVoirConfirmerMdp.Margin = new Padding(4, 4, 4, 4);
+            btnVoirConfirmerMdp.Margin = new Padding(4);
             btnVoirConfirmerMdp.Name = "btnVoirConfirmerMdp";
             btnVoirConfirmerMdp.Size = new Size(44, 42);
             btnVoirConfirmerMdp.TabIndex = 7;
@@ -189,7 +190,7 @@
             btnConnexion.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnConnexion.ForeColor = Color.White;
             btnConnexion.Location = new Point(61, 486);
-            btnConnexion.Margin = new Padding(4, 4, 4, 4);
+            btnConnexion.Margin = new Padding(4);
             btnConnexion.Name = "btnConnexion";
             btnConnexion.Size = new Size(312, 50);
             btnConnexion.TabIndex = 8;
@@ -206,7 +207,7 @@
             btnRetour.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnRetour.ForeColor = Color.White;
             btnRetour.Location = new Point(61, 569);
-            btnRetour.Margin = new Padding(4, 4, 4, 4);
+            btnRetour.Margin = new Padding(4);
             btnRetour.Name = "btnRetour";
             btnRetour.Size = new Size(312, 50);
             btnRetour.TabIndex = 9;
@@ -230,11 +231,12 @@
             Controls.Add(btnConnexion);
             Controls.Add(btnRetour);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Recuperationmdp";
             Text = "Récupération du mot de passe";
+            Load += Recuperationmdp_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();

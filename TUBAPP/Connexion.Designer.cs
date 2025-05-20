@@ -109,6 +109,7 @@
             resources.ApplyResources(llbMDPOublié, "llbMDPOublié");
             llbMDPOublié.Name = "llbMDPOublié";
             llbMDPOublié.TabStop = true;
+            llbMDPOublié.Click += btnMdpOublie_Click;
             // 
             // btn_retour
             // 
