@@ -117,22 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>flpNavbarre</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblTUBAPP.Name" xml:space="preserve">
+    <value>lblTUBAPP</value>
+  </data>
+  <data name="&gt;&gt;lblTUBAPP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTUBAPP.Parent" xml:space="preserve">
+    <value>flpNavbarre</value>
+  </data>
+  <data name="&gt;&gt;lblTUBAPP.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;picIconeContact.Name" xml:space="preserve">
+    <value>picIconeContact</value>
+  </data>
+  <data name="&gt;&gt;picIconeContact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picIconeContact.Parent" xml:space="preserve">
+    <value>flpNavbarre</value>
+  </data>
+  <data name="&gt;&gt;picIconeContact.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="flpNavbarre.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flpNavbarre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="flpNavbarre.Size" type="System.Drawing.Size, System.Drawing">
+    <value>446, 95</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flpNavbarre.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.Name" xml:space="preserve">
+    <value>flpNavbarre</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpNavbarre.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 2</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 116</value>
+    <value>148, 149</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -158,13 +218,13 @@
     <value>Segoe UI, 25pt, style=Bold</value>
   </data>
   <data name="lblTUBAPP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 26</value>
+    <value>214, 33</value>
   </data>
   <data name="lblTUBAPP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>46, 0, 46, 0</value>
+    <value>60, 0, 60, 0</value>
   </data>
   <data name="lblTUBAPP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 67</value>
+    <value>297, 89</value>
   </data>
   <data name="lblTUBAPP.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -188,13 +248,13 @@
     <value>1</value>
   </data>
   <data name="picIconeContact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>433, 0</value>
+    <value>571, 0</value>
   </data>
   <data name="picIconeContact.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="picIconeContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 116</value>
+    <value>151, 149</value>
   </data>
   <data name="picIconeContact.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -217,11 +277,8 @@
   <data name="flpNavbarre.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="flpNavbarre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
   <data name="flpNavbarre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>558, 119</value>
+    <value>725, 152</value>
   </data>
   <data name="flpNavbarre.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -245,13 +302,13 @@
     <value>Segoe UI, 34.875pt, style=Bold</value>
   </data>
   <data name="lblBienvenue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>65, 152</value>
+    <value>84, 195</value>
   </data>
   <data name="lblBienvenue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
   <data name="lblBienvenue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>393, 93</value>
+    <value>519, 124</value>
   </data>
   <data name="lblBienvenue.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -275,13 +332,13 @@
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="btnRetour.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 927</value>
+    <value>81, 1186</value>
   </data>
   <data name="btnRetour.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="btnRetour.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 62</value>
+    <value>522, 80</value>
   </data>
   <data name="btnRetour.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -305,16 +362,13 @@
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="txtIdentifiant.Location" type="System.Drawing.Point, System.Drawing">
-    <value>65, 290</value>
-  </data>
-  <data name="txtIdentifiant.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>84, 371</value>
   </data>
   <data name="txtIdentifiant.PlaceholderText" xml:space="preserve">
     <value>Identifiant</value>
   </data>
   <data name="txtIdentifiant.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 47</value>
+    <value>522, 61</value>
   </data>
   <data name="txtIdentifiant.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -335,16 +389,13 @@
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="txtMDP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 360</value>
-  </data>
-  <data name="txtMDP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>81, 461</value>
   </data>
   <data name="txtMDP.PlaceholderText" xml:space="preserve">
     <value>Mot de passe</value>
   </data>
   <data name="txtMDP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 47</value>
+    <value>526, 61</value>
   </data>
   <data name="txtMDP.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -365,13 +416,10 @@
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="btnConnexion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 552</value>
-  </data>
-  <data name="btnConnexion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>81, 706</value>
   </data>
   <data name="btnConnexion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 62</value>
+    <value>522, 80</value>
   </data>
   <data name="btnConnexion.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -395,13 +443,10 @@
     <value>True</value>
   </data>
   <data name="llbMDPOublié.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 444</value>
-  </data>
-  <data name="llbMDPOublié.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>81, 568</value>
   </data>
   <data name="llbMDPOublié.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 25</value>
+    <value>250, 32</value>
   </data>
   <data name="llbMDPOublié.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -425,13 +470,10 @@
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="btn_retour.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 635</value>
-  </data>
-  <data name="btn_retour.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>81, 813</value>
   </data>
   <data name="btn_retour.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 62</value>
+    <value>522, 80</value>
   </data>
   <data name="btn_retour.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -455,13 +497,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>10, 25</value>
+    <value>13, 32</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>558, 823</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>725, 1054</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

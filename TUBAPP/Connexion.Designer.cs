@@ -99,9 +99,11 @@
             // 
             // btnConnexion
             // 
+            btnConnexion.BackColor = Color.FromArgb(209, 66, 54);
             resources.ApplyResources(btnConnexion, "btnConnexion");
+            btnConnexion.ForeColor = SystemColors.Control;
             btnConnexion.Name = "btnConnexion";
-            btnConnexion.UseVisualStyleBackColor = true;
+            btnConnexion.UseVisualStyleBackColor = false;
             btnConnexion.Click += btnConnexion_Click;
             // 
             // llbMDPOublié
@@ -113,9 +115,11 @@
             // 
             // btn_retour
             // 
+            btn_retour.BackColor = Color.FromArgb(209, 66, 54);
             resources.ApplyResources(btn_retour, "btn_retour");
+            btn_retour.ForeColor = SystemColors.Control;
             btn_retour.Name = "btn_retour";
-            btn_retour.UseVisualStyleBackColor = true;
+            btn_retour.UseVisualStyleBackColor = false;
             btn_retour.MouseClick += btnRetour_MouseClick;
             // 
             // frmConnexion

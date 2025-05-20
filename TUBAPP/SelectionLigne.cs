@@ -16,5 +16,15 @@ namespace TUBAPP
         {
             InitializeComponent();
         }
+
+        private void labelSelectionner_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SelectionLigne_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
