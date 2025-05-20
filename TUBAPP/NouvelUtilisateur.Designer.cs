@@ -38,6 +38,7 @@
             ConditionUtilisation = new CheckBox();
             lblBienvenue = new Label();
             flpNavbarre = new FlowLayoutPanel();
+            pictureBox1 = new PictureBox();
             lblTUBAPP = new Label();
             picIconeContact = new PictureBox();
             PopupCondition = new Panel();
@@ -47,11 +48,10 @@
             label1 = new Label();
             msg_erreurMail = new Label();
             msg_erreurMdp = new Label();
-            pictureBox1 = new PictureBox();
             flpNavbarre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             PopupCondition.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button2
@@ -113,6 +113,13 @@
             flpNavbarre.Controls.Add(picIconeContact);
             resources.ApplyResources(flpNavbarre, "flpNavbarre");
             flpNavbarre.Name = "flpNavbarre";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo1;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
             // 
             // lblTUBAPP
             // 
@@ -178,13 +185,6 @@
             msg_erreurMdp.BackColor = Color.Red;
             msg_erreurMdp.Name = "msg_erreurMdp";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.logo1;
-            resources.ApplyResources(pictureBox1, "pictureBox1");
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.TabStop = false;
-            // 
             // frmNouvelUtilisateur
             // 
             resources.ApplyResources(this, "$this");
@@ -206,9 +206,9 @@
             Name = "frmNouvelUtilisateur";
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             PopupCondition.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

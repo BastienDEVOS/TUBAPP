@@ -119,10 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 1146</value>
+    <value>180, 716</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 46</value>
+    <value>92, 29</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
@@ -150,10 +154,13 @@
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="btn_Connecter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 795</value>
+    <value>57, 497</value>
+  </data>
+  <data name="btn_Connecter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btn_Connecter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>522, 80</value>
+    <value>321, 50</value>
   </data>
   <data name="btn_Connecter.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -177,10 +184,13 @@
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="Btn_Retour.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 930</value>
+    <value>57, 581</value>
+  </data>
+  <data name="Btn_Retour.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="Btn_Retour.Size" type="System.Drawing.Size, System.Drawing">
-    <value>522, 80</value>
+    <value>321, 50</value>
   </data>
   <data name="Btn_Retour.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -204,13 +214,16 @@
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="txtConfirmMDP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 614</value>
+    <value>20, 384</value>
+  </data>
+  <data name="txtConfirmMDP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="txtConfirmMDP.PlaceholderText" xml:space="preserve">
     <value>Confirmer le mot de passe</value>
   </data>
   <data name="txtConfirmMDP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 61</value>
+    <value>405, 41</value>
   </data>
   <data name="txtConfirmMDP.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -231,13 +244,16 @@
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="txtMDP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 515</value>
+    <value>20, 322</value>
+  </data>
+  <data name="txtMDP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="txtMDP.PlaceholderText" xml:space="preserve">
     <value>Mot de passe</value>
   </data>
   <data name="txtMDP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 61</value>
+    <value>405, 41</value>
   </data>
   <data name="txtMDP.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -258,13 +274,16 @@
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="txtAdresseMail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 398</value>
+    <value>20, 249</value>
+  </data>
+  <data name="txtAdresseMail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="txtAdresseMail.PlaceholderText" xml:space="preserve">
     <value>Adresse mail</value>
   </data>
   <data name="txtAdresseMail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 61</value>
+    <value>405, 41</value>
   </data>
   <data name="txtAdresseMail.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -288,10 +307,13 @@
     <value>Segoe UI, 9pt, style=Underline</value>
   </data>
   <data name="ConditionUtilisation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 731</value>
+    <value>20, 457</value>
+  </data>
+  <data name="ConditionUtilisation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="ConditionUtilisation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 36</value>
+    <value>177, 24</value>
   </data>
   <data name="ConditionUtilisation.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -318,10 +340,13 @@
     <value>Segoe UI, 26pt, style=Bold</value>
   </data>
   <data name="lblBienvenue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 250</value>
+    <value>18, 156</value>
+  </data>
+  <data name="lblBienvenue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lblBienvenue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>636, 93</value>
+    <value>404, 60</value>
   </data>
   <data name="lblBienvenue.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -346,10 +371,13 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>2, 2</value>
+  </data>
+  <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 149</value>
+    <value>91, 93</value>
   </data>
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -379,14 +407,13 @@
     <value>Segoe UI, 25pt, style=Bold</value>
   </data>
   <data name="lblTUBAPP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 33</value>
+    <value>132, 20</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblTUBAPP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>60, 0, 60, 0</value>
+    <value>37, 0, 37, 0</value>
   </data>
   <data name="lblTUBAPP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 89</value>
+    <value>189, 57</value>
   </data>
   <data name="lblTUBAPP.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -410,13 +437,13 @@
     <value>1</value>
   </data>
   <data name="picIconeContact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>571, 0</value>
+    <value>0, 97</value>
   </data>
   <data name="picIconeContact.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="picIconeContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 149</value>
+    <value>93, 93</value>
   </data>
   <data name="picIconeContact.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -437,10 +464,13 @@
     <value>2</value>
   </data>
   <data name="flpNavbarre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 21</value>
+    <value>2, 1</value>
+  </data>
+  <data name="flpNavbarre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="flpNavbarre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>725, 152</value>
+    <value>446, 95</value>
   </data>
   <data name="flpNavbarre.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -457,6 +487,78 @@
   <data name="&gt;&gt;flpNavbarre.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="&gt;&gt;Refuser.Name" xml:space="preserve">
+    <value>Refuser</value>
+  </data>
+  <data name="&gt;&gt;Refuser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Refuser.Parent" xml:space="preserve">
+    <value>PopupCondition</value>
+  </data>
+  <data name="&gt;&gt;Refuser.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Accepter.Name" xml:space="preserve">
+    <value>Accepter</value>
+  </data>
+  <data name="&gt;&gt;Accepter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Accepter.Parent" xml:space="preserve">
+    <value>PopupCondition</value>
+  </data>
+  <data name="&gt;&gt;Accepter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
+    <value>richTextBox1</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
+    <value>PopupCondition</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>PopupCondition</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PopupCondition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 229</value>
+  </data>
+  <data name="PopupCondition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 402</value>
+  </data>
+  <data name="PopupCondition.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="PopupCondition.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.Name" xml:space="preserve">
+    <value>PopupCondition</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PopupCondition.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="Refuser.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 15pt, style=Bold</value>
   </data>
@@ -464,13 +566,10 @@
     <value>NoControl</value>
   </data>
   <data name="Refuser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 525</value>
-  </data>
-  <data name="Refuser.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
+    <value>227, 328</value>
   </data>
   <data name="Refuser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 72</value>
+    <value>140, 45</value>
   </data>
   <data name="Refuser.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -497,13 +596,10 @@
     <value>NoControl</value>
   </data>
   <data name="Accepter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 525</value>
-  </data>
-  <data name="Accepter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
+    <value>37, 328</value>
   </data>
   <data name="Accepter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 72</value>
+    <value>140, 45</value>
   </data>
   <data name="Accepter.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -527,16 +623,13 @@
     <value>NoControl</value>
   </data>
   <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 78</value>
-  </data>
-  <data name="richTextBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
+    <value>37, 49</value>
   </data>
   <data name="richTextBox1.ScrollBars" type="System.Windows.Forms.RichTextBoxScrollBars, System.Windows.Forms">
     <value>Vertical</value>
   </data>
   <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>534, 404</value>
+    <value>330, 254</value>
   </data>
   <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -567,10 +660,13 @@ L'utilisation de l'Application implique l'acceptation sans réserve des présent
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 3</value>
+    <value>15, 2</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 70</value>
+    <value>390, 44</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -590,33 +686,6 @@ L'utilisation de l'Application implique l'acceptation sans réserve des présent
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="PopupCondition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 366</value>
-  </data>
-  <data name="PopupCondition.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="PopupCondition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 641</value>
-  </data>
-  <data name="PopupCondition.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="PopupCondition.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;PopupCondition.Name" xml:space="preserve">
-    <value>PopupCondition</value>
-  </data>
-  <data name="&gt;&gt;PopupCondition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PopupCondition.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PopupCondition.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="msg_erreurMail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -627,10 +696,13 @@ L'utilisation de l'Application implique l'acceptation sans réserve des présent
     <value>NoControl</value>
   </data>
   <data name="msg_erreurMail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 467</value>
+    <value>20, 292</value>
+  </data>
+  <data name="msg_erreurMail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="msg_erreurMail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 30</value>
+    <value>146, 19</value>
   </data>
   <data name="msg_erreurMail.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -663,10 +735,13 @@ L'utilisation de l'Application implique l'acceptation sans réserve des présent
     <value>NoControl</value>
   </data>
   <data name="msg_erreurMdp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 683</value>
+    <value>20, 427</value>
+  </data>
+  <data name="msg_erreurMdp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="msg_erreurMdp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>389, 30</value>
+    <value>258, 19</value>
   </data>
   <data name="msg_erreurMdp.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -693,10 +768,13 @@ L'utilisation de l'Application implique l'acceptation sans réserve des présent
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>13, 32</value>
+    <value>8, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>725, 1054</value>
+    <value>446, 659</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
