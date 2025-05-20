@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConnexion));
             flpNavbarre = new FlowLayoutPanel();
+            pictureBox1 = new PictureBox();
             lblTUBAPP = new Label();
             picIconeContact = new PictureBox();
             lblBienvenue = new Label();
@@ -39,10 +40,9 @@
             btnConnexion = new Button();
             llbMDPOublié = new LinkLabel();
             btn_retour = new Button();
-            pictureBox1 = new PictureBox();
             flpNavbarre.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             SuspendLayout();
             // 
             // flpNavbarre
@@ -53,6 +53,13 @@
             flpNavbarre.Controls.Add(picIconeContact);
             resources.ApplyResources(flpNavbarre, "flpNavbarre");
             flpNavbarre.Name = "flpNavbarre";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo1;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
             // 
             // lblTUBAPP
             // 
@@ -110,13 +117,6 @@
             btn_retour.UseVisualStyleBackColor = true;
             btn_retour.MouseClick += btnRetour_MouseClick;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.logo1;
-            resources.ApplyResources(pictureBox1, "pictureBox1");
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.TabStop = false;
-            // 
             // frmConnexion
             // 
             resources.ApplyResources(this, "$this");
@@ -136,8 +136,8 @@
             Load += Form2_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
