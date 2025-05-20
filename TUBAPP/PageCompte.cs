@@ -13,42 +13,41 @@ namespace TUBAPP
 {
     internal partial class PageCompte : Form
     {
-        private Utilisateur utilisateur;
+        private readonly Utilisateur utilisateur;
 
         public PageCompte(Utilisateur user)
         {
             InitializeComponent();
-            utilisateur = user;
+            utilisateur = user ?? throw new ArgumentNullException(nameof(user));
+            this.Load += PageCompte_Load;
         }
+
         private void PageCompte_Load(object sender, EventArgs e)
         {
+            // Always set the title
+            lblTitre.Text = "Votre profil";
+
             if (utilisateur.EstInvite)
             {
-                lblTitre.Text = "Profil - Mode Invité";
-                lblNom.Text = "Nom : -";
-                lblPrenom.Text = "Prénom : -";
-                lblEmail.Text = "Email : -";
-                lblStatut.Text = "Statut : Invité";
+                lblInvite.Text = "INVITER";
+                lblNomPrenom.Text = "NOM Prénom";
+                lblMailValue.Text = "Invité";
+                lblNaissanceValue.Text = "Jours/Mois/Années";
+                btnModifier.Visible = false; // Hide modifier for guest
 
-                btnConnexion.Visible = true;
-                btnCreation.Visible = true;
-                btnModifierInfos.Visible = false;
-                btnAdminPanel.Visible = false;
-                //btnLogs.Visible = false;
+                btnCreerCompte.Visible = true;
+                btnSeConnecter.Visible = true;
             }
             else
             {
-                lblTitre.Text = "Profil de " + utilisateur.Prenom;
-                lblNom.Text = "Nom : " + utilisateur.Nom;
-                lblPrenom.Text = "Prénom : " + utilisateur.Prenom;
-                lblEmail.Text = "Email : " + utilisateur.Email;
-                lblStatut.Text = utilisateur.EstAdmin ? "Statut : Administrateur" : "Statut : Utilisateur";
+                lblInvite.Text = utilisateur.EstAdmin ? "ADMINISTRATEUR" : "UTILISATEUR";
+                lblNomPrenom.Text = $"{utilisateur.Nom} {utilisateur.Prenom}";
+                lblMailValue.Text = utilisateur.Email;
+                lblNaissanceValue.Text = utilisateur.DateNaissance?.ToString("dd/MM/yyyy") ?? "Non renseignée";
+                btnModifier.Visible = true;
 
-                btnConnexion.Visible = false;
-                btnCreation.Visible = false;
-                btnModifierInfos.Visible = true;
-                btnAdminPanel.Visible = utilisateur.EstAdmin;
-                //btnLogs.Visible = utilisateur.EstAdmin;
+                btnCreerCompte.Visible = false;
+                btnSeConnecter.Visible = false;
             }
         }
     }

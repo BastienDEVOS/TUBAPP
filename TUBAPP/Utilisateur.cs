@@ -12,7 +12,7 @@ namespace TUBAPP
         public string? Prenom { get; set; }
         public string? Email { get; set; }
         public bool EstAdmin { get; set; }
-
-        public bool EstInvite => string.IsNullOrEmpty(Nom);
+        public bool EstInvite { get; }
+        public DateTime? DateNaissance { get; set; } // Added this property
     }
 }
