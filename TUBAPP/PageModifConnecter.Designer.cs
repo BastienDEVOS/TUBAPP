@@ -30,6 +30,13 @@
         {
             btnConfirmer = new Button();
             pnlCard = new Panel();
+            comboBox1 = new ComboBox();
+            dtpNaissance = new DateTimePicker();
+            llbPrenom = new LinkLabel();
+            linkLabel2 = new LinkLabel();
+            txtPrenom = new TextBox();
+            txtNom = new TextBox();
+            txtEmail = new TextBox();
             linkLabel1 = new LinkLabel();
             lblInvite = new Label();
             llbMail = new LinkLabel();
@@ -45,13 +52,6 @@
             BtnHome = new PictureBox();
             pictureBox5 = new PictureBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
-            txtEmail = new TextBox();
-            txtNom = new TextBox();
-            txtPrenom = new TextBox();
-            linkLabel2 = new LinkLabel();
-            llbPrenom = new LinkLabel();
-            dtpNaissance = new DateTimePicker();
-            comboBox1 = new ComboBox();
             pnlCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -98,6 +98,69 @@
             pnlCard.Name = "pnlCard";
             pnlCard.Size = new Size(313, 312);
             pnlCard.TabIndex = 31;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(141, 203);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 15;
+            // 
+            // dtpNaissance
+            // 
+            dtpNaissance.Location = new Point(141, 167);
+            dtpNaissance.MaxDate = new DateTime(2025, 12, 31, 0, 0, 0, 0);
+            dtpNaissance.MinDate = new DateTime(2001, 1, 1, 0, 0, 0, 0);
+            dtpNaissance.Name = "dtpNaissance";
+            dtpNaissance.Size = new Size(151, 27);
+            dtpNaissance.TabIndex = 14;
+            dtpNaissance.Value = new DateTime(2004, 1, 17, 0, 0, 0, 0);
+            dtpNaissance.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // llbPrenom
+            // 
+            llbPrenom.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            llbPrenom.LinkColor = Color.Black;
+            llbPrenom.Location = new Point(19, 62);
+            llbPrenom.Name = "llbPrenom";
+            llbPrenom.Size = new Size(103, 27);
+            llbPrenom.TabIndex = 13;
+            llbPrenom.TabStop = true;
+            llbPrenom.Text = "Prenom :";
+            llbPrenom.LinkClicked += llbPrenom_LinkClicked;
+            // 
+            // linkLabel2
+            // 
+            linkLabel2.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            linkLabel2.LinkColor = Color.Black;
+            linkLabel2.Location = new Point(19, 95);
+            linkLabel2.Name = "linkLabel2";
+            linkLabel2.Size = new Size(103, 27);
+            linkLabel2.TabIndex = 12;
+            linkLabel2.TabStop = true;
+            linkLabel2.Text = "Nom :";
+            // 
+            // txtPrenom
+            // 
+            txtPrenom.Location = new Point(141, 62);
+            txtPrenom.Name = "txtPrenom";
+            txtPrenom.Size = new Size(151, 27);
+            txtPrenom.TabIndex = 11;
+            // 
+            // txtNom
+            // 
+            txtNom.Location = new Point(141, 95);
+            txtNom.Name = "txtNom";
+            txtNom.Size = new Size(151, 27);
+            txtNom.TabIndex = 10;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(141, 128);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(151, 27);
+            txtEmail.TabIndex = 9;
             // 
             // linkLabel1
             // 
@@ -276,69 +339,6 @@
             flowLayoutPanel2.Size = new Size(446, 65);
             flowLayoutPanel2.TabIndex = 34;
             // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(141, 128);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(151, 27);
-            txtEmail.TabIndex = 9;
-            // 
-            // txtNom
-            // 
-            txtNom.Location = new Point(141, 95);
-            txtNom.Name = "txtNom";
-            txtNom.Size = new Size(151, 27);
-            txtNom.TabIndex = 10;
-            // 
-            // txtPrenom
-            // 
-            txtPrenom.Location = new Point(141, 62);
-            txtPrenom.Name = "txtPrenom";
-            txtPrenom.Size = new Size(151, 27);
-            txtPrenom.TabIndex = 11;
-            // 
-            // linkLabel2
-            // 
-            linkLabel2.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            linkLabel2.LinkColor = Color.Black;
-            linkLabel2.Location = new Point(19, 95);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(103, 27);
-            linkLabel2.TabIndex = 12;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Nom :";
-            // 
-            // llbPrenom
-            // 
-            llbPrenom.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            llbPrenom.LinkColor = Color.Black;
-            llbPrenom.Location = new Point(19, 62);
-            llbPrenom.Name = "llbPrenom";
-            llbPrenom.Size = new Size(103, 27);
-            llbPrenom.TabIndex = 13;
-            llbPrenom.TabStop = true;
-            llbPrenom.Text = "Prenom :";
-            llbPrenom.LinkClicked += llbPrenom_LinkClicked;
-            // 
-            // dtpNaissance
-            // 
-            dtpNaissance.Location = new Point(137, 167);
-            dtpNaissance.MaxDate = new DateTime(2025, 12, 31, 0, 0, 0, 0);
-            dtpNaissance.MinDate = new DateTime(2001, 1, 1, 0, 0, 0, 0);
-            dtpNaissance.Name = "dtpNaissance";
-            dtpNaissance.Size = new Size(171, 27);
-            dtpNaissance.TabIndex = 14;
-            dtpNaissance.Value = new DateTime(2004, 1, 17, 0, 0, 0, 0);
-            dtpNaissance.ValueChanged += dateTimePicker1_ValueChanged;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(137, 204);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 15;
-            // 
             // PageModifConnecter
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -350,6 +350,7 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(flowLayoutPanel2);
             Name = "PageModifConnecter";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PageModifConnecter";
             Load += PageModifConnecter_Load;
             pnlCard.ResumeLayout(false);

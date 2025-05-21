@@ -24,25 +24,25 @@ namespace TUBAPP
 
         private void PageCompte_Load(object sender, EventArgs e)
         {
-            // Always set the title
-            lblTitre.Text = "Votre profil";
+            //// Always set the title
+            //lblTitre.Text = "Votre profil";
 
-            if (utilisateur.EstInvite)
-            {
-                lblInvite.Text = "INVITER";
-                lblNomPrenom.Text = "NOM Prénom";
-                lblMailValue.Text = "Invité";
-                lblNaissanceValue.Text = "Jours/Mois/Années";
-                //btnModifier.Visible = false; // Hide modifier for guest
-            }
-            else
-            {
-                lblInvite.Text = utilisateur.EstAdmin ? "ADMINISTRATEUR" : "UTILISATEUR";
-                lblNomPrenom.Text = $"{utilisateur.Nom} {utilisateur.Prenom}";
-                lblMailValue.Text = utilisateur.Email;
-                lblNaissanceValue.Text = utilisateur.DateNaissance?.ToString("dd/MM/yyyy") ?? "Non renseignée";
-                //btnModifier.Visible = true;
-            }
+            //if (utilisateur.EstInvite)
+            //{
+            //    lblInvite.Text = "INVITER";
+            //    lblNomPrenom.Text = "NOM Prénom";
+            //    lblMailValue.Text = "Invité";
+            //    lblNaissanceValue.Text = "Jours/Mois/Années";
+            //    //btnModifier.Visible = false; // Hide modifier for guest
+            //}
+            //else
+            //{
+            //    lblInvite.Text = utilisateur.EstAdmin ? "ADMINISTRATEUR" : "UTILISATEUR";
+            //    lblNomPrenom.Text = $"{utilisateur.Nom} {utilisateur.Prenom}";
+            //    lblMailValue.Text = utilisateur.Email;
+            //    lblNaissanceValue.Text = utilisateur.DateNaissance?.ToString("dd/MM/yyyy") ?? "Non renseignée";
+            //    //btnModifier.Visible = true;
+            //}
         }
 
         private void picIconeContact_Click(object sender, EventArgs e)

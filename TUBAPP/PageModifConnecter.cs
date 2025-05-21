@@ -29,7 +29,9 @@ namespace TUBAPP
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-
+            PageProfilConnecter pageProfil = new PageProfilConnecter();
+            pageProfil.Show();
+            this.Close(); // Masquer le formulaire de modification
         }
 
         private void llbPrenom_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

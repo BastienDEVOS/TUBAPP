@@ -24,5 +24,12 @@ namespace TUBAPP
 
             this.Close();
         }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            PageModifConnecter pageModif = new PageModifConnecter();
+            pageModif.Show();
+            this.Close(); // Masquer le formulaire de profil
+        }
     }
 }

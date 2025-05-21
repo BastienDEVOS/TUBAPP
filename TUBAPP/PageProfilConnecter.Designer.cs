@@ -283,6 +283,7 @@
             btnModifier.TabIndex = 6;
             btnModifier.Text = "Modifier";
             btnModifier.UseVisualStyleBackColor = false;
+            btnModifier.Click += btnModifier_Click;
             // 
             // lblTitre
             // 
@@ -320,6 +321,7 @@
             Controls.Add(lblTitre);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PageProfilConnecter";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PageProfilConnecter";
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

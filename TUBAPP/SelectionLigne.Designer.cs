@@ -48,8 +48,8 @@
             cmb_Horaire1 = new ComboBox();
             cmb_Horaire2 = new ComboBox();
             p_ = new Panel();
-            panel1 = new Panel();
             panel2 = new Panel();
+            panel1 = new Panel();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -59,8 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             p_.SuspendLayout();
-            panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // flpNavbarre
@@ -268,17 +268,6 @@
             p_.TabIndex = 29;
             p_.Paint += panel1_Paint;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(labelhoraire);
-            panel1.Controls.Add(cmb_Horaire2);
-            panel1.Controls.Add(cmb_Horaire1);
-            panel1.Location = new Point(225, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(141, 119);
-            panel1.TabIndex = 29;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.White;
@@ -290,6 +279,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(202, 119);
             panel2.TabIndex = 30;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(labelhoraire);
+            panel1.Controls.Add(cmb_Horaire2);
+            panel1.Controls.Add(cmb_Horaire1);
+            panel1.Location = new Point(225, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(141, 119);
+            panel1.TabIndex = 29;
             // 
             // SelectionLigne
             // 
@@ -303,6 +303,7 @@
             Controls.Add(p_);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "SelectionLigne";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SelectionLigne";
             Load += SelectionLigne_Load;
             flpNavbarre.ResumeLayout(false);
@@ -315,8 +316,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             p_.ResumeLayout(false);
-            panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
