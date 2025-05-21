@@ -21,7 +21,9 @@ namespace TUBAPP
 
         private void VoirItineraire_Click(object sender, EventArgs e)
         {
-
+            SelectionLigne selectionLigne = new SelectionLigne();
+            selectionLigne.Show();
+            this.Close();  // Masquer le formulaire principal
         }
 
         private void IconeProfil_Click(object sender, EventArgs e)
@@ -37,6 +39,14 @@ namespace TUBAPP
             // Ouvrir la page de profil
             PageProfilInviter pageCompte = new PageProfilInviter(user);
             pageCompte.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            InfoLigne infoLigne = new InfoLigne();
+            infoLigne.Show();
+
+            this.Hide(); // Masquer le formulaire principal
         }
     }
 }

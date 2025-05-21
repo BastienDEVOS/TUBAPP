@@ -74,7 +74,6 @@
             // VoirItineraire
             // 
             VoirItineraire.BackColor = SystemColors.ControlLight;
-            VoirItineraire.Enabled = false;
             VoirItineraire.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             VoirItineraire.ForeColor = SystemColors.ControlText;
             VoirItineraire.Location = new Point(109, 268);
@@ -206,6 +205,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // pictureBox2
             // 

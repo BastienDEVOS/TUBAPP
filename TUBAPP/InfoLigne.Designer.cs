@@ -1,6 +1,6 @@
 ﻿namespace TUBAPP
 {
-    partial class OptionAdminModif
+    partial class InfoLigne
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionAdminModif));
-            Horaire = new ComboBox();
-            Station = new ComboBox();
-            Ligne = new ComboBox();
-            btnRetour = new Button();
-            btnModif = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoLigne));
+            cmb_Ligne = new ComboBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             BtnHome = new PictureBox();
@@ -52,6 +48,10 @@
             lblNaissanceValue = new Label();
             btnModifier = new Button();
             lblTitre = new Label();
+            label2 = new Label();
+            flowLayoutPanel3 = new FlowLayoutPanel();
+            panel1 = new Panel();
+            label4 = new Label();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).BeginInit();
@@ -61,66 +61,18 @@
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             pnlCard.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // Horaire
+            // cmb_Ligne
             // 
-            Horaire.Font = new Font("Segoe UI", 15F);
-            Horaire.FormattingEnabled = true;
-            Horaire.Location = new Point(121, 380);
-            Horaire.Name = "Horaire";
-            Horaire.Size = new Size(200, 43);
-            Horaire.TabIndex = 57;
-            Horaire.Text = "Horaire";
-            // 
-            // Station
-            // 
-            Station.Font = new Font("Segoe UI", 15F);
-            Station.FormattingEnabled = true;
-            Station.Location = new Point(121, 309);
-            Station.Name = "Station";
-            Station.Size = new Size(200, 43);
-            Station.TabIndex = 56;
-            Station.Text = "Station";
-            // 
-            // Ligne
-            // 
-            Ligne.Font = new Font("Segoe UI", 15F);
-            Ligne.FormattingEnabled = true;
-            Ligne.Location = new Point(121, 240);
-            Ligne.Name = "Ligne";
-            Ligne.Size = new Size(200, 43);
-            Ligne.TabIndex = 55;
-            Ligne.Text = "Ligne";
-            // 
-            // btnRetour
-            // 
-            btnRetour.BackColor = Color.FromArgb(209, 66, 54);
-            btnRetour.FlatStyle = FlatStyle.Flat;
-            btnRetour.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnRetour.ForeColor = Color.White;
-            btnRetour.Location = new Point(115, 530);
-            btnRetour.Margin = new Padding(3, 4, 3, 4);
-            btnRetour.Name = "btnRetour";
-            btnRetour.Size = new Size(217, 46);
-            btnRetour.TabIndex = 54;
-            btnRetour.Text = "Retour";
-            btnRetour.UseVisualStyleBackColor = false;
-            // 
-            // btnModif
-            // 
-            btnModif.BackColor = Color.FromArgb(209, 66, 54);
-            btnModif.Enabled = false;
-            btnModif.FlatStyle = FlatStyle.Flat;
-            btnModif.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnModif.ForeColor = Color.White;
-            btnModif.Location = new Point(95, 469);
-            btnModif.Margin = new Padding(3, 4, 3, 4);
-            btnModif.Name = "btnModif";
-            btnModif.Size = new Size(251, 53);
-            btnModif.TabIndex = 53;
-            btnModif.Text = "Modifier";
-            btnModif.UseVisualStyleBackColor = false;
+            cmb_Ligne.Font = new Font("Segoe UI", 13F);
+            cmb_Ligne.FormattingEnabled = true;
+            cmb_Ligne.Location = new Point(121, 199);
+            cmb_Ligne.Name = "cmb_Ligne";
+            cmb_Ligne.Size = new Size(200, 38);
+            cmb_Ligne.TabIndex = 55;
+            cmb_Ligne.Text = "Ligne";
             // 
             // flowLayoutPanel2
             // 
@@ -137,7 +89,7 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources.GPS;
+            pictureBox1.Image = Properties.Resources.GPSSelectionner;
             pictureBox1.Location = new Point(70, 5);
             pictureBox1.Margin = new Padding(70, 0, 15, 0);
             pictureBox1.Name = "pictureBox1";
@@ -325,30 +277,69 @@
             // lblTitre
             // 
             lblTitre.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lblTitre.Location = new Point(30, 96);
+            lblTitre.Location = new Point(45, 96);
             lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(394, 114);
+            lblTitre.Size = new Size(358, 95);
             lblTitre.TabIndex = 49;
-            lblTitre.Text = "Option Administrateur Modifier\r\n";
+            lblTitre.Text = "Information Des lignes";
             lblTitre.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // OptionAdminModif
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label2.Location = new Point(12, 359);
+            label2.Name = "label2";
+            label2.Size = new Size(226, 41);
+            label2.TabIndex = 56;
+            label2.Text = "Stations desservies ";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // flowLayoutPanel3
+            // 
+            flowLayoutPanel3.Anchor = AnchorStyles.None;
+            flowLayoutPanel3.BackColor = Color.White;
+            flowLayoutPanel3.Location = new Point(26, 403);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Size = new Size(194, 182);
+            flowLayoutPanel3.TabIndex = 57;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(label4);
+            panel1.Location = new Point(244, 403);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(180, 182);
+            panel1.TabIndex = 58;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.Location = new Point(8, 8);
+            label4.Name = "label4";
+            label4.Size = new Size(162, 165);
+            label4.TabIndex = 0;
+            label4.Text = "Toutes les stations de notre réseau ont un train roulant de 5h00 a minuit du lundi au samedi et de 7h00 a minuit le dimanche avec une fréquence moyenne de 6 minutes";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            label4.Click += label4_Click;
+            // 
+            // InfoLigne
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
-            Controls.Add(Horaire);
-            Controls.Add(Station);
-            Controls.Add(Ligne);
-            Controls.Add(btnRetour);
-            Controls.Add(btnModif);
+            Controls.Add(panel1);
+            Controls.Add(flowLayoutPanel3);
+            Controls.Add(label2);
+            Controls.Add(cmb_Ligne);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "OptionAdminModif";
-            Text = "OptionAdminModif";
+            Name = "InfoLigne";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "InfoLigne";
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).EndInit();
@@ -359,16 +350,12 @@
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             pnlCard.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ComboBox Horaire;
-        private ComboBox Station;
-        private ComboBox Ligne;
-        private Button btnRetour;
-        private Button btnModif;
+        private ComboBox cmb_Ligne;
         private FlowLayoutPanel flowLayoutPanel2;
         private PictureBox pictureBox1;
         private PictureBox BtnHome;
@@ -387,5 +374,9 @@
         private Label lblNaissanceValue;
         private Button btnModifier;
         private Label lblTitre;
+        private Label label2;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private Panel panel1;
+        private Label label4;
     }
 }
