@@ -38,5 +38,13 @@ namespace TUBAPP
             PageProfilInviter pageCompte = new PageProfilInviter(user);
             pageCompte.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            InfoLigne infoLigne = new InfoLigne();
+            infoLigne.Show();
+
+            this.Hide(); // Masquer le formulaire principal
+        }
     }
 }

@@ -69,7 +69,7 @@
             btnRetour.FlatStyle = FlatStyle.Flat;
             btnRetour.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnRetour.ForeColor = Color.White;
-            btnRetour.Location = new Point(104, 530);
+            btnRetour.Location = new Point(115, 530);
             btnRetour.Margin = new Padding(3, 4, 3, 4);
             btnRetour.Name = "btnRetour";
             btnRetour.Size = new Size(217, 46);
@@ -84,7 +84,7 @@
             btnSuprimer.FlatStyle = FlatStyle.Flat;
             btnSuprimer.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnSuprimer.ForeColor = Color.White;
-            btnSuprimer.Location = new Point(86, 469);
+            btnSuprimer.Location = new Point(97, 469);
             btnSuprimer.Margin = new Padding(3, 4, 3, 4);
             btnSuprimer.Name = "btnSuprimer";
             btnSuprimer.Size = new Size(251, 53);
