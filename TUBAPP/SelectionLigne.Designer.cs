@@ -46,6 +46,7 @@
             labelhoraire = new Label();
             comboBoxHoraire1 = new ComboBox();
             comboBoxHoraire2 = new ComboBox();
+            pictureBox5 = new PictureBox();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // flpNavbarre
@@ -60,6 +62,7 @@
             flpNavbarre.BackColor = Color.FromArgb(234, 99, 93);
             flpNavbarre.Controls.Add(pictureBox4);
             flpNavbarre.Controls.Add(lblTUBAPP);
+            flpNavbarre.Controls.Add(pictureBox5);
             flpNavbarre.Controls.Add(picIconeContact);
             flpNavbarre.Location = new Point(0, 0);
             flpNavbarre.Margin = new Padding(2);
@@ -85,7 +88,7 @@
             lblTUBAPP.AutoSize = true;
             lblTUBAPP.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             lblTUBAPP.ForeColor = Color.White;
-            lblTUBAPP.Location = new Point(132, 20);
+            lblTUBAPP.Location = new Point(132, 21);
             lblTUBAPP.Margin = new Padding(37, 0, 37, 0);
             lblTUBAPP.Name = "lblTUBAPP";
             lblTUBAPP.Size = new Size(189, 57);
@@ -96,7 +99,7 @@
             // picIconeContact
             // 
             picIconeContact.Image = Properties.Resources.icone_profil;
-            picIconeContact.Location = new Point(0, 97);
+            picIconeContact.Location = new Point(0, 99);
             picIconeContact.Margin = new Padding(0);
             picIconeContact.Name = "picIconeContact";
             picIconeContact.Size = new Size(93, 97);
@@ -245,6 +248,17 @@
             comboBoxHoraire2.Size = new Size(115, 28);
             comboBoxHoraire2.TabIndex = 28;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.icone_profil;
+            pictureBox5.Location = new Point(361, 4);
+            pictureBox5.Margin = new Padding(3, 4, 3, 4);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(63, 91);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 29;
+            pictureBox5.TabStop = false;
+            // 
             // SelectionLigne
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -273,6 +287,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -297,5 +312,6 @@
         private Label labelhoraire;
         private ComboBox comboBoxHoraire1;
         private ComboBox comboBoxHoraire2;
+        private PictureBox pictureBox5;
     }
 }

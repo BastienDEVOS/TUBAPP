@@ -20,279 +20,246 @@ namespace TUBAPP
 
         private void InitializeComponent()
         {
-            this.flpNavbarre = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.lblTUBAPP = new System.Windows.Forms.Label();
-            this.picIconeContact = new System.Windows.Forms.PictureBox();
-            this.lblTitre = new System.Windows.Forms.Label();
-            this.pnlCard = new System.Windows.Forms.Panel();
-            this.lblInvite = new System.Windows.Forms.Label();
-            this.lblNomPrenom = new System.Windows.Forms.Label();
-            this.llbMail = new System.Windows.Forms.LinkLabel();
-            this.lblMailValue = new System.Windows.Forms.Label();
-            this.llbNaissance = new System.Windows.Forms.LinkLabel();
-            this.lblNaissanceValue = new System.Windows.Forms.Label();
-            this.btnModifier = new System.Windows.Forms.Button();
-            this.btnCreerCompte = new System.Windows.Forms.Button();
-            this.btnSeConnecter = new System.Windows.Forms.Button();
-            this.pnlBottomNav = new System.Windows.Forms.Panel();
-            this.picHome = new System.Windows.Forms.PictureBox();
-            this.picAccount = new System.Windows.Forms.PictureBox();
-            this.picSettings = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIconeContact)).BeginInit();
-            this.pnlCard.SuspendLayout();
-            this.pnlBottomNav.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSettings)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // flpNavbarre
-            // 
-            this.flpNavbarre.BackColor = System.Drawing.Color.FromArgb(234, 99, 93);
-            this.flpNavbarre.Controls.Add(this.pictureBoxLogo);
-            this.flpNavbarre.Controls.Add(this.lblTUBAPP);
-            this.flpNavbarre.Controls.Add(this.picIconeContact);
-            this.flpNavbarre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flpNavbarre.Location = new System.Drawing.Point(0, 0);
-            this.flpNavbarre.Name = "flpNavbarre";
-            this.flpNavbarre.Size = new System.Drawing.Size(214, 48);
-            this.flpNavbarre.TabIndex = 0;
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Image = global::TUBAPP.Properties.Resources.logo1;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(3, 3);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(40, 40);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogo.TabIndex = 0;
-            this.pictureBoxLogo.TabStop = false;
-            // 
-            // lblTUBAPP
-            // 
-            this.lblTUBAPP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTUBAPP.ForeColor = System.Drawing.Color.White;
-            this.lblTUBAPP.Location = new System.Drawing.Point(49, 10);
-            this.lblTUBAPP.Name = "lblTUBAPP";
-            this.lblTUBAPP.Size = new System.Drawing.Size(90, 28);
-            this.lblTUBAPP.TabIndex = 1;
-            this.lblTUBAPP.Text = "TUBAPP";
-            this.lblTUBAPP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            picIconeContact = new PictureBox();
+            lblTitre = new Label();
+            pnlCard = new Panel();
+            lblInvite = new Label();
+            lblNomPrenom = new Label();
+            llbMail = new LinkLabel();
+            lblMailValue = new Label();
+            llbNaissance = new LinkLabel();
+            lblNaissanceValue = new Label();
+            btnModifier = new Button();
+            btnCreerCompte = new Button();
+            btnSeConnecter = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            pictureBox3 = new PictureBox();
+            label1 = new Label();
+            pictureBox4 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
+            pnlCard.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            SuspendLayout();
             // 
             // picIconeContact
             // 
-            this.picIconeContact.Image = global::TUBAPP.Properties.Resources.icone_profil;
-            this.picIconeContact.Location = new System.Drawing.Point(145, 3);
-            this.picIconeContact.Name = "picIconeContact";
-            this.picIconeContact.Size = new System.Drawing.Size(40, 40);
-            this.picIconeContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picIconeContact.TabIndex = 2;
-            this.picIconeContact.TabStop = false;
+            picIconeContact.Image = Properties.Resources.icone_profil;
+            picIconeContact.Location = new Point(361, 4);
+            picIconeContact.Margin = new Padding(3, 4, 3, 4);
+            picIconeContact.Name = "picIconeContact";
+            picIconeContact.Size = new Size(63, 91);
+            picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
+            picIconeContact.TabIndex = 2;
+            picIconeContact.TabStop = false;
+            picIconeContact.Click += picIconeContact_Click;
             // 
             // lblTitre
             // 
-            this.lblTitre.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitre.Location = new System.Drawing.Point(0, 55);
-            this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(214, 40);
-            this.lblTitre.TabIndex = 1;
-            this.lblTitre.Text = "Votre profil";
-            this.lblTitre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblTitre.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblTitre.Location = new Point(96, 106);
+            lblTitre.Name = "lblTitre";
+            lblTitre.Size = new Size(245, 53);
+            lblTitre.TabIndex = 1;
+            lblTitre.Text = "Votre profil";
+            lblTitre.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pnlCard
             // 
-            this.pnlCard.BackColor = System.Drawing.Color.White;
-            this.pnlCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCard.Controls.Add(this.lblInvite);
-            this.pnlCard.Controls.Add(this.lblNomPrenom);
-            this.pnlCard.Controls.Add(this.llbMail);
-            this.pnlCard.Controls.Add(this.lblMailValue);
-            this.pnlCard.Controls.Add(this.llbNaissance);
-            this.pnlCard.Controls.Add(this.lblNaissanceValue);
-            this.pnlCard.Controls.Add(this.btnModifier);
-            this.pnlCard.Location = new System.Drawing.Point(10, 100);
-            this.pnlCard.Name = "pnlCard";
-            this.pnlCard.Size = new System.Drawing.Size(194, 200);
-            this.pnlCard.TabIndex = 2;
-            // Rounded corners
-            this.pnlCard.Region = System.Drawing.Region.FromHrgn(
-                NativeMethods.CreateRoundRectRgn(0, 0, pnlCard.Width, pnlCard.Height, 20, 20)
-            );
+            pnlCard.BackColor = Color.White;
+            pnlCard.BorderStyle = BorderStyle.FixedSingle;
+            pnlCard.Controls.Add(lblInvite);
+            pnlCard.Controls.Add(lblNomPrenom);
+            pnlCard.Controls.Add(llbMail);
+            pnlCard.Controls.Add(lblMailValue);
+            pnlCard.Controls.Add(llbNaissance);
+            pnlCard.Controls.Add(lblNaissanceValue);
+            pnlCard.Controls.Add(btnModifier);
+            pnlCard.Location = new Point(64, 163);
+            pnlCard.Margin = new Padding(3, 4, 3, 4);
+            pnlCard.Name = "pnlCard";
+            pnlCard.Size = new Size(313, 266);
+            pnlCard.TabIndex = 2;
             // 
             // lblInvite
             // 
-            this.lblInvite.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblInvite.ForeColor = System.Drawing.Color.FromArgb(234, 99, 93);
-            this.lblInvite.Location = new System.Drawing.Point(0, 10);
-            this.lblInvite.Name = "lblInvite";
-            this.lblInvite.Size = new System.Drawing.Size(194, 20);
-            this.lblInvite.TabIndex = 0;
-            this.lblInvite.Text = "INVITER";
-            this.lblInvite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblInvite.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblInvite.ForeColor = Color.FromArgb(234, 99, 93);
+            lblInvite.Location = new Point(50, 20);
+            lblInvite.Name = "lblInvite";
+            lblInvite.Size = new Size(222, 27);
+            lblInvite.TabIndex = 0;
+            lblInvite.Text = "INVITER";
+            lblInvite.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblNomPrenom
             // 
-            this.lblNomPrenom.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNomPrenom.Location = new System.Drawing.Point(0, 35);
-            this.lblNomPrenom.Name = "lblNomPrenom";
-            this.lblNomPrenom.Size = new System.Drawing.Size(194, 20);
-            this.lblNomPrenom.TabIndex = 1;
-            this.lblNomPrenom.Text = "NOM Prénom";
-            this.lblNomPrenom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblNomPrenom.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblNomPrenom.Location = new Point(50, 47);
+            lblNomPrenom.Name = "lblNomPrenom";
+            lblNomPrenom.Size = new Size(222, 27);
+            lblNomPrenom.TabIndex = 1;
+            lblNomPrenom.Text = "NOM Prénom";
+            lblNomPrenom.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // llbMail
             // 
-            this.llbMail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.llbMail.LinkColor = System.Drawing.Color.Black;
-            this.llbMail.Location = new System.Drawing.Point(10, 60);
-            this.llbMail.Name = "llbMail";
-            this.llbMail.Size = new System.Drawing.Size(90, 20);
-            this.llbMail.TabIndex = 2;
-            this.llbMail.TabStop = true;
-            this.llbMail.Text = "Adresse mail :";
+            llbMail.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            llbMail.LinkColor = Color.Black;
+            llbMail.Location = new Point(39, 87);
+            llbMail.Name = "llbMail";
+            llbMail.Size = new Size(103, 27);
+            llbMail.TabIndex = 2;
+            llbMail.TabStop = true;
+            llbMail.Text = "Adresse mail :";
             // 
             // lblMailValue
             // 
-            this.lblMailValue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMailValue.Location = new System.Drawing.Point(100, 60);
-            this.lblMailValue.Name = "lblMailValue";
-            this.lblMailValue.Size = new System.Drawing.Size(84, 20);
-            this.lblMailValue.TabIndex = 3;
-            this.lblMailValue.Text = "Invité";
+            lblMailValue.Font = new Font("Segoe UI", 9F);
+            lblMailValue.Location = new Point(142, 87);
+            lblMailValue.Name = "lblMailValue";
+            lblMailValue.Size = new Size(96, 27);
+            lblMailValue.TabIndex = 3;
+            lblMailValue.Text = "Invité";
             // 
             // llbNaissance
             // 
-            this.llbNaissance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.llbNaissance.LinkColor = System.Drawing.Color.Black;
-            this.llbNaissance.Location = new System.Drawing.Point(10, 85);
-            this.llbNaissance.Name = "llbNaissance";
-            this.llbNaissance.Size = new System.Drawing.Size(130, 20);
-            this.llbNaissance.TabIndex = 4;
-            this.llbNaissance.TabStop = true;
-            this.llbNaissance.Text = "Date de naissance :";
+            llbNaissance.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            llbNaissance.LinkColor = Color.Black;
+            llbNaissance.Location = new Point(39, 120);
+            llbNaissance.Name = "llbNaissance";
+            llbNaissance.Size = new Size(149, 27);
+            llbNaissance.TabIndex = 4;
+            llbNaissance.TabStop = true;
+            llbNaissance.Text = "Date de naissance :";
             // 
             // lblNaissanceValue
             // 
-            this.lblNaissanceValue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNaissanceValue.Location = new System.Drawing.Point(10, 105);
-            this.lblNaissanceValue.Name = "lblNaissanceValue";
-            this.lblNaissanceValue.Size = new System.Drawing.Size(174, 20);
-            this.lblNaissanceValue.TabIndex = 5;
-            this.lblNaissanceValue.Text = "Jours/Mois/Années";
+            lblNaissanceValue.Font = new Font("Segoe UI", 9F);
+            lblNaissanceValue.Location = new Point(39, 147);
+            lblNaissanceValue.Name = "lblNaissanceValue";
+            lblNaissanceValue.Size = new Size(199, 27);
+            lblNaissanceValue.TabIndex = 5;
+            lblNaissanceValue.Text = "Jours/Mois/Années";
             // 
             // btnModifier
             // 
-            this.btnModifier.BackColor = System.Drawing.Color.LightGray;
-            this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifier.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnModifier.Location = new System.Drawing.Point(37, 145);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(120, 30);
-            this.btnModifier.TabIndex = 6;
-            this.btnModifier.Text = "Modifier";
-            this.btnModifier.UseVisualStyleBackColor = false;
+            btnModifier.BackColor = Color.LightGray;
+            btnModifier.FlatStyle = FlatStyle.Flat;
+            btnModifier.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnModifier.Location = new Point(90, 196);
+            btnModifier.Margin = new Padding(3, 4, 3, 4);
+            btnModifier.Name = "btnModifier";
+            btnModifier.Size = new Size(137, 40);
+            btnModifier.TabIndex = 6;
+            btnModifier.Text = "Modifier";
+            btnModifier.UseVisualStyleBackColor = false;
             // 
             // btnCreerCompte
             // 
-            this.btnCreerCompte.BackColor = System.Drawing.Color.FromArgb(209, 66, 54);
-            this.btnCreerCompte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreerCompte.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCreerCompte.ForeColor = System.Drawing.Color.White;
-            this.btnCreerCompte.Location = new System.Drawing.Point(10, 315);
-            this.btnCreerCompte.Name = "btnCreerCompte";
-            this.btnCreerCompte.Size = new System.Drawing.Size(194, 40);
-            this.btnCreerCompte.TabIndex = 3;
-            this.btnCreerCompte.Text = "Créer un compte";
-            this.btnCreerCompte.UseVisualStyleBackColor = false;
-            this.btnCreerCompte.Region = System.Drawing.Region.FromHrgn(
-                NativeMethods.CreateRoundRectRgn(0, 0, btnCreerCompte.Width, btnCreerCompte.Height, 20, 20)
-            );
+            btnCreerCompte.BackColor = Color.FromArgb(209, 66, 54);
+            btnCreerCompte.FlatStyle = FlatStyle.Flat;
+            btnCreerCompte.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnCreerCompte.ForeColor = Color.White;
+            btnCreerCompte.Location = new Point(64, 450);
+            btnCreerCompte.Margin = new Padding(3, 4, 3, 4);
+            btnCreerCompte.Name = "btnCreerCompte";
+            btnCreerCompte.Size = new Size(313, 53);
+            btnCreerCompte.TabIndex = 3;
+            btnCreerCompte.Text = "Créer un compte";
+            btnCreerCompte.UseVisualStyleBackColor = false;
             // 
             // btnSeConnecter
             // 
-            this.btnSeConnecter.BackColor = System.Drawing.Color.FromArgb(209, 66, 54);
-            this.btnSeConnecter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeConnecter.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSeConnecter.ForeColor = System.Drawing.Color.White;
-            this.btnSeConnecter.Location = new System.Drawing.Point(10, 360);
-            this.btnSeConnecter.Name = "btnSeConnecter";
-            this.btnSeConnecter.Size = new System.Drawing.Size(194, 40);
-            this.btnSeConnecter.TabIndex = 4;
-            this.btnSeConnecter.Text = "Se connecter";
-            this.btnSeConnecter.UseVisualStyleBackColor = false;
-            this.btnSeConnecter.Region = System.Drawing.Region.FromHrgn(
-                NativeMethods.CreateRoundRectRgn(0, 0, btnSeConnecter.Width, btnSeConnecter.Height, 20, 20)
-            );
+            btnSeConnecter.BackColor = Color.FromArgb(209, 66, 54);
+            btnSeConnecter.FlatStyle = FlatStyle.Flat;
+            btnSeConnecter.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnSeConnecter.ForeColor = Color.White;
+            btnSeConnecter.Location = new Point(64, 521);
+            btnSeConnecter.Margin = new Padding(3, 4, 3, 4);
+            btnSeConnecter.Name = "btnSeConnecter";
+            btnSeConnecter.Size = new Size(313, 53);
+            btnSeConnecter.TabIndex = 4;
+            btnSeConnecter.Text = "Se connecter";
+            btnSeConnecter.UseVisualStyleBackColor = false;
             // 
-            // pnlBottomNav
+            // flowLayoutPanel1
             // 
-            this.pnlBottomNav.BackColor = System.Drawing.Color.White;
-            this.pnlBottomNav.Controls.Add(this.picHome);
-            this.pnlBottomNav.Controls.Add(this.picAccount);
-            this.pnlBottomNav.Controls.Add(this.picSettings);
-            this.pnlBottomNav.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottomNav.Location = new System.Drawing.Point(0, 413);
-            this.pnlBottomNav.Name = "pnlBottomNav";
-            this.pnlBottomNav.Size = new System.Drawing.Size(214, 50);
-            this.pnlBottomNav.TabIndex = 5;
+            flowLayoutPanel1.BackColor = Color.FromArgb(234, 99, 93);
+            flowLayoutPanel1.Controls.Add(pictureBox3);
+            flowLayoutPanel1.Controls.Add(label1);
+            flowLayoutPanel1.Controls.Add(picIconeContact);
+            flowLayoutPanel1.Controls.Add(pictureBox4);
+            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Margin = new Padding(2);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(446, 95);
+            flowLayoutPanel1.TabIndex = 17;
             // 
-            // picHome
+            // pictureBox3
             // 
-            this.picHome.Image = global::TUBAPP.Properties.Resources.GPS;
-            this.picHome.Location = new System.Drawing.Point(20, 5);
-            this.picHome.Name = "picHome";
-            this.picHome.Size = new System.Drawing.Size(32, 32);
-            this.picHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picHome.TabIndex = 0;
-            this.picHome.TabStop = false;
+            pictureBox3.Image = Properties.Resources.logo1;
+            pictureBox3.ImeMode = ImeMode.NoControl;
+            pictureBox3.Location = new Point(2, 2);
+            pictureBox3.Margin = new Padding(2);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(91, 93);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 4;
+            pictureBox3.TabStop = false;
             // 
-            // picAccount
+            // label1
             // 
-            this.picAccount.Image = global::TUBAPP.Properties.Resources.homepng;
-            this.picAccount.Location = new System.Drawing.Point(91, 5);
-            this.picAccount.Name = "picAccount";
-            this.picAccount.Size = new System.Drawing.Size(32, 32);
-            this.picAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAccount.TabIndex = 1;
-            this.picAccount.TabStop = false;
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.ImeMode = ImeMode.NoControl;
+            label1.Location = new Point(132, 21);
+            label1.Margin = new Padding(37, 0, 37, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(189, 57);
+            label1.TabIndex = 0;
+            label1.Text = "TUBAPP";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // picSettings
+            // pictureBox4
             // 
-            this.picSettings.Image = global::TUBAPP.Properties.Resources.network;
-            this.picSettings.Location = new System.Drawing.Point(162, 5);
-            this.picSettings.Name = "picSettings";
-            this.picSettings.Size = new System.Drawing.Size(32, 32);
-            this.picSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSettings.TabIndex = 2;
-            this.picSettings.TabStop = false;
+            pictureBox4.Image = Properties.Resources.icone_profil;
+            pictureBox4.ImeMode = ImeMode.NoControl;
+            pictureBox4.Location = new Point(0, 99);
+            pictureBox4.Margin = new Padding(0);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(93, 93);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 2;
+            pictureBox4.TabStop = false;
             // 
             // PageCompte
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(214, 463);
-            this.Controls.Add(this.pnlBottomNav);
-            this.Controls.Add(this.btnSeConnecter);
-            this.Controls.Add(this.btnCreerCompte);
-            this.Controls.Add(this.pnlCard);
-            this.Controls.Add(this.lblTitre);
-            this.Controls.Add(this.flpNavbarre);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "PageCompte";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIconeContact)).EndInit();
-            this.pnlCard.ResumeLayout(false);
-            this.pnlBottomNav.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSettings)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(446, 659);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(btnSeConnecter);
+            Controls.Add(btnCreerCompte);
+            Controls.Add(pnlCard);
+            Controls.Add(lblTitre);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "PageCompte";
+            StartPosition = FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
+            pnlCard.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ResumeLayout(false);
         }
 
         // Helper for rounded corners
@@ -303,11 +270,7 @@ namespace TUBAPP
                 int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         }
 
-        #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flpNavbarre;
-        private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private System.Windows.Forms.Label lblTUBAPP;
+#endregion
         private System.Windows.Forms.PictureBox picIconeContact;
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Panel pnlCard;
@@ -320,9 +283,9 @@ namespace TUBAPP
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnCreerCompte;
         private System.Windows.Forms.Button btnSeConnecter;
-        private System.Windows.Forms.Panel pnlBottomNav;
-        private System.Windows.Forms.PictureBox picHome;
-        private System.Windows.Forms.PictureBox picAccount;
-        private System.Windows.Forms.PictureBox picSettings;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private PictureBox pictureBox3;
+        private Label label1;
+        private PictureBox pictureBox4;
     }
 }

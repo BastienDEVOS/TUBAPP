@@ -50,5 +50,10 @@ namespace TUBAPP
                 btnSeConnecter.Visible = false;
             }
         }
+
+        private void picIconeContact_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
