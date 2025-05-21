@@ -22,6 +22,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Recuperationmdp));
             lblTitre = new Label();
             txtEmail = new TextBox();
             txtCode = new TextBox();
@@ -238,6 +239,7 @@
             Controls.Add(btnRetour);
             Controls.Add(btnVoirMdp);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Recuperationmdp";

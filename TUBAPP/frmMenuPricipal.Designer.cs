@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPricipal));
             InfoImportantes = new FlowLayoutPanel();
             label3 = new Label();
             VoirItineraire = new Button();
@@ -242,6 +243,7 @@
             Controls.Add(StationArrivee);
             Controls.Add(StationDepart);
             Controls.Add(flpNavbarre);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMenuPricipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmMenuPricipal";

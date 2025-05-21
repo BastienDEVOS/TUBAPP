@@ -20,6 +20,7 @@ namespace TUBAPP
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageProfilInviter));
             picIconeContact = new PictureBox();
             lblTitre = new Label();
             pnlCard = new Panel();
@@ -289,6 +290,7 @@ namespace TUBAPP
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;

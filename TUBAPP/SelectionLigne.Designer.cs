@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectionLigne));
             flpNavbarre = new FlowLayoutPanel();
             pictureBox4 = new PictureBox();
             lblTUBAPP = new Label();
+            pictureBox5 = new PictureBox();
             picIconeContact = new PictureBox();
             labelSelectionner = new Label();
             labeldepart = new Label();
@@ -46,15 +48,14 @@
             labelhoraire = new Label();
             comboBoxHoraire1 = new ComboBox();
             comboBoxHoraire2 = new ComboBox();
-            pictureBox5 = new PictureBox();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // flpNavbarre
@@ -96,6 +97,17 @@
             lblTUBAPP.Text = "TUBAPP";
             lblTUBAPP.TextAlign = ContentAlignment.TopCenter;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.icone_profil;
+            pictureBox5.Location = new Point(361, 4);
+            pictureBox5.Margin = new Padding(3, 4, 3, 4);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(63, 91);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 29;
+            pictureBox5.TabStop = false;
+            // 
             // picIconeContact
             // 
             picIconeContact.Image = Properties.Resources.icone_profil;
@@ -110,11 +122,11 @@
             // labelSelectionner
             // 
             labelSelectionner.AutoSize = true;
-            labelSelectionner.Font = new Font("Rockwell Nova", 18F);
+            labelSelectionner.Font = new Font("Microsoft Sans Serif", 18F);
             labelSelectionner.ForeColor = SystemColors.MenuText;
             labelSelectionner.Location = new Point(30, 121);
             labelSelectionner.Name = "labelSelectionner";
-            labelSelectionner.Size = new Size(389, 38);
+            labelSelectionner.Size = new Size(352, 36);
             labelSelectionner.TabIndex = 16;
             labelSelectionner.Text = "Sélectionnez vos stations";
             labelSelectionner.Click += labelSelectionner_Click;
@@ -248,17 +260,6 @@
             comboBoxHoraire2.Size = new Size(115, 28);
             comboBoxHoraire2.TabIndex = 28;
             // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = Properties.Resources.icone_profil;
-            pictureBox5.Location = new Point(361, 4);
-            pictureBox5.Margin = new Padding(3, 4, 3, 4);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(63, 91);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 29;
-            pictureBox5.TabStop = false;
-            // 
             // SelectionLigne
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -276,18 +277,19 @@
             Controls.Add(StationDepart);
             Controls.Add(labelSelectionner);
             Controls.Add(flpNavbarre);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "SelectionLigne";
             Text = "SelectionLigne";
             Load += SelectionLigne_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionAdminSuprimer));
             btnRetour = new Button();
             btnSuprimer = new Button();
             flowLayoutPanel2 = new FlowLayoutPanel();
@@ -345,6 +346,7 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "OptionAdminSuprimer";
             Text = "OptionAdminSuprimer";
             flowLayoutPanel2.ResumeLayout(false);

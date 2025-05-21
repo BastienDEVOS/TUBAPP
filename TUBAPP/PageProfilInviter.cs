@@ -33,7 +33,7 @@ namespace TUBAPP
                 lblNomPrenom.Text = "NOM Prénom";
                 lblMailValue.Text = "Invité";
                 lblNaissanceValue.Text = "Jours/Mois/Années";
-                btnModifier.Visible = false; // Hide modifier for guest
+                //btnModifier.Visible = false; // Hide modifier for guest
             }
             else
             {
@@ -41,7 +41,7 @@ namespace TUBAPP
                 lblNomPrenom.Text = $"{utilisateur.Nom} {utilisateur.Prenom}";
                 lblMailValue.Text = utilisateur.Email;
                 lblNaissanceValue.Text = utilisateur.DateNaissance?.ToString("dd/MM/yyyy") ?? "Non renseignée";
-                btnModifier.Visible = true;
+                //btnModifier.Visible = true;
             }
         }
 

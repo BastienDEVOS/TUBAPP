@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageProfilAdmin));
             flowLayoutPanel2 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             BtnHome = new PictureBox();
@@ -309,6 +310,7 @@
             Controls.Add(btnCreerCompte);
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PageProfilAdmin";
             Text = "PageProfilAdmin";
             flowLayoutPanel2.ResumeLayout(false);

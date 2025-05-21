@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionAdminModif));
             Horaire = new ComboBox();
             Station = new ComboBox();
             Ligne = new ComboBox();
@@ -345,6 +346,7 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "OptionAdminModif";
             Text = "OptionAdminModif";
             flowLayoutPanel2.ResumeLayout(false);

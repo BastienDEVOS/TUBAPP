@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionAdminAjouter));
             flowLayoutPanel2 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             BtnHome = new PictureBox();
@@ -239,6 +240,7 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(btnAjoutStation);
             Controls.Add(btnAjoutLigne);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "OptionAdminAjouter";
             Text = "OptionAdminAjouter";
             Load += OptionAdminAjouter_Load;

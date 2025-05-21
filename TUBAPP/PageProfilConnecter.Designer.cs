@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageProfilConnecter));
             flowLayoutPanel2 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             BtnHome = new PictureBox();
@@ -317,6 +318,7 @@
             Controls.Add(btnSeConnecter);
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PageProfilConnecter";
             Text = "PageProfilConnecter";
             flowLayoutPanel2.ResumeLayout(false);

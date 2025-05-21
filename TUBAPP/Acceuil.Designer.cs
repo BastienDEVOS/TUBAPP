@@ -34,12 +34,12 @@
             btnConnexion = new Button();
             lblBienvenue = new Label();
             flpNavbarre = new FlowLayoutPanel();
+            pictureBox1 = new PictureBox();
             lblTUBAPP = new Label();
             picIconeContact = new PictureBox();
-            pictureBox1 = new PictureBox();
             flpNavbarre.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             SuspendLayout();
             // 
             // btnInvité
@@ -83,6 +83,13 @@
             resources.ApplyResources(flpNavbarre, "flpNavbarre");
             flpNavbarre.Name = "flpNavbarre";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
+            // 
             // lblTUBAPP
             // 
             resources.ApplyResources(lblTUBAPP, "lblTUBAPP");
@@ -95,13 +102,6 @@
             resources.ApplyResources(picIconeContact, "picIconeContact");
             picIconeContact.Name = "picIconeContact";
             picIconeContact.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.logo;
-            resources.ApplyResources(pictureBox1, "pictureBox1");
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.TabStop = false;
             // 
             // frmAcceuil
             // 
@@ -119,8 +119,8 @@
             Load += frmAcceuil_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
