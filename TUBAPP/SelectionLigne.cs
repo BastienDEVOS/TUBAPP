@@ -25,7 +25,13 @@ namespace TUBAPP
 
         private void SelectionLigne_Load(object sender, EventArgs e)
         {
-
+            ClassUtilitaire.MettreBordArrondis(p_InfosTrajet, 20);
+            ClassUtilitaire.MettreBordArrondis(p_Horraire, 20);
+            ClassUtilitaire.MettreBordArrondis(p_Station, 20);
+            ClassUtilitaire.MettreBordArrondis(cmb_StationDepart, 20);
+            ClassUtilitaire.MettreBordArrondis(cmb_StationArrivee, 20);
+            ClassUtilitaire.MettreBordArrondis(cmb_Horaire1, 20);
+            ClassUtilitaire.MettreBordArrondis(cmb_Horaire2, 20);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

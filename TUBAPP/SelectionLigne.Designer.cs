@@ -47,9 +47,9 @@
             labelhoraire = new Label();
             cmb_Horaire1 = new ComboBox();
             cmb_Horaire2 = new ComboBox();
-            p_ = new Panel();
-            panel2 = new Panel();
-            panel1 = new Panel();
+            p_InfosTrajet = new Panel();
+            p_Station = new Panel();
+            p_Horraire = new Panel();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -58,9 +58,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            p_.SuspendLayout();
-            panel2.SuspendLayout();
-            panel1.SuspendLayout();
+            p_InfosTrajet.SuspendLayout();
+            p_Station.SuspendLayout();
+            p_Horraire.SuspendLayout();
             SuspendLayout();
             // 
             // flpNavbarre
@@ -157,6 +157,8 @@
             // cmb_StationArrivee
             // 
             cmb_StationArrivee.Anchor = AnchorStyles.Top;
+            cmb_StationArrivee.BackColor = SystemColors.Menu;
+            cmb_StationArrivee.FlatStyle = FlatStyle.Flat;
             cmb_StationArrivee.FormattingEnabled = true;
             cmb_StationArrivee.ItemHeight = 20;
             cmb_StationArrivee.Location = new Point(12, 80);
@@ -166,6 +168,8 @@
             // 
             // cmb_StationDepart
             // 
+            cmb_StationDepart.BackColor = SystemColors.Menu;
+            cmb_StationDepart.FlatStyle = FlatStyle.Flat;
             cmb_StationDepart.FormattingEnabled = true;
             cmb_StationDepart.Location = new Point(12, 24);
             cmb_StationDepart.Name = "cmb_StationDepart";
@@ -178,10 +182,10 @@
             flowLayoutPanel1.Controls.Add(pictureBox1);
             flowLayoutPanel1.Controls.Add(pictureBox2);
             flowLayoutPanel1.Controls.Add(pictureBox3);
-            flowLayoutPanel1.Location = new Point(2, 595);
+            flowLayoutPanel1.Location = new Point(-5, 595);
             flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(446, 65);
+            flowLayoutPanel1.Size = new Size(460, 65);
             flowLayoutPanel1.TabIndex = 24;
             // 
             // pictureBox1
@@ -243,6 +247,8 @@
             // 
             // cmb_Horaire1
             // 
+            cmb_Horaire1.BackColor = SystemColors.Menu;
+            cmb_Horaire1.FlatStyle = FlatStyle.Flat;
             cmb_Horaire1.FormattingEnabled = true;
             cmb_Horaire1.Location = new Point(8, 24);
             cmb_Horaire1.Name = "cmb_Horaire1";
@@ -251,45 +257,47 @@
             // 
             // cmb_Horaire2
             // 
+            cmb_Horaire2.BackColor = SystemColors.Menu;
+            cmb_Horaire2.FlatStyle = FlatStyle.Flat;
             cmb_Horaire2.FormattingEnabled = true;
             cmb_Horaire2.Location = new Point(8, 80);
             cmb_Horaire2.Name = "cmb_Horaire2";
             cmb_Horaire2.Size = new Size(122, 28);
             cmb_Horaire2.TabIndex = 28;
             // 
-            // p_
+            // p_InfosTrajet
             // 
-            p_.BackColor = Color.FromArgb(255, 128, 128);
-            p_.Controls.Add(panel2);
-            p_.Controls.Add(panel1);
-            p_.Location = new Point(35, 162);
-            p_.Name = "p_";
-            p_.Size = new Size(371, 330);
-            p_.TabIndex = 29;
-            p_.Paint += panel1_Paint;
+            p_InfosTrajet.BackColor = Color.FromArgb(255, 128, 128);
+            p_InfosTrajet.Controls.Add(p_Station);
+            p_InfosTrajet.Controls.Add(p_Horraire);
+            p_InfosTrajet.Location = new Point(35, 162);
+            p_InfosTrajet.Name = "p_InfosTrajet";
+            p_InfosTrajet.Size = new Size(371, 330);
+            p_InfosTrajet.TabIndex = 29;
+            p_InfosTrajet.Paint += panel1_Paint;
             // 
-            // panel2
+            // p_Station
             // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(labeldepart);
-            panel2.Controls.Add(cmb_StationDepart);
-            panel2.Controls.Add(cmb_StationArrivee);
-            panel2.Controls.Add(labelarrivee);
-            panel2.Location = new Point(3, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(202, 119);
-            panel2.TabIndex = 30;
+            p_Station.BackColor = Color.White;
+            p_Station.Controls.Add(labeldepart);
+            p_Station.Controls.Add(cmb_StationDepart);
+            p_Station.Controls.Add(cmb_StationArrivee);
+            p_Station.Controls.Add(labelarrivee);
+            p_Station.Location = new Point(3, 3);
+            p_Station.Name = "p_Station";
+            p_Station.Size = new Size(202, 119);
+            p_Station.TabIndex = 30;
             // 
-            // panel1
+            // p_Horraire
             // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(labelhoraire);
-            panel1.Controls.Add(cmb_Horaire2);
-            panel1.Controls.Add(cmb_Horaire1);
-            panel1.Location = new Point(225, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(141, 119);
-            panel1.TabIndex = 29;
+            p_Horraire.BackColor = Color.White;
+            p_Horraire.Controls.Add(labelhoraire);
+            p_Horraire.Controls.Add(cmb_Horaire2);
+            p_Horraire.Controls.Add(cmb_Horaire1);
+            p_Horraire.Location = new Point(225, 3);
+            p_Horraire.Name = "p_Horraire";
+            p_Horraire.Size = new Size(141, 119);
+            p_Horraire.TabIndex = 29;
             // 
             // SelectionLigne
             // 
@@ -300,7 +308,7 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(labelSelectionner);
             Controls.Add(flpNavbarre);
-            Controls.Add(p_);
+            Controls.Add(p_InfosTrajet);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "SelectionLigne";
             StartPosition = FormStartPosition.CenterScreen;
@@ -315,9 +323,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            p_.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel1.ResumeLayout(false);
+            p_InfosTrajet.ResumeLayout(false);
+            p_Station.ResumeLayout(false);
+            p_Horraire.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -343,8 +351,8 @@
         private ComboBox cmb_Horaire1;
         private ComboBox cmb_Horaire2;
         private PictureBox pictureBox5;
-        private Panel p_;
-        private Panel panel1;
-        private Panel panel2;
+        private Panel p_InfosTrajet;
+        private Panel p_Horraire;
+        private Panel p_Station;
     }
 }

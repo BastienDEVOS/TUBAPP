@@ -247,6 +247,7 @@
             Name = "frmMenuPricipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmMenuPricipal";
+            Load += frmMenuPricipal_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

@@ -49,5 +49,10 @@ namespace TUBAPP
 
             this.Hide(); // Masquer le formulaire principal
         }
+
+        private void frmMenuPricipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
