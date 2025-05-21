@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,22 +21,23 @@ namespace TUBAPP
             InitializeComponent();
         }
 
+        // Cette méthode permet de mettre le mot de passe invisible
         private void btnVoirMdp_Click(object sender, EventArgs e)
         {
-            isNouveauMdpVisible = !isNouveauMdpVisible;
-            txtNouveauMdp.UseSystemPasswordChar = !isNouveauMdpVisible;
-            btnVoirMdp.Image = isNouveauMdpVisible
-                ? Properties.Resources.eye
-                : Properties.Resources.eye_crossed;
+            //isNouveauMdpVisible = !isNouveauMdpVisible;
+            //txtNouveauMdp.UseSystemPasswordChar = !isNouveauMdpVisible;
+            //btnVoirMdp.Image = isNouveauMdpVisible
+            //    ? Properties.Resources.eye
+            //    : Properties.Resources.eyed_crossed;
         }
-
+        
         private void btnVoirConfirmerMdp_Click(object sender, EventArgs e)
         {
-            isConfirmerMdpVisible = !isConfirmerMdpVisible;
-            txtConfirmerMdp.UseSystemPasswordChar = !isConfirmerMdpVisible;
-            btnVoirConfirmerMdp.Image = isConfirmerMdpVisible
-                ? Properties.Resources.eye
-                : Properties.Resources.eye_crossed;
+            //isConfirmerMdpVisible = !isConfirmerMdpVisible;
+            //txtConfirmerMdp.UseSystemPasswordChar = !isConfirmerMdpVisible;
+            //btnVoirConfirmerMdp.Image = isConfirmerMdpVisible
+            //    ? Properties.Resources.eye
+            //    : Properties.Resources.eyed_crossed;
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)

@@ -32,7 +32,7 @@ namespace TUBAPP
             frmAcceuil FrmAcceuil = new frmAcceuil();
             FrmAcceuil.Show();
 
-            this.Hide();
+            this.Close();
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
@@ -47,6 +47,11 @@ namespace TUBAPP
             Recuperationmdp recuperationForm = new Recuperationmdp();
             recuperationForm.Show();
             this.Hide();
+        }
+
+        private void btn_retour_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

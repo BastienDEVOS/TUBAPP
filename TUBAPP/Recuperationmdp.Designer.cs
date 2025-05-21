@@ -83,7 +83,7 @@
             txtNouveauMdp.BorderStyle = BorderStyle.FixedSingle;
             txtNouveauMdp.Font = new Font("Segoe UI", 12F);
             txtNouveauMdp.ForeColor = Color.Gray;
-            txtNouveauMdp.Location = new Point(64, 343);
+            txtNouveauMdp.Location = new Point(64, 342);
             txtNouveauMdp.Name = "txtNouveauMdp";
             txtNouveauMdp.PlaceholderText = "Nouveau Mot de passe";
             txtNouveauMdp.Size = new Size(313, 34);
@@ -96,7 +96,7 @@
             txtConfirmerMdp.BorderStyle = BorderStyle.FixedSingle;
             txtConfirmerMdp.Font = new Font("Segoe UI", 12F);
             txtConfirmerMdp.ForeColor = Color.Gray;
-            txtConfirmerMdp.Location = new Point(64, 393);
+            txtConfirmerMdp.Location = new Point(64, 392);
             txtConfirmerMdp.Name = "txtConfirmerMdp";
             txtConfirmerMdp.PlaceholderText = "Confirmation Mot de passe";
             txtConfirmerMdp.Size = new Size(313, 34);
@@ -105,22 +105,26 @@
             // 
             // btnVoirMdp
             // 
+            btnVoirMdp.BackColor = SystemColors.ActiveCaptionText;
             btnVoirMdp.FlatAppearance.BorderSize = 0;
             btnVoirMdp.FlatStyle = FlatStyle.Flat;
-            btnVoirMdp.Location = new Point(265, 314);
+            btnVoirMdp.Location = new Point(64, 201);
             btnVoirMdp.Name = "btnVoirMdp";
             btnVoirMdp.Size = new Size(98, 34);
             btnVoirMdp.TabIndex = 5;
+            btnVoirMdp.UseVisualStyleBackColor = false;
             btnVoirMdp.Click += btnVoirMdp_Click;
             // 
             // btnVoirConfirmerMdp
             // 
+            btnVoirConfirmerMdp.BackColor = SystemColors.ActiveCaptionText;
             btnVoirConfirmerMdp.FlatAppearance.BorderSize = 0;
             btnVoirConfirmerMdp.FlatStyle = FlatStyle.Flat;
-            btnVoirConfirmerMdp.Location = new Point(265, 375);
+            btnVoirConfirmerMdp.Location = new Point(279, 201);
             btnVoirConfirmerMdp.Name = "btnVoirConfirmerMdp";
             btnVoirConfirmerMdp.Size = new Size(98, 34);
             btnVoirConfirmerMdp.TabIndex = 7;
+            btnVoirConfirmerMdp.UseVisualStyleBackColor = false;
             btnVoirConfirmerMdp.Click += btnVoirConfirmerMdp_Click;
             // 
             // btnConnexion
@@ -228,11 +232,11 @@
             Controls.Add(txtEmail);
             Controls.Add(txtCode);
             Controls.Add(txtNouveauMdp);
-            Controls.Add(btnVoirMdp);
             Controls.Add(txtConfirmerMdp);
             Controls.Add(btnVoirConfirmerMdp);
             Controls.Add(btnConnexion);
             Controls.Add(btnRetour);
+            Controls.Add(btnVoirMdp);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;

@@ -35,7 +35,7 @@ namespace TUBAPP
             };
 
             // Ouvrir la page de profil
-            PageCompte pageCompte = new PageCompte(user);
+            PageProfilInviter pageCompte = new PageProfilInviter(user);
             pageCompte.Show();
         }
     }

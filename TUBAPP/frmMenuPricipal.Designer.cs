@@ -38,6 +38,7 @@
             flpNavbarre = new FlowLayoutPanel();
             pictureBox4 = new PictureBox();
             lblTUBAPP = new Label();
+            pictureBox5 = new PictureBox();
             picIconeContact = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
@@ -45,6 +46,7 @@
             pictureBox3 = new PictureBox();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -123,9 +125,10 @@
             flpNavbarre.BackColor = Color.FromArgb(234, 99, 93);
             flpNavbarre.Controls.Add(pictureBox4);
             flpNavbarre.Controls.Add(lblTUBAPP);
+            flpNavbarre.Controls.Add(pictureBox5);
             flpNavbarre.Controls.Add(picIconeContact);
             flpNavbarre.Location = new Point(0, 0);
-            flpNavbarre.Margin = new Padding(2, 2, 2, 2);
+            flpNavbarre.Margin = new Padding(2);
             flpNavbarre.Name = "flpNavbarre";
             flpNavbarre.Size = new Size(446, 97);
             flpNavbarre.TabIndex = 14;
@@ -135,7 +138,7 @@
             pictureBox4.Image = Properties.Resources.logo1;
             pictureBox4.ImeMode = ImeMode.NoControl;
             pictureBox4.Location = new Point(2, 2);
-            pictureBox4.Margin = new Padding(2, 2, 2, 2);
+            pictureBox4.Margin = new Padding(2);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(91, 93);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -148,7 +151,7 @@
             lblTUBAPP.AutoSize = true;
             lblTUBAPP.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             lblTUBAPP.ForeColor = Color.White;
-            lblTUBAPP.Location = new Point(132, 20);
+            lblTUBAPP.Location = new Point(132, 21);
             lblTUBAPP.Margin = new Padding(37, 0, 37, 0);
             lblTUBAPP.Name = "lblTUBAPP";
             lblTUBAPP.Size = new Size(189, 57);
@@ -156,10 +159,22 @@
             lblTUBAPP.Text = "TUBAPP";
             lblTUBAPP.TextAlign = ContentAlignment.TopCenter;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.icone_profil;
+            pictureBox5.Location = new Point(361, 4);
+            pictureBox5.Margin = new Padding(3, 4, 3, 4);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(63, 91);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 30;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += IconeProfil_Click;
+            // 
             // picIconeContact
             // 
             picIconeContact.Image = Properties.Resources.icone_profil;
-            picIconeContact.Location = new Point(0, 97);
+            picIconeContact.Location = new Point(0, 99);
             picIconeContact.Margin = new Padding(0);
             picIconeContact.Name = "picIconeContact";
             picIconeContact.Size = new Size(93, 97);
@@ -174,7 +189,7 @@
             flowLayoutPanel1.Controls.Add(pictureBox2);
             flowLayoutPanel1.Controls.Add(pictureBox3);
             flowLayoutPanel1.Location = new Point(0, 594);
-            flowLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
+            flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(446, 65);
             flowLayoutPanel1.TabIndex = 22;
@@ -233,6 +248,7 @@
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -258,5 +274,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
     }
 }

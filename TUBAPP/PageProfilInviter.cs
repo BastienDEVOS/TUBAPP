@@ -11,11 +11,11 @@ using TUBAPP; // Assurez-vous que le bon espace de noms est utilisé pour les re
 
 namespace TUBAPP
 {
-    internal partial class PageCompte : Form
+    internal partial class PageProfilInviter : Form
     {
         private readonly Utilisateur utilisateur;
 
-        public PageCompte(Utilisateur user)
+        public PageProfilInviter(Utilisateur user)
         {
             InitializeComponent();
             utilisateur = user ?? throw new ArgumentNullException(nameof(user));
@@ -34,9 +34,6 @@ namespace TUBAPP
                 lblMailValue.Text = "Invité";
                 lblNaissanceValue.Text = "Jours/Mois/Années";
                 btnModifier.Visible = false; // Hide modifier for guest
-
-                btnCreerCompte.Visible = true;
-                btnSeConnecter.Visible = true;
             }
             else
             {
@@ -45,15 +42,25 @@ namespace TUBAPP
                 lblMailValue.Text = utilisateur.Email;
                 lblNaissanceValue.Text = utilisateur.DateNaissance?.ToString("dd/MM/yyyy") ?? "Non renseignée";
                 btnModifier.Visible = true;
-
-                btnCreerCompte.Visible = false;
-                btnSeConnecter.Visible = false;
             }
         }
 
         private void picIconeContact_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PageCompte_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            frmMenuPricipal FrmMenuPrincipal= new frmMenuPricipal();
+            FrmMenuPrincipal.Show();
+
+            this.Close();
         }
     }
 }

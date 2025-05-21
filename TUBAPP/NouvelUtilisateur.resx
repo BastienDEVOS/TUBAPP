@@ -184,7 +184,7 @@
     <value>Segoe UI, 15pt</value>
   </data>
   <data name="Btn_Retour.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 581</value>
+    <value>57, 582</value>
   </data>
   <data name="Btn_Retour.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -615,7 +615,7 @@ L'utilisation de l'Application implique l'acceptation sans réserve des présent
     <value>3</value>
   </data>
   <data name="PopupCondition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 229</value>
+    <value>18, 230</value>
   </data>
   <data name="PopupCondition.Size" type="System.Drawing.Size, System.Drawing">
     <value>405, 402</value>

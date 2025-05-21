@@ -76,6 +76,7 @@
             Btn_Retour.ForeColor = SystemColors.Control;
             Btn_Retour.Name = "Btn_Retour";
             Btn_Retour.UseVisualStyleBackColor = false;
+            Btn_Retour.Click += Btn_Retour_Click;
             // 
             // txtConfirmMDP
             // 

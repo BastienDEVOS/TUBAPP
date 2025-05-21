@@ -120,6 +120,7 @@
             btn_retour.ForeColor = SystemColors.Control;
             btn_retour.Name = "btn_retour";
             btn_retour.UseVisualStyleBackColor = false;
+            btn_retour.Click += btn_retour_Click;
             btn_retour.MouseClick += btnRetour_MouseClick;
             // 
             // frmConnexion
