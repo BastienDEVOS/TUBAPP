@@ -21,7 +21,9 @@ namespace TUBAPP
 
         private void VoirItineraire_Click(object sender, EventArgs e)
         {
-
+            SelectionLigne selectionLigne = new SelectionLigne();
+            selectionLigne.Show();
+            this.Close();  // Masquer le formulaire principal
         }
 
         private void IconeProfil_Click(object sender, EventArgs e)

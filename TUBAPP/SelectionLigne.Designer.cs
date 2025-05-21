@@ -37,17 +37,19 @@
             labelSelectionner = new Label();
             labeldepart = new Label();
             labelarrivee = new Label();
-            StationArrivee = new ComboBox();
-            StationDepart = new ComboBox();
-            listBoxStation = new ListBox();
+            cmb_StationArrivee = new ComboBox();
+            cmb_StationDepart = new ComboBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             btn_retour = new Button();
             labelhoraire = new Label();
-            comboBoxHoraire1 = new ComboBox();
-            comboBoxHoraire2 = new ComboBox();
+            cmb_Horaire1 = new ComboBox();
+            cmb_Horaire2 = new ComboBox();
+            p_ = new Panel();
+            panel1 = new Panel();
+            panel2 = new Panel();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -56,6 +58,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            p_.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // flpNavbarre
@@ -124,7 +129,7 @@
             labelSelectionner.AutoSize = true;
             labelSelectionner.Font = new Font("Microsoft Sans Serif", 18F);
             labelSelectionner.ForeColor = SystemColors.MenuText;
-            labelSelectionner.Location = new Point(30, 121);
+            labelSelectionner.Location = new Point(49, 109);
             labelSelectionner.Name = "labelSelectionner";
             labelSelectionner.Size = new Size(352, 36);
             labelSelectionner.TabIndex = 16;
@@ -133,47 +138,39 @@
             // 
             // labeldepart
             // 
-            labeldepart.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            labeldepart.Location = new Point(30, 175);
+            labeldepart.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            labeldepart.Location = new Point(3, 0);
             labeldepart.Name = "labeldepart";
-            labeldepart.Size = new Size(251, 31);
+            labeldepart.Size = new Size(162, 21);
             labeldepart.TabIndex = 22;
             labeldepart.Text = "Station de départ :";
             // 
             // labelarrivee
             // 
-            labelarrivee.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            labelarrivee.Location = new Point(30, 240);
+            labelarrivee.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            labelarrivee.Location = new Point(3, 55);
             labelarrivee.Name = "labelarrivee";
-            labelarrivee.Size = new Size(225, 31);
+            labelarrivee.Size = new Size(162, 22);
             labelarrivee.TabIndex = 21;
             labelarrivee.Text = "Station d'arrivée :";
             // 
-            // StationArrivee
+            // cmb_StationArrivee
             // 
-            StationArrivee.Anchor = AnchorStyles.Top;
-            StationArrivee.FormattingEnabled = true;
-            StationArrivee.ItemHeight = 20;
-            StationArrivee.Location = new Point(30, 275);
-            StationArrivee.Name = "StationArrivee";
-            StationArrivee.Size = new Size(251, 28);
-            StationArrivee.TabIndex = 20;
+            cmb_StationArrivee.Anchor = AnchorStyles.Top;
+            cmb_StationArrivee.FormattingEnabled = true;
+            cmb_StationArrivee.ItemHeight = 20;
+            cmb_StationArrivee.Location = new Point(12, 80);
+            cmb_StationArrivee.Name = "cmb_StationArrivee";
+            cmb_StationArrivee.Size = new Size(179, 28);
+            cmb_StationArrivee.TabIndex = 20;
             // 
-            // StationDepart
+            // cmb_StationDepart
             // 
-            StationDepart.FormattingEnabled = true;
-            StationDepart.Location = new Point(30, 209);
-            StationDepart.Name = "StationDepart";
-            StationDepart.Size = new Size(251, 28);
-            StationDepart.TabIndex = 19;
-            // 
-            // listBoxStation
-            // 
-            listBoxStation.FormattingEnabled = true;
-            listBoxStation.Location = new Point(41, 321);
-            listBoxStation.Name = "listBoxStation";
-            listBoxStation.Size = new Size(360, 184);
-            listBoxStation.TabIndex = 23;
+            cmb_StationDepart.FormattingEnabled = true;
+            cmb_StationDepart.Location = new Point(12, 24);
+            cmb_StationDepart.Name = "cmb_StationDepart";
+            cmb_StationDepart.Size = new Size(177, 28);
+            cmb_StationDepart.TabIndex = 19;
             // 
             // flowLayoutPanel1
             // 
@@ -237,46 +234,73 @@
             // 
             // labelhoraire
             // 
-            labelhoraire.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            labelhoraire.Location = new Point(304, 175);
+            labelhoraire.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            labelhoraire.Location = new Point(3, 0);
             labelhoraire.Name = "labelhoraire";
-            labelhoraire.Size = new Size(142, 31);
+            labelhoraire.Size = new Size(86, 21);
             labelhoraire.TabIndex = 26;
             labelhoraire.Text = "Horaire :";
             // 
-            // comboBoxHoraire1
+            // cmb_Horaire1
             // 
-            comboBoxHoraire1.FormattingEnabled = true;
-            comboBoxHoraire1.Location = new Point(304, 209);
-            comboBoxHoraire1.Name = "comboBoxHoraire1";
-            comboBoxHoraire1.Size = new Size(115, 28);
-            comboBoxHoraire1.TabIndex = 27;
+            cmb_Horaire1.FormattingEnabled = true;
+            cmb_Horaire1.Location = new Point(8, 24);
+            cmb_Horaire1.Name = "cmb_Horaire1";
+            cmb_Horaire1.Size = new Size(122, 28);
+            cmb_Horaire1.TabIndex = 27;
             // 
-            // comboBoxHoraire2
+            // cmb_Horaire2
             // 
-            comboBoxHoraire2.FormattingEnabled = true;
-            comboBoxHoraire2.Location = new Point(304, 275);
-            comboBoxHoraire2.Name = "comboBoxHoraire2";
-            comboBoxHoraire2.Size = new Size(115, 28);
-            comboBoxHoraire2.TabIndex = 28;
+            cmb_Horaire2.FormattingEnabled = true;
+            cmb_Horaire2.Location = new Point(8, 80);
+            cmb_Horaire2.Name = "cmb_Horaire2";
+            cmb_Horaire2.Size = new Size(122, 28);
+            cmb_Horaire2.TabIndex = 28;
+            // 
+            // p_
+            // 
+            p_.BackColor = Color.FromArgb(255, 128, 128);
+            p_.Controls.Add(panel2);
+            p_.Controls.Add(panel1);
+            p_.Location = new Point(35, 162);
+            p_.Name = "p_";
+            p_.Size = new Size(371, 330);
+            p_.TabIndex = 29;
+            p_.Paint += panel1_Paint;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(labelhoraire);
+            panel1.Controls.Add(cmb_Horaire2);
+            panel1.Controls.Add(cmb_Horaire1);
+            panel1.Location = new Point(225, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(141, 119);
+            panel1.TabIndex = 29;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(labeldepart);
+            panel2.Controls.Add(cmb_StationDepart);
+            panel2.Controls.Add(cmb_StationArrivee);
+            panel2.Controls.Add(labelarrivee);
+            panel2.Location = new Point(3, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(202, 119);
+            panel2.TabIndex = 30;
             // 
             // SelectionLigne
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
-            Controls.Add(comboBoxHoraire2);
-            Controls.Add(comboBoxHoraire1);
-            Controls.Add(labelhoraire);
             Controls.Add(btn_retour);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(listBoxStation);
-            Controls.Add(labeldepart);
-            Controls.Add(labelarrivee);
-            Controls.Add(StationArrivee);
-            Controls.Add(StationDepart);
             Controls.Add(labelSelectionner);
             Controls.Add(flpNavbarre);
+            Controls.Add(p_);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "SelectionLigne";
             Text = "SelectionLigne";
@@ -290,6 +314,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            p_.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -303,8 +330,8 @@
         private Label labelSelectionner;
         private Label labeldepart;
         private Label labelarrivee;
-        private ComboBox StationArrivee;
-        private ComboBox StationDepart;
+        private ComboBox cmb_StationArrivee;
+        private ComboBox cmb_StationDepart;
         private ListBox listBoxStation;
         private FlowLayoutPanel flowLayoutPanel1;
         private PictureBox pictureBox1;
@@ -312,8 +339,11 @@
         private PictureBox pictureBox3;
         private Button btn_retour;
         private Label labelhoraire;
-        private ComboBox comboBoxHoraire1;
-        private ComboBox comboBoxHoraire2;
+        private ComboBox cmb_Horaire1;
+        private ComboBox cmb_Horaire2;
         private PictureBox pictureBox5;
+        private Panel p_;
+        private Panel panel1;
+        private Panel panel2;
     }
 }
