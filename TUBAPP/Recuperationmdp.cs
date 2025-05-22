@@ -24,20 +24,20 @@ namespace TUBAPP
         // Cette méthode permet de mettre le mot de passe invisible
         private void btnVoirMdp_Click(object sender, EventArgs e)
         {
-            //isNouveauMdpVisible = !isNouveauMdpVisible;
-            //txtNouveauMdp.UseSystemPasswordChar = !isNouveauMdpVisible;
-            //btnVoirMdp.Image = isNouveauMdpVisible
-            //    ? Properties.Resources.eye
-            //    : Properties.Resources.eyed_crossed;
+            isNouveauMdpVisible = !isNouveauMdpVisible;
+            txtNouveauMdp.UseSystemPasswordChar = !isNouveauMdpVisible;
+            pictureBox1.Image = isNouveauMdpVisible
+                ? Properties.Resources.eye
+                : Properties.Resources.eye_crossed;
         }
-        
+
         private void btnVoirConfirmerMdp_Click(object sender, EventArgs e)
         {
-            //isConfirmerMdpVisible = !isConfirmerMdpVisible;
-            //txtConfirmerMdp.UseSystemPasswordChar = !isConfirmerMdpVisible;
-            //btnVoirConfirmerMdp.Image = isConfirmerMdpVisible
-            //    ? Properties.Resources.eye
-            //    : Properties.Resources.eyed_crossed;
+            isConfirmerMdpVisible = !isConfirmerMdpVisible;
+            txtConfirmerMdp.UseSystemPasswordChar = !isConfirmerMdpVisible;
+            pictureBox2.Image = isConfirmerMdpVisible
+                ? Properties.Resources.eye
+                : Properties.Resources.eye_crossed;
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
@@ -75,6 +75,11 @@ namespace TUBAPP
         }
 
         private void Recuperationmdp_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

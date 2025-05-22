@@ -8,8 +8,6 @@
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.TextBox txtNouveauMdp;
         private System.Windows.Forms.TextBox txtConfirmerMdp;
-        private System.Windows.Forms.Button btnVoirMdp;
-        private System.Windows.Forms.Button btnVoirConfirmerMdp;
         private System.Windows.Forms.Button btnConnexion;
         private System.Windows.Forms.Button btnRetour;
 
@@ -28,8 +26,6 @@
             txtCode = new TextBox();
             txtNouveauMdp = new TextBox();
             txtConfirmerMdp = new TextBox();
-            btnVoirMdp = new Button();
-            btnVoirConfirmerMdp = new Button();
             btnConnexion = new Button();
             btnRetour = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -37,10 +33,14 @@
             label1 = new Label();
             picIconeContact = new PictureBox();
             pictureBox4 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblTitre
@@ -87,7 +87,7 @@
             txtNouveauMdp.Location = new Point(64, 342);
             txtNouveauMdp.Name = "txtNouveauMdp";
             txtNouveauMdp.PlaceholderText = "Nouveau Mot de passe";
-            txtNouveauMdp.Size = new Size(313, 34);
+            txtNouveauMdp.Size = new Size(209, 34);
             txtNouveauMdp.TabIndex = 4;
             txtNouveauMdp.UseSystemPasswordChar = true;
             // 
@@ -100,33 +100,9 @@
             txtConfirmerMdp.Location = new Point(64, 392);
             txtConfirmerMdp.Name = "txtConfirmerMdp";
             txtConfirmerMdp.PlaceholderText = "Confirmation Mot de passe";
-            txtConfirmerMdp.Size = new Size(313, 34);
+            txtConfirmerMdp.Size = new Size(209, 34);
             txtConfirmerMdp.TabIndex = 6;
             txtConfirmerMdp.UseSystemPasswordChar = true;
-            // 
-            // btnVoirMdp
-            // 
-            btnVoirMdp.BackColor = SystemColors.ActiveCaptionText;
-            btnVoirMdp.FlatAppearance.BorderSize = 0;
-            btnVoirMdp.FlatStyle = FlatStyle.Flat;
-            btnVoirMdp.Location = new Point(64, 201);
-            btnVoirMdp.Name = "btnVoirMdp";
-            btnVoirMdp.Size = new Size(98, 34);
-            btnVoirMdp.TabIndex = 5;
-            btnVoirMdp.UseVisualStyleBackColor = false;
-            btnVoirMdp.Click += btnVoirMdp_Click;
-            // 
-            // btnVoirConfirmerMdp
-            // 
-            btnVoirConfirmerMdp.BackColor = SystemColors.ActiveCaptionText;
-            btnVoirConfirmerMdp.FlatAppearance.BorderSize = 0;
-            btnVoirConfirmerMdp.FlatStyle = FlatStyle.Flat;
-            btnVoirConfirmerMdp.Location = new Point(279, 201);
-            btnVoirConfirmerMdp.Name = "btnVoirConfirmerMdp";
-            btnVoirConfirmerMdp.Size = new Size(98, 34);
-            btnVoirConfirmerMdp.TabIndex = 7;
-            btnVoirConfirmerMdp.UseVisualStyleBackColor = false;
-            btnVoirConfirmerMdp.Click += btnVoirConfirmerMdp_Click;
             // 
             // btnConnexion
             // 
@@ -223,26 +199,51 @@
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.eye_crossed;
+            pictureBox2.Location = new Point(301, 392);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(63, 34);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 20;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += btnVoirConfirmerMdp_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.eye_crossed;
+            pictureBox1.Location = new Point(301, 342);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(63, 34);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 21;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += btnVoirMdp_Click;
+            // 
             // Recuperationmdp
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
+            Controls.Add(pictureBox1);
+            Controls.Add(pictureBox2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(lblTitre);
             Controls.Add(txtEmail);
             Controls.Add(txtCode);
             Controls.Add(txtNouveauMdp);
             Controls.Add(txtConfirmerMdp);
-            Controls.Add(btnVoirConfirmerMdp);
             Controls.Add(btnConnexion);
             Controls.Add(btnRetour);
-            Controls.Add(btnVoirMdp);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Recuperationmdp";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Récupération du mot de passe";
             Load += Recuperationmdp_Load;
             flowLayoutPanel1.ResumeLayout(false);
@@ -250,6 +251,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -259,5 +262,7 @@
         private Label label1;
         private PictureBox picIconeContact;
         private PictureBox pictureBox4;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
     }
 }

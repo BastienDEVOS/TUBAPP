@@ -61,12 +61,22 @@ namespace TUBAPP.Properties {
         }
         
         /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static byte[] eye {
+        internal static System.Drawing.Bitmap eye {
             get {
                 object obj = ResourceManager.GetObject("eye", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye_crossed {
+            get {
+                object obj = ResourceManager.GetObject("eye_crossed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
