@@ -21,5 +21,19 @@ namespace TUBAPP
         {
 
         }
+
+        private void picIconeContact_Click(object sender, EventArgs e)
+        {
+            PageProfilAdmin pageProfilAdmin = new PageProfilAdmin();
+            pageProfilAdmin.Show();
+            this.Close();
+        }
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            frmMenuPricipal menuPrincipal = new frmMenuPricipal();
+            menuPrincipal.Show();
+            this.Close();
+        }
     }
 }

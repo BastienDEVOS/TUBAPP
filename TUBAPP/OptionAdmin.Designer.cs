@@ -38,8 +38,8 @@
             label1 = new Label();
             picIconeContact = new PictureBox();
             pictureBox4 = new PictureBox();
-            btnSeConnecter = new Button();
-            btnCreerCompte = new Button();
+            btnOptionAdminModif = new Button();
+            btnOptionAdminAjout = new Button();
             pnlCard = new Panel();
             lblInvite = new Label();
             lblNomPrenom = new Label();
@@ -49,7 +49,7 @@
             lblNaissanceValue = new Label();
             btnModifier = new Button();
             lblTitre = new Label();
-            button1 = new Button();
+            btnOptionAdminSupr = new Button();
             btnRetour = new Button();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -85,6 +85,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pbGps_Click;
             // 
             // BtnHome
             // 
@@ -96,7 +97,7 @@
             BtnHome.SizeMode = PictureBoxSizeMode.Zoom;
             BtnHome.TabIndex = 3;
             BtnHome.TabStop = false;
-            BtnHome.Click += pictureBox2_Click;
+            BtnHome.Click += BtnHome_Click;
             // 
             // pictureBox5
             // 
@@ -172,33 +173,35 @@
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
             // 
-            // btnSeConnecter
+            // btnOptionAdminModif
             // 
-            btnSeConnecter.BackColor = Color.FromArgb(209, 66, 54);
-            btnSeConnecter.FlatStyle = FlatStyle.Flat;
-            btnSeConnecter.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnSeConnecter.ForeColor = Color.White;
-            btnSeConnecter.Location = new Point(95, 327);
-            btnSeConnecter.Margin = new Padding(3, 4, 3, 4);
-            btnSeConnecter.Name = "btnSeConnecter";
-            btnSeConnecter.Size = new Size(251, 53);
-            btnSeConnecter.TabIndex = 33;
-            btnSeConnecter.Text = "Modifier";
-            btnSeConnecter.UseVisualStyleBackColor = false;
+            btnOptionAdminModif.BackColor = Color.FromArgb(209, 66, 54);
+            btnOptionAdminModif.FlatStyle = FlatStyle.Flat;
+            btnOptionAdminModif.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnOptionAdminModif.ForeColor = Color.White;
+            btnOptionAdminModif.Location = new Point(95, 327);
+            btnOptionAdminModif.Margin = new Padding(3, 4, 3, 4);
+            btnOptionAdminModif.Name = "btnOptionAdminModif";
+            btnOptionAdminModif.Size = new Size(251, 53);
+            btnOptionAdminModif.TabIndex = 33;
+            btnOptionAdminModif.Text = "Modifier";
+            btnOptionAdminModif.UseVisualStyleBackColor = false;
+            btnOptionAdminModif.Click += btnOptionAdminModif_Click;
             // 
-            // btnCreerCompte
+            // btnOptionAdminAjout
             // 
-            btnCreerCompte.BackColor = Color.FromArgb(209, 66, 54);
-            btnCreerCompte.FlatStyle = FlatStyle.Flat;
-            btnCreerCompte.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnCreerCompte.ForeColor = Color.White;
-            btnCreerCompte.Location = new Point(95, 241);
-            btnCreerCompte.Margin = new Padding(3, 4, 3, 4);
-            btnCreerCompte.Name = "btnCreerCompte";
-            btnCreerCompte.Size = new Size(251, 53);
-            btnCreerCompte.TabIndex = 32;
-            btnCreerCompte.Text = "Ajouter";
-            btnCreerCompte.UseVisualStyleBackColor = false;
+            btnOptionAdminAjout.BackColor = Color.FromArgb(209, 66, 54);
+            btnOptionAdminAjout.FlatStyle = FlatStyle.Flat;
+            btnOptionAdminAjout.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnOptionAdminAjout.ForeColor = Color.White;
+            btnOptionAdminAjout.Location = new Point(95, 241);
+            btnOptionAdminAjout.Margin = new Padding(3, 4, 3, 4);
+            btnOptionAdminAjout.Name = "btnOptionAdminAjout";
+            btnOptionAdminAjout.Size = new Size(251, 53);
+            btnOptionAdminAjout.TabIndex = 32;
+            btnOptionAdminAjout.Text = "Ajouter";
+            btnOptionAdminAjout.UseVisualStyleBackColor = false;
+            btnOptionAdminAjout.Click += btnOptionAdminAjout_Click;
             // 
             // pnlCard
             // 
@@ -301,19 +304,20 @@
             lblTitre.Text = "Option Administrateur";
             lblTitre.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnOptionAdminSupr
             // 
-            button1.BackColor = Color.FromArgb(209, 66, 54);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(95, 407);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(251, 53);
-            button1.TabIndex = 36;
-            button1.Text = "Suprimer";
-            button1.UseVisualStyleBackColor = false;
+            btnOptionAdminSupr.BackColor = Color.FromArgb(209, 66, 54);
+            btnOptionAdminSupr.FlatStyle = FlatStyle.Flat;
+            btnOptionAdminSupr.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnOptionAdminSupr.ForeColor = Color.White;
+            btnOptionAdminSupr.Location = new Point(95, 407);
+            btnOptionAdminSupr.Margin = new Padding(3, 4, 3, 4);
+            btnOptionAdminSupr.Name = "btnOptionAdminSupr";
+            btnOptionAdminSupr.Size = new Size(251, 53);
+            btnOptionAdminSupr.TabIndex = 36;
+            btnOptionAdminSupr.Text = "Suprimer";
+            btnOptionAdminSupr.UseVisualStyleBackColor = false;
+            btnOptionAdminSupr.Click += btnOptionAdminSupr_Click;
             // 
             // btnRetour
             // 
@@ -328,6 +332,7 @@
             btnRetour.TabIndex = 37;
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
+            btnRetour.Click += btnRetour_Click;
             // 
             // OptionAdmin
             // 
@@ -335,11 +340,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
             Controls.Add(btnRetour);
-            Controls.Add(button1);
+            Controls.Add(btnOptionAdminSupr);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(btnSeConnecter);
-            Controls.Add(btnCreerCompte);
+            Controls.Add(btnOptionAdminModif);
+            Controls.Add(btnOptionAdminAjout);
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -370,8 +375,8 @@
         private Label label1;
         private PictureBox picIconeContact;
         private PictureBox pictureBox4;
-        private Button btnSeConnecter;
-        private Button btnCreerCompte;
+        private Button btnOptionAdminModif;
+        private Button btnOptionAdminAjout;
         private Panel pnlCard;
         private Label lblInvite;
         private Label lblNomPrenom;
@@ -381,7 +386,7 @@
         private Label lblNaissanceValue;
         private Button btnModifier;
         private Label lblTitre;
-        private Button button1;
+        private Button btnOptionAdminSupr;
         private Button btnRetour;
     }
 }

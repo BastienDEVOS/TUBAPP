@@ -108,6 +108,7 @@
             BtnHome.SizeMode = PictureBoxSizeMode.Zoom;
             BtnHome.TabIndex = 3;
             BtnHome.TabStop = false;
+            BtnHome.Click += BtnHome_Click;
             // 
             // pictureBox5
             // 
@@ -162,7 +163,7 @@
             // 
             // picIconeContact
             // 
-            picIconeContact.Image = Properties.Resources.IconeProfilSelectionner;
+            picIconeContact.Image = Properties.Resources.icone_profil;
             picIconeContact.Location = new Point(361, 4);
             picIconeContact.Margin = new Padding(3, 4, 3, 4);
             picIconeContact.Name = "picIconeContact";
@@ -170,6 +171,7 @@
             picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
             picIconeContact.TabIndex = 2;
             picIconeContact.TabStop = false;
+            picIconeContact.Click += picIconeContact_Click;
             // 
             // pictureBox4
             // 

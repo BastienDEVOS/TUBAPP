@@ -227,6 +227,7 @@
             btnRetour.TabIndex = 41;
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
+            btnRetour.Click += btnRetour_Click;
             // 
             // OptionAdminAjouter
             // 

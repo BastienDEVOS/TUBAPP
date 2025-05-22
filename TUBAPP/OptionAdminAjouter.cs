@@ -21,5 +21,12 @@ namespace TUBAPP
         {
 
         }
+
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            OptionAdmin optionAdmin = new OptionAdmin();
+            optionAdmin.Show();
+            this.Close();
+        }
     }
 }

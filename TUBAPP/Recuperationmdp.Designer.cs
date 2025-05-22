@@ -31,13 +31,11 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox3 = new PictureBox();
             label1 = new Label();
-            picIconeContact = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -141,7 +139,6 @@
             flowLayoutPanel1.BackColor = Color.FromArgb(234, 99, 93);
             flowLayoutPanel1.Controls.Add(pictureBox3);
             flowLayoutPanel1.Controls.Add(label1);
-            flowLayoutPanel1.Controls.Add(picIconeContact);
             flowLayoutPanel1.Controls.Add(pictureBox4);
             flowLayoutPanel1.Location = new Point(1, 0);
             flowLayoutPanel1.Margin = new Padding(2);
@@ -168,7 +165,7 @@
             label1.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.ImeMode = ImeMode.NoControl;
-            label1.Location = new Point(132, 21);
+            label1.Location = new Point(132, 20);
             label1.Margin = new Padding(37, 0, 37, 0);
             label1.Name = "label1";
             label1.Size = new Size(189, 57);
@@ -176,22 +173,11 @@
             label1.Text = "TUBAPP";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // picIconeContact
-            // 
-            picIconeContact.Image = Properties.Resources.icone_profil;
-            picIconeContact.Location = new Point(361, 4);
-            picIconeContact.Margin = new Padding(3, 4, 3, 4);
-            picIconeContact.Name = "picIconeContact";
-            picIconeContact.Size = new Size(63, 91);
-            picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
-            picIconeContact.TabIndex = 2;
-            picIconeContact.TabStop = false;
-            // 
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.icone_profil;
             pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(0, 99);
+            pictureBox4.Location = new Point(0, 97);
             pictureBox4.Margin = new Padding(0);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(93, 93);
@@ -249,7 +235,6 @@
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -260,7 +245,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private PictureBox pictureBox3;
         private Label label1;
-        private PictureBox picIconeContact;
         private PictureBox pictureBox4;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
