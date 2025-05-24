@@ -37,11 +37,45 @@ namespace TUBAPP
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
-            FrmMenuPrincipal.Show();
+            string email = txtIdentifiant.Text.Trim();
+            string password = txtMDP.Text;
 
-            this.Close();
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    var cmd = new MySql.Data.MySqlClient.MySqlCommand(
+                        "SELECT COUNT(*) FROM Client WHERE MailClient = @Email AND MotDePasse = @Password", conn);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Password", password);
+
+                    int userCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if (userCount > 0)
+                    {
+                        frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
+                        FrmMenuPrincipal.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Identifiants invalides.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur de connexion à la base de données: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
         private void btnMdpOublie_Click(object sender, EventArgs e)
         {
             Recuperationmdp recuperationForm = new Recuperationmdp();

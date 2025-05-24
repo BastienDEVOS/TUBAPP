@@ -57,9 +57,30 @@ namespace TUBAPP
                 return;
             }
 
-            MessageBox.Show("Mot de passe réinitialisé avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    var cmd = new MySql.Data.MySqlClient.MySqlCommand(
+                        "UPDATE Client SET MotDePasse = @Password WHERE MailClient = @Email", conn);
+                    cmd.Parameters.AddWithValue("@Password", txtNouveauMdp.Text);
+                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                    int rows = cmd.ExecuteNonQuery();
+
+                    if (rows > 0)
+                        MessageBox.Show("Mot de passe réinitialisé avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("Utilisateur non trouvé.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur de connexion à la base de données: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             this.Close();
         }
+
+
 
         private void btnRetour_Click(object sender, EventArgs e)
         {

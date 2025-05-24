@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TUBAPP
@@ -16,6 +10,38 @@ namespace TUBAPP
         {
             InitializeComponent();
         }
+
+        private void InfoLigne_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    var cmd = new MySqlCommand("SELECT * FROM Ligne", conn);
+                    var adapter = new MySqlDataAdapter(cmd);
+                    var table = new DataTable();
+                    adapter.Fill(table);
+
+                    flowLayoutPanel3.Controls.Clear();
+
+                    foreach (DataRow row in table.Rows)
+                    {
+                        var label = new Label
+                        {
+                            AutoSize = true,
+                            Padding = new Padding(5),
+                            Text = string.Join(" | ", row.ItemArray.Select(item => item.ToString()))
+                        };
+                        flowLayoutPanel3.Controls.Add(label);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors du chargement des lignes : " + ex.Message);
+            }
+        }
+
 
         private void label4_Click(object sender, EventArgs e)
         {

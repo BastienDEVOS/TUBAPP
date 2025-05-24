@@ -1,3 +1,5 @@
+using MySql.Data.MySqlClient;
+
 namespace TUBAPP
 {
     public partial class frmAcceuil : Form
@@ -7,12 +9,24 @@ namespace TUBAPP
             InitializeComponent();
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        private void frmAcceuil_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    var cmd = new MySqlCommand("SELECT COUNT(*) FROM Client", conn);
+                    int clientCount = Convert.ToInt32(cmd.ExecuteScalar());
+                    this.Text = $"TUBAPP - {clientCount} clients inscrits";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la connexion à la base de données : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void frmAcceuil_Load(object sender, EventArgs e)
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -45,6 +59,5 @@ namespace TUBAPP
         {
 
         }
-       
     }
 }
