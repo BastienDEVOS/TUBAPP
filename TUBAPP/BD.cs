@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using MySql.Data.MySqlClient;
+using Classes;
+using Google.Protobuf.WellKnownTypes;
+using Mysqlx.Crud;
 
 namespace TUBAPP
 {
@@ -58,6 +61,21 @@ namespace TUBAPP
                     throw new InvalidOperationException("Unable to open database connection.");
             }
             return Conn!;
+        }
+
+        /// <summary>
+        /// Ajoute une station à la base de données.
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="Nom"></param>
+        /// <param name="Zone"></param>
+        /// <param name="Accessibilite"></param>
+        /// <param name="Correspondance"></param>
+        public static void AjoutStationBase(int Id, string Nom, string Zone, bool Accessibilite, bool Correspondance)
+        {
+            string reSQL = $"INSERT INTO Station(NomStation, Zone, Correspondance, Accessibilite) VALUES ({Id}, '{Nom}', '{Zone}', {Accessibilite}, {Correspondance})";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.ExecuteNonQuery();
         }
     }
 }
