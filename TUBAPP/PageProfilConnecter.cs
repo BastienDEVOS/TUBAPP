@@ -55,6 +55,11 @@ namespace TUBAPP
             this.Close(); // Masquer le formulaire de profil
         }
 
-       
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            InfoLigne infoLigne = new InfoLigne();
+            infoLigne.Show();
+            this.Close(); // Masquer le formulaire de profil
+        }
     }
 }

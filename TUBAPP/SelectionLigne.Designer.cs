@@ -112,6 +112,7 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 29;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // picIconeContact
             // 
@@ -199,6 +200,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // pictureBox2
             // 
@@ -210,6 +212,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // pictureBox3
             // 
@@ -221,6 +224,7 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // btn_retour
             // 
@@ -235,6 +239,7 @@
             btn_retour.TabIndex = 25;
             btn_retour.Text = "Retour";
             btn_retour.UseVisualStyleBackColor = false;
+            btn_retour.Click += btn_retour_Click;
             // 
             // labelhoraire
             // 

@@ -243,6 +243,7 @@
             Controls.Add(btnAjoutLigne);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "OptionAdminAjouter";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "OptionAdminAjouter";
             Load += OptionAdminAjouter_Load;
             flowLayoutPanel2.ResumeLayout(false);

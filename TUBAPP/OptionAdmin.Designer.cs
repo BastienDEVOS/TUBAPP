@@ -349,6 +349,7 @@
             Controls.Add(lblTitre);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "OptionAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "OptionAdmin";
             Load += OptionAdmin_Load;
             flowLayoutPanel2.ResumeLayout(false);

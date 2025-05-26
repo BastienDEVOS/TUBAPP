@@ -66,31 +66,32 @@
             flowLayoutPanel2.Controls.Add(pictureBox1);
             flowLayoutPanel2.Controls.Add(BtnHome);
             flowLayoutPanel2.Controls.Add(pictureBox5);
-            flowLayoutPanel2.Location = new Point(0, 742);
+            flowLayoutPanel2.Location = new Point(0, 594);
             flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(558, 81);
+            flowLayoutPanel2.Size = new Size(446, 65);
             flowLayoutPanel2.TabIndex = 29;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.GPS;
-            pictureBox1.Location = new Point(88, 6);
-            pictureBox1.Margin = new Padding(88, 0, 19, 0);
+            pictureBox1.Location = new Point(70, 5);
+            pictureBox1.Margin = new Padding(70, 0, 15, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(56, 70);
+            pictureBox1.Size = new Size(45, 56);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // BtnHome
             // 
             BtnHome.Image = Properties.Resources.homepng;
-            BtnHome.Location = new Point(232, 0);
-            BtnHome.Margin = new Padding(69, 0, 44, 0);
+            BtnHome.Location = new Point(185, 0);
+            BtnHome.Margin = new Padding(55, 0, 35, 0);
             BtnHome.Name = "BtnHome";
-            BtnHome.Size = new Size(99, 81);
+            BtnHome.Size = new Size(79, 65);
             BtnHome.SizeMode = PictureBoxSizeMode.Zoom;
             BtnHome.TabIndex = 3;
             BtnHome.TabStop = false;
@@ -99,10 +100,10 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.network;
-            pictureBox5.Location = new Point(413, 4);
-            pictureBox5.Margin = new Padding(38, 4, 19, 6);
+            pictureBox5.Location = new Point(329, 3);
+            pictureBox5.Margin = new Padding(30, 3, 15, 5);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(74, 72);
+            pictureBox5.Size = new Size(59, 58);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
@@ -117,7 +118,7 @@
             flowLayoutPanel1.Location = new Point(0, -1);
             flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(558, 119);
+            flowLayoutPanel1.Size = new Size(446, 95);
             flowLayoutPanel1.TabIndex = 28;
             // 
             // pictureBox3
@@ -127,7 +128,7 @@
             pictureBox3.Location = new Point(2, 2);
             pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(114, 116);
+            pictureBox3.Size = new Size(91, 93);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
@@ -139,10 +140,10 @@
             label1.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.ImeMode = ImeMode.NoControl;
-            label1.Location = new Point(164, 28);
-            label1.Margin = new Padding(46, 0, 46, 0);
+            label1.Location = new Point(132, 21);
+            label1.Margin = new Padding(37, 0, 37, 0);
             label1.Name = "label1";
-            label1.Size = new Size(223, 67);
+            label1.Size = new Size(189, 57);
             label1.TabIndex = 0;
             label1.Text = "TUBAPP";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -150,10 +151,10 @@
             // picIconeContact
             // 
             picIconeContact.Image = Properties.Resources.IconeProfilSelectionner;
-            picIconeContact.Location = new Point(437, 5);
-            picIconeContact.Margin = new Padding(4, 5, 4, 5);
+            picIconeContact.Location = new Point(361, 4);
+            picIconeContact.Margin = new Padding(3, 4, 3, 4);
             picIconeContact.Name = "picIconeContact";
-            picIconeContact.Size = new Size(79, 114);
+            picIconeContact.Size = new Size(63, 91);
             picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
             picIconeContact.TabIndex = 2;
             picIconeContact.TabStop = false;
@@ -162,10 +163,10 @@
             // 
             pictureBox4.Image = Properties.Resources.icone_profil;
             pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(0, 124);
+            pictureBox4.Location = new Point(0, 99);
             pictureBox4.Margin = new Padding(0);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(116, 116);
+            pictureBox4.Size = new Size(93, 93);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
@@ -176,10 +177,10 @@
             btnSeConnecter.FlatStyle = FlatStyle.Flat;
             btnSeConnecter.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnSeConnecter.ForeColor = Color.White;
-            btnSeConnecter.Location = new Point(80, 655);
-            btnSeConnecter.Margin = new Padding(4, 5, 4, 5);
+            btnSeConnecter.Location = new Point(64, 524);
+            btnSeConnecter.Margin = new Padding(3, 4, 3, 4);
             btnSeConnecter.Name = "btnSeConnecter";
-            btnSeConnecter.Size = new Size(391, 66);
+            btnSeConnecter.Size = new Size(313, 53);
             btnSeConnecter.TabIndex = 27;
             btnSeConnecter.Text = "Se déconnecter";
             btnSeConnecter.UseVisualStyleBackColor = false;
@@ -190,13 +191,14 @@
             btnCreerCompte.FlatStyle = FlatStyle.Flat;
             btnCreerCompte.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnCreerCompte.ForeColor = Color.White;
-            btnCreerCompte.Location = new Point(80, 566);
-            btnCreerCompte.Margin = new Padding(4, 5, 4, 5);
+            btnCreerCompte.Location = new Point(64, 453);
+            btnCreerCompte.Margin = new Padding(3, 4, 3, 4);
             btnCreerCompte.Name = "btnCreerCompte";
-            btnCreerCompte.Size = new Size(391, 66);
+            btnCreerCompte.Size = new Size(313, 53);
             btnCreerCompte.TabIndex = 26;
             btnCreerCompte.Text = "Option Admin";
             btnCreerCompte.UseVisualStyleBackColor = false;
+            btnCreerCompte.Click += btnCreerCompte_Click;
             // 
             // pnlCard
             // 
@@ -209,20 +211,19 @@
             pnlCard.Controls.Add(llbNaissance);
             pnlCard.Controls.Add(lblNaissanceValue);
             pnlCard.Controls.Add(btnModifier);
-            pnlCard.Location = new Point(80, 202);
-            pnlCard.Margin = new Padding(4, 5, 4, 5);
+            pnlCard.Location = new Point(64, 162);
+            pnlCard.Margin = new Padding(3, 4, 3, 4);
             pnlCard.Name = "pnlCard";
-            pnlCard.Size = new Size(391, 332);
+            pnlCard.Size = new Size(313, 266);
             pnlCard.TabIndex = 25;
             // 
             // lblInvite
             // 
             lblInvite.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             lblInvite.ForeColor = Color.FromArgb(234, 99, 93);
-            lblInvite.Location = new Point(62, 1);
-            lblInvite.Margin = new Padding(4, 0, 4, 0);
+            lblInvite.Location = new Point(50, 1);
             lblInvite.Name = "lblInvite";
-            lblInvite.Size = new Size(278, 58);
+            lblInvite.Size = new Size(222, 46);
             lblInvite.TabIndex = 0;
             lblInvite.Text = "ADMIN";
             lblInvite.TextAlign = ContentAlignment.MiddleCenter;
@@ -230,10 +231,9 @@
             // lblNomPrenom
             // 
             lblNomPrenom.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblNomPrenom.Location = new Point(62, 59);
-            lblNomPrenom.Margin = new Padding(4, 0, 4, 0);
+            lblNomPrenom.Location = new Point(50, 47);
             lblNomPrenom.Name = "lblNomPrenom";
-            lblNomPrenom.Size = new Size(278, 34);
+            lblNomPrenom.Size = new Size(222, 27);
             lblNomPrenom.TabIndex = 1;
             lblNomPrenom.Text = "NOM Prénom";
             lblNomPrenom.TextAlign = ContentAlignment.MiddleCenter;
@@ -242,10 +242,9 @@
             // 
             llbMail.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
             llbMail.LinkColor = Color.Black;
-            llbMail.Location = new Point(49, 109);
-            llbMail.Margin = new Padding(4, 0, 4, 0);
+            llbMail.Location = new Point(39, 87);
             llbMail.Name = "llbMail";
-            llbMail.Size = new Size(129, 34);
+            llbMail.Size = new Size(103, 27);
             llbMail.TabIndex = 2;
             llbMail.TabStop = true;
             llbMail.Text = "Adresse mail :";
@@ -253,10 +252,9 @@
             // lblMailValue
             // 
             lblMailValue.Font = new Font("Segoe UI", 9F);
-            lblMailValue.Location = new Point(178, 109);
-            lblMailValue.Margin = new Padding(4, 0, 4, 0);
+            lblMailValue.Location = new Point(142, 87);
             lblMailValue.Name = "lblMailValue";
-            lblMailValue.Size = new Size(120, 34);
+            lblMailValue.Size = new Size(96, 27);
             lblMailValue.TabIndex = 3;
             lblMailValue.Text = "Invité";
             // 
@@ -264,10 +262,9 @@
             // 
             llbNaissance.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
             llbNaissance.LinkColor = Color.Black;
-            llbNaissance.Location = new Point(49, 150);
-            llbNaissance.Margin = new Padding(4, 0, 4, 0);
+            llbNaissance.Location = new Point(39, 120);
             llbNaissance.Name = "llbNaissance";
-            llbNaissance.Size = new Size(186, 34);
+            llbNaissance.Size = new Size(149, 27);
             llbNaissance.TabIndex = 4;
             llbNaissance.TabStop = true;
             llbNaissance.Text = "Date de naissance :";
@@ -275,10 +272,9 @@
             // lblNaissanceValue
             // 
             lblNaissanceValue.Font = new Font("Segoe UI", 9F);
-            lblNaissanceValue.Location = new Point(49, 184);
-            lblNaissanceValue.Margin = new Padding(4, 0, 4, 0);
+            lblNaissanceValue.Location = new Point(39, 147);
             lblNaissanceValue.Name = "lblNaissanceValue";
-            lblNaissanceValue.Size = new Size(249, 34);
+            lblNaissanceValue.Size = new Size(199, 27);
             lblNaissanceValue.TabIndex = 5;
             lblNaissanceValue.Text = "Jours/Mois/Années";
             // 
@@ -287,10 +283,10 @@
             btnModifier.BackColor = Color.LightGray;
             btnModifier.FlatStyle = FlatStyle.Flat;
             btnModifier.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnModifier.Location = new Point(112, 245);
-            btnModifier.Margin = new Padding(4, 5, 4, 5);
+            btnModifier.Location = new Point(90, 196);
+            btnModifier.Margin = new Padding(3, 4, 3, 4);
             btnModifier.Name = "btnModifier";
-            btnModifier.Size = new Size(171, 50);
+            btnModifier.Size = new Size(137, 40);
             btnModifier.TabIndex = 6;
             btnModifier.Text = "Modifier";
             btnModifier.UseVisualStyleBackColor = false;
@@ -298,19 +294,18 @@
             // lblTitre
             // 
             lblTitre.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitre.Location = new Point(120, 131);
-            lblTitre.Margin = new Padding(4, 0, 4, 0);
+            lblTitre.Location = new Point(96, 105);
             lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(306, 66);
+            lblTitre.Size = new Size(245, 53);
             lblTitre.TabIndex = 24;
             lblTitre.Text = "Votre profil";
             lblTitre.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // PageProfilAdmin
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(558, 824);
+            ClientSize = new Size(446, 659);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(btnSeConnecter);
@@ -318,8 +313,8 @@
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4, 4, 4, 4);
             Name = "PageProfilAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PageProfilAdmin";
             Load += PageProfilAdmin_Load;
             flowLayoutPanel2.ResumeLayout(false);

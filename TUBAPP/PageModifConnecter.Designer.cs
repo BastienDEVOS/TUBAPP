@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageModifConnecter));
             btnConfirmer = new Button();
             pnlCard = new Panel();
             comboBox1 = new ComboBox();
@@ -333,7 +334,7 @@
             flowLayoutPanel2.Controls.Add(pictureBox1);
             flowLayoutPanel2.Controls.Add(BtnHome);
             flowLayoutPanel2.Controls.Add(pictureBox5);
-            flowLayoutPanel2.Location = new Point(0, 595);
+            flowLayoutPanel2.Location = new Point(0, 599);
             flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(446, 65);
@@ -349,6 +350,7 @@
             Controls.Add(lblTitre);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(flowLayoutPanel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PageModifConnecter";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PageModifConnecter";

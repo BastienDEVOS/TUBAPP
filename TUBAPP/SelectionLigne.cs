@@ -46,5 +46,38 @@ namespace TUBAPP
             // Libération des ressources du stylo
             pen.Dispose();
         }
+
+        private void btn_retour_Click(object sender, EventArgs e)
+        {
+            frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
+            FrmMenuPrincipal.Show();
+            this.Close(); // Ferme le formulaire actuel
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            InfoLigne infoLigne = new InfoLigne();
+            infoLigne.Show();
+            this.Close(); // Masquer le formulaire actuel
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
+            FrmMenuPrincipal.Show();
+            this.Close(); // Ferme le formulaire actuel
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            PageProfilAdmin pageProfilAdmin = new PageProfilAdmin();
+            pageProfilAdmin.Show();
+            this.Close(); // Ferme le formulaire actuel
+        }
     }
 }
