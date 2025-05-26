@@ -1,0 +1,63 @@
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using MySql.Data.MySqlClient;
+
+namespace TUBAPP
+{
+    public static class BD
+    {
+        private static MySqlConnection? Conn;
+        public static bool Connection()
+        {
+            string serveur = "10.1.139.236";
+            string login = "c2";
+            string mdp = "mdp";
+            string bd = "basec2";
+            string chaineConnexion = $"server={serveur};uid ={login};pwd={mdp};database={bd}";
+            Conn = new MySqlConnection(chaineConnexion);
+            try
+            {
+                Conn.Open();
+                Console.WriteLine("Connection réussi");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur de connection");
+                return false;
+            }
+        }
+
+        public static bool Deconecter()
+        {
+            try
+            {
+                if (Conn?.State == System.Data.ConnectionState.Open)
+                {
+                    Conn.Close();
+                    Conn.Dispose();
+                    Console.WriteLine("Déconection réussi");
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur de déconnexion");
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Gets the current open connection, or opens it if needed.
+        /// </summary>
+        public static MySqlConnection GetConnection()
+        {
+            if (Conn == null || Conn.State != System.Data.ConnectionState.Open)
+            {
+                if (!Connection())
+                    throw new InvalidOperationException("Unable to open database connection.");
+            }
+            return Conn!;
+        }
+    }
+}

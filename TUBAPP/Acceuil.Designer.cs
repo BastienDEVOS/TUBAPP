@@ -37,6 +37,9 @@
             pictureBox1 = new PictureBox();
             lblTUBAPP = new Label();
             picIconeContact = new PictureBox();
+            Connecter = new Label();
+            ConnecterNon = new Label();
+            ConnecterOui = new Label();
             flpNavbarre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
@@ -103,11 +106,31 @@
             picIconeContact.Name = "picIconeContact";
             picIconeContact.TabStop = false;
             // 
+            // Connecter
+            // 
+            resources.ApplyResources(Connecter, "Connecter");
+            Connecter.Name = "Connecter";
+            // 
+            // ConnecterNon
+            // 
+            resources.ApplyResources(ConnecterNon, "ConnecterNon");
+            ConnecterNon.BackColor = Color.Red;
+            ConnecterNon.Name = "ConnecterNon";
+            // 
+            // ConnecterOui
+            // 
+            resources.ApplyResources(ConnecterOui, "ConnecterOui");
+            ConnecterOui.BackColor = Color.Lime;
+            ConnecterOui.Name = "ConnecterOui";
+            // 
             // frmAcceuil
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(ConnecterOui);
+            Controls.Add(ConnecterNon);
+            Controls.Add(Connecter);
             Controls.Add(flpNavbarre);
             Controls.Add(lblBienvenue);
             Controls.Add(btnConnexion);
@@ -135,5 +158,8 @@
         private Label lblTUBAPP;
         private PictureBox picIconeContact;
         private PictureBox pictureBox1;
+        private Label Connecter;
+        private Label ConnecterNon;
+        private Label ConnecterOui;
     }
 }

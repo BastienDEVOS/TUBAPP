@@ -15,7 +15,7 @@ namespace TUBAPP
         {
             try
             {
-                using (var conn = DatabaseHelper.GetConnection())
+                using (var conn = BD.GetConnection())
                 {
                     var cmd = new MySqlCommand("SELECT * FROM Ligne", conn);
                     var adapter = new MySqlDataAdapter(cmd);

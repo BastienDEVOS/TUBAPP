@@ -37,7 +37,7 @@ namespace TUBAPP
             };
 
             // Ouvrir la page de profil
-            PageProfilConnecter pageCompte = new PageProfilConnecter();
+            PageProfilConnecter pageCompte = new PageProfilConnecter(user.Email);
             pageCompte.Show();
             this.Close(); // Masquer le formulaire principal
         }

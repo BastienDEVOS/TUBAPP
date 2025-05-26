@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnInvité.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="btnNvCompt.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 15pt, style=Bold</value>
@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnNvCompt.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="btnConnexion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -211,7 +211,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnConnexion.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="lblBienvenue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -244,7 +244,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblBienvenue.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
@@ -365,6 +365,102 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flpNavbarre.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Connecter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Connecter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Connecter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 587</value>
+  </data>
+  <data name="Connecter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 20</value>
+  </data>
+  <data name="Connecter.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="Connecter.Text" xml:space="preserve">
+    <value>Connexion BD ?</value>
+  </data>
+  <data name="&gt;&gt;Connecter.Name" xml:space="preserve">
+    <value>Connecter</value>
+  </data>
+  <data name="&gt;&gt;Connecter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Connecter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Connecter.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ConnecterNon.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ConnecterNon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ConnecterNon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 587</value>
+  </data>
+  <data name="ConnecterNon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="ConnecterNon.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ConnecterNon.Text" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="ConnecterNon.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ConnecterNon.Name" xml:space="preserve">
+    <value>ConnecterNon</value>
+  </data>
+  <data name="&gt;&gt;ConnecterNon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ConnecterNon.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ConnecterNon.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ConnecterOui.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ConnecterOui.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ConnecterOui.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 587</value>
+  </data>
+  <data name="ConnecterOui.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 20</value>
+  </data>
+  <data name="ConnecterOui.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="ConnecterOui.Text" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="ConnecterOui.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ConnecterOui.Name" xml:space="preserve">
+    <value>ConnecterOui</value>
+  </data>
+  <data name="&gt;&gt;ConnecterOui.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ConnecterOui.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ConnecterOui.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

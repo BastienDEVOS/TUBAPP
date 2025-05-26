@@ -48,7 +48,7 @@ namespace TUBAPP
 
             try
             {
-                using (var conn = DatabaseHelper.GetConnection())
+                using (var conn = BD.GetConnection())
                 {
                     var cmd = new MySql.Data.MySqlClient.MySqlCommand(
                         "SELECT COUNT(*) FROM Client WHERE MailClient = @Email AND MotDePasse = @Password", conn);

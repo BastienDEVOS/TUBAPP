@@ -16,7 +16,7 @@ namespace TUBAPP
         {
             try
             {
-                using (var conn = DatabaseHelper.GetConnection())
+                using (var conn = BD.GetConnection())
                 {
                     var cmd = new MySql.Data.MySqlClient.MySqlCommand(
                         "SELECT NomClient, PrenomClient, MailClient, DateNaissanceClient FROM Client WHERE MailClient=@Mail", conn);

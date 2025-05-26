@@ -15,7 +15,7 @@ namespace TUBAPP
 
             try
             {
-                using (var conn = DatabaseHelper.GetConnection())
+                using (var conn = BD.GetConnection())
                 {
                     var cmd = new MySqlCommand("DELETE FROM Ligne WHERE IdLigne=@IdLigne", conn);
                     cmd.Parameters.AddWithValue("@IdLigne", idLigne);

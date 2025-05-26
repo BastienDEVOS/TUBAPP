@@ -11,19 +11,18 @@ namespace TUBAPP
 
         private void frmAcceuil_Load(object sender, EventArgs e)
         {
-            try
-            {
-                using (var conn = DatabaseHelper.GetConnection())
+                BD.Connection();
+                try
                 {
-                    var cmd = new MySqlCommand("SELECT COUNT(*) FROM Client", conn);
-                    int clientCount = Convert.ToInt32(cmd.ExecuteScalar());
-                    this.Text = $"TUBAPP - {clientCount} clients inscrits";
+                    using (var conn = BD.GetConnection())
+                    {
+                        ConnecterOui.Visible = true;
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur lors de la connexion à la base de données : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                catch (Exception ex)
+                {
+                    ConnecterNon.Visible = true;
+                }
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
