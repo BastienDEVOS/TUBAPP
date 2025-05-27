@@ -84,13 +84,11 @@
             resources.ApplyResources(btnRetour, "btnRetour");
             btnRetour.Name = "btnRetour";
             btnRetour.UseVisualStyleBackColor = true;
-            btnRetour.MouseClick += btnRetour_MouseClick;
             // 
             // txtIdentifiant
             // 
             resources.ApplyResources(txtIdentifiant, "txtIdentifiant");
             txtIdentifiant.Name = "txtIdentifiant";
-            txtIdentifiant.TextChanged += txtIdentifiant_TextChanged;
             // 
             // txtMDP
             // 
@@ -121,7 +119,6 @@
             btn_retour.Name = "btn_retour";
             btn_retour.UseVisualStyleBackColor = false;
             btn_retour.Click += btn_retour_Click;
-            btn_retour.MouseClick += btnRetour_MouseClick;
             // 
             // frmConnexion
             // 
@@ -139,7 +136,6 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmConnexion";
-            Load += Form2_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
