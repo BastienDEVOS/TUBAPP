@@ -61,5 +61,13 @@ namespace TUBAPP
             infoLigne.Show();
             this.Close(); // Masquer le formulaire de profil
         }
+
+        private void btnSeConnecter_Click(object sender, EventArgs e)
+        {
+            frmAcceuil FrmAcceuil = new frmAcceuil();
+            FrmAcceuil.Show();
+
+            this.Close();
+        }
     }
 }

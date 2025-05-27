@@ -313,6 +313,7 @@
             btnSeConnecter.TabIndex = 27;
             btnSeConnecter.Text = "Se déconnecter";
             btnSeConnecter.UseVisualStyleBackColor = false;
+            btnSeConnecter.Click += btnSeConnecter_Click;
             // 
             // frmPageProfilConnecter
             // 
