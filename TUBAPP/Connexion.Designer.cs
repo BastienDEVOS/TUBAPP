@@ -88,7 +88,9 @@
             // 
             // txtIdentifiant
             // 
+            txtIdentifiant.BackColor = Color.White;
             resources.ApplyResources(txtIdentifiant, "txtIdentifiant");
+            txtIdentifiant.ForeColor = Color.Black;
             txtIdentifiant.Name = "txtIdentifiant";
             txtIdentifiant.TextChanged += txtIdentifiant_TextChanged;
             // 
