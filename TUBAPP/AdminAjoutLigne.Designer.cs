@@ -66,7 +66,6 @@
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(446, 65);
             flowLayoutPanel2.TabIndex = 45;
-            flowLayoutPanel2.Paint += this.flowLayoutPanel2_Paint;
             // 
             // pictureBox1
             // 
@@ -114,7 +113,6 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(446, 95);
             flowLayoutPanel1.TabIndex = 44;
-            flowLayoutPanel1.Paint += this.flowLayoutPanel1_Paint;
             // 
             // pictureBox3
             // 
@@ -179,7 +177,6 @@
             btnRetour.TabIndex = 48;
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
-            btnRetour.Click += this.btnRetour_Click;
             // 
             // lblTitre
             // 
@@ -200,7 +197,6 @@
             label2.TabIndex = 49;
             label2.Text = "Ajouter";
             label2.TextAlign = ContentAlignment.MiddleCenter;
-            label2.Click += label2_Click;
             // 
             // txtNomLigne
             // 
@@ -209,7 +205,6 @@
             txtNomLigne.PlaceholderText = "Nom de ligne";
             txtNomLigne.Size = new Size(292, 27);
             txtNomLigne.TabIndex = 50;
-            txtNomLigne.TextChanged += textBox1_TextChanged;
             // 
             // txtZoneLigne
             // 
@@ -250,7 +245,6 @@
             Controls.Add(btnRetour);
             Name = "AdminAjoutLigne";
             Text = "AdminAjoutLigne";
-            Load += AdminAjoutLigne_Load;
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).EndInit();
