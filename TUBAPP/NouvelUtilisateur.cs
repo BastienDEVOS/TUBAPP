@@ -21,11 +21,46 @@ namespace TUBAPP
 
         private void btn_Connecter_Click(object sender, EventArgs e)
         {
-            frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
-            FrmMenuPrincipal.Show();
+            string email = txtAdresseMail.Text.Trim();
+            string mdp = txtMDP.Text;
 
-            this.Close();
+            if (string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(mdp))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                using (var conn = BD.GetConnection())
+                {
+                    var cmd = new MySql.Data.MySqlClient.MySqlCommand(
+                        "INSERT INTO Client (MailClient, MotDePasse) " +
+                        "VALUES (@Mail, @Mdp)", conn);
+                    cmd.Parameters.AddWithValue("@Mail", email);
+                    cmd.Parameters.AddWithValue("@Mdp", mdp);
+
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Compte créé avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
+                        FrmMenuPrincipal.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur lors de la création du compte.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la création du compte : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         //verification de l'état des champs et permet la connection de l'utilisateur
         private void verif()
