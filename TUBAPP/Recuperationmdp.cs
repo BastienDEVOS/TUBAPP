@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace TUBAPP
 {
-    public partial class Recuperationmdp : Form
+    public partial class frmRecuperationmdp : Form
     {
         private bool isNouveauMdpVisible = false;
         private bool isConfirmerMdpVisible = false;
 
-        public Recuperationmdp()
+        public frmRecuperationmdp()
         {
             InitializeComponent();
         }

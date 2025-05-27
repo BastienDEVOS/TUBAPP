@@ -2,9 +2,9 @@
 
 namespace TUBAPP
 {
-    public partial class OptionAdminModif : Form
+    public partial class frmOptionAdminModif : Form
     {
-        public OptionAdminModif()
+        public frmOptionAdminModif()
         {
             InitializeComponent();
         }
@@ -15,7 +15,7 @@ namespace TUBAPP
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
-            OptionAdmin optionAdmin = new OptionAdmin();
+            frmOptionAdmin optionAdmin = new frmOptionAdmin();
             optionAdmin.Show();
             this.Close();
         }
@@ -29,7 +29,7 @@ namespace TUBAPP
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            InfoLigne infoLigne = new InfoLigne();
+            frmInfoLigne infoLigne = new frmInfoLigne();
             infoLigne.Show();
             this.Close();
 

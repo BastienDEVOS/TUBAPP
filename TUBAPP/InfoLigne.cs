@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace TUBAPP
 {
-    public partial class InfoLigne : Form
+    public partial class frmInfoLigne : Form
     {
-        public InfoLigne()
+        public frmInfoLigne()
         {
             InitializeComponent();
         }
@@ -54,17 +54,17 @@ namespace TUBAPP
 
             if (currentUser == null)
             {
-                PageProfilInviter pageProfilInviter = new PageProfilInviter(new Utilisateur(true));
+                frmPageProfilInviter pageProfilInviter = new frmPageProfilInviter(new Utilisateur(true));
                 pageProfilInviter.Show();
             }
             else if (currentUser.EstAdmin)
             {
-                PageProfilAdmin pageProfilAdmin = new PageProfilAdmin();
+                frmPageProfilAdmin pageProfilAdmin = new frmPageProfilAdmin();
                 pageProfilAdmin.Show();
             }
             else
             {
-                PageProfilConnecter pageProfilConnecter = new PageProfilConnecter(currentUser.Email);
+                frmPageProfilConnecter pageProfilConnecter = new frmPageProfilConnecter(currentUser.Email);
                 pageProfilConnecter.Show();
             }
 

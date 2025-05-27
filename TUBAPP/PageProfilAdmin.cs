@@ -2,9 +2,9 @@
 
 namespace TUBAPP
 {
-    public partial class PageProfilAdmin : Form
+    public partial class frmPageProfilAdmin : Form
     {
-        public PageProfilAdmin()
+        public frmPageProfilAdmin()
         {
             InitializeComponent();
         }
@@ -37,14 +37,14 @@ namespace TUBAPP
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            InfoLigne infoLigne = new InfoLigne();
+            frmInfoLigne infoLigne = new frmInfoLigne();
             infoLigne.Show();
             this.Close(); // Masquer le formulaire de profil admin
         }
 
         private void btnCreerCompte_Click(object sender, EventArgs e)
         {
-            OptionAdmin optionAdmin = new OptionAdmin();
+            frmOptionAdmin optionAdmin = new frmOptionAdmin();
             optionAdmin.Show();
             this.Close(); // Masquer le formulaire de profil admin
         }

@@ -21,7 +21,7 @@ namespace TUBAPP
 
         private void VoirItineraire_Click(object sender, EventArgs e)
         {
-            SelectionLigne selectionLigne = new SelectionLigne();
+            frmSelectionLigne selectionLigne = new frmSelectionLigne();
             selectionLigne.Show();
             this.Close();  // Masquer le formulaire principal
         }
@@ -32,17 +32,17 @@ namespace TUBAPP
 
             if (currentUser == null)
             {
-                PageProfilInviter pageProfilInviter = new PageProfilInviter(new Utilisateur(true));
+                frmPageProfilInviter pageProfilInviter = new frmPageProfilInviter(new Utilisateur(true));
                 pageProfilInviter.Show();
             }
             else if (currentUser.EstAdmin)
             {
-                PageProfilAdmin pageProfilAdmin = new PageProfilAdmin();
+                frmPageProfilAdmin pageProfilAdmin = new frmPageProfilAdmin();
                 pageProfilAdmin.Show();
             }
             else
             {
-                PageProfilConnecter pageProfilConnecter = new PageProfilConnecter(currentUser.Email);
+                frmPageProfilConnecter pageProfilConnecter = new frmPageProfilConnecter(currentUser.Email);
                 pageProfilConnecter.Show();
             }
 
@@ -51,7 +51,7 @@ namespace TUBAPP
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            InfoLigne infoLigne = new InfoLigne();
+            frmInfoLigne infoLigne = new frmInfoLigne();
             infoLigne.Show();
 
             this.Hide(); // Masquer le formulaire principal

@@ -1,6 +1,6 @@
 ﻿namespace TUBAPP
 {
-    partial class PageModifConnecter
+    partial class frmPageModifConnecter
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageModifConnecter));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPageModifConnecter));
             btnConfirmer = new Button();
             pnlCard = new Panel();
             comboBox1 = new ComboBox();
@@ -70,10 +70,10 @@
             btnConfirmer.FlatStyle = FlatStyle.Flat;
             btnConfirmer.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnConfirmer.ForeColor = Color.White;
-            btnConfirmer.Location = new Point(64, 508);
-            btnConfirmer.Margin = new Padding(3, 4, 3, 4);
+            btnConfirmer.Location = new Point(104, 813);
+            btnConfirmer.Margin = new Padding(5, 6, 5, 6);
             btnConfirmer.Name = "btnConfirmer";
-            btnConfirmer.Size = new Size(313, 53);
+            btnConfirmer.Size = new Size(509, 85);
             btnConfirmer.TabIndex = 32;
             btnConfirmer.Text = "Confirmer les modifications";
             btnConfirmer.UseVisualStyleBackColor = false;
@@ -94,27 +94,29 @@
             pnlCard.Controls.Add(llbMail);
             pnlCard.Controls.Add(llbNaissance);
             pnlCard.Controls.Add(btnModifier);
-            pnlCard.Location = new Point(64, 163);
-            pnlCard.Margin = new Padding(3, 4, 3, 4);
+            pnlCard.Location = new Point(104, 261);
+            pnlCard.Margin = new Padding(5, 6, 5, 6);
             pnlCard.Name = "pnlCard";
-            pnlCard.Size = new Size(313, 312);
+            pnlCard.Size = new Size(507, 498);
             pnlCard.TabIndex = 31;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(141, 203);
+            comboBox1.Location = new Point(229, 325);
+            comboBox1.Margin = new Padding(5, 5, 5, 5);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
+            comboBox1.Size = new Size(243, 40);
             comboBox1.TabIndex = 15;
             // 
             // dtpNaissance
             // 
-            dtpNaissance.Location = new Point(141, 167);
+            dtpNaissance.Location = new Point(229, 267);
+            dtpNaissance.Margin = new Padding(5, 5, 5, 5);
             dtpNaissance.MaxDate = new DateTime(2025, 12, 31, 0, 0, 0, 0);
             dtpNaissance.MinDate = new DateTime(2001, 1, 1, 0, 0, 0, 0);
             dtpNaissance.Name = "dtpNaissance";
-            dtpNaissance.Size = new Size(151, 27);
+            dtpNaissance.Size = new Size(243, 39);
             dtpNaissance.TabIndex = 14;
             dtpNaissance.Value = new DateTime(2004, 1, 17, 0, 0, 0, 0);
             dtpNaissance.ValueChanged += dateTimePicker1_ValueChanged;
@@ -123,9 +125,10 @@
             // 
             llbPrenom.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
             llbPrenom.LinkColor = Color.Black;
-            llbPrenom.Location = new Point(19, 62);
+            llbPrenom.Location = new Point(31, 99);
+            llbPrenom.Margin = new Padding(5, 0, 5, 0);
             llbPrenom.Name = "llbPrenom";
-            llbPrenom.Size = new Size(103, 27);
+            llbPrenom.Size = new Size(167, 43);
             llbPrenom.TabIndex = 13;
             llbPrenom.TabStop = true;
             llbPrenom.Text = "Prenom :";
@@ -135,41 +138,46 @@
             // 
             linkLabel2.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
             linkLabel2.LinkColor = Color.Black;
-            linkLabel2.Location = new Point(19, 95);
+            linkLabel2.Location = new Point(31, 152);
+            linkLabel2.Margin = new Padding(5, 0, 5, 0);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(103, 27);
+            linkLabel2.Size = new Size(167, 43);
             linkLabel2.TabIndex = 12;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Nom :";
             // 
             // txtPrenom
             // 
-            txtPrenom.Location = new Point(141, 62);
+            txtPrenom.Location = new Point(229, 99);
+            txtPrenom.Margin = new Padding(5, 5, 5, 5);
             txtPrenom.Name = "txtPrenom";
-            txtPrenom.Size = new Size(151, 27);
+            txtPrenom.Size = new Size(243, 39);
             txtPrenom.TabIndex = 11;
             // 
             // txtNom
             // 
-            txtNom.Location = new Point(141, 95);
+            txtNom.Location = new Point(229, 152);
+            txtNom.Margin = new Padding(5, 5, 5, 5);
             txtNom.Name = "txtNom";
-            txtNom.Size = new Size(151, 27);
+            txtNom.Size = new Size(243, 39);
             txtNom.TabIndex = 10;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(141, 128);
+            txtEmail.Location = new Point(229, 205);
+            txtEmail.Margin = new Padding(5, 5, 5, 5);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(151, 27);
+            txtEmail.Size = new Size(243, 39);
             txtEmail.TabIndex = 9;
             // 
             // linkLabel1
             // 
             linkLabel1.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
             linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(19, 204);
+            linkLabel1.Location = new Point(31, 326);
+            linkLabel1.Margin = new Padding(5, 0, 5, 0);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(112, 27);
+            linkLabel1.Size = new Size(182, 43);
             linkLabel1.TabIndex = 7;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Ligne Favorite :";
@@ -178,9 +186,10 @@
             // 
             lblInvite.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             lblInvite.ForeColor = Color.Lime;
-            lblInvite.Location = new Point(50, -5);
+            lblInvite.Location = new Point(81, -8);
+            lblInvite.Margin = new Padding(5, 0, 5, 0);
             lblInvite.Name = "lblInvite";
-            lblInvite.Size = new Size(222, 46);
+            lblInvite.Size = new Size(361, 74);
             lblInvite.TabIndex = 0;
             lblInvite.Text = "CONNECTER";
             lblInvite.TextAlign = ContentAlignment.MiddleCenter;
@@ -189,9 +198,10 @@
             // 
             llbMail.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
             llbMail.LinkColor = Color.Black;
-            llbMail.Location = new Point(19, 131);
+            llbMail.Location = new Point(31, 210);
+            llbMail.Margin = new Padding(5, 0, 5, 0);
             llbMail.Name = "llbMail";
-            llbMail.Size = new Size(103, 27);
+            llbMail.Size = new Size(167, 43);
             llbMail.TabIndex = 2;
             llbMail.TabStop = true;
             llbMail.Text = "Adresse mail :";
@@ -200,9 +210,10 @@
             // 
             llbNaissance.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
             llbNaissance.LinkColor = Color.Black;
-            llbNaissance.Location = new Point(5, 167);
+            llbNaissance.Location = new Point(8, 267);
+            llbNaissance.Margin = new Padding(5, 0, 5, 0);
             llbNaissance.Name = "llbNaissance";
-            llbNaissance.Size = new Size(149, 27);
+            llbNaissance.Size = new Size(242, 43);
             llbNaissance.TabIndex = 4;
             llbNaissance.TabStop = true;
             llbNaissance.Text = "Date de naissance :";
@@ -212,10 +223,10 @@
             btnModifier.BackColor = Color.LightGray;
             btnModifier.FlatStyle = FlatStyle.Flat;
             btnModifier.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnModifier.Location = new Point(39, 257);
-            btnModifier.Margin = new Padding(3, 4, 3, 4);
+            btnModifier.Location = new Point(63, 411);
+            btnModifier.Margin = new Padding(5, 6, 5, 6);
             btnModifier.Name = "btnModifier";
-            btnModifier.Size = new Size(222, 40);
+            btnModifier.Size = new Size(361, 64);
             btnModifier.TabIndex = 6;
             btnModifier.Text = "Annuler la modification";
             btnModifier.UseVisualStyleBackColor = false;
@@ -224,9 +235,10 @@
             // lblTitre
             // 
             lblTitre.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitre.Location = new Point(96, 106);
+            lblTitre.Location = new Point(156, 170);
+            lblTitre.Margin = new Padding(5, 0, 5, 0);
             lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(245, 53);
+            lblTitre.Size = new Size(398, 85);
             lblTitre.TabIndex = 30;
             lblTitre.Text = "Votre profil";
             lblTitre.TextAlign = ContentAlignment.MiddleCenter;
@@ -238,10 +250,10 @@
             label1.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.ImeMode = ImeMode.NoControl;
-            label1.Location = new Point(132, 21);
-            label1.Margin = new Padding(37, 0, 37, 0);
+            label1.Location = new Point(214, 34);
+            label1.Margin = new Padding(60, 0, 60, 0);
             label1.Name = "label1";
-            label1.Size = new Size(189, 57);
+            label1.Size = new Size(297, 89);
             label1.TabIndex = 0;
             label1.Text = "TUBAPP";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -249,10 +261,10 @@
             // picIconeContact
             // 
             picIconeContact.Image = Properties.Resources.IconeProfilSelectionner;
-            picIconeContact.Location = new Point(361, 4);
-            picIconeContact.Margin = new Padding(3, 4, 3, 4);
+            picIconeContact.Location = new Point(576, 6);
+            picIconeContact.Margin = new Padding(5, 6, 5, 6);
             picIconeContact.Name = "picIconeContact";
-            picIconeContact.Size = new Size(63, 91);
+            picIconeContact.Size = new Size(102, 146);
             picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
             picIconeContact.TabIndex = 2;
             picIconeContact.TabStop = false;
@@ -261,10 +273,10 @@
             // 
             pictureBox4.Image = Properties.Resources.icone_profil;
             pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(0, 99);
+            pictureBox4.Location = new Point(0, 158);
             pictureBox4.Margin = new Padding(0);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(93, 93);
+            pictureBox4.Size = new Size(151, 149);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
@@ -277,19 +289,17 @@
             flowLayoutPanel1.Controls.Add(picIconeContact);
             flowLayoutPanel1.Controls.Add(pictureBox4);
             flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(446, 95);
+            flowLayoutPanel1.Size = new Size(725, 152);
             flowLayoutPanel1.TabIndex = 33;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.logo1;
             pictureBox3.ImeMode = ImeMode.NoControl;
-            pictureBox3.Location = new Point(2, 2);
-            pictureBox3.Margin = new Padding(2);
+            pictureBox3.Location = new Point(3, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(91, 93);
+            pictureBox3.Size = new Size(148, 149);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
@@ -298,10 +308,10 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.GPS;
-            pictureBox1.Location = new Point(70, 5);
-            pictureBox1.Margin = new Padding(70, 0, 15, 0);
+            pictureBox1.Location = new Point(114, 8);
+            pictureBox1.Margin = new Padding(114, 0, 24, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(45, 56);
+            pictureBox1.Size = new Size(73, 90);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -309,10 +319,10 @@
             // BtnHome
             // 
             BtnHome.Image = Properties.Resources.homepng;
-            BtnHome.Location = new Point(185, 0);
-            BtnHome.Margin = new Padding(55, 0, 35, 0);
+            BtnHome.Location = new Point(300, 0);
+            BtnHome.Margin = new Padding(89, 0, 57, 0);
             BtnHome.Name = "BtnHome";
-            BtnHome.Size = new Size(79, 65);
+            BtnHome.Size = new Size(128, 104);
             BtnHome.SizeMode = PictureBoxSizeMode.Zoom;
             BtnHome.TabIndex = 3;
             BtnHome.TabStop = false;
@@ -320,10 +330,10 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.network;
-            pictureBox5.Location = new Point(329, 3);
-            pictureBox5.Margin = new Padding(30, 3, 15, 5);
+            pictureBox5.Location = new Point(534, 5);
+            pictureBox5.Margin = new Padding(49, 5, 24, 8);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(59, 58);
+            pictureBox5.Size = new Size(96, 93);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
@@ -334,26 +344,26 @@
             flowLayoutPanel2.Controls.Add(pictureBox1);
             flowLayoutPanel2.Controls.Add(BtnHome);
             flowLayoutPanel2.Controls.Add(pictureBox5);
-            flowLayoutPanel2.Location = new Point(0, 599);
-            flowLayoutPanel2.Margin = new Padding(2);
+            flowLayoutPanel2.Location = new Point(0, 958);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(446, 65);
+            flowLayoutPanel2.Size = new Size(725, 104);
             flowLayoutPanel2.TabIndex = 34;
             // 
-            // PageModifConnecter
+            // frmPageModifConnecter
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(449, 663);
+            ClientSize = new Size(730, 1061);
             Controls.Add(btnConfirmer);
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(flowLayoutPanel2);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "PageModifConnecter";
+            Margin = new Padding(5, 5, 5, 5);
+            Name = "frmPageModifConnecter";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "PageModifConnecter";
+            Text = "Page modif connecter";
             Load += PageModifConnecter_Load;
             pnlCard.ResumeLayout(false);
             pnlCard.PerformLayout();

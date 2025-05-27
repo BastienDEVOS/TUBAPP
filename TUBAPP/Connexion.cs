@@ -79,7 +79,7 @@ namespace TUBAPP
 
         private void btnMdpOublie_Click(object sender, EventArgs e)
         {
-            Recuperationmdp recuperationForm = new Recuperationmdp();
+            frmRecuperationmdp recuperationForm = new frmRecuperationmdp();
             recuperationForm.Show();
             this.Hide();
         }

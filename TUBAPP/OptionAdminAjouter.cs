@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TUBAPP
 {
-    public partial class OptionAdminAjouter : Form
+    public partial class frmOptionAdminAjouter : Form
     {
-        public OptionAdminAjouter()
+        public frmOptionAdminAjouter()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace TUBAPP
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
-            OptionAdmin optionAdmin = new OptionAdmin();
+            frmOptionAdmin optionAdmin = new frmOptionAdmin();
             optionAdmin.Show();
             this.Close();
         }

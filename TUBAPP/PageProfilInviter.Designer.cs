@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace TUBAPP
 {
-    partial class PageProfilInviter
+    partial class frmPageProfilInviter
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -20,7 +20,7 @@ namespace TUBAPP
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageProfilInviter));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPageProfilInviter));
             picIconeContact = new PictureBox();
             lblTitre = new Label();
             pnlCard = new Panel();
@@ -217,7 +217,7 @@ namespace TUBAPP
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
             // 
-            // PageProfilInviter
+            // frmPageProfilInviter
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -234,8 +234,9 @@ namespace TUBAPP
             Margin = new Padding(5, 6, 5, 6);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "PageProfilInviter";
+            Name = "frmPageProfilInviter";
             StartPosition = FormStartPosition.CenterScreen;
+            Text = "Page profil inviter";
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             pnlCard.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);

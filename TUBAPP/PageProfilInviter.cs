@@ -11,11 +11,11 @@ using TUBAPP; // Assurez-vous que le bon espace de noms est utilisé pour les re
 
 namespace TUBAPP
 {
-    internal partial class PageProfilInviter : Form
+    internal partial class frmPageProfilInviter : Form
     {
         private readonly Utilisateur utilisateur;
 
-        public PageProfilInviter(Utilisateur user)
+        public frmPageProfilInviter(Utilisateur user)
         {
             InitializeComponent();
             utilisateur = user ?? throw new ArgumentNullException(nameof(user));

@@ -1,6 +1,6 @@
 ﻿namespace TUBAPP
 {
-    partial class Recuperationmdp
+    partial class frmRecuperationmdp
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Label lblTitre;
@@ -20,7 +20,7 @@
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Recuperationmdp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecuperationmdp));
             lblTitre = new Label();
             txtEmail = new TextBox();
             txtCode = new TextBox();
@@ -44,9 +44,10 @@
             // lblTitre
             // 
             lblTitre.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitre.Location = new Point(57, 110);
+            lblTitre.Location = new Point(93, 176);
+            lblTitre.Margin = new Padding(5, 0, 5, 0);
             lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(320, 82);
+            lblTitre.Size = new Size(520, 131);
             lblTitre.TabIndex = 1;
             lblTitre.Text = "Récupération de\nMot de passe";
             lblTitre.TextAlign = ContentAlignment.MiddleCenter;
@@ -58,10 +59,11 @@
             txtEmail.BorderStyle = BorderStyle.FixedSingle;
             txtEmail.Font = new Font("Segoe UI", 12F);
             txtEmail.ForeColor = Color.Gray;
-            txtEmail.Location = new Point(64, 241);
+            txtEmail.Location = new Point(104, 386);
+            txtEmail.Margin = new Padding(5, 5, 5, 5);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Adresse mail";
-            txtEmail.Size = new Size(313, 34);
+            txtEmail.Size = new Size(507, 50);
             txtEmail.TabIndex = 2;
             // 
             // txtCode
@@ -70,10 +72,11 @@
             txtCode.BorderStyle = BorderStyle.FixedSingle;
             txtCode.Font = new Font("Segoe UI", 12F);
             txtCode.ForeColor = Color.Gray;
-            txtCode.Location = new Point(64, 292);
+            txtCode.Location = new Point(104, 467);
+            txtCode.Margin = new Padding(5, 5, 5, 5);
             txtCode.Name = "txtCode";
             txtCode.PlaceholderText = "Code de vérification";
-            txtCode.Size = new Size(313, 34);
+            txtCode.Size = new Size(507, 50);
             txtCode.TabIndex = 3;
             // 
             // txtNouveauMdp
@@ -82,10 +85,11 @@
             txtNouveauMdp.BorderStyle = BorderStyle.FixedSingle;
             txtNouveauMdp.Font = new Font("Segoe UI", 12F);
             txtNouveauMdp.ForeColor = Color.Gray;
-            txtNouveauMdp.Location = new Point(64, 342);
+            txtNouveauMdp.Location = new Point(104, 547);
+            txtNouveauMdp.Margin = new Padding(5, 5, 5, 5);
             txtNouveauMdp.Name = "txtNouveauMdp";
             txtNouveauMdp.PlaceholderText = "Nouveau Mot de passe";
-            txtNouveauMdp.Size = new Size(209, 34);
+            txtNouveauMdp.Size = new Size(338, 50);
             txtNouveauMdp.TabIndex = 4;
             txtNouveauMdp.UseSystemPasswordChar = true;
             // 
@@ -95,10 +99,11 @@
             txtConfirmerMdp.BorderStyle = BorderStyle.FixedSingle;
             txtConfirmerMdp.Font = new Font("Segoe UI", 12F);
             txtConfirmerMdp.ForeColor = Color.Gray;
-            txtConfirmerMdp.Location = new Point(64, 392);
+            txtConfirmerMdp.Location = new Point(104, 627);
+            txtConfirmerMdp.Margin = new Padding(5, 5, 5, 5);
             txtConfirmerMdp.Name = "txtConfirmerMdp";
             txtConfirmerMdp.PlaceholderText = "Confirmation Mot de passe";
-            txtConfirmerMdp.Size = new Size(209, 34);
+            txtConfirmerMdp.Size = new Size(338, 50);
             txtConfirmerMdp.TabIndex = 6;
             txtConfirmerMdp.UseSystemPasswordChar = true;
             // 
@@ -110,9 +115,10 @@
             btnConnexion.FlatStyle = FlatStyle.Flat;
             btnConnexion.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnConnexion.ForeColor = Color.White;
-            btnConnexion.Location = new Point(64, 490);
+            btnConnexion.Location = new Point(104, 784);
+            btnConnexion.Margin = new Padding(5, 5, 5, 5);
             btnConnexion.Name = "btnConnexion";
-            btnConnexion.Size = new Size(313, 40);
+            btnConnexion.Size = new Size(509, 64);
             btnConnexion.TabIndex = 8;
             btnConnexion.Text = "Connexion";
             btnConnexion.UseVisualStyleBackColor = false;
@@ -126,9 +132,10 @@
             btnRetour.FlatStyle = FlatStyle.Flat;
             btnRetour.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnRetour.ForeColor = Color.White;
-            btnRetour.Location = new Point(64, 556);
+            btnRetour.Location = new Point(104, 890);
+            btnRetour.Margin = new Padding(5, 5, 5, 5);
             btnRetour.Name = "btnRetour";
-            btnRetour.Size = new Size(313, 40);
+            btnRetour.Size = new Size(509, 64);
             btnRetour.TabIndex = 9;
             btnRetour.Text = "RETOUR";
             btnRetour.UseVisualStyleBackColor = false;
@@ -140,20 +147,18 @@
             flowLayoutPanel1.Controls.Add(pictureBox3);
             flowLayoutPanel1.Controls.Add(label1);
             flowLayoutPanel1.Controls.Add(pictureBox4);
-            flowLayoutPanel1.Location = new Point(1, 0);
-            flowLayoutPanel1.Margin = new Padding(2);
+            flowLayoutPanel1.Location = new Point(2, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(446, 95);
+            flowLayoutPanel1.Size = new Size(725, 152);
             flowLayoutPanel1.TabIndex = 18;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.logo1;
             pictureBox3.ImeMode = ImeMode.NoControl;
-            pictureBox3.Location = new Point(2, 2);
-            pictureBox3.Margin = new Padding(2);
+            pictureBox3.Location = new Point(3, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(91, 93);
+            pictureBox3.Size = new Size(148, 149);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
@@ -165,10 +170,10 @@
             label1.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.ImeMode = ImeMode.NoControl;
-            label1.Location = new Point(132, 20);
-            label1.Margin = new Padding(37, 0, 37, 0);
+            label1.Location = new Point(214, 33);
+            label1.Margin = new Padding(60, 0, 60, 0);
             label1.Name = "label1";
-            label1.Size = new Size(189, 57);
+            label1.Size = new Size(297, 89);
             label1.TabIndex = 0;
             label1.Text = "TUBAPP";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -177,10 +182,10 @@
             // 
             pictureBox4.Image = Properties.Resources.icone_profil;
             pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(0, 97);
+            pictureBox4.Location = new Point(571, 0);
             pictureBox4.Margin = new Padding(0);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(93, 93);
+            pictureBox4.Size = new Size(151, 149);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
@@ -188,10 +193,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.eye_crossed;
-            pictureBox2.Location = new Point(301, 392);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Location = new Point(489, 627);
+            pictureBox2.Margin = new Padding(5, 6, 5, 6);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(63, 34);
+            pictureBox2.Size = new Size(102, 54);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 20;
             pictureBox2.TabStop = false;
@@ -200,20 +205,20 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.eye_crossed;
-            pictureBox1.Location = new Point(301, 342);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(489, 547);
+            pictureBox1.Margin = new Padding(5, 6, 5, 6);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(63, 34);
+            pictureBox1.Size = new Size(102, 54);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 21;
             pictureBox1.TabStop = false;
             pictureBox1.Click += btnVoirMdp_Click;
             // 
-            // Recuperationmdp
+            // frmRecuperationmdp
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(446, 659);
+            ClientSize = new Size(725, 1054);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
             Controls.Add(flowLayoutPanel1);
@@ -226,9 +231,10 @@
             Controls.Add(btnRetour);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(5, 5, 5, 5);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Recuperationmdp";
+            Name = "frmRecuperationmdp";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Récupération du mot de passe";
             Load += Recuperationmdp_Load;

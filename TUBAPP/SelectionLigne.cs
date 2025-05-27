@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace TUBAPP
 {
-    public partial class SelectionLigne : Form
+    public partial class frmSelectionLigne : Form
     {
-        public SelectionLigne()
+        public frmSelectionLigne()
         {
             InitializeComponent();
         }
@@ -56,7 +56,7 @@ namespace TUBAPP
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            InfoLigne infoLigne = new InfoLigne();
+            frmInfoLigne infoLigne = new frmInfoLigne();
             infoLigne.Show();
             this.Close(); // Masquer le formulaire actuel
         }
@@ -79,17 +79,17 @@ namespace TUBAPP
 
             if (currentUser == null)
             {
-                PageProfilInviter pageProfilInviter = new PageProfilInviter(new Utilisateur(true));
+                frmPageProfilInviter pageProfilInviter = new frmPageProfilInviter(new Utilisateur(true));
                 pageProfilInviter.Show();
             }
             else if (currentUser.EstAdmin)
             {
-                PageProfilAdmin pageProfilAdmin = new PageProfilAdmin();
+                frmPageProfilAdmin pageProfilAdmin = new frmPageProfilAdmin();
                 pageProfilAdmin.Show();
             }
             else
             {
-                PageProfilConnecter pageProfilConnecter = new PageProfilConnecter(currentUser.Email);
+                frmPageProfilConnecter pageProfilConnecter = new frmPageProfilConnecter(currentUser.Email);
                 pageProfilConnecter.Show();
             }
 

@@ -1,6 +1,6 @@
 ﻿namespace TUBAPP
 {
-    partial class SelectionLigne
+    partial class frmSelectionLigne
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectionLigne));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectionLigne));
             flpNavbarre = new FlowLayoutPanel();
             pictureBox4 = new PictureBox();
             lblTUBAPP = new Label();
@@ -71,19 +71,17 @@
             flpNavbarre.Controls.Add(pictureBox5);
             flpNavbarre.Controls.Add(picIconeContact);
             flpNavbarre.Location = new Point(0, 0);
-            flpNavbarre.Margin = new Padding(2);
             flpNavbarre.Name = "flpNavbarre";
-            flpNavbarre.Size = new Size(446, 97);
+            flpNavbarre.Size = new Size(725, 155);
             flpNavbarre.TabIndex = 15;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.logo1;
             pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(2, 2);
-            pictureBox4.Margin = new Padding(2);
+            pictureBox4.Location = new Point(3, 3);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(91, 93);
+            pictureBox4.Size = new Size(148, 149);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 4;
             pictureBox4.TabStop = false;
@@ -94,10 +92,10 @@
             lblTUBAPP.AutoSize = true;
             lblTUBAPP.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             lblTUBAPP.ForeColor = Color.White;
-            lblTUBAPP.Location = new Point(132, 21);
-            lblTUBAPP.Margin = new Padding(37, 0, 37, 0);
+            lblTUBAPP.Location = new Point(214, 34);
+            lblTUBAPP.Margin = new Padding(60, 0, 60, 0);
             lblTUBAPP.Name = "lblTUBAPP";
-            lblTUBAPP.Size = new Size(189, 57);
+            lblTUBAPP.Size = new Size(297, 89);
             lblTUBAPP.TabIndex = 0;
             lblTUBAPP.Text = "TUBAPP";
             lblTUBAPP.TextAlign = ContentAlignment.TopCenter;
@@ -105,10 +103,10 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.icone_profil;
-            pictureBox5.Location = new Point(361, 4);
-            pictureBox5.Margin = new Padding(3, 4, 3, 4);
+            pictureBox5.Location = new Point(576, 6);
+            pictureBox5.Margin = new Padding(5, 6, 5, 6);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(63, 91);
+            pictureBox5.Size = new Size(102, 146);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 29;
             pictureBox5.TabStop = false;
@@ -117,10 +115,10 @@
             // picIconeContact
             // 
             picIconeContact.Image = Properties.Resources.icone_profil;
-            picIconeContact.Location = new Point(0, 99);
+            picIconeContact.Location = new Point(0, 158);
             picIconeContact.Margin = new Padding(0);
             picIconeContact.Name = "picIconeContact";
-            picIconeContact.Size = new Size(93, 97);
+            picIconeContact.Size = new Size(151, 155);
             picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
             picIconeContact.TabIndex = 2;
             picIconeContact.TabStop = false;
@@ -130,9 +128,10 @@
             labelSelectionner.AutoSize = true;
             labelSelectionner.Font = new Font("Microsoft Sans Serif", 18F);
             labelSelectionner.ForeColor = SystemColors.MenuText;
-            labelSelectionner.Location = new Point(49, 109);
+            labelSelectionner.Location = new Point(80, 174);
+            labelSelectionner.Margin = new Padding(5, 0, 5, 0);
             labelSelectionner.Name = "labelSelectionner";
-            labelSelectionner.Size = new Size(352, 36);
+            labelSelectionner.Size = new Size(565, 55);
             labelSelectionner.TabIndex = 16;
             labelSelectionner.Text = "Sélectionnez vos stations";
             labelSelectionner.Click += labelSelectionner_Click;
@@ -140,18 +139,20 @@
             // labeldepart
             // 
             labeldepart.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            labeldepart.Location = new Point(3, 0);
+            labeldepart.Location = new Point(5, 0);
+            labeldepart.Margin = new Padding(5, 0, 5, 0);
             labeldepart.Name = "labeldepart";
-            labeldepart.Size = new Size(162, 21);
+            labeldepart.Size = new Size(263, 34);
             labeldepart.TabIndex = 22;
             labeldepart.Text = "Station de départ :";
             // 
             // labelarrivee
             // 
             labelarrivee.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            labelarrivee.Location = new Point(3, 55);
+            labelarrivee.Location = new Point(5, 88);
+            labelarrivee.Margin = new Padding(5, 0, 5, 0);
             labelarrivee.Name = "labelarrivee";
-            labelarrivee.Size = new Size(162, 22);
+            labelarrivee.Size = new Size(263, 35);
             labelarrivee.TabIndex = 21;
             labelarrivee.Text = "Station d'arrivée :";
             // 
@@ -161,10 +162,11 @@
             cmb_StationArrivee.BackColor = SystemColors.Menu;
             cmb_StationArrivee.FlatStyle = FlatStyle.Flat;
             cmb_StationArrivee.FormattingEnabled = true;
-            cmb_StationArrivee.ItemHeight = 20;
-            cmb_StationArrivee.Location = new Point(12, 80);
+            cmb_StationArrivee.ItemHeight = 32;
+            cmb_StationArrivee.Location = new Point(20, 128);
+            cmb_StationArrivee.Margin = new Padding(5, 5, 5, 5);
             cmb_StationArrivee.Name = "cmb_StationArrivee";
-            cmb_StationArrivee.Size = new Size(179, 28);
+            cmb_StationArrivee.Size = new Size(288, 40);
             cmb_StationArrivee.TabIndex = 20;
             // 
             // cmb_StationDepart
@@ -172,9 +174,10 @@
             cmb_StationDepart.BackColor = SystemColors.Menu;
             cmb_StationDepart.FlatStyle = FlatStyle.Flat;
             cmb_StationDepart.FormattingEnabled = true;
-            cmb_StationDepart.Location = new Point(12, 24);
+            cmb_StationDepart.Location = new Point(20, 38);
+            cmb_StationDepart.Margin = new Padding(5, 5, 5, 5);
             cmb_StationDepart.Name = "cmb_StationDepart";
-            cmb_StationDepart.Size = new Size(177, 28);
+            cmb_StationDepart.Size = new Size(285, 40);
             cmb_StationDepart.TabIndex = 19;
             // 
             // flowLayoutPanel1
@@ -183,20 +186,19 @@
             flowLayoutPanel1.Controls.Add(pictureBox1);
             flowLayoutPanel1.Controls.Add(pictureBox2);
             flowLayoutPanel1.Controls.Add(pictureBox3);
-            flowLayoutPanel1.Location = new Point(-5, 595);
-            flowLayoutPanel1.Margin = new Padding(2);
+            flowLayoutPanel1.Location = new Point(-8, 952);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(460, 65);
+            flowLayoutPanel1.Size = new Size(748, 104);
             flowLayoutPanel1.TabIndex = 24;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.GPS;
-            pictureBox1.Location = new Point(70, 5);
-            pictureBox1.Margin = new Padding(70, 0, 15, 0);
+            pictureBox1.Location = new Point(114, 8);
+            pictureBox1.Margin = new Padding(114, 0, 24, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(45, 56);
+            pictureBox1.Size = new Size(73, 90);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -205,10 +207,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.homeSelectionnerpng;
-            pictureBox2.Location = new Point(185, 0);
-            pictureBox2.Margin = new Padding(55, 0, 35, 0);
+            pictureBox2.Location = new Point(300, 0);
+            pictureBox2.Margin = new Padding(89, 0, 57, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(79, 65);
+            pictureBox2.Size = new Size(128, 104);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
@@ -217,10 +219,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.network;
-            pictureBox3.Location = new Point(329, 3);
-            pictureBox3.Margin = new Padding(30, 3, 15, 5);
+            pictureBox3.Location = new Point(534, 5);
+            pictureBox3.Margin = new Padding(49, 5, 24, 8);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(59, 58);
+            pictureBox3.Size = new Size(96, 93);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
@@ -232,10 +234,9 @@
             btn_retour.Font = new Font("Segoe UI", 15F);
             btn_retour.ForeColor = SystemColors.Control;
             btn_retour.ImeMode = ImeMode.NoControl;
-            btn_retour.Location = new Point(56, 526);
-            btn_retour.Margin = new Padding(2);
+            btn_retour.Location = new Point(91, 842);
             btn_retour.Name = "btn_retour";
-            btn_retour.Size = new Size(321, 50);
+            btn_retour.Size = new Size(522, 80);
             btn_retour.TabIndex = 25;
             btn_retour.Text = "Retour";
             btn_retour.UseVisualStyleBackColor = false;
@@ -244,9 +245,10 @@
             // labelhoraire
             // 
             labelhoraire.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            labelhoraire.Location = new Point(3, 0);
+            labelhoraire.Location = new Point(5, 0);
+            labelhoraire.Margin = new Padding(5, 0, 5, 0);
             labelhoraire.Name = "labelhoraire";
-            labelhoraire.Size = new Size(86, 21);
+            labelhoraire.Size = new Size(140, 34);
             labelhoraire.TabIndex = 26;
             labelhoraire.Text = "Horaire :";
             // 
@@ -255,9 +257,10 @@
             cmb_Horaire1.BackColor = SystemColors.Menu;
             cmb_Horaire1.FlatStyle = FlatStyle.Flat;
             cmb_Horaire1.FormattingEnabled = true;
-            cmb_Horaire1.Location = new Point(8, 24);
+            cmb_Horaire1.Location = new Point(13, 38);
+            cmb_Horaire1.Margin = new Padding(5, 5, 5, 5);
             cmb_Horaire1.Name = "cmb_Horaire1";
-            cmb_Horaire1.Size = new Size(122, 28);
+            cmb_Horaire1.Size = new Size(196, 40);
             cmb_Horaire1.TabIndex = 27;
             // 
             // cmb_Horaire2
@@ -265,9 +268,10 @@
             cmb_Horaire2.BackColor = SystemColors.Menu;
             cmb_Horaire2.FlatStyle = FlatStyle.Flat;
             cmb_Horaire2.FormattingEnabled = true;
-            cmb_Horaire2.Location = new Point(8, 80);
+            cmb_Horaire2.Location = new Point(13, 128);
+            cmb_Horaire2.Margin = new Padding(5, 5, 5, 5);
             cmb_Horaire2.Name = "cmb_Horaire2";
-            cmb_Horaire2.Size = new Size(122, 28);
+            cmb_Horaire2.Size = new Size(196, 40);
             cmb_Horaire2.TabIndex = 28;
             // 
             // p_InfosTrajet
@@ -275,9 +279,10 @@
             p_InfosTrajet.BackColor = Color.FromArgb(255, 128, 128);
             p_InfosTrajet.Controls.Add(p_Station);
             p_InfosTrajet.Controls.Add(p_Horraire);
-            p_InfosTrajet.Location = new Point(35, 162);
+            p_InfosTrajet.Location = new Point(57, 259);
+            p_InfosTrajet.Margin = new Padding(5, 5, 5, 5);
             p_InfosTrajet.Name = "p_InfosTrajet";
-            p_InfosTrajet.Size = new Size(371, 330);
+            p_InfosTrajet.Size = new Size(603, 528);
             p_InfosTrajet.TabIndex = 29;
             p_InfosTrajet.Paint += panel1_Paint;
             // 
@@ -288,9 +293,10 @@
             p_Station.Controls.Add(cmb_StationDepart);
             p_Station.Controls.Add(cmb_StationArrivee);
             p_Station.Controls.Add(labelarrivee);
-            p_Station.Location = new Point(3, 3);
+            p_Station.Location = new Point(5, 5);
+            p_Station.Margin = new Padding(5, 5, 5, 5);
             p_Station.Name = "p_Station";
-            p_Station.Size = new Size(202, 119);
+            p_Station.Size = new Size(328, 190);
             p_Station.TabIndex = 30;
             // 
             // p_Horraire
@@ -299,25 +305,27 @@
             p_Horraire.Controls.Add(labelhoraire);
             p_Horraire.Controls.Add(cmb_Horaire2);
             p_Horraire.Controls.Add(cmb_Horaire1);
-            p_Horraire.Location = new Point(225, 3);
+            p_Horraire.Location = new Point(366, 5);
+            p_Horraire.Margin = new Padding(5, 5, 5, 5);
             p_Horraire.Name = "p_Horraire";
-            p_Horraire.Size = new Size(141, 119);
+            p_Horraire.Size = new Size(229, 190);
             p_Horraire.TabIndex = 29;
             // 
-            // SelectionLigne
+            // frmSelectionLigne
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(446, 659);
+            ClientSize = new Size(725, 1054);
             Controls.Add(btn_retour);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(labelSelectionner);
             Controls.Add(flpNavbarre);
             Controls.Add(p_InfosTrajet);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "SelectionLigne";
+            Margin = new Padding(5, 5, 5, 5);
+            Name = "frmSelectionLigne";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "SelectionLigne";
+            Text = "Selection ligne";
             Load += SelectionLigne_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
