@@ -11,11 +11,11 @@ using TUBAPP; // Assurez-vous que le bon espace de noms est utilisé pour les re
 
 namespace TUBAPP
 {
-    internal partial class PageProfilInviter : Form
+    internal partial class frmPageProfilInviter : Form
     {
         private readonly Utilisateur utilisateur;
 
-        public PageProfilInviter(Utilisateur user)
+        public frmPageProfilInviter(Utilisateur user)
         {
             InitializeComponent();
             utilisateur = user ?? throw new ArgumentNullException(nameof(user));
@@ -45,20 +45,26 @@ namespace TUBAPP
             //}
         }
 
-        private void picIconeContact_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PageCompte_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            frmMenuPricipal FrmMenuPrincipal= new frmMenuPricipal();
+            frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
             FrmMenuPrincipal.Show();
+
+            this.Close();
+        }
+
+        private void btnCreerCompte_Click(object sender, EventArgs e)
+        {
+            frmNouvelUtilisateur FrmNouvelUtilisateur = new frmNouvelUtilisateur();
+            FrmNouvelUtilisateur.Show();
+
+            this.Close();
+        }
+
+        private void btnSeConnecter_Click(object sender, EventArgs e)
+        {
+            frmConnexion FrmConnexion = new frmConnexion();
+            FrmConnexion.Show();
 
             this.Close();
         }

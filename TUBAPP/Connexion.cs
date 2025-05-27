@@ -17,24 +17,6 @@ namespace TUBAPP
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIdentifiant_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRetour_MouseClick(object sender, MouseEventArgs e)
-        {
-            frmAcceuil FrmAcceuil = new frmAcceuil();
-            FrmAcceuil.Show();
-
-            this.Close();
-        }
-
         private void btnConnexion_Click(object sender, EventArgs e)
         {
             string email = txtIdentifiant.Text.Trim();
@@ -97,14 +79,17 @@ namespace TUBAPP
 
         private void btnMdpOublie_Click(object sender, EventArgs e)
         {
-            Recuperationmdp recuperationForm = new Recuperationmdp();
+            frmRecuperationmdp recuperationForm = new frmRecuperationmdp();
             recuperationForm.Show();
             this.Hide();
         }
 
         private void btn_retour_Click(object sender, EventArgs e)
         {
+            frmAcceuil FrmAcceuil = new frmAcceuil();
+            FrmAcceuil.Show();
 
+            this.Close();
         }
     }
 }

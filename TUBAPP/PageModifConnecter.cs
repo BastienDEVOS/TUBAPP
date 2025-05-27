@@ -11,11 +11,11 @@ using MySql.Data.MySqlClient;
 
 namespace TUBAPP
 {
-    public partial class PageModifConnecter : Form
+    public partial class frmPageModifConnecter : Form
     {
         private string userEmail;
 
-        public PageModifConnecter(string email)
+        public frmPageModifConnecter(string email)
         {
             InitializeComponent();
             userEmail = email;
@@ -74,7 +74,7 @@ namespace TUBAPP
                     else
                         MessageBox.Show("Aucune modification effectuée.");
 
-                    PageProfilConnecter pageProfil = new PageProfilConnecter(userEmail);
+                    frmPageProfilConnecter pageProfil = new frmPageProfilConnecter(userEmail);
                     pageProfil.Show();
                     this.Close();
                 }

@@ -2,10 +2,10 @@
 
 namespace TUBAPP
 {
-    public partial class PageProfilConnecter : Form
+    public partial class frmPageProfilConnecter : Form
     {
         private string userEmail;
-        public PageProfilConnecter(string email)
+        public frmPageProfilConnecter(string email)
         {
             InitializeComponent();
             userEmail = email;
@@ -50,16 +50,24 @@ namespace TUBAPP
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            PageModifConnecter pageModif = new PageModifConnecter(userEmail);
+            frmPageModifConnecter pageModif = new frmPageModifConnecter(userEmail);
             pageModif.Show();
             this.Close(); // Masquer le formulaire de profil
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            InfoLigne infoLigne = new InfoLigne();
+            frmInfoLigne infoLigne = new frmInfoLigne();
             infoLigne.Show();
             this.Close(); // Masquer le formulaire de profil
+        }
+
+        private void btnSeConnecter_Click(object sender, EventArgs e)
+        {
+            frmAcceuil FrmAcceuil = new frmAcceuil();
+            FrmAcceuil.Show();
+
+            this.Close();
         }
     }
 }
