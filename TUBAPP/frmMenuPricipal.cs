@@ -26,20 +26,27 @@ namespace TUBAPP
             this.Close();  // Masquer le formulaire principal
         }
 
-        private void IconeProfil_Click(object sender, EventArgs e)
+        private void picIconeContact_Click(object sender, EventArgs e)
         {
-            Utilisateur user = new Utilisateur
-            {
-                Nom = "Martin",
-                Prenom = "Julie",
-                Email = "julie@exemple.com",
-                EstAdmin = false
-            };
+            Utilisateur? currentUser = SessionManager.CurrentUser;
 
-            // Ouvrir la page de profil
-            PageProfilConnecter pageCompte = new PageProfilConnecter(user.Email);
-            pageCompte.Show();
-            this.Close(); // Masquer le formulaire principal
+            if (currentUser == null)
+            {
+                PageProfilInviter pageProfilInviter = new PageProfilInviter(new Utilisateur(true));
+                pageProfilInviter.Show();
+            }
+            else if (currentUser.EstAdmin)
+            {
+                PageProfilAdmin pageProfilAdmin = new PageProfilAdmin();
+                pageProfilAdmin.Show();
+            }
+            else
+            {
+                PageProfilConnecter pageProfilConnecter = new PageProfilConnecter(currentUser.Email);
+                pageProfilConnecter.Show();
+            }
+
+            this.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

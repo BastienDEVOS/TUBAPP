@@ -11,6 +11,20 @@ namespace TUBAPP
 
         private void PageProfilAdmin_Load(object sender, EventArgs e)
         {
+            var admin = SessionManager.CurrentUser;
+
+            if (admin != null)
+            {
+                lblNomPrenom.Text = $"{admin.Nom ?? "Nom"} {admin.Prenom ?? "Prénom"}";
+                lblMailValue.Text = admin.Email ?? "Non renseigné";
+                lblNaissanceValue.Text = admin.DateNaissance?.ToString("dd/MM/yyyy") ?? "Non renseignée";
+            }
+            else
+            {
+                lblNomPrenom.Text = "Nom Prénom";
+                lblMailValue.Text = "Non renseigné";
+                lblNaissanceValue.Text = "Non renseignée";
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -33,6 +47,17 @@ namespace TUBAPP
             OptionAdmin optionAdmin = new OptionAdmin();
             optionAdmin.Show();
             this.Close(); // Masquer le formulaire de profil admin
+        }
+        private void btnDeconnecter_Click(object sender, EventArgs e)
+        {
+            // Clear the session
+            SessionManager.CurrentUser = null;
+
+            // Redirect to the login form
+            frmConnexion frmConnexion = new frmConnexion();
+            frmConnexion.Show();
+
+            this.Close();
         }
     }
 }

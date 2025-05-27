@@ -75,9 +75,25 @@ namespace TUBAPP
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            PageProfilAdmin pageProfilAdmin = new PageProfilAdmin();
-            pageProfilAdmin.Show();
-            this.Close(); // Ferme le formulaire actuel
+            Utilisateur? currentUser = SessionManager.CurrentUser;
+
+            if (currentUser == null)
+            {
+                PageProfilInviter pageProfilInviter = new PageProfilInviter(new Utilisateur(true));
+                pageProfilInviter.Show();
+            }
+            else if (currentUser.EstAdmin)
+            {
+                PageProfilAdmin pageProfilAdmin = new PageProfilAdmin();
+                pageProfilAdmin.Show();
+            }
+            else
+            {
+                PageProfilConnecter pageProfilConnecter = new PageProfilConnecter(currentUser.Email);
+                pageProfilConnecter.Show();
+            }
+
+            this.Close();
         }
     }
 }

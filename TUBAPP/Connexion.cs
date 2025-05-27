@@ -59,6 +59,25 @@ namespace TUBAPP
 
                     if (userCount > 0)
                     {
+                        var userCmd = new MySql.Data.MySqlClient.MySqlCommand(
+                            "SELECT NomClient, PrenomClient, MailClient, DateNaissanceClient, StatutsClient FROM Client WHERE MailClient = @Email", conn);
+                        userCmd.Parameters.AddWithValue("@Email", email);
+                        using (var reader = userCmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                var user = new Utilisateur
+                                {
+                                    Nom = reader["NomClient"].ToString(),
+                                    Prenom = reader["PrenomClient"].ToString(),
+                                    Email = reader["MailClient"].ToString(),
+                                    DateNaissance = reader["DateNaissanceClient"] as DateTime?,
+                                    EstAdmin = reader["StatutsClient"].ToString() == "Admin"
+                                };
+                                SessionManager.CurrentUser = user;
+                            }
+                        }
+
                         frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
                         FrmMenuPrincipal.Show();
                         this.Close();

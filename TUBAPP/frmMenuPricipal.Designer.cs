@@ -169,7 +169,7 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 30;
             pictureBox5.TabStop = false;
-            pictureBox5.Click += IconeProfil_Click;
+            pictureBox5.Click += picIconeContact_Click;
             // 
             // picIconeContact
             // 

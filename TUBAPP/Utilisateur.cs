@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace TUBAPP
 {
-    internal class Utilisateur
+    public class Utilisateur
     {
         public string? Nom { get; set; }
         public string? Prenom { get; set; }
         public string? Email { get; set; }
         public bool EstAdmin { get; set; }
-        public bool EstInvite { get; }
+        public bool EstInvite { get; private set; }
+        public Utilisateur(bool estInvite = false)
+        {
+            EstInvite = estInvite;
+        }
+        public Utilisateur() { }
         public DateTime? DateNaissance { get; set; } // Added this property
     }
 }

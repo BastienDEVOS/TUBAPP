@@ -39,8 +39,7 @@
             picIconeContact = new PictureBox();
             pictureBox4 = new PictureBox();
             pnlCard = new Panel();
-            lblPrenom = new Label();
-            lblNom = new Label();
+            lblNomPrenom = new Label();
             label2 = new Label();
             linkLabel1 = new LinkLabel();
             lblInvite = new Label();
@@ -177,8 +176,7 @@
             // 
             pnlCard.BackColor = Color.White;
             pnlCard.BorderStyle = BorderStyle.FixedSingle;
-            pnlCard.Controls.Add(lblPrenom);
-            pnlCard.Controls.Add(lblNom);
+            pnlCard.Controls.Add(lblNomPrenom);
             pnlCard.Controls.Add(label2);
             pnlCard.Controls.Add(linkLabel1);
             pnlCard.Controls.Add(lblInvite);
@@ -193,25 +191,15 @@
             pnlCard.Size = new Size(313, 312);
             pnlCard.TabIndex = 25;
             // 
-            // lblPrenom
+            // lblNomPrenom
             // 
-            lblPrenom.AutoSize = true;
-            lblPrenom.Location = new Point(153, 47);
-            lblPrenom.Margin = new Padding(2, 0, 2, 0);
-            lblPrenom.Name = "lblPrenom";
-            lblPrenom.Size = new Size(60, 20);
-            lblPrenom.TabIndex = 10;
-            lblPrenom.Text = "Prenom";
-            // 
-            // lblNom
-            // 
-            lblNom.AutoSize = true;
-            lblNom.Location = new Point(86, 47);
-            lblNom.Margin = new Padding(2, 0, 2, 0);
-            lblNom.Name = "lblNom";
-            lblNom.Size = new Size(42, 20);
-            lblNom.TabIndex = 9;
-            lblNom.Text = "Nom";
+            lblNomPrenom.AutoSize = true;
+            lblNomPrenom.Location = new Point(153, 47);
+            lblNomPrenom.Margin = new Padding(2, 0, 2, 0);
+            lblNomPrenom.Name = "lblNomPrenom";
+            lblNomPrenom.Size = new Size(60, 20);
+            lblNomPrenom.TabIndex = 10;
+            lblNomPrenom.Text = "Nom Prenom";
             // 
             // label2
             // 
@@ -373,7 +361,6 @@
         private Button btnSeConnecter;
         private Label label2;
         private LinkLabel linkLabel1;
-        private Label lblNom;
-        private Label lblPrenom;
+        private Label lblNomPrenom;
     }
 }

@@ -25,11 +25,6 @@ namespace TUBAPP
             lblTitre = new Label();
             pnlCard = new Panel();
             lblInvite = new Label();
-            lblNomPrenom = new Label();
-            llbMail = new LinkLabel();
-            lblMailValue = new Label();
-            llbNaissance = new LinkLabel();
-            lblNaissanceValue = new Label();
             btnCreerCompte = new Button();
             btnSeConnecter = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -54,10 +49,10 @@ namespace TUBAPP
             // picIconeContact
             // 
             picIconeContact.Image = Properties.Resources.IconeProfilSelectionner;
-            picIconeContact.Location = new Point(361, 4);
-            picIconeContact.Margin = new Padding(3, 4, 3, 4);
+            picIconeContact.Location = new Point(437, 5);
+            picIconeContact.Margin = new Padding(4, 5, 4, 5);
             picIconeContact.Name = "picIconeContact";
-            picIconeContact.Size = new Size(63, 91);
+            picIconeContact.Size = new Size(79, 114);
             picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
             picIconeContact.TabIndex = 2;
             picIconeContact.TabStop = false;
@@ -66,9 +61,10 @@ namespace TUBAPP
             // lblTitre
             // 
             lblTitre.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitre.Location = new Point(96, 106);
+            lblTitre.Location = new Point(133, 133);
+            lblTitre.Margin = new Padding(4, 0, 4, 0);
             lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(245, 53);
+            lblTitre.Size = new Size(306, 66);
             lblTitre.TabIndex = 1;
             lblTitre.Text = "Votre profil";
             lblTitre.TextAlign = ContentAlignment.MiddleCenter;
@@ -78,77 +74,23 @@ namespace TUBAPP
             pnlCard.BackColor = Color.White;
             pnlCard.BorderStyle = BorderStyle.FixedSingle;
             pnlCard.Controls.Add(lblInvite);
-            pnlCard.Controls.Add(lblNomPrenom);
-            pnlCard.Controls.Add(llbMail);
-            pnlCard.Controls.Add(lblMailValue);
-            pnlCard.Controls.Add(llbNaissance);
-            pnlCard.Controls.Add(lblNaissanceValue);
-            pnlCard.Location = new Point(64, 163);
-            pnlCard.Margin = new Padding(3, 4, 3, 4);
+            pnlCard.Location = new Point(80, 204);
+            pnlCard.Margin = new Padding(4, 5, 4, 5);
             pnlCard.Name = "pnlCard";
-            pnlCard.Size = new Size(313, 266);
+            pnlCard.Size = new Size(391, 332);
             pnlCard.TabIndex = 2;
             // 
             // lblInvite
             // 
             lblInvite.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             lblInvite.ForeColor = Color.FromArgb(0, 192, 192);
-            lblInvite.Location = new Point(54, -1);
+            lblInvite.Location = new Point(52, 70);
+            lblInvite.Margin = new Padding(4, 0, 4, 0);
             lblInvite.Name = "lblInvite";
-            lblInvite.Size = new Size(222, 48);
+            lblInvite.Size = new Size(278, 60);
             lblInvite.TabIndex = 0;
             lblInvite.Text = "INVITER";
             lblInvite.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblNomPrenom
-            // 
-            lblNomPrenom.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblNomPrenom.Location = new Point(50, 47);
-            lblNomPrenom.Name = "lblNomPrenom";
-            lblNomPrenom.Size = new Size(222, 27);
-            lblNomPrenom.TabIndex = 1;
-            lblNomPrenom.Text = "NOM Prénom";
-            lblNomPrenom.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // llbMail
-            // 
-            llbMail.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            llbMail.LinkColor = Color.Black;
-            llbMail.Location = new Point(39, 87);
-            llbMail.Name = "llbMail";
-            llbMail.Size = new Size(103, 27);
-            llbMail.TabIndex = 2;
-            llbMail.TabStop = true;
-            llbMail.Text = "Adresse mail :";
-            // 
-            // lblMailValue
-            // 
-            lblMailValue.Font = new Font("Segoe UI", 9F);
-            lblMailValue.Location = new Point(142, 87);
-            lblMailValue.Name = "lblMailValue";
-            lblMailValue.Size = new Size(96, 27);
-            lblMailValue.TabIndex = 3;
-            lblMailValue.Text = "Invité";
-            // 
-            // llbNaissance
-            // 
-            llbNaissance.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            llbNaissance.LinkColor = Color.Black;
-            llbNaissance.Location = new Point(39, 120);
-            llbNaissance.Name = "llbNaissance";
-            llbNaissance.Size = new Size(149, 27);
-            llbNaissance.TabIndex = 4;
-            llbNaissance.TabStop = true;
-            llbNaissance.Text = "Date de naissance :";
-            // 
-            // lblNaissanceValue
-            // 
-            lblNaissanceValue.Font = new Font("Segoe UI", 9F);
-            lblNaissanceValue.Location = new Point(39, 147);
-            lblNaissanceValue.Name = "lblNaissanceValue";
-            lblNaissanceValue.Size = new Size(199, 27);
-            lblNaissanceValue.TabIndex = 5;
-            lblNaissanceValue.Text = "Jours/Mois/Années";
             // 
             // btnCreerCompte
             // 
@@ -156,10 +98,10 @@ namespace TUBAPP
             btnCreerCompte.FlatStyle = FlatStyle.Flat;
             btnCreerCompte.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnCreerCompte.ForeColor = Color.White;
-            btnCreerCompte.Location = new Point(64, 454);
-            btnCreerCompte.Margin = new Padding(3, 4, 3, 4);
+            btnCreerCompte.Location = new Point(80, 568);
+            btnCreerCompte.Margin = new Padding(4, 5, 4, 5);
             btnCreerCompte.Name = "btnCreerCompte";
-            btnCreerCompte.Size = new Size(313, 53);
+            btnCreerCompte.Size = new Size(391, 66);
             btnCreerCompte.TabIndex = 3;
             btnCreerCompte.Text = "Créer un compte";
             btnCreerCompte.UseVisualStyleBackColor = false;
@@ -170,10 +112,10 @@ namespace TUBAPP
             btnSeConnecter.FlatStyle = FlatStyle.Flat;
             btnSeConnecter.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnSeConnecter.ForeColor = Color.White;
-            btnSeConnecter.Location = new Point(64, 525);
-            btnSeConnecter.Margin = new Padding(3, 4, 3, 4);
+            btnSeConnecter.Location = new Point(80, 656);
+            btnSeConnecter.Margin = new Padding(4, 5, 4, 5);
             btnSeConnecter.Name = "btnSeConnecter";
-            btnSeConnecter.Size = new Size(313, 53);
+            btnSeConnecter.Size = new Size(391, 66);
             btnSeConnecter.TabIndex = 4;
             btnSeConnecter.Text = "Se connecter";
             btnSeConnecter.UseVisualStyleBackColor = false;
@@ -188,7 +130,7 @@ namespace TUBAPP
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(446, 95);
+            flowLayoutPanel1.Size = new Size(558, 119);
             flowLayoutPanel1.TabIndex = 17;
             // 
             // pictureBox3
@@ -198,7 +140,7 @@ namespace TUBAPP
             pictureBox3.Location = new Point(2, 2);
             pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(91, 93);
+            pictureBox3.Size = new Size(114, 116);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
@@ -210,10 +152,10 @@ namespace TUBAPP
             label1.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.ImeMode = ImeMode.NoControl;
-            label1.Location = new Point(132, 21);
-            label1.Margin = new Padding(37, 0, 37, 0);
+            label1.Location = new Point(164, 28);
+            label1.Margin = new Padding(46, 0, 46, 0);
             label1.Name = "label1";
-            label1.Size = new Size(189, 57);
+            label1.Size = new Size(223, 67);
             label1.TabIndex = 0;
             label1.Text = "TUBAPP";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -222,10 +164,10 @@ namespace TUBAPP
             // 
             pictureBox4.Image = Properties.Resources.icone_profil;
             pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(0, 99);
+            pictureBox4.Location = new Point(0, 124);
             pictureBox4.Margin = new Padding(0);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(93, 93);
+            pictureBox4.Size = new Size(116, 116);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
@@ -236,20 +178,20 @@ namespace TUBAPP
             flowLayoutPanel2.Controls.Add(pictureBox1);
             flowLayoutPanel2.Controls.Add(BtnHome);
             flowLayoutPanel2.Controls.Add(pictureBox5);
-            flowLayoutPanel2.Location = new Point(0, 595);
+            flowLayoutPanel2.Location = new Point(0, 744);
             flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(446, 65);
+            flowLayoutPanel2.Size = new Size(558, 81);
             flowLayoutPanel2.TabIndex = 23;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.GPS;
-            pictureBox1.Location = new Point(70, 5);
-            pictureBox1.Margin = new Padding(70, 0, 15, 0);
+            pictureBox1.Location = new Point(88, 6);
+            pictureBox1.Margin = new Padding(88, 0, 19, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(45, 56);
+            pictureBox1.Size = new Size(56, 70);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -257,10 +199,10 @@ namespace TUBAPP
             // BtnHome
             // 
             BtnHome.Image = Properties.Resources.homepng;
-            BtnHome.Location = new Point(185, 0);
-            BtnHome.Margin = new Padding(55, 0, 35, 0);
+            BtnHome.Location = new Point(232, 0);
+            BtnHome.Margin = new Padding(69, 0, 44, 0);
             BtnHome.Name = "BtnHome";
-            BtnHome.Size = new Size(79, 65);
+            BtnHome.Size = new Size(99, 81);
             BtnHome.SizeMode = PictureBoxSizeMode.Zoom;
             BtnHome.TabIndex = 3;
             BtnHome.TabStop = false;
@@ -269,20 +211,20 @@ namespace TUBAPP
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.network;
-            pictureBox5.Location = new Point(329, 3);
-            pictureBox5.Margin = new Padding(30, 3, 15, 5);
+            pictureBox5.Location = new Point(413, 4);
+            pictureBox5.Margin = new Padding(38, 4, 19, 6);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(59, 58);
+            pictureBox5.Size = new Size(74, 72);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
             // 
             // PageProfilInviter
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(446, 659);
+            ClientSize = new Size(558, 824);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(btnSeConnecter);
@@ -291,7 +233,7 @@ namespace TUBAPP
             Controls.Add(lblTitre);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "PageProfilInviter";
@@ -323,11 +265,6 @@ namespace TUBAPP
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Panel pnlCard;
         private System.Windows.Forms.Label lblInvite;
-        private System.Windows.Forms.Label lblNomPrenom;
-        private System.Windows.Forms.LinkLabel llbMail;
-        private System.Windows.Forms.Label lblMailValue;
-        private System.Windows.Forms.LinkLabel llbNaissance;
-        private System.Windows.Forms.Label lblNaissanceValue;
         private System.Windows.Forms.Button btnCreerCompte;
         private System.Windows.Forms.Button btnSeConnecter;
         private FlowLayoutPanel flowLayoutPanel1;

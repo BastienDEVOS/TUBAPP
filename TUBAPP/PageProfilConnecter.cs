@@ -25,8 +25,8 @@ namespace TUBAPP
                     {
                         if (reader.Read())
                         {
-                            lblNom.Text = reader.GetString("NomClient");
-                            lblPrenom.Text = reader.GetString("PrenomClient");
+                            // Set the combined name and prenom
+                            lblNomPrenom.Text = $"{reader.GetString("NomClient")} {reader.GetString("PrenomClient")}";
                             lblMailValue.Text = reader.GetString("MailClient");
                             lblNaissanceValue.Text = reader.GetDateTime("DateNaissanceClient").ToString("dd/MM/yyyy");
                         }
