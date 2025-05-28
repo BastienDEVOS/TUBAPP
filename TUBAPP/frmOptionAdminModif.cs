@@ -34,5 +34,10 @@ namespace TUBAPP
             this.Close();
 
         }
+
+        private void frmOptionAdminModif_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
