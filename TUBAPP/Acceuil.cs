@@ -53,10 +53,5 @@ namespace TUBAPP
 
             this.Hide();
         }
-
-        private void picUndergroudLogo_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

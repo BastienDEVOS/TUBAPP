@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOptionAdminModif));
-            Horaire = new ComboBox();
+            Trajets = new ComboBox();
             Station = new ComboBox();
             Ligne = new ComboBox();
             btnRetour = new Button();
@@ -63,23 +63,29 @@
             pnlCard.SuspendLayout();
             SuspendLayout();
             // 
-            // Horaire
+            // Trajets
             // 
-            Horaire.Font = new Font("Segoe UI", 15F);
-            Horaire.FormattingEnabled = true;
-            Horaire.Location = new Point(121, 380);
-            Horaire.Name = "Horaire";
-            Horaire.Size = new Size(200, 43);
-            Horaire.TabIndex = 57;
-            Horaire.Text = "Horaire";
+            Trajets.DropDownHeight = 150;
+            Trajets.Font = new Font("Segoe UI", 15F);
+            Trajets.FormattingEnabled = true;
+            Trajets.Location = new Point(54, 382);
+            Trajets.MaxDropDownItems = 100;
+            Trajets.Name = "Trajets";
+            Trajets.Size = new Size(334, 43);
+            Trajets.TabIndex = 57;
+            Trajets.Text = "Trajets";
             // 
             // Station
             // 
+            Station.DropDownHeight = 150;
+            Station.DropDownWidth = 334;
             Station.Font = new Font("Segoe UI", 15F);
             Station.FormattingEnabled = true;
-            Station.Location = new Point(121, 309);
+            Station.IntegralHeight = false;
+            Station.Location = new Point(54, 309);
+            Station.MaxDropDownItems = 100;
             Station.Name = "Station";
-            Station.Size = new Size(200, 43);
+            Station.Size = new Size(334, 43);
             Station.TabIndex = 56;
             Station.Text = "Station";
             // 
@@ -87,9 +93,9 @@
             // 
             Ligne.Font = new Font("Segoe UI", 15F);
             Ligne.FormattingEnabled = true;
-            Ligne.Location = new Point(121, 240);
+            Ligne.Location = new Point(54, 240);
             Ligne.Name = "Ligne";
-            Ligne.Size = new Size(200, 43);
+            Ligne.Size = new Size(334, 43);
             Ligne.TabIndex = 55;
             Ligne.Text = "Ligne";
             // 
@@ -130,7 +136,7 @@
             flowLayoutPanel2.Controls.Add(BtnHome);
             flowLayoutPanel2.Controls.Add(pictureBox5);
             flowLayoutPanel2.Location = new Point(0, 594);
-            flowLayoutPanel2.Margin = new Padding(2, 2, 2, 2);
+            flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(446, 65);
             flowLayoutPanel2.TabIndex = 52;
@@ -179,7 +185,7 @@
             flowLayoutPanel1.Controls.Add(picIconeContact);
             flowLayoutPanel1.Controls.Add(pictureBox4);
             flowLayoutPanel1.Location = new Point(0, -1);
-            flowLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
+            flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(446, 95);
             flowLayoutPanel1.TabIndex = 51;
@@ -189,7 +195,7 @@
             pictureBox3.Image = Properties.Resources.logo1;
             pictureBox3.ImeMode = ImeMode.NoControl;
             pictureBox3.Location = new Point(2, 2);
-            pictureBox3.Margin = new Padding(2, 2, 2, 2);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(91, 93);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -340,7 +346,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
-            Controls.Add(Horaire);
+            Controls.Add(Trajets);
             Controls.Add(Station);
             Controls.Add(Ligne);
             Controls.Add(btnRetour);
@@ -369,7 +375,7 @@
 
         #endregion
 
-        private ComboBox Horaire;
+        private ComboBox Trajets;
         private ComboBox Station;
         private ComboBox Ligne;
         private Button btnRetour;

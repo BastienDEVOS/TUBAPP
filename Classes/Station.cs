@@ -19,6 +19,10 @@
             Correspondance = correspondance;
         }
 
+        public Station()
+        {
+        }
+
         //Accesseurs
         public int IdStation
         {
@@ -50,5 +54,9 @@
         }
 
         //Méthode 
+        public override string ToString()
+        {
+            return Nom;
+        }
     }
 }

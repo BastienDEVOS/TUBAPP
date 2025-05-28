@@ -77,5 +77,82 @@ namespace TUBAPP
             MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
             cmd.ExecuteNonQuery();
         }
+
+        public static List<Station> GetStation()
+        {
+            List<Station> stations = new List<Station>();
+            string reSQL = "SELECT * FROM Station";
+
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Station s = new Station
+                    {
+                        IdStation = reader.GetInt32("IdStation"),
+                        Nom = reader.GetString("NomStation"),
+                        Zone = reader.GetString("Zone"),
+                        Accessibilite = reader.GetBoolean("Accessibilite"),
+                        CorrespondanceStation = reader.GetBoolean("Correspondance")
+                    };
+                    stations.Add(s);
+                }
+            }
+
+            return stations;
+        }
+
+        public static List<Ligne> GetLigne()
+        {
+            List<Ligne> lignes = new List<Ligne>();
+            string reSQL = "SELECT * FROM Ligne";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Ligne l = new Ligne
+                    {
+                        IdLigne = reader.GetInt32("IdLigne"),
+                        Nom = reader.GetString("NomLigne"),
+                        Couleur = reader.GetString("Couleur"),
+                        Longueur = reader.GetInt32("Longueur"),
+                        Status = reader.GetString("Statuts"),
+                        Frequence = reader.GetTimeSpan("Frequence").ToString(@"hh\:mm"),
+                        HeureFin = reader.GetTimeSpan("HeureFin").ToString(@"hh\:mm"),
+                        HeureDebut = reader.GetTimeSpan("HeureDebut").ToString(@"hh\:mm"),
+                    };
+                    lignes.Add(l);
+                }
+            }
+            return lignes;
+        }
+
+        public static List<Trajet> GetTrajet()
+        {
+            List<Trajet> trajets = new List<Trajet>();
+
+            string reSQL = "SELECT * FROM Trajet";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Trajet t = new Trajet
+                    {
+                        IdLigne = reader.GetInt32("IdLigne"),
+                        IdStationDepart = reader.GetInt32("IdStation"),
+                        IdStationArrivee = reader.GetInt32("IdStation_1"),
+                        TempsTrajets = reader.GetTimeSpan("TempsTrajet").ToString(@"hh\:mm"),
+                    };
+
+                    trajets.Add(t);
+                }
+            }
+
+            return trajets;
+        }
     }
 }
