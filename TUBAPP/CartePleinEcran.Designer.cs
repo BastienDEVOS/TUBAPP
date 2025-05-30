@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartePleinEcran));
             PicBoxCartePleineEcran = new PictureBox();
             btnQuitter = new Button();
             ((System.ComponentModel.ISupportInitialize)PicBoxCartePleineEcran).BeginInit();
@@ -37,7 +36,7 @@
             // PicBoxCartePleineEcran
             // 
             PicBoxCartePleineEcran.Dock = DockStyle.Fill;
-            PicBoxCartePleineEcran.Image = (Image)resources.GetObject("PicBoxCartePleineEcran.Image");
+            PicBoxCartePleineEcran.Image = Properties.Resources.plan_metro_londres;
             PicBoxCartePleineEcran.Location = new Point(0, 0);
             PicBoxCartePleineEcran.Name = "PicBoxCartePleineEcran";
             PicBoxCartePleineEcran.Size = new Size(446, 659);

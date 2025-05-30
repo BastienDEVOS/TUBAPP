@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageCarte));
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox3 = new PictureBox();
             label2 = new Label();
@@ -169,7 +168,7 @@
             // 
             // picBoxCarte
             // 
-            picBoxCarte.Image = (Image)resources.GetObject("picBoxCarte.Image");
+            picBoxCarte.Image = Properties.Resources.plan_metro_londres;
             picBoxCarte.Location = new Point(47, 438);
             picBoxCarte.Name = "picBoxCarte";
             picBoxCarte.Size = new Size(354, 152);
