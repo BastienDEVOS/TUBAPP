@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPageProfilConnecter));
             flowLayoutPanel2 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             BtnHome = new PictureBox();
@@ -68,7 +67,7 @@
             flowLayoutPanel2.Controls.Add(BtnHome);
             flowLayoutPanel2.Controls.Add(pictureBox5);
             flowLayoutPanel2.Location = new Point(0, 594);
-            flowLayoutPanel2.Margin = new Padding(2, 2, 2, 2);
+            flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(446, 65);
             flowLayoutPanel2.TabIndex = 29;
@@ -108,6 +107,7 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -117,7 +117,7 @@
             flowLayoutPanel1.Controls.Add(picIconeContact);
             flowLayoutPanel1.Controls.Add(pictureBox4);
             flowLayoutPanel1.Location = new Point(0, -1);
-            flowLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
+            flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(446, 95);
             flowLayoutPanel1.TabIndex = 28;
@@ -127,7 +127,7 @@
             pictureBox3.Image = Properties.Resources.logo1;
             pictureBox3.ImeMode = ImeMode.NoControl;
             pictureBox3.Location = new Point(2, 2);
-            pictureBox3.Margin = new Padding(2, 2, 2, 2);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(91, 93);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -321,7 +321,6 @@
             Controls.Add(btnSeConnecter);
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
-            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmPageProfilConnecter";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Page profil connecter";

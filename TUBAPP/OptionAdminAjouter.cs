@@ -28,5 +28,17 @@ namespace TUBAPP
             optionAdmin.Show();
             this.Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            PageCarte page = new PageCarte();
+            page.Show();
+            this.Close();
+        }
     }
 }

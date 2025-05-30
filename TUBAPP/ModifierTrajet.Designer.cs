@@ -50,14 +50,14 @@
             btnModifier = new Button();
             lblTitre = new Label();
             panel1 = new Panel();
+            textBox1 = new TextBox();
+            label4 = new Label();
+            comboBox3 = new ComboBox();
+            comboBox2 = new ComboBox();
             label6 = new Label();
             label3 = new Label();
             label2 = new Label();
             comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            label4 = new Label();
-            textBox1 = new TextBox();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).BeginInit();
@@ -144,6 +144,7 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -327,6 +328,38 @@
             panel1.Size = new Size(313, 229);
             panel1.TabIndex = 65;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(138, 165);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(156, 27);
+            textBox1.TabIndex = 25;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(8, 168);
+            label4.Name = "label4";
+            label4.Size = new Size(112, 20);
+            label4.TabIndex = 24;
+            label4.Text = "Temps de trajet";
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(139, 18);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(156, 28);
+            comboBox3.TabIndex = 23;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(138, 65);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(156, 28);
+            comboBox2.TabIndex = 22;
+            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -361,38 +394,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(156, 28);
             comboBox1.TabIndex = 15;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(138, 65);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(156, 28);
-            comboBox2.TabIndex = 22;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(139, 18);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(156, 28);
-            comboBox3.TabIndex = 23;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(8, 168);
-            label4.Name = "label4";
-            label4.Size = new Size(112, 20);
-            label4.TabIndex = 24;
-            label4.Text = "Temps de trajet";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(138, 165);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(156, 27);
-            textBox1.TabIndex = 25;
             // 
             // ModifierTrajet
             // 

@@ -54,5 +54,12 @@
             infoLigne.Show();
             this.Close();
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            PageCarte page = new PageCarte();
+            page.Show();
+            this.Close();
+        }
     }
 }

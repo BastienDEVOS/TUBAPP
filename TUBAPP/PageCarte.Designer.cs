@@ -213,6 +213,7 @@
             BtnHome.SizeMode = PictureBoxSizeMode.Zoom;
             BtnHome.TabIndex = 3;
             BtnHome.TabStop = false;
+            BtnHome.Click += BtnHome_Click;
             // 
             // pictureBox5
             // 

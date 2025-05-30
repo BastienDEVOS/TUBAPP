@@ -59,30 +59,32 @@
             flowLayoutPanel2.Controls.Add(pictureBox1);
             flowLayoutPanel2.Controls.Add(BtnHome);
             flowLayoutPanel2.Controls.Add(pictureBox5);
-            flowLayoutPanel2.Location = new Point(0, 950);
+            flowLayoutPanel2.Location = new Point(0, 594);
+            flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(725, 104);
+            flowLayoutPanel2.Size = new Size(446, 65);
             flowLayoutPanel2.TabIndex = 35;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.GPS;
-            pictureBox1.Location = new Point(114, 8);
-            pictureBox1.Margin = new Padding(114, 0, 24, 0);
+            pictureBox1.Location = new Point(70, 5);
+            pictureBox1.Margin = new Padding(70, 0, 15, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(73, 90);
+            pictureBox1.Size = new Size(45, 56);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // BtnHome
             // 
             BtnHome.Image = Properties.Resources.homepng;
-            BtnHome.Location = new Point(300, 0);
-            BtnHome.Margin = new Padding(89, 0, 57, 0);
+            BtnHome.Location = new Point(185, 0);
+            BtnHome.Margin = new Padding(55, 0, 35, 0);
             BtnHome.Name = "BtnHome";
-            BtnHome.Size = new Size(128, 104);
+            BtnHome.Size = new Size(79, 65);
             BtnHome.SizeMode = PictureBoxSizeMode.Zoom;
             BtnHome.TabIndex = 3;
             BtnHome.TabStop = false;
@@ -90,13 +92,14 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.network;
-            pictureBox5.Location = new Point(534, 5);
-            pictureBox5.Margin = new Padding(49, 5, 24, 8);
+            pictureBox5.Location = new Point(329, 3);
+            pictureBox5.Margin = new Padding(30, 3, 15, 5);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(96, 93);
+            pictureBox5.Size = new Size(59, 58);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -105,18 +108,20 @@
             flowLayoutPanel1.Controls.Add(label1);
             flowLayoutPanel1.Controls.Add(picIconeContact);
             flowLayoutPanel1.Controls.Add(pictureBox4);
-            flowLayoutPanel1.Location = new Point(0, -2);
+            flowLayoutPanel1.Location = new Point(0, -1);
+            flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(725, 152);
+            flowLayoutPanel1.Size = new Size(446, 95);
             flowLayoutPanel1.TabIndex = 34;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.logo1;
             pictureBox3.ImeMode = ImeMode.NoControl;
-            pictureBox3.Location = new Point(3, 3);
+            pictureBox3.Location = new Point(2, 2);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(148, 149);
+            pictureBox3.Size = new Size(91, 93);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
@@ -128,10 +133,10 @@
             label1.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.ImeMode = ImeMode.NoControl;
-            label1.Location = new Point(214, 34);
-            label1.Margin = new Padding(60, 0, 60, 0);
+            label1.Location = new Point(132, 21);
+            label1.Margin = new Padding(37, 0, 37, 0);
             label1.Name = "label1";
-            label1.Size = new Size(297, 89);
+            label1.Size = new Size(189, 57);
             label1.TabIndex = 0;
             label1.Text = "TUBAPP";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -139,10 +144,10 @@
             // picIconeContact
             // 
             picIconeContact.Image = Properties.Resources.IconeProfilSelectionner;
-            picIconeContact.Location = new Point(576, 6);
-            picIconeContact.Margin = new Padding(5, 6, 5, 6);
+            picIconeContact.Location = new Point(361, 4);
+            picIconeContact.Margin = new Padding(3, 4, 3, 4);
             picIconeContact.Name = "picIconeContact";
-            picIconeContact.Size = new Size(102, 146);
+            picIconeContact.Size = new Size(63, 91);
             picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
             picIconeContact.TabIndex = 2;
             picIconeContact.TabStop = false;
@@ -151,10 +156,10 @@
             // 
             pictureBox4.Image = Properties.Resources.icone_profil;
             pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(0, 158);
+            pictureBox4.Location = new Point(0, 99);
             pictureBox4.Margin = new Padding(0);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(151, 149);
+            pictureBox4.Size = new Size(93, 93);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
@@ -165,10 +170,10 @@
             btnAjoutStation.FlatStyle = FlatStyle.Flat;
             btnAjoutStation.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnAjoutStation.ForeColor = Color.White;
-            btnAjoutStation.Location = new Point(104, 491);
-            btnAjoutStation.Margin = new Padding(5, 6, 5, 6);
+            btnAjoutStation.Location = new Point(64, 307);
+            btnAjoutStation.Margin = new Padding(3, 4, 3, 4);
             btnAjoutStation.Name = "btnAjoutStation";
-            btnAjoutStation.Size = new Size(509, 85);
+            btnAjoutStation.Size = new Size(313, 53);
             btnAjoutStation.TabIndex = 33;
             btnAjoutStation.Text = "Station";
             btnAjoutStation.UseVisualStyleBackColor = false;
@@ -179,10 +184,10 @@
             btnAjoutLigne.FlatStyle = FlatStyle.Flat;
             btnAjoutLigne.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnAjoutLigne.ForeColor = Color.White;
-            btnAjoutLigne.Location = new Point(104, 378);
-            btnAjoutLigne.Margin = new Padding(5, 6, 5, 6);
+            btnAjoutLigne.Location = new Point(64, 236);
+            btnAjoutLigne.Margin = new Padding(3, 4, 3, 4);
             btnAjoutLigne.Name = "btnAjoutLigne";
-            btnAjoutLigne.Size = new Size(509, 85);
+            btnAjoutLigne.Size = new Size(313, 53);
             btnAjoutLigne.TabIndex = 32;
             btnAjoutLigne.Text = "Ligne";
             btnAjoutLigne.UseVisualStyleBackColor = false;
@@ -190,10 +195,9 @@
             // lblTitre
             // 
             lblTitre.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lblTitre.Location = new Point(49, 157);
-            lblTitre.Margin = new Padding(5, 0, 5, 0);
+            lblTitre.Location = new Point(30, 98);
             lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(640, 182);
+            lblTitre.Size = new Size(394, 114);
             lblTitre.TabIndex = 39;
             lblTitre.Text = "Option Administrateur Ajouter\r\n";
             lblTitre.TextAlign = ContentAlignment.MiddleCenter;
@@ -204,10 +208,10 @@
             btnAjoutHoraire.FlatStyle = FlatStyle.Flat;
             btnAjoutHoraire.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnAjoutHoraire.ForeColor = Color.White;
-            btnAjoutHoraire.Location = new Point(104, 608);
-            btnAjoutHoraire.Margin = new Padding(5, 6, 5, 6);
+            btnAjoutHoraire.Location = new Point(64, 380);
+            btnAjoutHoraire.Margin = new Padding(3, 4, 3, 4);
             btnAjoutHoraire.Name = "btnAjoutHoraire";
-            btnAjoutHoraire.Size = new Size(509, 85);
+            btnAjoutHoraire.Size = new Size(313, 53);
             btnAjoutHoraire.TabIndex = 40;
             btnAjoutHoraire.Text = "Horaire";
             btnAjoutHoraire.UseVisualStyleBackColor = false;
@@ -218,10 +222,10 @@
             btnRetour.FlatStyle = FlatStyle.Flat;
             btnRetour.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnRetour.ForeColor = Color.White;
-            btnRetour.Location = new Point(154, 802);
-            btnRetour.Margin = new Padding(5, 6, 5, 6);
+            btnRetour.Location = new Point(95, 501);
+            btnRetour.Margin = new Padding(3, 4, 3, 4);
             btnRetour.Name = "btnRetour";
-            btnRetour.Size = new Size(418, 85);
+            btnRetour.Size = new Size(257, 53);
             btnRetour.TabIndex = 41;
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
@@ -229,9 +233,9 @@
             // 
             // frmOptionAdminAjouter
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(725, 1054);
+            ClientSize = new Size(446, 659);
             Controls.Add(btnRetour);
             Controls.Add(btnAjoutHoraire);
             Controls.Add(lblTitre);
@@ -240,7 +244,6 @@
             Controls.Add(btnAjoutStation);
             Controls.Add(btnAjoutLigne);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(5);
             Name = "frmOptionAdminAjouter";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Option admin ajouter";

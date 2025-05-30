@@ -32,13 +32,13 @@
             pictureBox1 = new PictureBox();
             BtnHome = new PictureBox();
             pictureBox5 = new PictureBox();
+            lblTitre = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox3 = new PictureBox();
             label1 = new Label();
             picIconeContact = new PictureBox();
             pictureBox4 = new PictureBox();
             btnRetour = new Button();
-            lblTitre = new Label();
             label2 = new Label();
             txtNomLigne = new TextBox();
             txtZoneLigne = new TextBox();
@@ -100,6 +100,17 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
+            // 
+            // lblTitre
+            // 
+            lblTitre.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblTitre.Location = new Point(3, 66);
+            lblTitre.Name = "lblTitre";
+            lblTitre.Size = new Size(325, 132);
+            lblTitre.TabIndex = 31;
+            lblTitre.Text = "Option Administrateur";
+            lblTitre.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel1
             // 
@@ -177,16 +188,6 @@
             btnRetour.TabIndex = 48;
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
-            // 
-            // lblTitre
-            // 
-            lblTitre.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            lblTitre.Location = new Point(3, 66);
-            lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(325, 132);
-            lblTitre.TabIndex = 31;
-            lblTitre.Text = "Option Administrateur";
-            lblTitre.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 

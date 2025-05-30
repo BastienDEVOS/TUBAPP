@@ -68,6 +68,7 @@
             Trajets.DropDownHeight = 150;
             Trajets.Font = new Font("Segoe UI", 15F);
             Trajets.FormattingEnabled = true;
+            Trajets.IntegralHeight = false;
             Trajets.Location = new Point(54, 382);
             Trajets.MaxDropDownItems = 100;
             Trajets.Name = "Trajets";
@@ -176,6 +177,7 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // flowLayoutPanel1
             // 

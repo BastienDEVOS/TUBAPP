@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TUBAPP;
 namespace TUBAPP
 {
     public partial class PageCarte : Form
@@ -53,10 +53,36 @@ namespace TUBAPP
 
         private void picIconeContact_Click(object sender, EventArgs e)
         {
+            Utilisateur? currentUser = SessionManager.CurrentUser;
 
+            if (currentUser == null)
+            {
+                frmPageProfilInviter pageProfilInviter = new frmPageProfilInviter(new Utilisateur(true));
+                pageProfilInviter.Show();
+            }
+            else if (currentUser.EstAdmin)
+            {
+                frmPageProfilAdmin pageProfilAdmin = new frmPageProfilAdmin();
+                pageProfilAdmin.Show();
+            }
+            else
+            {
+                frmPageProfilConnecter pageProfilConnecter = new frmPageProfilConnecter(currentUser.Email);
+                pageProfilConnecter.Show();
+            }
+
+            this.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
+            FrmMenuPrincipal.Show();
+
+            this.Close();
+        }
+
+        private void BtnHome_Click(object sender, EventArgs e)
         {
             frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
             FrmMenuPrincipal.Show();
