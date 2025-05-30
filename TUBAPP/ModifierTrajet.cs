@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Classes;
+using ZstdSharp.Unsafe;
 
 namespace TUBAPP
 {
     public partial class ModifierTrajet : Form
     {
-        public ModifierTrajet()
+        private Trajet TrajetModifier;
+        public ModifierTrajet(Trajet Trajet)
         {
             InitializeComponent();
+            this.TrajetModifier = Trajet;
+            // Initialisation des champs avec les données du trajet à modifier  
+
+            txtTpsTrajet.Text = Trajet.TempsTrajets;
         }
 
         private void ModifierHorraire_Load(object sender, EventArgs e)

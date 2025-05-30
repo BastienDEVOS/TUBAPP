@@ -40,19 +40,17 @@
             pictureBox1 = new PictureBox();
             BtnHome = new PictureBox();
             pictureBox5 = new PictureBox();
-            txtEmail = new TextBox();
+            txtCouleur = new TextBox();
             txtNom = new TextBox();
-            txtPrenom = new TextBox();
-            comboBox1 = new ComboBox();
             pnlCard = new Panel();
+            txtStatus = new TextBox();
             label7 = new Label();
-            textBox2 = new TextBox();
+            txtFrequence = new TextBox();
             label6 = new Label();
             label5 = new Label();
-            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtLongueur = new TextBox();
             btnRetour = new Button();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -199,77 +197,67 @@
             pictureBox5.TabStop = false;
             pictureBox5.Click += pictureBox5_Click;
             // 
-            // txtEmail
+            // txtCouleur
             // 
-            txtEmail.Location = new Point(120, 109);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(156, 27);
-            txtEmail.TabIndex = 9;
+            txtCouleur.Location = new Point(120, 64);
+            txtCouleur.Name = "txtCouleur";
+            txtCouleur.Size = new Size(156, 27);
+            txtCouleur.TabIndex = 10;
             // 
             // txtNom
             // 
-            txtNom.Location = new Point(120, 64);
+            txtNom.Location = new Point(120, 18);
             txtNom.Name = "txtNom";
             txtNom.Size = new Size(156, 27);
-            txtNom.TabIndex = 10;
-            // 
-            // txtPrenom
-            // 
-            txtPrenom.Location = new Point(120, 18);
-            txtPrenom.Name = "txtPrenom";
-            txtPrenom.Size = new Size(156, 27);
-            txtPrenom.TabIndex = 11;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(120, 200);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(156, 28);
-            comboBox1.TabIndex = 15;
+            txtNom.TabIndex = 11;
             // 
             // pnlCard
             // 
             pnlCard.BackColor = Color.White;
             pnlCard.BorderStyle = BorderStyle.FixedSingle;
+            pnlCard.Controls.Add(txtStatus);
             pnlCard.Controls.Add(label7);
-            pnlCard.Controls.Add(textBox2);
+            pnlCard.Controls.Add(txtFrequence);
             pnlCard.Controls.Add(label6);
             pnlCard.Controls.Add(label5);
-            pnlCard.Controls.Add(label4);
             pnlCard.Controls.Add(label3);
             pnlCard.Controls.Add(label2);
-            pnlCard.Controls.Add(textBox1);
-            pnlCard.Controls.Add(comboBox1);
-            pnlCard.Controls.Add(txtPrenom);
+            pnlCard.Controls.Add(txtLongueur);
             pnlCard.Controls.Add(txtNom);
-            pnlCard.Controls.Add(txtEmail);
+            pnlCard.Controls.Add(txtCouleur);
             pnlCard.Location = new Point(64, 149);
             pnlCard.Margin = new Padding(3, 4, 3, 4);
             pnlCard.Name = "pnlCard";
             pnlCard.Size = new Size(313, 297);
             pnlCard.TabIndex = 36;
             // 
+            // txtStatus
+            // 
+            txtStatus.Location = new Point(120, 156);
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new Size(156, 27);
+            txtStatus.TabIndex = 24;
+            // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(8, 246);
+            label7.Location = new Point(8, 208);
             label7.Name = "label7";
             label7.Size = new Size(77, 20);
             label7.TabIndex = 23;
             label7.Text = "Fréquence";
             // 
-            // textBox2
+            // txtFrequence
             // 
-            textBox2.Location = new Point(120, 243);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(156, 27);
-            textBox2.TabIndex = 22;
+            txtFrequence.Location = new Point(120, 205);
+            txtFrequence.Name = "txtFrequence";
+            txtFrequence.Size = new Size(156, 27);
+            txtFrequence.TabIndex = 22;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(8, 203);
+            label6.Location = new Point(8, 159);
             label6.Name = "label6";
             label6.Size = new Size(49, 20);
             label6.TabIndex = 21;
@@ -277,20 +265,11 @@
             // 
             // label5
             // 
-            label5.Location = new Point(8, 158);
+            label5.Location = new Point(8, 109);
             label5.Name = "label5";
             label5.Size = new Size(147, 27);
             label5.TabIndex = 20;
             label5.Text = "Longueur de la ligne";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(8, 109);
-            label4.Name = "label4";
-            label4.Size = new Size(43, 20);
-            label4.TabIndex = 19;
-            label4.Text = "Zone";
             // 
             // label3
             // 
@@ -310,12 +289,12 @@
             label2.TabIndex = 17;
             label2.Text = "Nom de ligne";
             // 
-            // textBox1
+            // txtLongueur
             // 
-            textBox1.Location = new Point(158, 158);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(118, 27);
-            textBox1.TabIndex = 16;
+            txtLongueur.Location = new Point(158, 109);
+            txtLongueur.Name = "txtLongueur";
+            txtLongueur.Size = new Size(118, 27);
+            txtLongueur.TabIndex = 16;
             // 
             // btnRetour
             // 
@@ -345,6 +324,7 @@
             Controls.Add(flowLayoutPanel2);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ModifierLigne";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ModifierLigne";
             Load += ModifierLigne_Load;
             flowLayoutPanel1.ResumeLayout(false);
@@ -374,19 +354,17 @@
         private PictureBox pictureBox1;
         private PictureBox BtnHome;
         private PictureBox pictureBox5;
-        private TextBox txtEmail;
+        private TextBox txtCouleur;
         private TextBox txtNom;
-        private TextBox txtPrenom;
-        private ComboBox comboBox1;
         private Panel pnlCard;
-        private TextBox textBox1;
+        private TextBox txtLongueur;
         private Label label6;
         private Label label5;
-        private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txtFrequence;
         private Label label7;
         private Button btnRetour;
+        private TextBox txtStatus;
     }
 }

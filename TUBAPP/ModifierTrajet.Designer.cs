@@ -50,7 +50,7 @@
             btnModifier = new Button();
             lblTitre = new Label();
             panel1 = new Panel();
-            textBox1 = new TextBox();
+            txtTpsTrajet = new TextBox();
             label4 = new Label();
             comboBox3 = new ComboBox();
             comboBox2 = new ComboBox();
@@ -314,7 +314,7 @@
             // 
             panel1.BackColor = Color.White;
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtTpsTrajet);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(comboBox3);
             panel1.Controls.Add(comboBox2);
@@ -328,12 +328,12 @@
             panel1.Size = new Size(313, 229);
             panel1.TabIndex = 65;
             // 
-            // textBox1
+            // txtTpsTrajet
             // 
-            textBox1.Location = new Point(138, 165);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(156, 27);
-            textBox1.TabIndex = 25;
+            txtTpsTrajet.Location = new Point(138, 165);
+            txtTpsTrajet.Name = "txtTpsTrajet";
+            txtTpsTrajet.Size = new Size(156, 27);
+            txtTpsTrajet.TabIndex = 25;
             // 
             // label4
             // 
@@ -409,7 +409,8 @@
             Controls.Add(lblTitre);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ModifierTrajet";
-            Text = "ModifierHorraire";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "ModifierTrajet";
             Load += ModifierHorraire_Load;
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -452,7 +453,7 @@
         private Label label3;
         private Label label2;
         private ComboBox comboBox1;
-        private TextBox textBox1;
+        private TextBox txtTpsTrajet;
         private Label label4;
         private ComboBox comboBox3;
         private ComboBox comboBox2;

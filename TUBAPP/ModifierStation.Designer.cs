@@ -57,7 +57,7 @@
             label3 = new Label();
             label2 = new Label();
             comboBox1 = new ComboBox();
-            txtPrenom = new TextBox();
+            txtNom = new TextBox();
             btnConfirmer = new Button();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -308,7 +308,7 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(txtPrenom);
+            panel1.Controls.Add(txtNom);
             panel1.Location = new Point(67, 181);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
@@ -386,12 +386,12 @@
             comboBox1.Size = new Size(156, 28);
             comboBox1.TabIndex = 15;
             // 
-            // txtPrenom
+            // txtNom
             // 
-            txtPrenom.Location = new Point(139, 18);
-            txtPrenom.Name = "txtPrenom";
-            txtPrenom.Size = new Size(137, 27);
-            txtPrenom.TabIndex = 11;
+            txtNom.Location = new Point(139, 18);
+            txtNom.Name = "txtNom";
+            txtNom.Size = new Size(137, 27);
+            txtNom.TabIndex = 11;
             // 
             // btnConfirmer
             // 
@@ -421,6 +421,7 @@
             Controls.Add(lblTitre);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ModifierStation";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ModifierStation";
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -462,7 +463,7 @@
         private Label label3;
         private Label label2;
         private ComboBox comboBox1;
-        private TextBox txtPrenom;
+        private TextBox txtNom;
         private Button btnConfirmer;
         private Label label9;
         private Label label8;

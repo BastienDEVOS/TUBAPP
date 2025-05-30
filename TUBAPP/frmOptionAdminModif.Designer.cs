@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOptionAdminModif));
-            Trajets = new ComboBox();
-            Station = new ComboBox();
-            Ligne = new ComboBox();
+            cbTrajet = new ComboBox();
+            cbStation = new ComboBox();
+            cbLigne = new ComboBox();
             btnRetour = new Button();
             btnModif = new Button();
             flowLayoutPanel2 = new FlowLayoutPanel();
@@ -63,42 +63,45 @@
             pnlCard.SuspendLayout();
             SuspendLayout();
             // 
-            // Trajets
+            // cbTrajet
             // 
-            Trajets.DropDownHeight = 150;
-            Trajets.Font = new Font("Segoe UI", 15F);
-            Trajets.FormattingEnabled = true;
-            Trajets.IntegralHeight = false;
-            Trajets.Location = new Point(54, 382);
-            Trajets.MaxDropDownItems = 100;
-            Trajets.Name = "Trajets";
-            Trajets.Size = new Size(334, 43);
-            Trajets.TabIndex = 57;
-            Trajets.Text = "Trajets";
+            cbTrajet.DropDownHeight = 150;
+            cbTrajet.Font = new Font("Segoe UI", 15F);
+            cbTrajet.FormattingEnabled = true;
+            cbTrajet.IntegralHeight = false;
+            cbTrajet.Location = new Point(54, 382);
+            cbTrajet.MaxDropDownItems = 100;
+            cbTrajet.Name = "cbTrajet";
+            cbTrajet.Size = new Size(334, 43);
+            cbTrajet.TabIndex = 57;
+            cbTrajet.Text = "Trajets";
+            cbTrajet.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             // 
-            // Station
+            // cbStation
             // 
-            Station.DropDownHeight = 150;
-            Station.DropDownWidth = 334;
-            Station.Font = new Font("Segoe UI", 15F);
-            Station.FormattingEnabled = true;
-            Station.IntegralHeight = false;
-            Station.Location = new Point(54, 309);
-            Station.MaxDropDownItems = 100;
-            Station.Name = "Station";
-            Station.Size = new Size(334, 43);
-            Station.TabIndex = 56;
-            Station.Text = "Station";
+            cbStation.DropDownHeight = 150;
+            cbStation.DropDownWidth = 334;
+            cbStation.Font = new Font("Segoe UI", 15F);
+            cbStation.FormattingEnabled = true;
+            cbStation.IntegralHeight = false;
+            cbStation.Location = new Point(54, 309);
+            cbStation.MaxDropDownItems = 100;
+            cbStation.Name = "cbStation";
+            cbStation.Size = new Size(334, 43);
+            cbStation.TabIndex = 56;
+            cbStation.Text = "Station";
+            cbStation.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             // 
-            // Ligne
+            // cbLigne
             // 
-            Ligne.Font = new Font("Segoe UI", 15F);
-            Ligne.FormattingEnabled = true;
-            Ligne.Location = new Point(54, 240);
-            Ligne.Name = "Ligne";
-            Ligne.Size = new Size(334, 43);
-            Ligne.TabIndex = 55;
-            Ligne.Text = "Ligne";
+            cbLigne.Font = new Font("Segoe UI", 15F);
+            cbLigne.FormattingEnabled = true;
+            cbLigne.Location = new Point(54, 240);
+            cbLigne.Name = "cbLigne";
+            cbLigne.Size = new Size(334, 43);
+            cbLigne.TabIndex = 55;
+            cbLigne.Text = "Ligne";
+            cbLigne.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             // 
             // btnRetour
             // 
@@ -129,6 +132,7 @@
             btnModif.TabIndex = 53;
             btnModif.Text = "Modifier";
             btnModif.UseVisualStyleBackColor = false;
+            btnModif.Click += btnModif_Click;
             // 
             // flowLayoutPanel2
             // 
@@ -348,9 +352,9 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
-            Controls.Add(Trajets);
-            Controls.Add(Station);
-            Controls.Add(Ligne);
+            Controls.Add(cbTrajet);
+            Controls.Add(cbStation);
+            Controls.Add(cbLigne);
             Controls.Add(btnRetour);
             Controls.Add(btnModif);
             Controls.Add(flowLayoutPanel2);
@@ -377,9 +381,9 @@
 
         #endregion
 
-        private ComboBox Trajets;
-        private ComboBox Station;
-        private ComboBox Ligne;
+        private ComboBox cbTrajet;
+        private ComboBox cbStation;
+        private ComboBox cbLigne;
         private Button btnRetour;
         private Button btnModif;
         private FlowLayoutPanel flowLayoutPanel2;
