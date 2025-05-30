@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartePleinEcran));
             PicBoxCartePleineEcran = new PictureBox();
             btnQuitter = new Button();
             ((System.ComponentModel.ISupportInitialize)PicBoxCartePleineEcran).BeginInit();
@@ -43,7 +44,6 @@
             PicBoxCartePleineEcran.SizeMode = PictureBoxSizeMode.Zoom;
             PicBoxCartePleineEcran.TabIndex = 55;
             PicBoxCartePleineEcran.TabStop = false;
-            PicBoxCartePleineEcran.Click += PicBoxCartePleineEcran_Click;
             // 
             // btnQuitter
             // 
@@ -54,7 +54,6 @@
             btnQuitter.TabIndex = 56;
             btnQuitter.Text = "<>";
             btnQuitter.UseVisualStyleBackColor = true;
-            btnQuitter.Click += btnQuitter_Click;
             // 
             // CartePleinEcran
             // 
@@ -63,9 +62,10 @@
             ClientSize = new Size(446, 659);
             Controls.Add(btnQuitter);
             Controls.Add(PicBoxCartePleineEcran);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CartePleinEcran";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CartePleinEcran";
-            Load += CartePleinEcran_Load;
             ((System.ComponentModel.ISupportInitialize)PicBoxCartePleineEcran).EndInit();
             ResumeLayout(false);
         }

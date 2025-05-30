@@ -17,31 +17,6 @@ namespace TUBAPP
             InitializeComponent();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnConfirmer_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void picBoxCarte_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PageCarte_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)

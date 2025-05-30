@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageCarte));
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox3 = new PictureBox();
             label2 = new Label();
@@ -96,7 +97,7 @@
             // 
             // picIconeContact
             // 
-            picIconeContact.Image = Properties.Resources.IconeProfilSelectionner;
+            picIconeContact.Image = Properties.Resources.icone_profil;
             picIconeContact.Location = new Point(361, 4);
             picIconeContact.Margin = new Padding(3, 4, 3, 4);
             picIconeContact.Name = "picIconeContact";
@@ -142,7 +143,6 @@
             btnEstimation.TabIndex = 45;
             btnEstimation.Text = "Estimation de la capacité";
             btnEstimation.UseVisualStyleBackColor = false;
-            btnEstimation.Click += btnConfirmer_Click;
             // 
             // lblRame
             // 
@@ -175,7 +175,6 @@
             picBoxCarte.SizeMode = PictureBoxSizeMode.StretchImage;
             picBoxCarte.TabIndex = 48;
             picBoxCarte.TabStop = false;
-            picBoxCarte.Click += picBoxCarte_Click;
             // 
             // flowLayoutPanel2
             // 
@@ -183,7 +182,7 @@
             flowLayoutPanel2.Controls.Add(pictureBox1);
             flowLayoutPanel2.Controls.Add(BtnHome);
             flowLayoutPanel2.Controls.Add(pictureBox5);
-            flowLayoutPanel2.Location = new Point(2, 595);
+            flowLayoutPanel2.Location = new Point(0, 595);
             flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(446, 65);
@@ -192,7 +191,7 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources.GPSSelectionner;
+            pictureBox1.Image = Properties.Resources.GPS;
             pictureBox1.Location = new Point(70, 5);
             pictureBox1.Margin = new Padding(70, 0, 15, 0);
             pictureBox1.Name = "pictureBox1";
@@ -216,7 +215,7 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = Properties.Resources.network;
+            pictureBox5.Image = Properties.Resources.networkSelectionner;
             pictureBox5.Location = new Point(329, 3);
             pictureBox5.Margin = new Padding(30, 3, 15, 5);
             pictureBox5.Name = "pictureBox5";
@@ -248,9 +247,10 @@
             Controls.Add(btnEstimation);
             Controls.Add(lblInfo);
             Controls.Add(flowLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PageCarte";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PageCarte";
-            Load += PageCarte_Load;
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

@@ -30,26 +30,6 @@ namespace TUBAPP
             btnQuitter.Text = "Quitter";
             btnQuitter.Click += (s, e) => this.Close();
             btnQuitter.BringToFront(); // S'assurer qu’il n’est pas caché par l’image
-
-
-
-
-
-        }
-
-        private void CartePleinEcran_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnQuitter_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PicBoxCartePleineEcran_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
