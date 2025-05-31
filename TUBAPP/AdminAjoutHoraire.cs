@@ -7,27 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TUBAPP
 {
-    public partial class AdminAjoutLigne : Form
+    public partial class AdminAjoutHoraire : Form
     {
-        public AdminAjoutLigne()
+        public AdminAjoutHoraire()
         {
             InitializeComponent();
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            PageCarte page = new PageCarte();
-            page.Show();
-            this.Close();
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "HH:mm";
+            dateTimePicker1.ShowUpDown = true;
         }
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
             frmOptionAdminAjouter page = new frmOptionAdminAjouter();
+            page.Show();
+            this.Close();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            PageCarte page = new PageCarte();
             page.Show();
             this.Close();
         }

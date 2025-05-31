@@ -44,6 +44,8 @@
             txtZoneLigne = new TextBox();
             txtStatusLigne = new TextBox();
             txtLongueurLigne = new TextBox();
+            comboBox1 = new ComboBox();
+            btnAjouter = new Button();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).BeginInit();
@@ -188,54 +190,80 @@
             btnRetour.TabIndex = 48;
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
+            btnRetour.Click += btnRetour_Click;
             // 
             // label2
             // 
             label2.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            label2.Location = new Point(70, 98);
+            label2.Location = new Point(3, 98);
             label2.Name = "label2";
-            label2.Size = new Size(292, 69);
+            label2.Size = new Size(443, 93);
             label2.TabIndex = 49;
-            label2.Text = "Ajouter";
+            label2.Text = "Ajouter une ligne";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtNomLigne
             // 
-            txtNomLigne.Location = new Point(77, 212);
+            txtNomLigne.Location = new Point(66, 212);
             txtNomLigne.Name = "txtNomLigne";
             txtNomLigne.PlaceholderText = "Nom de ligne";
-            txtNomLigne.Size = new Size(292, 27);
+            txtNomLigne.Size = new Size(322, 27);
             txtNomLigne.TabIndex = 50;
             // 
             // txtZoneLigne
             // 
-            txtZoneLigne.Location = new Point(77, 319);
+            txtZoneLigne.Location = new Point(66, 319);
             txtZoneLigne.Name = "txtZoneLigne";
             txtZoneLigne.PlaceholderText = "Zone ligne";
-            txtZoneLigne.Size = new Size(292, 27);
+            txtZoneLigne.Size = new Size(322, 27);
             txtZoneLigne.TabIndex = 51;
             // 
             // txtStatusLigne
             // 
-            txtStatusLigne.Location = new Point(77, 401);
+            txtStatusLigne.Location = new Point(66, 401);
             txtStatusLigne.Name = "txtStatusLigne";
             txtStatusLigne.PlaceholderText = "Status Ligne";
-            txtStatusLigne.Size = new Size(292, 27);
+            txtStatusLigne.Size = new Size(322, 27);
             txtStatusLigne.TabIndex = 52;
             // 
             // txtLongueurLigne
             // 
-            txtLongueurLigne.Location = new Point(77, 360);
+            txtLongueurLigne.Location = new Point(66, 360);
             txtLongueurLigne.Name = "txtLongueurLigne";
             txtLongueurLigne.PlaceholderText = "Longueur ligne";
-            txtLongueurLigne.Size = new Size(292, 27);
+            txtLongueurLigne.Size = new Size(322, 27);
             txtLongueurLigne.TabIndex = 53;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(66, 265);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(322, 28);
+            comboBox1.TabIndex = 54;
+            comboBox1.Text = "Couleur de ligne";
+            // 
+            // btnAjouter
+            // 
+            btnAjouter.BackColor = Color.FromArgb(209, 66, 54);
+            btnAjouter.FlatStyle = FlatStyle.Flat;
+            btnAjouter.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnAjouter.ForeColor = Color.White;
+            btnAjouter.Location = new Point(95, 462);
+            btnAjouter.Margin = new Padding(3, 4, 3, 4);
+            btnAjouter.Name = "btnAjouter";
+            btnAjouter.Size = new Size(257, 53);
+            btnAjouter.TabIndex = 55;
+            btnAjouter.Text = "Ajouter la ligne";
+            btnAjouter.UseVisualStyleBackColor = false;
             // 
             // AdminAjoutLigne
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
+            Controls.Add(btnAjouter);
+            Controls.Add(comboBox1);
             Controls.Add(txtLongueurLigne);
             Controls.Add(txtStatusLigne);
             Controls.Add(txtZoneLigne);
@@ -277,5 +305,7 @@
         private TextBox txtZoneLigne;
         private TextBox txtStatusLigne;
         private TextBox txtLongueurLigne;
+        private ComboBox comboBox1;
+        private Button btnAjouter;
     }
 }

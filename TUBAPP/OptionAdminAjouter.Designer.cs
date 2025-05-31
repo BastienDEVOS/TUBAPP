@@ -177,6 +177,7 @@
             btnAjoutStation.TabIndex = 33;
             btnAjoutStation.Text = "Station";
             btnAjoutStation.UseVisualStyleBackColor = false;
+            btnAjoutStation.Click += btnAjoutStation_Click;
             // 
             // btnAjoutLigne
             // 
@@ -191,6 +192,7 @@
             btnAjoutLigne.TabIndex = 32;
             btnAjoutLigne.Text = "Ligne";
             btnAjoutLigne.UseVisualStyleBackColor = false;
+            btnAjoutLigne.Click += btnAjoutLigne_Click;
             // 
             // lblTitre
             // 

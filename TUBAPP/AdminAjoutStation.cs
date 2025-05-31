@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TUBAPP
 {
-    public partial class AdminAjoutLigne : Form
+    public partial class AdminAjoutStation : Form
     {
-        public AdminAjoutLigne()
+        public AdminAjoutStation()
         {
             InitializeComponent();
         }
@@ -23,6 +22,11 @@ namespace TUBAPP
             PageCarte page = new PageCarte();
             page.Show();
             this.Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnRetour_Click(object sender, EventArgs e)

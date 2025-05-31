@@ -40,5 +40,19 @@ namespace TUBAPP
             page.Show();
             this.Close();
         }
+
+        private void btnAjoutLigne_Click(object sender, EventArgs e)
+        {
+            AdminAjoutLigne page = new AdminAjoutLigne();
+            page.Show();
+            this.Close();
+        }
+
+        private void btnAjoutStation_Click(object sender, EventArgs e)
+        {
+            AdminAjoutStation page = new AdminAjoutStation();
+            page.Show();
+            this.Close();
+        }
     }
 }
