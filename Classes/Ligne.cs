@@ -70,6 +70,8 @@
             set { _heuredebut = value; }
         }
 
+        public string IdEtNom => $"{IdLigne} | {Nom}";
+
         //Methode
         public override string ToString()
         {

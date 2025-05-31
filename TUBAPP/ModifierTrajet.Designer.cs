@@ -52,12 +52,12 @@
             panel1 = new Panel();
             txtTpsTrajet = new TextBox();
             label4 = new Label();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
+            cbLigne = new ComboBox();
+            cbStationDepart = new ComboBox();
             label6 = new Label();
             label3 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            cbStationArrivee = new ComboBox();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).BeginInit();
@@ -83,6 +83,7 @@
             btnRetour.TabIndex = 63;
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
+            btnRetour.Click += btnRetour_Click;
             // 
             // btnModif
             // 
@@ -316,12 +317,12 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(txtTpsTrajet);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(comboBox3);
-            panel1.Controls.Add(comboBox2);
+            panel1.Controls.Add(cbLigne);
+            panel1.Controls.Add(cbStationDepart);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(cbStationArrivee);
             panel1.Location = new Point(67, 181);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
@@ -344,21 +345,21 @@
             label4.TabIndex = 24;
             label4.Text = "Temps de trajet";
             // 
-            // comboBox3
+            // cbLigne
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(139, 18);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(156, 28);
-            comboBox3.TabIndex = 23;
+            cbLigne.FormattingEnabled = true;
+            cbLigne.Location = new Point(139, 18);
+            cbLigne.Name = "cbLigne";
+            cbLigne.Size = new Size(156, 28);
+            cbLigne.TabIndex = 23;
             // 
-            // comboBox2
+            // cbStationDepart
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(138, 65);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(156, 28);
-            comboBox2.TabIndex = 22;
+            cbStationDepart.FormattingEnabled = true;
+            cbStationDepart.Location = new Point(138, 65);
+            cbStationDepart.Name = "cbStationDepart";
+            cbStationDepart.Size = new Size(156, 28);
+            cbStationDepart.TabIndex = 22;
             // 
             // label6
             // 
@@ -387,13 +388,13 @@
             label2.TabIndex = 17;
             label2.Text = "Ligne concernée";
             // 
-            // comboBox1
+            // cbStationArrivee
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(139, 118);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(156, 28);
-            comboBox1.TabIndex = 15;
+            cbStationArrivee.FormattingEnabled = true;
+            cbStationArrivee.Location = new Point(139, 118);
+            cbStationArrivee.Name = "cbStationArrivee";
+            cbStationArrivee.Size = new Size(156, 28);
+            cbStationArrivee.TabIndex = 15;
             // 
             // ModifierTrajet
             // 
@@ -452,10 +453,10 @@
         private Label label6;
         private Label label3;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox cbStationArrivee;
         private TextBox txtTpsTrajet;
         private Label label4;
-        private ComboBox comboBox3;
-        private ComboBox comboBox2;
+        private ComboBox cbLigne;
+        private ComboBox cbStationDepart;
     }
 }

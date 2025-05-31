@@ -51,12 +51,12 @@
             panel1 = new Panel();
             label9 = new Label();
             label8 = new Label();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            AccessibiliterNon = new CheckBox();
+            AccessibiliterOui = new CheckBox();
             label6 = new Label();
             label3 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            cbLigne = new ComboBox();
             txtNom = new TextBox();
             btnConfirmer = new Button();
             flowLayoutPanel2.SuspendLayout();
@@ -84,6 +84,7 @@
             btnRetour.TabIndex = 63;
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
+            btnRetour.Click += btnRetour_Click;
             // 
             // flowLayoutPanel2
             // 
@@ -302,12 +303,12 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label9);
             panel1.Controls.Add(label8);
-            panel1.Controls.Add(checkBox2);
-            panel1.Controls.Add(checkBox1);
+            panel1.Controls.Add(AccessibiliterNon);
+            panel1.Controls.Add(AccessibiliterOui);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(cbLigne);
             panel1.Controls.Add(txtNom);
             panel1.Location = new Point(67, 181);
             panel1.Margin = new Padding(3, 4, 3, 4);
@@ -333,23 +334,23 @@
             label8.TabIndex = 26;
             label8.Text = "Oui";
             // 
-            // checkBox2
+            // AccessibiliterNon
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(235, 70);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(18, 17);
-            checkBox2.TabIndex = 25;
-            checkBox2.UseVisualStyleBackColor = true;
+            AccessibiliterNon.AutoSize = true;
+            AccessibiliterNon.Location = new Point(235, 70);
+            AccessibiliterNon.Name = "AccessibiliterNon";
+            AccessibiliterNon.Size = new Size(18, 17);
+            AccessibiliterNon.TabIndex = 25;
+            AccessibiliterNon.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // AccessibiliterOui
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(158, 70);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(18, 17);
-            checkBox1.TabIndex = 24;
-            checkBox1.UseVisualStyleBackColor = true;
+            AccessibiliterOui.AutoSize = true;
+            AccessibiliterOui.Location = new Point(158, 70);
+            AccessibiliterOui.Name = "AccessibiliterOui";
+            AccessibiliterOui.Size = new Size(18, 17);
+            AccessibiliterOui.TabIndex = 24;
+            AccessibiliterOui.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -378,13 +379,13 @@
             label2.TabIndex = 17;
             label2.Text = "Nom de la station";
             // 
-            // comboBox1
+            // cbLigne
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(139, 101);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(156, 28);
-            comboBox1.TabIndex = 15;
+            cbLigne.FormattingEnabled = true;
+            cbLigne.Location = new Point(139, 101);
+            cbLigne.Name = "cbLigne";
+            cbLigne.Size = new Size(156, 28);
+            cbLigne.TabIndex = 15;
             // 
             // txtNom
             // 
@@ -462,12 +463,12 @@
         private Label label6;
         private Label label3;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox cbLigne;
         private TextBox txtNom;
         private Button btnConfirmer;
         private Label label9;
         private Label label8;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
+        private CheckBox AccessibiliterNon;
+        private CheckBox AccessibiliterOui;
     }
 }

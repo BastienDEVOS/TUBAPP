@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAjoutLigne));
             flowLayoutPanel2 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             BtnHome = new PictureBox();
@@ -272,7 +273,9 @@
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(btnRetour);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminAjoutLigne";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminAjoutLigne";
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

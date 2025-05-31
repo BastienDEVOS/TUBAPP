@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAjoutHoraire));
             btnRetour = new Button();
             lblTitre1 = new Label();
             pictureBox3 = new PictureBox();
@@ -285,8 +286,10 @@
             Controls.Add(btnAjouter);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Location = new Point(66, 265);
             Name = "AdminAjoutHoraire";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminAjoutHoraire";
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();

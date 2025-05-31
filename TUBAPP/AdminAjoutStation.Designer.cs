@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAjoutStation));
             txtNomStation = new TextBox();
             btnRetour = new Button();
             pictureBox3 = new PictureBox();
@@ -255,7 +256,9 @@
             Controls.Add(lblTitre1);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminAjoutStation";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminAjoutStation";
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();

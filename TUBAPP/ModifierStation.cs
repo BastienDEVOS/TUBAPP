@@ -21,6 +21,24 @@ namespace TUBAPP
 
             // Initialisation des champs avec les données de la station à modifier
             txtNom.Text = Station.Nom;
+            if (Station.Accessibilite.ToString() == "True")
+            {
+                AccessibiliterOui.Checked = true;
+            }
+            else
+            {
+                AccessibiliterNon.Checked = true;
+            }
+
+            List<Ligne> lignes = BD.GetLigne(); // récupère les lignes depuis la BD
+
+            // Ajoute une ligne "par défaut" tout en haut de la liste
+            lignes.Insert(0, new Ligne { IdLigne = -1, Nom = "-- Sélectionner une ligne --" });
+
+            cbLigne.DataSource = lignes;
+            cbLigne.DisplayMember = "IdEtNom";
+            cbLigne.ValueMember = "IdLigne";
+            cbLigne.SelectedIndex = 0; // force la sélection par défaut
 
         }
 
@@ -28,6 +46,13 @@ namespace TUBAPP
         {
             PageCarte page = new PageCarte();
             page.Show();
+            this.Close();
+        }
+
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            frmOptionAdminModif optionAdminModifier = new frmOptionAdminModif();
+            optionAdminModifier.Show();
             this.Close();
         }
     }
