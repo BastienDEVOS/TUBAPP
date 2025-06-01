@@ -8,14 +8,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Classes;
 
 namespace TUBAPP
 {
     public partial class frmSelectionLigne : Form
     {
-        public frmSelectionLigne()
+        public frmSelectionLigne(Station StationDepart, Station StationArrivee)
         {
             InitializeComponent();
+
+            // récupère les stations depuis la BD
+            List<Station> stationsDepart = BD.GetStation(); 
+            List<Station> stationsArrivee = BD.GetStation();
+
+            cmb_StationDepart.DataSource = stationsDepart;
+            cmb_StationDepart.DisplayMember = "Nom";
+            cmb_StationDepart.ValueMember = "IdStation";
+            cmb_StationDepart.SelectedIndex = (StationDepart.IdStation) -1; // force la sélection par défaut
+
+            cmb_StationArrivee.DataSource = stationsArrivee;
+            cmb_StationArrivee.DisplayMember = "Nom";
+            cmb_StationArrivee.ValueMember = "IdStation";
+            cmb_StationArrivee.SelectedIndex = (StationArrivee.IdStation) -1; // force la sélection par défaut
         }
 
         private void labelSelectionner_Click(object sender, EventArgs e)
@@ -28,10 +43,6 @@ namespace TUBAPP
             ClassUtilitaire.MettreBordArrondis(p_InfosTrajet, 20);
             ClassUtilitaire.MettreBordArrondis(p_Horraire, 20);
             ClassUtilitaire.MettreBordArrondis(p_Station, 20);
-            ClassUtilitaire.MettreBordArrondis(cmb_StationDepart, 20);
-            ClassUtilitaire.MettreBordArrondis(cmb_StationArrivee, 20);
-            ClassUtilitaire.MettreBordArrondis(cmb_Horaire1, 20);
-            ClassUtilitaire.MettreBordArrondis(cmb_Horaire2, 20);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

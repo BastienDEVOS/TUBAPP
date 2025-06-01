@@ -8,7 +8,7 @@ using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TUBAPP; // Assurez-vous que le bon espace de noms est utilisé pour les ressources
+using Classes;
 
 namespace TUBAPP
 {
@@ -17,13 +17,37 @@ namespace TUBAPP
         public frmMenuPricipal()
         {
             InitializeComponent();
+            BD.Connection();
+
+            // récupère les stations depuis la BD
+            List<Station> stationsDepart = BD.GetStation();
+            List<Station> stationsArrivee = BD.GetStation(); 
+
+
+            // Ajoute une station "par défaut" tout en haut de la liste
+            stationsDepart.Insert(0, new Station { IdStation = -1, Nom = "-- Sélectionner une station --" });
+            stationsArrivee.Insert(0, new Station { IdStation = -1, Nom = "-- Sélectionner une station --" });
+
+            cmbStationDepart.DataSource = stationsDepart;
+            cmbStationDepart.DisplayMember = "Nom";
+            cmbStationDepart.ValueMember = "IdStation";
+            cmbStationDepart.SelectedIndex = 0; // force la sélection par défaut
+
+            cmbStationArrivee.DataSource = stationsArrivee;
+            cmbStationArrivee.DisplayMember = "Nom";
+            cmbStationArrivee.ValueMember = "IdStation";
+            cmbStationArrivee.SelectedIndex = 0; // force la sélection par défaut
+
+            
         }
 
         private void VoirItineraire_Click(object sender, EventArgs e)
         {
-            frmSelectionLigne selectionLigne = new frmSelectionLigne();
+            Station StationDepart = (Station)cmbStationDepart.SelectedItem;
+            Station StationArrivee = (Station)cmbStationArrivee.SelectedItem;
+            frmSelectionLigne selectionLigne = new frmSelectionLigne(StationDepart, StationArrivee);
             selectionLigne.Show();
-            this.Close();  // Masquer le formulaire principal
+            this.Close();
         }
 
         private void picIconeContact_Click(object sender, EventArgs e)
@@ -57,16 +81,21 @@ namespace TUBAPP
             this.Hide(); // Masquer le formulaire principal
         }
 
-        private void frmMenuPricipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             PageCarte page = new PageCarte();
             page.Show();
             this.Close();
+        }
+
+        private void MettreAJourBoutonItineraire(object sender, EventArgs e)
+        {
+            bool selectionsValides =
+                cmbStationDepart.SelectedIndex > 0 &&
+                cmbStationArrivee.SelectedIndex > 0 &&
+                cmbStationDepart.SelectedIndex != cmbStationArrivee.SelectedIndex;
+
+            btnVoirItineraire.Enabled = selectionsValides;
         }
     }
 }

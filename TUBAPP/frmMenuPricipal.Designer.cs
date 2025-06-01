@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPricipal));
             InfoImportantes = new FlowLayoutPanel();
             label3 = new Label();
-            VoirItineraire = new Button();
+            btnVoirItineraire = new Button();
             label2 = new Label();
             label1 = new Label();
-            StationArrivee = new ComboBox();
-            StationDepart = new ComboBox();
+            cmbStationArrivee = new ComboBox();
+            cmbStationDepart = new ComboBox();
             flpNavbarre = new FlowLayoutPanel();
             pictureBox4 = new PictureBox();
             lblTUBAPP = new Label();
@@ -71,18 +71,19 @@
             label3.TabIndex = 20;
             label3.Text = "Informations importantes";
             // 
-            // VoirItineraire
+            // btnVoirItineraire
             // 
-            VoirItineraire.BackColor = SystemColors.ControlLight;
-            VoirItineraire.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            VoirItineraire.ForeColor = SystemColors.ControlText;
-            VoirItineraire.Location = new Point(109, 268);
-            VoirItineraire.Name = "VoirItineraire";
-            VoirItineraire.Size = new Size(228, 38);
-            VoirItineraire.TabIndex = 19;
-            VoirItineraire.Text = "Voir les itinéraires";
-            VoirItineraire.UseVisualStyleBackColor = false;
-            VoirItineraire.Click += VoirItineraire_Click;
+            btnVoirItineraire.BackColor = SystemColors.ControlLight;
+            btnVoirItineraire.Enabled = false;
+            btnVoirItineraire.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            btnVoirItineraire.ForeColor = SystemColors.ControlText;
+            btnVoirItineraire.Location = new Point(109, 268);
+            btnVoirItineraire.Name = "btnVoirItineraire";
+            btnVoirItineraire.Size = new Size(228, 38);
+            btnVoirItineraire.TabIndex = 19;
+            btnVoirItineraire.Text = "Voir les itinéraires";
+            btnVoirItineraire.UseVisualStyleBackColor = false;
+            btnVoirItineraire.Click += VoirItineraire_Click;
             // 
             // label2
             // 
@@ -102,23 +103,31 @@
             label1.TabIndex = 17;
             label1.Text = "Station d'arrivée :";
             // 
-            // StationArrivee
+            // cmbStationArrivee
             // 
-            StationArrivee.Anchor = AnchorStyles.Top;
-            StationArrivee.FormattingEnabled = true;
-            StationArrivee.ItemHeight = 20;
-            StationArrivee.Location = new Point(96, 234);
-            StationArrivee.Name = "StationArrivee";
-            StationArrivee.Size = new Size(251, 28);
-            StationArrivee.TabIndex = 16;
+            cmbStationArrivee.Anchor = AnchorStyles.Top;
+            cmbStationArrivee.DropDownHeight = 200;
+            cmbStationArrivee.FormattingEnabled = true;
+            cmbStationArrivee.IntegralHeight = false;
+            cmbStationArrivee.ItemHeight = 20;
+            cmbStationArrivee.Location = new Point(96, 234);
+            cmbStationArrivee.MaxDropDownItems = 100;
+            cmbStationArrivee.Name = "cmbStationArrivee";
+            cmbStationArrivee.Size = new Size(251, 28);
+            cmbStationArrivee.TabIndex = 16;
+            cmbStationArrivee.SelectedIndexChanged += MettreAJourBoutonItineraire;
             // 
-            // StationDepart
+            // cmbStationDepart
             // 
-            StationDepart.FormattingEnabled = true;
-            StationDepart.Location = new Point(96, 157);
-            StationDepart.Name = "StationDepart";
-            StationDepart.Size = new Size(251, 28);
-            StationDepart.TabIndex = 15;
+            cmbStationDepart.DropDownHeight = 200;
+            cmbStationDepart.FormattingEnabled = true;
+            cmbStationDepart.IntegralHeight = false;
+            cmbStationDepart.Location = new Point(96, 157);
+            cmbStationDepart.MaxDropDownItems = 100;
+            cmbStationDepart.Name = "cmbStationDepart";
+            cmbStationDepart.Size = new Size(251, 28);
+            cmbStationDepart.TabIndex = 15;
+            cmbStationDepart.SelectedIndexChanged += MettreAJourBoutonItineraire;
             // 
             // flpNavbarre
             // 
@@ -238,17 +247,16 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(InfoImportantes);
             Controls.Add(label3);
-            Controls.Add(VoirItineraire);
+            Controls.Add(btnVoirItineraire);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(StationArrivee);
-            Controls.Add(StationDepart);
+            Controls.Add(cmbStationArrivee);
+            Controls.Add(cmbStationDepart);
             Controls.Add(flpNavbarre);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMenuPricipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmMenuPricipal";
-            Load += frmMenuPricipal_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -265,11 +273,11 @@
 
         private FlowLayoutPanel InfoImportantes;
         private Label label3;
-        private Button VoirItineraire;
+        private Button btnVoirItineraire;
         private Label label2;
         private Label label1;
-        private ComboBox StationArrivee;
-        private ComboBox StationDepart;
+        private ComboBox cmbStationArrivee;
+        private ComboBox cmbStationDepart;
         private FlowLayoutPanel flpNavbarre;
         private Label lblTUBAPP;
         private PictureBox picIconeContact;

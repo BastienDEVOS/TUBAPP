@@ -81,7 +81,7 @@ namespace TUBAPP
             if (cbStation.SelectedIndex != 0) nbSelections++;
             if (cbTrajet.SelectedIndex != 0) nbSelections++;
 
-            // Active le bouton uniquement si une seule sélection est faite
+            // Active le bouton uniquement si une seule sélection sélectionner
             btnModif.Enabled = (nbSelections == 1);
 
             // Gestion dynamique des ComboBox : une seule active à la fois

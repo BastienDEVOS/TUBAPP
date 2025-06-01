@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TUBAPP
 {
-    public partial class AdminAjoutHoraire : Form
+    public partial class AdminAjoutTrajet : Form
     {
-        public AdminAjoutHoraire()
+        public AdminAjoutTrajet()
         {
             InitializeComponent();
         }

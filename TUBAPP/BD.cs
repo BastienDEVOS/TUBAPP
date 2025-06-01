@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 using Classes;
 using Google.Protobuf.WellKnownTypes;
 using Mysqlx.Crud;
+using System.Data;
 
 namespace TUBAPP
 {
@@ -83,6 +84,14 @@ namespace TUBAPP
             List<Station> stations = new List<Station>();
             string reSQL = "SELECT * FROM Station";
 
+            MySqlConnection conn = GetConnection();
+
+            if (conn == null)
+                throw new InvalidOperationException("Connexion non initialisée. Appelle BD.Connection() avant.");
+
+            if (conn.State != ConnectionState.Open)
+                conn.Open(); 
+
             MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
@@ -99,7 +108,6 @@ namespace TUBAPP
                     stations.Add(s);
                 }
             }
-
             return stations;
         }
 

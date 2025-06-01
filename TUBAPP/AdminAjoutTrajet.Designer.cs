@@ -1,6 +1,6 @@
 ﻿namespace TUBAPP
 {
-    partial class AdminAjoutHoraire
+    partial class AdminAjoutTrajet
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAjoutHoraire));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAjoutTrajet));
             btnRetour = new Button();
             lblTitre1 = new Label();
             pictureBox3 = new PictureBox();
@@ -79,7 +79,7 @@
             lblTitre1.Name = "lblTitre1";
             lblTitre1.Size = new Size(443, 93);
             lblTitre1.TabIndex = 66;
-            lblTitre1.Text = "Ajouter une station";
+            lblTitre1.Text = "Ajouter un Trajet";
             lblTitre1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
@@ -219,7 +219,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.CustomFormat = "HH:MM";
+            dateTimePicker1.CustomFormat = "HH:mm";
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(83, 278);
             dateTimePicker1.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
@@ -233,7 +233,7 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.CustomFormat = "HH:MM";
+            dateTimePicker2.CustomFormat = "HH:mm";
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.Location = new Point(83, 349);
             dateTimePicker2.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
@@ -271,7 +271,7 @@
             lblArrivé.TabIndex = 73;
             lblArrivé.Text = "Horaire d'arriver";
             // 
-            // AdminAjoutHoraire
+            // AdminAjoutTrajet
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -288,7 +288,7 @@
             Controls.Add(flowLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Location = new Point(66, 265);
-            Name = "AdminAjoutHoraire";
+            Name = "AdminAjoutTrajet";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminAjoutHoraire";
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

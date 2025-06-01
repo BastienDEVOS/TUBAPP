@@ -31,17 +31,19 @@ namespace TUBAPP
             cbLigne.ValueMember = "IdLigne";
             cbLigne.SelectedIndex = Trajet.IdLigne; // force la sélection par défaut
 
-            List<Station> stations = BD.GetStation(); // récupère les stations depuis la BD
+            List<Station> stationsDepart = BD.GetStation(); // récupère les stations depuis la BD
+            List<Station> stationsArrivee = BD.GetStation(); 
 
             // Ajoute une station "par défaut" tout en haut de la liste
-            stations.Insert(0, new Station { IdStation = -1, Nom = "-- Sélectionner une station --" });
+            stationsDepart.Insert(0, new Station { IdStation = -1, Nom = "-- Sélectionner une station --" });
+            stationsArrivee.Insert(0, new Station { IdStation = -1, Nom = "-- Sélectionner une station --" });
 
-            cbStationDepart.DataSource = stations;
+            cbStationDepart.DataSource = stationsDepart;
             cbStationDepart.DisplayMember = "Nom";
             cbStationDepart.ValueMember = "IdStation";
             cbStationDepart.SelectedIndex = Trajet.IdStationDepart; // force la sélection par défaut
 
-            cbStationArrivee.DataSource = stations;
+            cbStationArrivee.DataSource = stationsArrivee;
             cbStationArrivee.DisplayMember = "Nom";
             cbStationArrivee.ValueMember = "IdStation";
             cbStationArrivee.SelectedIndex = Trajet.IdStationArrivee; // force la sélection par défaut
