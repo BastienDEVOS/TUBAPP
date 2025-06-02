@@ -90,7 +90,7 @@ namespace TUBAPP
                 throw new InvalidOperationException("Connexion non initialisée. Appelle BD.Connection() avant.");
 
             if (conn.State != ConnectionState.Open)
-                conn.Open(); 
+                conn.Open();
 
             MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
             using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -186,6 +186,84 @@ namespace TUBAPP
                 }
             }
             return null;
+        }
+
+        public static List<Desservie> LigneDesservie(int idStation)
+        {
+            string reSQL = "Select IdLigne, IdStation FROM Desservie WHERE IdStation = @idStation;";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@idStation", idStation);
+
+            List<Desservie> desservies = new List<Desservie>();
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Desservie d = new Desservie()
+                    {
+                        IdLigne = reader.GetInt32("IdLigne"),
+                        IdStation = reader.GetInt32("IdStation"),
+                    };
+                    desservies.Add(d);
+                }
+            }
+            return desservies;
+        }
+
+        public static void ModifierStation(int idStation, string nom, string zone, bool accessibilite, bool correspondance)
+        {
+            string reSQL = "UPDATE Station SET NomStation = @Nom, Zone = @Zone, Accessibilite = @Accessibilite, Correspondance = @Correspondance WHERE IdStation = @IdStation";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdStation", idStation);
+            cmd.Parameters.AddWithValue("@Nom", nom);
+            cmd.Parameters.AddWithValue("@Zone", zone);
+            cmd.Parameters.AddWithValue("@Accessibilite", accessibilite);
+            cmd.Parameters.AddWithValue("@Correspondance", correspondance);
+            int rowsAffected = cmd.ExecuteNonQuery();
+        }
+
+        public static void ModifierLigne(int idLigne, string nom, string couleur, int longueur, string status, string frequence, string heureFin, string heureDebut)
+        {
+            string reSQL = "UPDATE Ligne SET NomLigne = @Nom, Couleur = @Couleur, Longueur = @Longueur, Statuts = @Status, Frequence = @Frequence, HeureFin = @HeureFin, HeureDebut = @HeureDebut WHERE IdLigne = @IdLigne";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
+            cmd.Parameters.AddWithValue("@Nom", nom);
+            cmd.Parameters.AddWithValue("@Couleur", couleur);
+            cmd.Parameters.AddWithValue("@Longueur", longueur);
+            cmd.Parameters.AddWithValue("@Status", status);
+            cmd.Parameters.AddWithValue("@Frequence", frequence);
+            cmd.Parameters.AddWithValue("@HeureFin", heureFin);
+            cmd.Parameters.AddWithValue("@HeureDebut", heureDebut);
+            int rowsAffected = cmd.ExecuteNonQuery();
+        }
+
+        public static void ModifierTrajet(int idLigne, int idStationDepart, int idStationArrivee, string tempsTrajets)
+        {
+            string reSQL = "UPDATE Trajet SET IdStation = @IdStationDepart, IdStation_1 = @IdStationArrivee, TempsTrajet = @TempsTrajets WHERE IdLigne = @IdLigne";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
+            cmd.Parameters.AddWithValue("@IdStationDepart", idStationDepart);
+            cmd.Parameters.AddWithValue("@IdStationArrivee", idStationArrivee);
+            cmd.Parameters.AddWithValue("@TempsTrajets", tempsTrajets);
+            int rowsAffected = cmd.ExecuteNonQuery();
+        }
+
+        public static void AjouterDesservie(int idLigne, int idStation)
+        {
+            string reSQL = "INSERT INTO Desservie (IdLigne, IdStation) VALUES (@IdLigne, @IdStation)";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
+            cmd.Parameters.AddWithValue("@IdStation", idStation);
+            cmd.ExecuteNonQuery();
+        }
+
+        public static void suprimerDesservieParStation(int idStation)
+        {
+            string reSQL = "DELETE FROM Desservie WHERE IdStation = @IdStation";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdStation", idStation);
+            cmd.ExecuteNonQuery();
         }
     }
 }

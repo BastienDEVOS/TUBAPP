@@ -101,6 +101,7 @@ namespace TUBAPP
             }
         }
 
+        // Ouvre la fenêtre de modification en fonction de la sélection
         private void btnModif_Click(object sender, EventArgs e)
         {
             if (cbLigne.SelectedIndex != 0)

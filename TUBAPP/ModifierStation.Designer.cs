@@ -49,6 +49,9 @@
             btnModifier = new Button();
             lblTitre = new Label();
             panel1 = new Panel();
+            txt_Zone = new TextBox();
+            lbl_Zone = new Label();
+            clb_ligne = new CheckedListBox();
             label9 = new Label();
             label8 = new Label();
             AccessibiliterNon = new CheckBox();
@@ -56,7 +59,6 @@
             label6 = new Label();
             label3 = new Label();
             label2 = new Label();
-            cbLigne = new ComboBox();
             txtNom = new TextBox();
             btnConfirmer = new Button();
             flowLayoutPanel2.SuspendLayout();
@@ -301,6 +303,9 @@
             // 
             panel1.BackColor = Color.White;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(txt_Zone);
+            panel1.Controls.Add(lbl_Zone);
+            panel1.Controls.Add(clb_ligne);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(AccessibiliterNon);
@@ -308,7 +313,6 @@
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(cbLigne);
             panel1.Controls.Add(txtNom);
             panel1.Location = new Point(67, 181);
             panel1.Margin = new Padding(3, 4, 3, 4);
@@ -316,10 +320,35 @@
             panel1.Size = new Size(313, 280);
             panel1.TabIndex = 64;
             // 
+            // txt_Zone
+            // 
+            txt_Zone.Location = new Point(152, 52);
+            txt_Zone.Name = "txt_Zone";
+            txt_Zone.Size = new Size(137, 27);
+            txt_Zone.TabIndex = 30;
+            // 
+            // lbl_Zone
+            // 
+            lbl_Zone.AutoSize = true;
+            lbl_Zone.Location = new Point(8, 55);
+            lbl_Zone.Name = "lbl_Zone";
+            lbl_Zone.Size = new Size(136, 20);
+            lbl_Zone.TabIndex = 29;
+            lbl_Zone.Text = "Zone de la station :";
+            // 
+            // clb_ligne
+            // 
+            clb_ligne.FormattingEnabled = true;
+            clb_ligne.HorizontalScrollbar = true;
+            clb_ligne.Location = new Point(152, 131);
+            clb_ligne.Name = "clb_ligne";
+            clb_ligne.Size = new Size(137, 136);
+            clb_ligne.TabIndex = 28;
+            // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(197, 68);
+            label9.Location = new Point(227, 95);
             label9.Name = "label9";
             label9.Size = new Size(37, 20);
             label9.TabIndex = 27;
@@ -328,7 +357,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(123, 67);
+            label8.Location = new Point(153, 94);
             label8.Name = "label8";
             label8.Size = new Size(32, 20);
             label8.TabIndex = 26;
@@ -337,59 +366,53 @@
             // AccessibiliterNon
             // 
             AccessibiliterNon.AutoSize = true;
-            AccessibiliterNon.Location = new Point(235, 70);
+            AccessibiliterNon.Location = new Point(265, 97);
             AccessibiliterNon.Name = "AccessibiliterNon";
             AccessibiliterNon.Size = new Size(18, 17);
             AccessibiliterNon.TabIndex = 25;
             AccessibiliterNon.UseVisualStyleBackColor = true;
+            AccessibiliterNon.CheckedChanged += Accessibiliter_CheckedChanged;
             // 
             // AccessibiliterOui
             // 
             AccessibiliterOui.AutoSize = true;
-            AccessibiliterOui.Location = new Point(158, 70);
+            AccessibiliterOui.Location = new Point(188, 97);
             AccessibiliterOui.Name = "AccessibiliterOui";
             AccessibiliterOui.Size = new Size(18, 17);
             AccessibiliterOui.TabIndex = 24;
             AccessibiliterOui.UseVisualStyleBackColor = true;
+            AccessibiliterOui.CheckedChanged += Accessibiliter_CheckedChanged;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(8, 104);
+            label6.Location = new Point(8, 131);
             label6.Name = "label6";
-            label6.Size = new Size(116, 20);
+            label6.Size = new Size(123, 20);
             label6.TabIndex = 21;
-            label6.Text = "Ligne désservies";
+            label6.Text = "Ligne désservies :";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(8, 67);
+            label3.Location = new Point(8, 94);
             label3.Name = "label3";
-            label3.Size = new Size(92, 20);
+            label3.Size = new Size(88, 20);
             label3.TabIndex = 18;
-            label3.Text = "Accès PMR ?";
+            label3.Text = "Accès PMR :";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(8, 21);
             label2.Name = "label2";
-            label2.Size = new Size(128, 20);
+            label2.Size = new Size(135, 20);
             label2.TabIndex = 17;
-            label2.Text = "Nom de la station";
-            // 
-            // cbLigne
-            // 
-            cbLigne.FormattingEnabled = true;
-            cbLigne.Location = new Point(139, 101);
-            cbLigne.Name = "cbLigne";
-            cbLigne.Size = new Size(156, 28);
-            cbLigne.TabIndex = 15;
+            label2.Text = "Nom de la station :";
             // 
             // txtNom
             // 
-            txtNom.Location = new Point(139, 18);
+            txtNom.Location = new Point(152, 18);
             txtNom.Name = "txtNom";
             txtNom.Size = new Size(137, 27);
             txtNom.TabIndex = 11;
@@ -407,6 +430,7 @@
             btnConfirmer.TabIndex = 38;
             btnConfirmer.Text = "Confirmer les modifications";
             btnConfirmer.UseVisualStyleBackColor = false;
+            btnConfirmer.Click += ConfirmeModif_Click;
             // 
             // ModifierStation
             // 
@@ -463,12 +487,14 @@
         private Label label6;
         private Label label3;
         private Label label2;
-        private ComboBox cbLigne;
         private TextBox txtNom;
         private Button btnConfirmer;
         private Label label9;
         private Label label8;
         private CheckBox AccessibiliterNon;
         private CheckBox AccessibiliterOui;
+        private CheckedListBox clb_ligne;
+        private TextBox txt_Zone;
+        private Label lbl_Zone;
     }
 }

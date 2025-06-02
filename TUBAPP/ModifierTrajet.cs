@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Classes;
+using Mysqlx.Crud;
 using ZstdSharp.Unsafe;
+using static System.Windows.Forms.LinkLabel;
 
 namespace TUBAPP
 {
@@ -32,7 +34,7 @@ namespace TUBAPP
             cbLigne.SelectedIndex = Trajet.IdLigne; // force la sélection par défaut
 
             List<Station> stationsDepart = BD.GetStation(); // récupère les stations depuis la BD
-            List<Station> stationsArrivee = BD.GetStation(); 
+            List<Station> stationsArrivee = BD.GetStation();
 
             // Ajoute une station "par défaut" tout en haut de la liste
             stationsDepart.Insert(0, new Station { IdStation = -1, Nom = "-- Sélectionner une station --" });
@@ -68,6 +70,11 @@ namespace TUBAPP
             frmOptionAdminModif optionAdminModifier = new frmOptionAdminModif();
             optionAdminModifier.Show();
             this.Close();
+        }
+
+        private void btnModif_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

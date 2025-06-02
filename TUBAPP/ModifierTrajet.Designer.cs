@@ -99,6 +99,7 @@
             btnModif.TabIndex = 62;
             btnModif.Text = "Modifier";
             btnModif.UseVisualStyleBackColor = false;
+            btnModif.Click += btnModif_Click;
             // 
             // flowLayoutPanel2
             // 
