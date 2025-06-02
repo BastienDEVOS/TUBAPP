@@ -23,7 +23,9 @@ namespace TUBAPP
             txtCouleur.Text = Ligne.Couleur;
             txtLongueur.Text = Ligne.Longueur.ToString();
             txtStatus.Text = Ligne.Status;
-            txtFrequence.Text = Ligne.Frequence;
+            dtp_Frequence.Text = Ligne.Frequence;
+            dtp_HeureDebut.Text = Ligne.HeureDebut;
+            dtp_HeureFin.Text = Ligne.HeureFin;
         }
 
         private void btnRetour_Click(object sender, EventArgs e)
@@ -33,15 +35,19 @@ namespace TUBAPP
             this.Close();
         }
 
-        private void ModifierLigne_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             PageCarte page = new PageCarte();
             page.Show();
+            this.Close();
+        }
+
+        private void btnConfirmer_Click(object sender, EventArgs e)
+        {
+            BD.ModifierLigne(LigneModifier.IdLigne, txtNom.Text, txtCouleur.Text, int.Parse(txtLongueur.Text), txtStatus.Text, dtp_Frequence.Text, dtp_HeureDebut.Text, dtp_HeureFin.Text);
+
+            frmOptionAdminModif optionAdminModifier = new frmOptionAdminModif();
+            optionAdminModifier.Show();
             this.Close();
         }
     }

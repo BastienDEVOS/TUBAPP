@@ -43,15 +43,19 @@
             txtCouleur = new TextBox();
             txtNom = new TextBox();
             pnlCard = new Panel();
+            dtp_Frequence = new DateTimePicker();
             txtStatus = new TextBox();
             label7 = new Label();
-            txtFrequence = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label3 = new Label();
             label2 = new Label();
             txtLongueur = new TextBox();
             btnRetour = new Button();
+            lbl_HeureDebut = new Label();
+            lbl_HeureFin = new Label();
+            dtp_HeureDebut = new DateTimePicker();
+            dtp_HeureFin = new DateTimePicker();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
@@ -76,6 +80,7 @@
             btnConfirmer.TabIndex = 37;
             btnConfirmer.Text = "Confirmer les modifications";
             btnConfirmer.UseVisualStyleBackColor = false;
+            btnConfirmer.Click += btnConfirmer_Click;
             // 
             // lblTitre
             // 
@@ -199,7 +204,7 @@
             // 
             // txtCouleur
             // 
-            txtCouleur.Location = new Point(120, 64);
+            txtCouleur.Location = new Point(120, 51);
             txtCouleur.Name = "txtCouleur";
             txtCouleur.Size = new Size(156, 27);
             txtCouleur.TabIndex = 10;
@@ -215,9 +220,13 @@
             // 
             pnlCard.BackColor = Color.White;
             pnlCard.BorderStyle = BorderStyle.FixedSingle;
+            pnlCard.Controls.Add(dtp_HeureFin);
+            pnlCard.Controls.Add(dtp_HeureDebut);
+            pnlCard.Controls.Add(lbl_HeureFin);
+            pnlCard.Controls.Add(lbl_HeureDebut);
+            pnlCard.Controls.Add(dtp_Frequence);
             pnlCard.Controls.Add(txtStatus);
             pnlCard.Controls.Add(label7);
-            pnlCard.Controls.Add(txtFrequence);
             pnlCard.Controls.Add(label6);
             pnlCard.Controls.Add(label5);
             pnlCard.Controls.Add(label3);
@@ -231,9 +240,22 @@
             pnlCard.Size = new Size(313, 297);
             pnlCard.TabIndex = 36;
             // 
+            // dtp_Frequence
+            // 
+            dtp_Frequence.CustomFormat = "HH:mm";
+            dtp_Frequence.Format = DateTimePickerFormat.Custom;
+            dtp_Frequence.Location = new Point(117, 173);
+            dtp_Frequence.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtp_Frequence.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
+            dtp_Frequence.Name = "dtp_Frequence";
+            dtp_Frequence.ShowUpDown = true;
+            dtp_Frequence.Size = new Size(156, 27);
+            dtp_Frequence.TabIndex = 71;
+            dtp_Frequence.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
+            // 
             // txtStatus
             // 
-            txtStatus.Location = new Point(120, 156);
+            txtStatus.Location = new Point(120, 130);
             txtStatus.Name = "txtStatus";
             txtStatus.Size = new Size(156, 27);
             txtStatus.TabIndex = 24;
@@ -241,23 +263,16 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(8, 208);
+            label7.Location = new Point(5, 178);
             label7.Name = "label7";
             label7.Size = new Size(77, 20);
             label7.TabIndex = 23;
             label7.Text = "Fréquence";
             // 
-            // txtFrequence
-            // 
-            txtFrequence.Location = new Point(120, 205);
-            txtFrequence.Name = "txtFrequence";
-            txtFrequence.Size = new Size(156, 27);
-            txtFrequence.TabIndex = 22;
-            // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(8, 159);
+            label6.Location = new Point(8, 133);
             label6.Name = "label6";
             label6.Size = new Size(49, 20);
             label6.TabIndex = 21;
@@ -265,7 +280,7 @@
             // 
             // label5
             // 
-            label5.Location = new Point(8, 109);
+            label5.Location = new Point(5, 90);
             label5.Name = "label5";
             label5.Size = new Size(147, 27);
             label5.TabIndex = 20;
@@ -274,7 +289,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(8, 67);
+            label3.Location = new Point(8, 54);
             label3.Name = "label3";
             label3.Size = new Size(97, 20);
             label3.TabIndex = 18;
@@ -291,7 +306,7 @@
             // 
             // txtLongueur
             // 
-            txtLongueur.Location = new Point(158, 109);
+            txtLongueur.Location = new Point(155, 90);
             txtLongueur.Name = "txtLongueur";
             txtLongueur.Size = new Size(118, 27);
             txtLongueur.TabIndex = 16;
@@ -311,6 +326,50 @@
             btnRetour.UseVisualStyleBackColor = false;
             btnRetour.Click += btnRetour_Click;
             // 
+            // lbl_HeureDebut
+            // 
+            lbl_HeureDebut.AutoSize = true;
+            lbl_HeureDebut.Location = new Point(5, 219);
+            lbl_HeureDebut.Name = "lbl_HeureDebut";
+            lbl_HeureDebut.Size = new Size(94, 20);
+            lbl_HeureDebut.TabIndex = 72;
+            lbl_HeureDebut.Text = "Heure Debut";
+            // 
+            // lbl_HeureFin
+            // 
+            lbl_HeureFin.AutoSize = true;
+            lbl_HeureFin.Location = new Point(8, 256);
+            lbl_HeureFin.Name = "lbl_HeureFin";
+            lbl_HeureFin.Size = new Size(72, 20);
+            lbl_HeureFin.TabIndex = 73;
+            lbl_HeureFin.Text = "Heure Fin";
+            // 
+            // dtp_HeureDebut
+            // 
+            dtp_HeureDebut.CustomFormat = "HH:mm";
+            dtp_HeureDebut.Format = DateTimePickerFormat.Custom;
+            dtp_HeureDebut.Location = new Point(117, 214);
+            dtp_HeureDebut.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtp_HeureDebut.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
+            dtp_HeureDebut.Name = "dtp_HeureDebut";
+            dtp_HeureDebut.ShowUpDown = true;
+            dtp_HeureDebut.Size = new Size(156, 27);
+            dtp_HeureDebut.TabIndex = 74;
+            dtp_HeureDebut.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
+            // 
+            // dtp_HeureFin
+            // 
+            dtp_HeureFin.CustomFormat = "HH:mm";
+            dtp_HeureFin.Format = DateTimePickerFormat.Custom;
+            dtp_HeureFin.Location = new Point(117, 251);
+            dtp_HeureFin.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtp_HeureFin.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
+            dtp_HeureFin.Name = "dtp_HeureFin";
+            dtp_HeureFin.ShowUpDown = true;
+            dtp_HeureFin.Size = new Size(156, 27);
+            dtp_HeureFin.TabIndex = 75;
+            dtp_HeureFin.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
+            // 
             // ModifierLigne
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -326,7 +385,6 @@
             Name = "ModifierLigne";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ModifierLigne";
-            Load += ModifierLigne_Load;
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -362,9 +420,13 @@
         private Label label5;
         private Label label3;
         private Label label2;
-        private TextBox txtFrequence;
         private Label label7;
         private Button btnRetour;
         private TextBox txtStatus;
+        private DateTimePicker dtp_Frequence;
+        private DateTimePicker dtp_HeureFin;
+        private DateTimePicker dtp_HeureDebut;
+        private Label lbl_HeureFin;
+        private Label lbl_HeureDebut;
     }
 }
