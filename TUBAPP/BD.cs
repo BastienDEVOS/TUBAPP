@@ -64,6 +64,8 @@ namespace TUBAPP
             return Conn!;
         }
 
+
+        #region AjoutDonnée
         /// <summary>
         /// Ajoute une station à la base de données.
         /// </summary>
@@ -79,6 +81,30 @@ namespace TUBAPP
             cmd.ExecuteNonQuery();
         }
 
+        public static void AjouterDesservie(int idLigne, int idStation)
+        {
+            string reSQL = "INSERT INTO Desservie (IdLigne, IdStation) VALUES (@IdLigne, @IdStation)";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
+            cmd.Parameters.AddWithValue("@IdStation", idStation);
+            cmd.ExecuteNonQuery();
+        }
+
+        public static void AjoutTrajetBase(int idLigne, int idStationDepart, int idStationArrivee, string tempsTrajets)
+        {
+            string reSQL = "INSERT INTO Trajet (IdLigne, IdStation, IdStation_1, TempsTrajet) VALUES (@IdLigne, @IdStationDepart, @IdStationArrivee, @TempsTrajets)";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
+            cmd.Parameters.AddWithValue("@IdStationDepart", idStationDepart);
+            cmd.Parameters.AddWithValue("@IdStationArrivee", idStationArrivee);
+            cmd.Parameters.AddWithValue("@TempsTrajets", tempsTrajets);
+            cmd.ExecuteNonQuery();
+        }
+
+        #endregion
+
+
+        #region GetDonnee
         public static List<Station> GetStation()
         {
             List<Station> stations = new List<Station>();
@@ -188,6 +214,8 @@ namespace TUBAPP
             return null;
         }
 
+        #endregion
+
         public static List<Desservie> LigneDesservie(int idStation)
         {
             string reSQL = "Select IdLigne, IdStation FROM Desservie WHERE IdStation = @idStation;";
@@ -210,6 +238,8 @@ namespace TUBAPP
             }
             return desservies;
         }
+
+        #region ModifierDonnee
 
         public static void ModifierStation(int idStation, string nom, string zone, bool accessibilite, bool correspondance)
         {
@@ -240,7 +270,7 @@ namespace TUBAPP
 
         public static void ModifierTrajet(int idLigne, int idStationDepart, int idStationArrivee, string tempsTrajets)
         {
-            string reSQL = "UPDATE Trajet SET IdStation = @IdStationDepart, IdStation_1 = @IdStationArrivee, TempsTrajet = @TempsTrajets WHERE IdLigne = @IdLigne";
+            string reSQL = "UPDATE Trajet SET IdStation = @IdStationDepart, IdStation_1 = @IdStationArrivee, TempsTrajet = @TempsTrajets WHERE IdLigne = @IdLigne AND IdStation = @IdStationDepart AND IdStation_1 = @IdStationArrivee";
             MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
             cmd.Parameters.AddWithValue("@IdLigne", idLigne);
             cmd.Parameters.AddWithValue("@IdStationDepart", idStationDepart);
@@ -249,15 +279,9 @@ namespace TUBAPP
             int rowsAffected = cmd.ExecuteNonQuery();
         }
 
-        public static void AjouterDesservie(int idLigne, int idStation)
-        {
-            string reSQL = "INSERT INTO Desservie (IdLigne, IdStation) VALUES (@IdLigne, @IdStation)";
-            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
-            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
-            cmd.Parameters.AddWithValue("@IdStation", idStation);
-            cmd.ExecuteNonQuery();
-        }
+        #endregion
 
+        #region SupprimerDonnee
         public static void suprimerDesservieParStation(int idStation)
         {
             string reSQL = "DELETE FROM Desservie WHERE IdStation = @IdStation";
@@ -265,5 +289,34 @@ namespace TUBAPP
             cmd.Parameters.AddWithValue("@IdStation", idStation);
             cmd.ExecuteNonQuery();
         }
+
+        public static void SupprimerStation(int idStation)
+        {
+            suprimerDesservieParStation(idStation);
+            string reSQL = "DELETE FROM Station WHERE IdStation = @IdStation";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdStation", idStation);
+            cmd.ExecuteNonQuery();
+        }
+
+        public static void SupprimerLigne(int idLigne)
+        {
+            string reSQL = "DELETE FROM Ligne WHERE IdLigne = @IdLigne";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
+            cmd.ExecuteNonQuery();
+        }
+
+        public static void SupprimerTrajet(int idLigne, int idStationDepart, int idStationArrivee)
+        {
+            string reSQL = "DELETE FROM Trajet WHERE IdLigne = @IdLigne AND IdStation = @IdStationDepart AND IdStation_1 = @IdStationArrivee";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
+            cmd.Parameters.AddWithValue("@IdStationDepart", idStationDepart);
+            cmd.Parameters.AddWithValue("@IdStationArrivee", idStationArrivee);
+            cmd.ExecuteNonQuery();
+        }
+
+        #endregion
     }
 }

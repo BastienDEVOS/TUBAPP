@@ -25,9 +25,6 @@ namespace TUBAPP
 
             List<Ligne> lignes = BD.GetLigne(); // récupère les lignes depuis la BD
 
-            // Ajoute une ligne "par défaut" tout en haut de la liste
-            lignes.Insert(0, new Ligne { IdLigne = -1, Nom = "-- Sélectionner une ligne --" });
-
             cbLigne.DataSource = lignes;
             cbLigne.DisplayMember = "Nom";
             cbLigne.ValueMember = "IdLigne";
@@ -35,10 +32,6 @@ namespace TUBAPP
 
             List<Station> stationsDepart = BD.GetStation(); // récupère les stations depuis la BD
             List<Station> stationsArrivee = BD.GetStation();
-
-            // Ajoute une station "par défaut" tout en haut de la liste
-            stationsDepart.Insert(0, new Station { IdStation = -1, Nom = "-- Sélectionner une station --" });
-            stationsArrivee.Insert(0, new Station { IdStation = -1, Nom = "-- Sélectionner une station --" });
 
             cbStationDepart.DataSource = stationsDepart;
             cbStationDepart.DisplayMember = "Nom";
@@ -50,12 +43,7 @@ namespace TUBAPP
             cbStationArrivee.ValueMember = "IdStation";
             cbStationArrivee.SelectedIndex = Trajet.IdStationArrivee; // force la sélection par défaut
 
-            txtTpsTrajet.Text = Trajet.TempsTrajets;
-        }
-
-        private void ModifierHorraire_Load(object sender, EventArgs e)
-        {
-
+            dtp_TempsTrajet.Text = Trajet.TempsTrajets;
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -74,7 +62,11 @@ namespace TUBAPP
 
         private void btnModif_Click(object sender, EventArgs e)
         {
-            
+            BD.SupprimerTrajet(TrajetModifier.IdLigne, TrajetModifier.IdStationDepart, TrajetModifier.IdStationArrivee);
+            BD.AjoutTrajetBase((int)cbLigne.SelectedValue, (int)cbStationDepart.SelectedValue, (int)cbStationArrivee.SelectedValue, dtp_TempsTrajet.Text);
+            frmOptionAdminModif optionAdminModifier = new frmOptionAdminModif();
+            optionAdminModifier.Show();
+            this.Close();
         }
     }
 }

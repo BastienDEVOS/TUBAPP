@@ -50,7 +50,7 @@
             btnModifier = new Button();
             lblTitre = new Label();
             panel1 = new Panel();
-            txtTpsTrajet = new TextBox();
+            dtp_TempsTrajet = new DateTimePicker();
             label4 = new Label();
             cbLigne = new ComboBox();
             cbStationDepart = new ComboBox();
@@ -88,7 +88,6 @@
             // btnModif
             // 
             btnModif.BackColor = Color.FromArgb(209, 66, 54);
-            btnModif.Enabled = false;
             btnModif.FlatStyle = FlatStyle.Flat;
             btnModif.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnModif.ForeColor = Color.White;
@@ -316,7 +315,7 @@
             // 
             panel1.BackColor = Color.White;
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(txtTpsTrajet);
+            panel1.Controls.Add(dtp_TempsTrajet);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(cbLigne);
             panel1.Controls.Add(cbStationDepart);
@@ -330,12 +329,18 @@
             panel1.Size = new Size(313, 229);
             panel1.TabIndex = 65;
             // 
-            // txtTpsTrajet
+            // dtp_TempsTrajet
             // 
-            txtTpsTrajet.Location = new Point(138, 165);
-            txtTpsTrajet.Name = "txtTpsTrajet";
-            txtTpsTrajet.Size = new Size(156, 27);
-            txtTpsTrajet.TabIndex = 25;
+            dtp_TempsTrajet.CustomFormat = "HH:mm";
+            dtp_TempsTrajet.Format = DateTimePickerFormat.Custom;
+            dtp_TempsTrajet.Location = new Point(138, 163);
+            dtp_TempsTrajet.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtp_TempsTrajet.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
+            dtp_TempsTrajet.Name = "dtp_TempsTrajet";
+            dtp_TempsTrajet.ShowUpDown = true;
+            dtp_TempsTrajet.Size = new Size(156, 27);
+            dtp_TempsTrajet.TabIndex = 70;
+            dtp_TempsTrajet.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
             // 
             // label4
             // 
@@ -349,7 +354,7 @@
             // cbLigne
             // 
             cbLigne.FormattingEnabled = true;
-            cbLigne.Location = new Point(139, 18);
+            cbLigne.Location = new Point(138, 18);
             cbLigne.Name = "cbLigne";
             cbLigne.Size = new Size(156, 28);
             cbLigne.TabIndex = 23;
@@ -392,7 +397,7 @@
             // cbStationArrivee
             // 
             cbStationArrivee.FormattingEnabled = true;
-            cbStationArrivee.Location = new Point(139, 118);
+            cbStationArrivee.Location = new Point(138, 115);
             cbStationArrivee.Name = "cbStationArrivee";
             cbStationArrivee.Size = new Size(156, 28);
             cbStationArrivee.TabIndex = 15;
@@ -413,7 +418,6 @@
             Name = "ModifierTrajet";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ModifierTrajet";
-            Load += ModifierHorraire_Load;
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).EndInit();
@@ -455,9 +459,9 @@
         private Label label3;
         private Label label2;
         private ComboBox cbStationArrivee;
-        private TextBox txtTpsTrajet;
         private Label label4;
         private ComboBox cbLigne;
         private ComboBox cbStationDepart;
+        private DateTimePicker dtp_TempsTrajet;
     }
 }
