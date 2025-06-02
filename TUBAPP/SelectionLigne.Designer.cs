@@ -2,15 +2,8 @@
 {
     partial class frmSelectionLigne
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,351 +15,284 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectionLigne));
-            flpNavbarre = new FlowLayoutPanel();
-            pictureBox4 = new PictureBox();
-            lblTUBAPP = new Label();
-            pictureBox5 = new PictureBox();
-            picIconeContact = new PictureBox();
-            labelSelectionner = new Label();
-            labeldepart = new Label();
-            labelarrivee = new Label();
-            cmb_StationArrivee = new ComboBox();
-            cmb_StationDepart = new ComboBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            btn_retour = new Button();
-            labelhoraire = new Label();
-            p_InfosTrajet = new Panel();
-            p_Station = new Panel();
-            p_Horraire = new Panel();
-            dtp_Horaire2 = new DateTimePicker();
-            dtp_Horaire1 = new DateTimePicker();
-            flpNavbarre.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
-            flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            p_InfosTrajet.SuspendLayout();
-            p_Station.SuspendLayout();
-            p_Horraire.SuspendLayout();
+            panelHeader = new Panel();
+            picLogo = new PictureBox();
+            lblAppName = new Label();
+            btnProfil = new PictureBox();
+            lblTitre = new Label();
+            panelMain = new Panel();
+            lblStations = new Label();
+            panelHoraire = new Panel();
+            lblHoraire = new Label();
+            lblHoraireSous = new Label();
+            lstTrajets = new ListView();
+            colLigne = new ColumnHeader();
+            colDuree = new ColumnHeader();
+            btnRetour = new Button();
+            panelNav = new Panel();
+            btnCarte = new PictureBox();
+            btnAccueil = new PictureBox();
+            btnReseau = new PictureBox();
+            panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnProfil).BeginInit();
+            panelMain.SuspendLayout();
+            panelHoraire.SuspendLayout();
+            panelNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnCarte).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnAccueil).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnReseau).BeginInit();
             SuspendLayout();
             // 
-            // flpNavbarre
+            // panelHeader
             // 
-            flpNavbarre.BackColor = Color.FromArgb(234, 99, 93);
-            flpNavbarre.Controls.Add(pictureBox4);
-            flpNavbarre.Controls.Add(lblTUBAPP);
-            flpNavbarre.Controls.Add(pictureBox5);
-            flpNavbarre.Controls.Add(picIconeContact);
-            flpNavbarre.Location = new Point(0, 0);
-            flpNavbarre.Margin = new Padding(2);
-            flpNavbarre.Name = "flpNavbarre";
-            flpNavbarre.Size = new Size(446, 97);
-            flpNavbarre.TabIndex = 15;
+            panelHeader.BackColor = Color.FromArgb(236, 99, 92);
+            panelHeader.Controls.Add(picLogo);
+            panelHeader.Controls.Add(lblAppName);
+            panelHeader.Controls.Add(btnProfil);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new Size(561, 119);
+            panelHeader.TabIndex = 0;
             // 
-            // pictureBox4
+            // picLogo
             // 
-            pictureBox4.Image = Properties.Resources.logo1;
-            pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(2, 2);
-            pictureBox4.Margin = new Padding(2);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(91, 93);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 4;
-            pictureBox4.TabStop = false;
+            picLogo.Image = Properties.Resources.logo;
+            picLogo.Location = new Point(2, 2);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(114, 116);
+            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picLogo.TabIndex = 0;
+            picLogo.TabStop = false;
             // 
-            // lblTUBAPP
+            // lblAppName
             // 
-            lblTUBAPP.Anchor = AnchorStyles.None;
-            lblTUBAPP.AutoSize = true;
-            lblTUBAPP.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            lblTUBAPP.ForeColor = Color.White;
-            lblTUBAPP.Location = new Point(132, 21);
-            lblTUBAPP.Margin = new Padding(37, 0, 37, 0);
-            lblTUBAPP.Name = "lblTUBAPP";
-            lblTUBAPP.Size = new Size(189, 57);
-            lblTUBAPP.TabIndex = 0;
-            lblTUBAPP.Text = "TUBAPP";
-            lblTUBAPP.TextAlign = ContentAlignment.TopCenter;
+            lblAppName.AutoSize = true;
+            lblAppName.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblAppName.ForeColor = Color.White;
+            lblAppName.Location = new Point(180, 32);
+            lblAppName.Name = "lblAppName";
+            lblAppName.Size = new Size(223, 67);
+            lblAppName.TabIndex = 1;
+            lblAppName.Text = "TUBAPP";
             // 
-            // pictureBox5
+            // btnProfil
             // 
-            pictureBox5.Image = Properties.Resources.icone_profil;
-            pictureBox5.Location = new Point(361, 4);
-            pictureBox5.Margin = new Padding(3, 4, 3, 4);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(63, 91);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 29;
-            pictureBox5.TabStop = false;
-            pictureBox5.Click += pictureBox5_Click;
+            btnProfil.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnProfil.Cursor = Cursors.Hand;
+            btnProfil.Image = Properties.Resources.icone_profil;
+            btnProfil.Location = new Point(437, 5);
+            btnProfil.Name = "btnProfil";
+            btnProfil.Size = new Size(79, 114);
+            btnProfil.SizeMode = PictureBoxSizeMode.Zoom;
+            btnProfil.TabIndex = 2;
+            btnProfil.TabStop = false;
+            btnProfil.Click += btnProfil_Click;
             // 
-            // picIconeContact
+            // lblTitre
             // 
-            picIconeContact.Image = Properties.Resources.icone_profil;
-            picIconeContact.Location = new Point(0, 99);
-            picIconeContact.Margin = new Padding(0);
-            picIconeContact.Name = "picIconeContact";
-            picIconeContact.Size = new Size(93, 97);
-            picIconeContact.SizeMode = PictureBoxSizeMode.Zoom;
-            picIconeContact.TabIndex = 2;
-            picIconeContact.TabStop = false;
+            lblTitre.AutoSize = true;
+            lblTitre.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
+            lblTitre.ForeColor = Color.FromArgb(33, 150, 243);
+            lblTitre.Location = new Point(150, 29);
+            lblTitre.Name = "lblTitre";
+            lblTitre.Size = new Size(288, 120);
+            lblTitre.TabIndex = 0;
+            lblTitre.Text = "Sélectionnez\nvotre ligne";
+            lblTitre.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // labelSelectionner
+            // panelMain
             // 
-            labelSelectionner.AutoSize = true;
-            labelSelectionner.Font = new Font("Microsoft Sans Serif", 18F);
-            labelSelectionner.ForeColor = SystemColors.MenuText;
-            labelSelectionner.Location = new Point(49, 109);
-            labelSelectionner.Name = "labelSelectionner";
-            labelSelectionner.Size = new Size(352, 36);
-            labelSelectionner.TabIndex = 16;
-            labelSelectionner.Text = "Sélectionnez vos stations";
-            labelSelectionner.Click += labelSelectionner_Click;
+            panelMain.BackColor = Color.FromArgb(224, 245, 196);
+            panelMain.Controls.Add(lblTitre);
+            panelMain.Controls.Add(lblStations);
+            panelMain.Controls.Add(panelHoraire);
+            panelMain.Controls.Add(lstTrajets);
+            panelMain.Controls.Add(btnRetour);
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(0, 119);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(561, 624);
+            panelMain.TabIndex = 1;
             // 
-            // labeldepart
+            // lblStations
             // 
-            labeldepart.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            labeldepart.Location = new Point(3, 0);
-            labeldepart.Name = "labeldepart";
-            labeldepart.Size = new Size(162, 21);
-            labeldepart.TabIndex = 22;
-            labeldepart.Text = "Station de départ :";
+            lblStations.BackColor = Color.FromArgb(236, 99, 92);
+            lblStations.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblStations.Location = new Point(80, 170);
+            lblStations.Name = "lblStations";
+            lblStations.Size = new Size(280, 50);
+            lblStations.TabIndex = 1;
+            lblStations.Text = "Station 1 - Station 2";
+            lblStations.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // labelarrivee
+            // panelHoraire
             // 
-            labelarrivee.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            labelarrivee.Location = new Point(3, 55);
-            labelarrivee.Name = "labelarrivee";
-            labelarrivee.Size = new Size(162, 22);
-            labelarrivee.TabIndex = 21;
-            labelarrivee.Text = "Station d'arrivée :";
+            panelHoraire.BackColor = Color.FromArgb(236, 99, 92);
+            panelHoraire.Controls.Add(lblHoraire);
+            panelHoraire.Controls.Add(lblHoraireSous);
+            panelHoraire.Location = new Point(370, 170);
+            panelHoraire.Name = "panelHoraire";
+            panelHoraire.Size = new Size(130, 50);
+            panelHoraire.TabIndex = 2;
             // 
-            // cmb_StationArrivee
+            // lblHoraire
             // 
-            cmb_StationArrivee.Anchor = AnchorStyles.Top;
-            cmb_StationArrivee.BackColor = SystemColors.Menu;
-            cmb_StationArrivee.DropDownHeight = 200;
-            cmb_StationArrivee.FlatStyle = FlatStyle.Flat;
-            cmb_StationArrivee.Font = new Font("Segoe UI", 10F);
-            cmb_StationArrivee.FormattingEnabled = true;
-            cmb_StationArrivee.IntegralHeight = false;
-            cmb_StationArrivee.ItemHeight = 23;
-            cmb_StationArrivee.Location = new Point(12, 80);
-            cmb_StationArrivee.Name = "cmb_StationArrivee";
-            cmb_StationArrivee.Size = new Size(179, 31);
-            cmb_StationArrivee.TabIndex = 20;
+            lblHoraire.AutoSize = true;
+            lblHoraire.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblHoraire.Location = new Point(0, 0);
+            lblHoraire.Name = "lblHoraire";
+            lblHoraire.Size = new Size(114, 32);
+            lblHoraire.TabIndex = 0;
+            lblHoraire.Text = "Horaire :";
             // 
-            // cmb_StationDepart
+            // lblHoraireSous
             // 
-            cmb_StationDepart.BackColor = SystemColors.Menu;
-            cmb_StationDepart.DropDownHeight = 200;
-            cmb_StationDepart.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmb_StationDepart.FlatStyle = FlatStyle.Flat;
-            cmb_StationDepart.Font = new Font("Segoe UI", 10F);
-            cmb_StationDepart.FormattingEnabled = true;
-            cmb_StationDepart.IntegralHeight = false;
-            cmb_StationDepart.Location = new Point(12, 24);
-            cmb_StationDepart.Name = "cmb_StationDepart";
-            cmb_StationDepart.RightToLeft = RightToLeft.Yes;
-            cmb_StationDepart.Size = new Size(177, 31);
-            cmb_StationDepart.TabIndex = 19;
+            lblHoraireSous.AutoSize = true;
+            lblHoraireSous.Font = new Font("Segoe UI", 9F);
+            lblHoraireSous.Location = new Point(0, 28);
+            lblHoraireSous.Name = "lblHoraireSous";
+            lblHoraireSous.Size = new Size(96, 25);
+            lblHoraireSous.TabIndex = 1;
+            lblHoraireSous.Text = "H/M   Jour";
             // 
-            // flowLayoutPanel1
+            // lstTrajets
             // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(234, 99, 93);
-            flowLayoutPanel1.Controls.Add(pictureBox1);
-            flowLayoutPanel1.Controls.Add(pictureBox2);
-            flowLayoutPanel1.Controls.Add(pictureBox3);
-            flowLayoutPanel1.Location = new Point(-5, 595);
-            flowLayoutPanel1.Margin = new Padding(2);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(460, 65);
-            flowLayoutPanel1.TabIndex = 24;
+            lstTrajets.BackColor = Color.FromArgb(236, 99, 92);
+            lstTrajets.BorderStyle = BorderStyle.None;
+            lstTrajets.Columns.AddRange(new ColumnHeader[] { colLigne, colDuree });
+            lstTrajets.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lstTrajets.FullRowSelect = true;
+            lstTrajets.HeaderStyle = ColumnHeaderStyle.None;
+            lstTrajets.Location = new Point(80, 240);
+            lstTrajets.Name = "lstTrajets";
+            lstTrajets.Size = new Size(420, 300);
+            lstTrajets.TabIndex = 3;
+            lstTrajets.UseCompatibleStateImageBehavior = false;
+            lstTrajets.View = View.Details;
             // 
-            // pictureBox1
+            // colLigne
             // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources.GPS;
-            pictureBox1.Location = new Point(70, 5);
-            pictureBox1.Margin = new Padding(70, 0, 15, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(45, 56);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            colLigne.Width = 280;
             // 
-            // pictureBox2
+            // colDuree
             // 
-            pictureBox2.Image = Properties.Resources.homeSelectionnerpng;
-            pictureBox2.Location = new Point(185, 0);
-            pictureBox2.Margin = new Padding(55, 0, 35, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(79, 65);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
+            colDuree.Width = 120;
             // 
-            // pictureBox3
+            // btnRetour
             // 
-            pictureBox3.Image = Properties.Resources.network;
-            pictureBox3.Location = new Point(329, 3);
-            pictureBox3.Margin = new Padding(30, 3, 15, 5);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(59, 58);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
+            btnRetour.BackColor = Color.FromArgb(236, 99, 92);
+            btnRetour.FlatStyle = FlatStyle.Flat;
+            btnRetour.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            btnRetour.ForeColor = Color.White;
+            btnRetour.Location = new Point(158, 546);
+            btnRetour.Name = "btnRetour";
+            btnRetour.Size = new Size(280, 60);
+            btnRetour.TabIndex = 4;
+            btnRetour.Text = "Retour";
+            btnRetour.UseVisualStyleBackColor = false;
+            btnRetour.Click += btnRetour_Click;
             // 
-            // btn_retour
+            // panelNav
             // 
-            btn_retour.BackColor = Color.FromArgb(209, 66, 54);
-            btn_retour.Font = new Font("Segoe UI", 15F);
-            btn_retour.ForeColor = SystemColors.Control;
-            btn_retour.ImeMode = ImeMode.NoControl;
-            btn_retour.Location = new Point(56, 526);
-            btn_retour.Margin = new Padding(2);
-            btn_retour.Name = "btn_retour";
-            btn_retour.Size = new Size(321, 50);
-            btn_retour.TabIndex = 25;
-            btn_retour.Text = "Retour";
-            btn_retour.UseVisualStyleBackColor = false;
-            btn_retour.Click += btn_retour_Click;
+            panelNav.BackColor = Color.FromArgb(236, 99, 92);
+            panelNav.Controls.Add(btnCarte);
+            panelNav.Controls.Add(btnAccueil);
+            panelNav.Controls.Add(btnReseau);
+            panelNav.Dock = DockStyle.Bottom;
+            panelNav.Location = new Point(0, 743);
+            panelNav.Name = "panelNav";
+            panelNav.Size = new Size(561, 81);
+            panelNav.TabIndex = 2;
             // 
-            // labelhoraire
+            // btnCarte
             // 
-            labelhoraire.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            labelhoraire.Location = new Point(3, 0);
-            labelhoraire.Name = "labelhoraire";
-            labelhoraire.Size = new Size(86, 21);
-            labelhoraire.TabIndex = 26;
-            labelhoraire.Text = "Horaire :";
+            btnCarte.Cursor = Cursors.Hand;
+            btnCarte.Image = Properties.Resources.GPS;
+            btnCarte.Location = new Point(88, 6);
+            btnCarte.Name = "btnCarte";
+            btnCarte.Size = new Size(56, 70);
+            btnCarte.SizeMode = PictureBoxSizeMode.Zoom;
+            btnCarte.TabIndex = 0;
+            btnCarte.TabStop = false;
+            btnCarte.Click += btnCarte_Click;
             // 
-            // p_InfosTrajet
+            // btnAccueil
             // 
-            p_InfosTrajet.BackColor = Color.FromArgb(255, 128, 128);
-            p_InfosTrajet.Controls.Add(p_Station);
-            p_InfosTrajet.Controls.Add(p_Horraire);
-            p_InfosTrajet.Location = new Point(35, 162);
-            p_InfosTrajet.Name = "p_InfosTrajet";
-            p_InfosTrajet.Size = new Size(371, 330);
-            p_InfosTrajet.TabIndex = 29;
-            p_InfosTrajet.Paint += panel1_Paint;
+            btnAccueil.Cursor = Cursors.Hand;
+            btnAccueil.Image = Properties.Resources.homepng;
+            btnAccueil.Location = new Point(232, 0);
+            btnAccueil.Name = "btnAccueil";
+            btnAccueil.Size = new Size(99, 81);
+            btnAccueil.SizeMode = PictureBoxSizeMode.Zoom;
+            btnAccueil.TabIndex = 1;
+            btnAccueil.TabStop = false;
+            btnAccueil.Click += btnAccueil_Click;
             // 
-            // p_Station
+            // btnReseau
             // 
-            p_Station.BackColor = Color.White;
-            p_Station.Controls.Add(labeldepart);
-            p_Station.Controls.Add(cmb_StationDepart);
-            p_Station.Controls.Add(cmb_StationArrivee);
-            p_Station.Controls.Add(labelarrivee);
-            p_Station.Location = new Point(3, 3);
-            p_Station.Name = "p_Station";
-            p_Station.Size = new Size(202, 119);
-            p_Station.TabIndex = 30;
-            // 
-            // p_Horraire
-            // 
-            p_Horraire.BackColor = Color.White;
-            p_Horraire.Controls.Add(dtp_Horaire2);
-            p_Horraire.Controls.Add(dtp_Horaire1);
-            p_Horraire.Controls.Add(labelhoraire);
-            p_Horraire.Location = new Point(225, 3);
-            p_Horraire.Name = "p_Horraire";
-            p_Horraire.Size = new Size(141, 119);
-            p_Horraire.TabIndex = 29;
-            // 
-            // dtp_Horaire2
-            // 
-            dtp_Horaire2.CustomFormat = "HH:mm";
-            dtp_Horaire2.Format = DateTimePickerFormat.Custom;
-            dtp_Horaire2.Location = new Point(8, 80);
-            dtp_Horaire2.Name = "dtp_Horaire2";
-            dtp_Horaire2.ShowUpDown = true;
-            dtp_Horaire2.Size = new Size(122, 27);
-            dtp_Horaire2.TabIndex = 32;
-            // 
-            // dtp_Horaire1
-            // 
-            dtp_Horaire1.CustomFormat = "HH:mm";
-            dtp_Horaire1.Format = DateTimePickerFormat.Custom;
-            dtp_Horaire1.Location = new Point(8, 24);
-            dtp_Horaire1.Name = "dtp_Horaire1";
-            dtp_Horaire1.ShowUpDown = true;
-            dtp_Horaire1.Size = new Size(122, 27);
-            dtp_Horaire1.TabIndex = 31;
-            dtp_Horaire1.Value = new DateTime(2025, 6, 1, 12, 12, 0, 0);
+            btnReseau.Cursor = Cursors.Hand;
+            btnReseau.Image = Properties.Resources.network;
+            btnReseau.Location = new Point(413, 4);
+            btnReseau.Name = "btnReseau";
+            btnReseau.Size = new Size(74, 72);
+            btnReseau.SizeMode = PictureBoxSizeMode.Zoom;
+            btnReseau.TabIndex = 2;
+            btnReseau.TabStop = false;
+            btnReseau.Click += btnReseau_Click;
             // 
             // frmSelectionLigne
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(446, 659);
-            Controls.Add(btn_retour);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(labelSelectionner);
-            Controls.Add(flpNavbarre);
-            Controls.Add(p_InfosTrajet);
-            Icon = (Icon)resources.GetObject("$this.Icon");
+            ClientSize = new Size(561, 824);
+            Controls.Add(panelMain);
+            Controls.Add(panelHeader);
+            Controls.Add(panelNav);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmSelectionLigne";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Selection ligne";
-            Load += SelectionLigne_Load;
-            flpNavbarre.ResumeLayout(false);
-            flpNavbarre.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
-            flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            p_InfosTrajet.ResumeLayout(false);
-            p_Station.ResumeLayout(false);
-            p_Horraire.ResumeLayout(false);
+            Text = "TUBAPP - Sélection Ligne";
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnProfil).EndInit();
+            panelMain.ResumeLayout(false);
+            panelMain.PerformLayout();
+            panelHoraire.ResumeLayout(false);
+            panelHoraire.PerformLayout();
+            panelNav.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnCarte).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnAccueil).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnReseau).EndInit();
             ResumeLayout(false);
-            PerformLayout();
+
         }
 
         #endregion
 
-        private FlowLayoutPanel flpNavbarre;
-        private PictureBox pictureBox4;
-        private Label lblTUBAPP;
-        private PictureBox picIconeContact;
-        private Label labelSelectionner;
-        private Label labeldepart;
-        private Label labelarrivee;
-        private ComboBox cmb_StationArrivee;
-        private ComboBox cmb_StationDepart;
-        private ListBox listBoxStation;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private Button btn_retour;
-        private Label labelhoraire;
-        private PictureBox pictureBox5;
-        private Panel p_InfosTrajet;
-        private Panel p_Horraire;
-        private Panel p_Station;
-        private DateTimePicker dtp_Horaire1;
-        private DateTimePicker dtp_Horaire2;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Label lblAppName;
+        private System.Windows.Forms.PictureBox btnProfil;
+        private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Label lblStations;
+        private System.Windows.Forms.Panel panelHoraire;
+        private System.Windows.Forms.Label lblHoraire;
+        private System.Windows.Forms.Label lblHoraireSous;
+        private System.Windows.Forms.ListView lstTrajets;
+        private System.Windows.Forms.ColumnHeader colLigne;
+        private System.Windows.Forms.ColumnHeader colDuree;
+        private System.Windows.Forms.Button btnRetour;
+        private System.Windows.Forms.Panel panelNav;
+        private System.Windows.Forms.PictureBox btnCarte;
+        private System.Windows.Forms.PictureBox btnAccueil;
+        private System.Windows.Forms.PictureBox btnReseau;
     }
 }

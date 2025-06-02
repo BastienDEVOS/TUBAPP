@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Classes;
 
@@ -14,79 +9,134 @@ namespace TUBAPP
 {
     public partial class frmSelectionLigne : Form
     {
-        public frmSelectionLigne(Station StationDepart, Station StationArrivee)
+        private Station _stationDepart;
+        private Station _stationArrivee;
+        private List<Trajet> _trajets;
+
+        public frmSelectionLigne(Station stationDepart, Station stationArrivee)
         {
             InitializeComponent();
 
-            // récupère les stations depuis la BD
-            List<Station> stationsDepart = BD.GetStation(); 
-            List<Station> stationsArrivee = BD.GetStation();
+            _stationDepart = stationDepart;
+            _stationArrivee = stationArrivee;
 
-            cmb_StationDepart.DataSource = stationsDepart;
-            cmb_StationDepart.DisplayMember = "Nom";
-            cmb_StationDepart.ValueMember = "IdStation";
-            cmb_StationDepart.SelectedIndex = (StationDepart.IdStation) -1; // force la sélection par défaut
+            lblTitre.Text = "Sélectionnez\nvotre ligne";
+            lblTitre.ForeColor = Color.FromArgb(33, 150, 243);
 
-            cmb_StationArrivee.DataSource = stationsArrivee;
-            cmb_StationArrivee.DisplayMember = "Nom";
-            cmb_StationArrivee.ValueMember = "IdStation";
-            cmb_StationArrivee.SelectedIndex = (StationArrivee.IdStation) -1; // force la sélection par défaut
+            lblStations.Text = $"{_stationDepart.Nom} - {_stationArrivee.Nom}";
+
+            LoadTrajets();
         }
 
-        private void labelSelectionner_Click(object sender, EventArgs e)
+        private void LoadTrajets()
         {
+            var allTrajets = BD.GetTrajet();
+            var graph = new Dictionary<int, List<Trajet>>();
 
+            foreach (var trajet in allTrajets)
+            {
+                if (!graph.ContainsKey(trajet.IdStationDepart))
+                    graph[trajet.IdStationDepart] = new List<Trajet>();
+                graph[trajet.IdStationDepart].Add(trajet);
+            }
+
+            var distances = new Dictionary<int, int>();
+            var previous = new Dictionary<int, Trajet?>();
+            var visited = new HashSet<int>();
+            var queue = new PriorityQueue<int, int>();
+
+            foreach (var trajet in allTrajets)
+            {
+                distances[trajet.IdStationDepart] = int.MaxValue;
+                distances[trajet.IdStationArrivee] = int.MaxValue;
+            }
+            distances[_stationDepart.IdStation] = 0;
+            queue.Enqueue(_stationDepart.IdStation, 0);
+
+            while (queue.Count > 0)
+            {
+                int current = queue.Dequeue();
+                if (visited.Contains(current))
+                    continue;
+                visited.Add(current);
+
+                if (!graph.ContainsKey(current))
+                    continue;
+
+                foreach (var trajet in graph[current])
+                {
+                    int neighbor = trajet.IdStationArrivee;
+                    int trajetMinutes = int.TryParse(trajet.TempsTrajets, out int t) ? t : 0;
+                    int newDist = distances[current] + trajetMinutes;
+
+                    if (newDist < distances[neighbor])
+                    {
+                        distances[neighbor] = newDist;
+                        previous[neighbor] = trajet;
+                        queue.Enqueue(neighbor, newDist);
+                    }
+                }
+            }
+
+            var path = new List<Trajet>();
+            int? step = _stationArrivee.IdStation;
+            while (step != null && previous.ContainsKey(step.Value))
+            {
+                var trajet = previous[step.Value];
+                if (trajet == null)
+                    break;
+                path.Insert(0, trajet);
+                step = trajet.IdStationDepart;
+            }
+
+            lstTrajets.Items.Clear();
+            if (path.Count == 0)
+            {
+                var item = new ListViewItem("Aucun trajet trouvé");
+                lstTrajets.Items.Add(item);
+                return;
+            }
+
+            foreach (var trajet in path)
+            {
+                var ligneObj = BD.GetLigneById(trajet.IdLigne);
+                string ligne = ligneObj != null
+                    ? $"Ligne {trajet.IdLigne}\n{ligneObj.HeureDebut:HH\\:mm} - {ligneObj.HeureFin:HH\\:mm}"
+                    : $"Ligne {trajet.IdLigne}\nHeures inconnues";
+                string duree = $"{trajet.TempsTrajets}min";
+                var item = new ListViewItem(ligne);
+                item.SubItems.Add(duree);
+                lstTrajets.Items.Add(item);
+            }
         }
 
-        private void SelectionLigne_Load(object sender, EventArgs e)
+
+        private void btnRetour_Click(object sender, EventArgs e)
         {
-            ClassUtilitaire.MettreBordArrondis(p_InfosTrajet, 20);
-            ClassUtilitaire.MettreBordArrondis(p_Horraire, 20);
-            ClassUtilitaire.MettreBordArrondis(p_Station, 20);
+            frmMenuPricipal menu = new frmMenuPricipal();
+            menu.Show();
+            this.Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            // Création d'un stylo noir avec une épaisseur de 2 pixels
-            Pen pen = new Pen(Color.Black, 5);
-
-            // Dessine une ligne de (x1=10, y1=10) à (x2=200, y2=10)
-            e.Graphics.DrawLine(pen, 0, 140, 464, 140);
-            e.Graphics.DrawLine(pen, 215, 0, 215, 140);
-
-            // Libération des ressources du stylo
-            pen.Dispose();
-        }
-
-        private void btn_retour_Click(object sender, EventArgs e)
-        {
-            frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
-            FrmMenuPrincipal.Show();
-            this.Close(); // Ferme le formulaire actuel
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            frmInfoLigne infoLigne = new frmInfoLigne();
-            infoLigne.Show();
-            this.Close(); // Masquer le formulaire actuel
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
-            FrmMenuPrincipal.Show();
-            this.Close(); // Ferme le formulaire actuel
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void btnCarte_Click(object sender, EventArgs e)
         {
             PageCarte page = new PageCarte();
             page.Show();
             this.Close();
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void btnAccueil_Click(object sender, EventArgs e)
+        {
+            frmMenuPricipal menu = new frmMenuPricipal();
+            menu.Show();
+            this.Close();
+        }
+
+        private void btnReseau_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnProfil_Click(object sender, EventArgs e)
         {
             Utilisateur? currentUser = SessionManager.CurrentUser;
 
@@ -108,5 +158,7 @@ namespace TUBAPP
 
             this.Close();
         }
+
+
     }
 }

@@ -162,5 +162,30 @@ namespace TUBAPP
 
             return trajets;
         }
+        public static Ligne? GetLigneById(int idLigne)
+        {
+            string reSQL = "SELECT * FROM Ligne WHERE IdLigne = @IdLigne";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    return new Ligne
+                    {
+                        IdLigne = reader.GetInt32("IdLigne"),
+                        Nom = reader.GetString("NomLigne"),
+                        Couleur = reader.GetString("Couleur"),
+                        Longueur = reader.GetInt32("Longueur"),
+                        Status = reader.GetString("Statuts"),
+                        Frequence = reader.GetTimeSpan("Frequence").ToString(@"hh\:mm"),
+                        HeureFin = reader.GetTimeSpan("HeureFin").ToString(@"hh\:mm"),
+                        HeureDebut = reader.GetTimeSpan("HeureDebut").ToString(@"hh\:mm"),
+                    };
+                }
+            }
+            return null;
+        }
     }
 }
