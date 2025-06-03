@@ -39,12 +39,19 @@
             pictureBox1 = new PictureBox();
             BtnHome = new PictureBox();
             pictureBox5 = new PictureBox();
-            lblTitre1 = new Label();
             flowLayoutPanel2 = new FlowLayoutPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnAjouter = new Button();
-            checkBox1 = new CheckBox();
-            comboBox1 = new ComboBox();
+            panel1 = new Panel();
+            label9 = new Label();
+            label8 = new Label();
+            AccessibiliterNon = new CheckBox();
+            AccessibiliterOui = new CheckBox();
+            label3 = new Label();
+            txtZoneStation = new TextBox();
+            lbl_LignesDesservie = new Label();
+            checkedListBox1 = new CheckedListBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -53,14 +60,15 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // txtNomStation
             // 
-            txtNomStation.Location = new Point(66, 212);
+            txtNomStation.Location = new Point(10, 12);
             txtNomStation.Name = "txtNomStation";
             txtNomStation.PlaceholderText = "Nom de la station";
-            txtNomStation.Size = new Size(322, 27);
+            txtNomStation.Size = new Size(282, 27);
             txtNomStation.TabIndex = 59;
             // 
             // btnRetour
@@ -69,7 +77,7 @@
             btnRetour.FlatStyle = FlatStyle.Flat;
             btnRetour.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnRetour.ForeColor = Color.White;
-            btnRetour.Location = new Point(95, 523);
+            btnRetour.Location = new Point(95, 513);
             btnRetour.Margin = new Padding(3, 4, 3, 4);
             btnRetour.Name = "btnRetour";
             btnRetour.Size = new Size(257, 53);
@@ -173,16 +181,6 @@
             pictureBox5.TabStop = false;
             pictureBox5.Click += pictureBox5_Click;
             // 
-            // lblTitre1
-            // 
-            lblTitre1.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            lblTitre1.Location = new Point(3, 98);
-            lblTitre1.Name = "lblTitre1";
-            lblTitre1.Size = new Size(443, 93);
-            lblTitre1.TabIndex = 58;
-            lblTitre1.Text = "Ajouter une station";
-            lblTitre1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.BackColor = Color.FromArgb(234, 99, 93);
@@ -212,50 +210,127 @@
             // btnAjouter
             // 
             btnAjouter.BackColor = Color.FromArgb(209, 66, 54);
+            btnAjouter.Enabled = false;
             btnAjouter.FlatStyle = FlatStyle.Flat;
             btnAjouter.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnAjouter.ForeColor = Color.White;
-            btnAjouter.Location = new Point(95, 451);
+            btnAjouter.Location = new Point(74, 452);
             btnAjouter.Margin = new Padding(3, 4, 3, 4);
             btnAjouter.Name = "btnAjouter";
-            btnAjouter.Size = new Size(257, 53);
+            btnAjouter.Size = new Size(299, 53);
             btnAjouter.TabIndex = 60;
             btnAjouter.Text = "Ajouter la Station";
             btnAjouter.UseVisualStyleBackColor = false;
             // 
-            // checkBox1
+            // panel1
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(110, 266);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(218, 24);
-            checkBox1.TabIndex = 61;
-            checkBox1.Text = " Station accessible au PMR ?";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(AccessibiliterNon);
+            panel1.Controls.Add(AccessibiliterOui);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(txtZoneStation);
+            panel1.Controls.Add(lbl_LignesDesservie);
+            panel1.Controls.Add(checkedListBox1);
+            panel1.Controls.Add(txtNomStation);
+            panel1.Location = new Point(66, 171);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(314, 265);
+            panel1.TabIndex = 63;
             // 
-            // comboBox1
+            // label9
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(62, 315);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(322, 28);
-            comboBox1.TabIndex = 62;
-            comboBox1.Text = "Lignes";
+            label9.AutoSize = true;
+            label9.Location = new Point(229, 105);
+            label9.Name = "label9";
+            label9.Size = new Size(37, 20);
+            label9.TabIndex = 69;
+            label9.Text = "Non";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(157, 105);
+            label8.Name = "label8";
+            label8.Size = new Size(32, 20);
+            label8.TabIndex = 68;
+            label8.Text = "Oui";
+            // 
+            // AccessibiliterNon
+            // 
+            AccessibiliterNon.AutoSize = true;
+            AccessibiliterNon.Location = new Point(272, 108);
+            AccessibiliterNon.Name = "AccessibiliterNon";
+            AccessibiliterNon.Size = new Size(18, 17);
+            AccessibiliterNon.TabIndex = 67;
+            AccessibiliterNon.UseVisualStyleBackColor = true;
+            // 
+            // AccessibiliterOui
+            // 
+            AccessibiliterOui.AutoSize = true;
+            AccessibiliterOui.Location = new Point(195, 108);
+            AccessibiliterOui.Name = "AccessibiliterOui";
+            AccessibiliterOui.Size = new Size(18, 17);
+            AccessibiliterOui.TabIndex = 66;
+            AccessibiliterOui.TextAlign = ContentAlignment.MiddleRight;
+            AccessibiliterOui.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(10, 105);
+            label3.Name = "label3";
+            label3.Size = new Size(88, 20);
+            label3.TabIndex = 65;
+            label3.Text = "Accès PMR :";
+            // 
+            // txtZoneStation
+            // 
+            txtZoneStation.Location = new Point(13, 55);
+            txtZoneStation.Name = "txtZoneStation";
+            txtZoneStation.PlaceholderText = "Zone de facturation de la station";
+            txtZoneStation.Size = new Size(277, 27);
+            txtZoneStation.TabIndex = 64;
+            // 
+            // lbl_LignesDesservie
+            // 
+            lbl_LignesDesservie.AutoSize = true;
+            lbl_LignesDesservie.Location = new Point(3, 143);
+            lbl_LignesDesservie.Name = "lbl_LignesDesservie";
+            lbl_LignesDesservie.Size = new Size(151, 20);
+            lbl_LignesDesservie.TabIndex = 63;
+            lbl_LignesDesservie.Text = "Ligne(s) Desservie(s) :";
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(160, 143);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(147, 114);
+            checkedListBox1.TabIndex = 62;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            label2.Location = new Point(26, 77);
+            label2.Name = "label2";
+            label2.Size = new Size(394, 114);
+            label2.TabIndex = 64;
+            label2.Text = "Modifier Station";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // AdminAjoutStation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
-            Controls.Add(comboBox1);
-            Controls.Add(checkBox1);
             Controls.Add(btnAjouter);
-            Controls.Add(txtNomStation);
             Controls.Add(btnRetour);
-            Controls.Add(lblTitre1);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
+            Controls.Add(panel1);
+            Controls.Add(label2);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminAjoutStation";
             StartPosition = FormStartPosition.CenterScreen;
@@ -269,8 +344,9 @@
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -284,11 +360,18 @@
         private PictureBox pictureBox1;
         private PictureBox BtnHome;
         private PictureBox pictureBox5;
-        private Label lblTitre1;
         private FlowLayoutPanel flowLayoutPanel2;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button btnAjouter;
-        private CheckBox checkBox1;
-        private ComboBox comboBox1;
+        private Panel panel1;
+        private Label lbl_LignesDesservie;
+        private CheckedListBox checkedListBox1;
+        private TextBox txtZoneStation;
+        private Label label2;
+        private Label label9;
+        private Label label8;
+        private CheckBox AccessibiliterNon;
+        private CheckBox AccessibiliterOui;
+        private Label label3;
     }
 }

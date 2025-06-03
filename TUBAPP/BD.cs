@@ -101,6 +101,20 @@ namespace TUBAPP
             cmd.ExecuteNonQuery();
         }
 
+        public static void AjoutLigneBase(string nom, string couleur, int longueur, string status, TimeSpan frequence, TimeSpan heureFin, TimeSpan heureDebut)
+        {
+            string reSQL = "INSERT INTO Ligne (NomLigne, Couleur, Longueur, Statuts, Frequence, HeureDebut ,HeureFin) VALUES (@NomLigne, @Couleur, @Longueur, @Statuts, @Frequence, @HeureDebut, @HeureFin)";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@NomLigne", nom);
+            cmd.Parameters.AddWithValue("@Couleur", couleur);
+            cmd.Parameters.AddWithValue("@Longueur", longueur);
+            cmd.Parameters.AddWithValue("@Statuts", status);
+            cmd.Parameters.AddWithValue("@Frequence", frequence);
+            cmd.Parameters.AddWithValue("@HeureFin", heureFin);
+            cmd.Parameters.AddWithValue("@HeureDebut", heureDebut);
+            cmd.ExecuteNonQuery();
+        }
+
         #endregion
 
 
@@ -290,6 +304,8 @@ namespace TUBAPP
             cmd.ExecuteNonQuery();
         }
 
+
+        /// Supprime une station et toutes les données associées à cette station.  
         public static void SupprimerStation(int idStation)
         {
             var cmd = Conn.CreateCommand();
@@ -304,6 +320,7 @@ namespace TUBAPP
             cmd.ExecuteNonQuery();
         }
 
+        /// Supprime une ligne et toutes les données associés
         public static void SupprimerLigne(int idLigne)
         {
             var cmd = Conn.CreateCommand();
@@ -319,6 +336,7 @@ namespace TUBAPP
             cmd.ExecuteNonQuery();
         }
 
+        //Supprime un trajet spécifique
         public static void SupprimerTrajet(int idLigne, int idStationDepart, int idStationArrivee)
         {
             string reSQL = "DELETE FROM Trajet WHERE IdLigne = @IdLigne AND IdStation = @IdStationDepart AND IdStation_1 = @IdStationArrivee";

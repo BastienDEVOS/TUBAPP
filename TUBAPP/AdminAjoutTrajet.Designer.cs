@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAjoutTrajet));
             btnRetour = new Button();
-            lblTitre1 = new Label();
             pictureBox3 = new PictureBox();
             label1 = new Label();
             lblTitre = new Label();
@@ -42,11 +41,16 @@
             btnAjouter = new Button();
             flowLayoutPanel2 = new FlowLayoutPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            dtpTempsTrajet = new DateTimePicker();
             cmbLigne = new ComboBox();
-            lblDepart = new Label();
             lblArrivé = new Label();
+            panel1 = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            cmbStationDepart = new ComboBox();
+            cmbStationArriver = new ComboBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -55,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnRetour
@@ -71,16 +76,6 @@
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
             btnRetour.Click += btnRetour_Click;
-            // 
-            // lblTitre1
-            // 
-            lblTitre1.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            lblTitre1.Location = new Point(3, 98);
-            lblTitre1.Name = "lblTitre1";
-            lblTitre1.Size = new Size(443, 93);
-            lblTitre1.TabIndex = 66;
-            lblTitre1.Text = "Ajouter un Trajet";
-            lblTitre1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
             // 
@@ -180,13 +175,14 @@
             // btnAjouter
             // 
             btnAjouter.BackColor = Color.FromArgb(209, 66, 54);
+            btnAjouter.Enabled = false;
             btnAjouter.FlatStyle = FlatStyle.Flat;
             btnAjouter.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnAjouter.ForeColor = Color.White;
-            btnAjouter.Location = new Point(95, 451);
+            btnAjouter.Location = new Point(83, 451);
             btnAjouter.Margin = new Padding(3, 4, 3, 4);
             btnAjouter.Name = "btnAjouter";
-            btnAjouter.Size = new Size(257, 53);
+            btnAjouter.Size = new Size(281, 53);
             btnAjouter.TabIndex = 68;
             btnAjouter.Text = "Ajouter la Station";
             btnAjouter.UseVisualStyleBackColor = false;
@@ -217,75 +213,120 @@
             flowLayoutPanel1.Size = new Size(446, 95);
             flowLayoutPanel1.TabIndex = 63;
             // 
-            // dateTimePicker1
+            // dtpTempsTrajet
             // 
-            dateTimePicker1.CustomFormat = "HH:mm";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(83, 278);
-            dateTimePicker1.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
-            dateTimePicker1.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.ShowUpDown = true;
-            dateTimePicker1.Size = new Size(281, 27);
-            dateTimePicker1.TabIndex = 69;
-            dateTimePicker1.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.CustomFormat = "HH:mm";
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(83, 349);
-            dateTimePicker2.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
-            dateTimePicker2.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.ShowUpDown = true;
-            dateTimePicker2.Size = new Size(281, 27);
-            dateTimePicker2.TabIndex = 70;
-            dateTimePicker2.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
+            dtpTempsTrajet.CustomFormat = "HH:mm";
+            dtpTempsTrajet.Format = DateTimePickerFormat.Custom;
+            dtpTempsTrajet.Location = new Point(131, 222);
+            dtpTempsTrajet.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtpTempsTrajet.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
+            dtpTempsTrajet.Name = "dtpTempsTrajet";
+            dtpTempsTrajet.ShowUpDown = true;
+            dtpTempsTrajet.Size = new Size(163, 27);
+            dtpTempsTrajet.TabIndex = 70;
+            dtpTempsTrajet.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
             // 
             // cmbLigne
             // 
             cmbLigne.FormattingEnabled = true;
-            cmbLigne.Location = new Point(83, 208);
+            cmbLigne.Location = new Point(13, 44);
             cmbLigne.Name = "cmbLigne";
             cmbLigne.Size = new Size(281, 28);
             cmbLigne.TabIndex = 71;
             cmbLigne.Text = "Choix de la ligne";
-            // 
-            // lblDepart
-            // 
-            lblDepart.AutoSize = true;
-            lblDepart.Location = new Point(84, 248);
-            lblDepart.Name = "lblDepart";
-            lblDepart.Size = new Size(128, 20);
-            lblDepart.TabIndex = 72;
-            lblDepart.Text = "Horaire de départ";
+            cmbLigne.SelectedIndexChanged += cmbLigne_SelectedIndexChanged;
             // 
             // lblArrivé
             // 
             lblArrivé.AutoSize = true;
-            lblArrivé.Location = new Point(84, 314);
+            lblArrivé.Location = new Point(13, 222);
             lblArrivé.Name = "lblArrivé";
-            lblArrivé.Size = new Size(117, 20);
+            lblArrivé.Size = new Size(112, 20);
             lblArrivé.TabIndex = 73;
-            lblArrivé.Text = "Horaire d'arriver";
+            lblArrivé.Text = "Temps de trajet";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(cmbStationDepart);
+            panel1.Controls.Add(cmbStationArriver);
+            panel1.Controls.Add(dtpTempsTrajet);
+            panel1.Controls.Add(lblArrivé);
+            panel1.Controls.Add(cmbLigne);
+            panel1.Location = new Point(70, 164);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(307, 266);
+            panel1.TabIndex = 74;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(13, 21);
+            label5.Name = "label5";
+            label5.Size = new Size(117, 20);
+            label5.TabIndex = 78;
+            label5.Text = "Ligne concernée";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(13, 87);
+            label4.Name = "label4";
+            label4.Size = new Size(125, 20);
+            label4.TabIndex = 77;
+            label4.Text = "Station de départ";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(13, 149);
+            label3.Name = "label3";
+            label3.Size = new Size(114, 20);
+            label3.TabIndex = 76;
+            label3.Text = "Station d'arriver";
+            // 
+            // cmbStationDepart
+            // 
+            cmbStationDepart.FormattingEnabled = true;
+            cmbStationDepart.Location = new Point(13, 110);
+            cmbStationDepart.Name = "cmbStationDepart";
+            cmbStationDepart.Size = new Size(281, 28);
+            cmbStationDepart.TabIndex = 75;
+            cmbStationDepart.Text = "Choix de la Station de départ";
+            // 
+            // cmbStationArriver
+            // 
+            cmbStationArriver.FormattingEnabled = true;
+            cmbStationArriver.Location = new Point(13, 172);
+            cmbStationArriver.Name = "cmbStationArriver";
+            cmbStationArriver.Size = new Size(281, 28);
+            cmbStationArriver.TabIndex = 74;
+            cmbStationArriver.Text = "Choix de la station d'arriver";
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            label2.Location = new Point(26, 68);
+            label2.Name = "label2";
+            label2.Size = new Size(394, 114);
+            label2.TabIndex = 75;
+            label2.Text = "Ajouter un Trajet";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // AdminAjoutTrajet
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
-            Controls.Add(lblArrivé);
-            Controls.Add(lblDepart);
-            Controls.Add(cmbLigne);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
             Controls.Add(btnRetour);
-            Controls.Add(lblTitre1);
             Controls.Add(btnAjouter);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
+            Controls.Add(panel1);
+            Controls.Add(label2);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Location = new Point(66, 265);
             Name = "AdminAjoutTrajet";
@@ -300,13 +341,13 @@
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private Button btnRetour;
-        private Label lblTitre1;
         private PictureBox pictureBox3;
         private Label label1;
         private Label lblTitre;
@@ -318,10 +359,15 @@
         private Button btnAjouter;
         private FlowLayoutPanel flowLayoutPanel2;
         private FlowLayoutPanel flowLayoutPanel1;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dtpTempsTrajet;
         private ComboBox cmbLigne;
-        private Label lblDepart;
         private Label lblArrivé;
+        private Panel panel1;
+        private ComboBox cmbStationDepart;
+        private ComboBox cmbStationArriver;
+        private Label label2;
+        private Label label5;
+        private Label label4;
+        private Label label3;
     }
 }

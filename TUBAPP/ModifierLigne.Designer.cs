@@ -43,6 +43,10 @@
             txtCouleur = new TextBox();
             txtNom = new TextBox();
             pnlCard = new Panel();
+            dtp_HeureFin = new DateTimePicker();
+            dtp_HeureDebut = new DateTimePicker();
+            lbl_HeureFin = new Label();
+            lbl_HeureDebut = new Label();
             dtp_Frequence = new DateTimePicker();
             txtStatus = new TextBox();
             label7 = new Label();
@@ -52,10 +56,6 @@
             label2 = new Label();
             txtLongueur = new TextBox();
             btnRetour = new Button();
-            lbl_HeureDebut = new Label();
-            lbl_HeureFin = new Label();
-            dtp_HeureDebut = new DateTimePicker();
-            dtp_HeureFin = new DateTimePicker();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
@@ -240,6 +240,50 @@
             pnlCard.Size = new Size(313, 297);
             pnlCard.TabIndex = 36;
             // 
+            // dtp_HeureFin
+            // 
+            dtp_HeureFin.CustomFormat = "HH:mm";
+            dtp_HeureFin.Format = DateTimePickerFormat.Custom;
+            dtp_HeureFin.Location = new Point(117, 251);
+            dtp_HeureFin.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtp_HeureFin.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
+            dtp_HeureFin.Name = "dtp_HeureFin";
+            dtp_HeureFin.ShowUpDown = true;
+            dtp_HeureFin.Size = new Size(156, 27);
+            dtp_HeureFin.TabIndex = 75;
+            dtp_HeureFin.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
+            // 
+            // dtp_HeureDebut
+            // 
+            dtp_HeureDebut.CustomFormat = "HH:mm";
+            dtp_HeureDebut.Format = DateTimePickerFormat.Custom;
+            dtp_HeureDebut.Location = new Point(117, 214);
+            dtp_HeureDebut.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtp_HeureDebut.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
+            dtp_HeureDebut.Name = "dtp_HeureDebut";
+            dtp_HeureDebut.ShowUpDown = true;
+            dtp_HeureDebut.Size = new Size(156, 27);
+            dtp_HeureDebut.TabIndex = 74;
+            dtp_HeureDebut.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
+            // 
+            // lbl_HeureFin
+            // 
+            lbl_HeureFin.AutoSize = true;
+            lbl_HeureFin.Location = new Point(8, 256);
+            lbl_HeureFin.Name = "lbl_HeureFin";
+            lbl_HeureFin.Size = new Size(72, 20);
+            lbl_HeureFin.TabIndex = 73;
+            lbl_HeureFin.Text = "Heure Fin";
+            // 
+            // lbl_HeureDebut
+            // 
+            lbl_HeureDebut.AutoSize = true;
+            lbl_HeureDebut.Location = new Point(5, 219);
+            lbl_HeureDebut.Name = "lbl_HeureDebut";
+            lbl_HeureDebut.Size = new Size(94, 20);
+            lbl_HeureDebut.TabIndex = 72;
+            lbl_HeureDebut.Text = "Heure Debut";
+            // 
             // dtp_Frequence
             // 
             dtp_Frequence.CustomFormat = "HH:mm";
@@ -325,50 +369,6 @@
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
             btnRetour.Click += btnRetour_Click;
-            // 
-            // lbl_HeureDebut
-            // 
-            lbl_HeureDebut.AutoSize = true;
-            lbl_HeureDebut.Location = new Point(5, 219);
-            lbl_HeureDebut.Name = "lbl_HeureDebut";
-            lbl_HeureDebut.Size = new Size(94, 20);
-            lbl_HeureDebut.TabIndex = 72;
-            lbl_HeureDebut.Text = "Heure Debut";
-            // 
-            // lbl_HeureFin
-            // 
-            lbl_HeureFin.AutoSize = true;
-            lbl_HeureFin.Location = new Point(8, 256);
-            lbl_HeureFin.Name = "lbl_HeureFin";
-            lbl_HeureFin.Size = new Size(72, 20);
-            lbl_HeureFin.TabIndex = 73;
-            lbl_HeureFin.Text = "Heure Fin";
-            // 
-            // dtp_HeureDebut
-            // 
-            dtp_HeureDebut.CustomFormat = "HH:mm";
-            dtp_HeureDebut.Format = DateTimePickerFormat.Custom;
-            dtp_HeureDebut.Location = new Point(117, 214);
-            dtp_HeureDebut.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
-            dtp_HeureDebut.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
-            dtp_HeureDebut.Name = "dtp_HeureDebut";
-            dtp_HeureDebut.ShowUpDown = true;
-            dtp_HeureDebut.Size = new Size(156, 27);
-            dtp_HeureDebut.TabIndex = 74;
-            dtp_HeureDebut.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
-            // 
-            // dtp_HeureFin
-            // 
-            dtp_HeureFin.CustomFormat = "HH:mm";
-            dtp_HeureFin.Format = DateTimePickerFormat.Custom;
-            dtp_HeureFin.Location = new Point(117, 251);
-            dtp_HeureFin.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
-            dtp_HeureFin.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
-            dtp_HeureFin.Name = "dtp_HeureFin";
-            dtp_HeureFin.ShowUpDown = true;
-            dtp_HeureFin.Size = new Size(156, 27);
-            dtp_HeureFin.TabIndex = 75;
-            dtp_HeureFin.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
             // 
             // ModifierLigne
             // 

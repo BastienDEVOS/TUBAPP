@@ -304,7 +304,7 @@
             // lblTitre
             // 
             lblTitre.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lblTitre.Location = new Point(26, 83);
+            lblTitre.Location = new Point(30, 77);
             lblTitre.Name = "lblTitre";
             lblTitre.Size = new Size(394, 114);
             lblTitre.TabIndex = 58;

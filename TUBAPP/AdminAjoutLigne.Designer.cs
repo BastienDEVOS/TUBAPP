@@ -40,13 +40,19 @@
             picIconeContact = new PictureBox();
             pictureBox4 = new PictureBox();
             btnRetour = new Button();
-            label2 = new Label();
             txtNomLigne = new TextBox();
-            txtZoneLigne = new TextBox();
             txtStatusLigne = new TextBox();
             txtLongueurLigne = new TextBox();
-            comboBox1 = new ComboBox();
             btnAjouter = new Button();
+            txtCouleur = new TextBox();
+            panel1 = new Panel();
+            lbl_HeureFin = new Label();
+            lbl_HeureDebut = new Label();
+            lbl_Frequence = new Label();
+            dtpFrequence = new DateTimePicker();
+            dtpHeureDebut = new DateTimePicker();
+            dtpHeureFin = new DateTimePicker();
+            label2 = new Label();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).BeginInit();
@@ -55,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel2
@@ -193,86 +200,164 @@
             btnRetour.UseVisualStyleBackColor = false;
             btnRetour.Click += btnRetour_Click;
             // 
-            // label2
-            // 
-            label2.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            label2.Location = new Point(3, 98);
-            label2.Name = "label2";
-            label2.Size = new Size(443, 93);
-            label2.TabIndex = 49;
-            label2.Text = "Ajouter une ligne";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // txtNomLigne
             // 
-            txtNomLigne.Location = new Point(66, 212);
+            txtNomLigne.Location = new Point(32, 10);
             txtNomLigne.Name = "txtNomLigne";
             txtNomLigne.PlaceholderText = "Nom de ligne";
-            txtNomLigne.Size = new Size(322, 27);
+            txtNomLigne.Size = new Size(272, 27);
             txtNomLigne.TabIndex = 50;
-            // 
-            // txtZoneLigne
-            // 
-            txtZoneLigne.Location = new Point(66, 319);
-            txtZoneLigne.Name = "txtZoneLigne";
-            txtZoneLigne.PlaceholderText = "Zone ligne";
-            txtZoneLigne.Size = new Size(322, 27);
-            txtZoneLigne.TabIndex = 51;
+            txtNomLigne.TextChanged += Verif;
             // 
             // txtStatusLigne
             // 
-            txtStatusLigne.Location = new Point(66, 401);
+            txtStatusLigne.Location = new Point(33, 109);
             txtStatusLigne.Name = "txtStatusLigne";
             txtStatusLigne.PlaceholderText = "Status Ligne";
-            txtStatusLigne.Size = new Size(322, 27);
+            txtStatusLigne.Size = new Size(272, 27);
             txtStatusLigne.TabIndex = 52;
+            txtStatusLigne.TextChanged += Verif;
             // 
             // txtLongueurLigne
             // 
-            txtLongueurLigne.Location = new Point(66, 360);
+            txtLongueurLigne.Location = new Point(33, 76);
             txtLongueurLigne.Name = "txtLongueurLigne";
             txtLongueurLigne.PlaceholderText = "Longueur ligne";
-            txtLongueurLigne.Size = new Size(322, 27);
+            txtLongueurLigne.Size = new Size(272, 27);
             txtLongueurLigne.TabIndex = 53;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(66, 265);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(322, 28);
-            comboBox1.TabIndex = 54;
-            comboBox1.Text = "Couleur de ligne";
+            txtLongueurLigne.TextChanged += Verif;
             // 
             // btnAjouter
             // 
             btnAjouter.BackColor = Color.FromArgb(209, 66, 54);
+            btnAjouter.Enabled = false;
             btnAjouter.FlatStyle = FlatStyle.Flat;
             btnAjouter.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnAjouter.ForeColor = Color.White;
-            btnAjouter.Location = new Point(95, 462);
+            btnAjouter.Location = new Point(69, 462);
             btnAjouter.Margin = new Padding(3, 4, 3, 4);
             btnAjouter.Name = "btnAjouter";
-            btnAjouter.Size = new Size(257, 53);
+            btnAjouter.Size = new Size(308, 53);
             btnAjouter.TabIndex = 55;
             btnAjouter.Text = "Ajouter la ligne";
             btnAjouter.UseVisualStyleBackColor = false;
+            btnAjouter.Click += btnAjouter_Click;
+            // 
+            // txtCouleur
+            // 
+            txtCouleur.Location = new Point(33, 43);
+            txtCouleur.Name = "txtCouleur";
+            txtCouleur.PlaceholderText = "Couleur";
+            txtCouleur.Size = new Size(272, 27);
+            txtCouleur.TabIndex = 56;
+            txtCouleur.TextChanged += Verif;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(lbl_HeureFin);
+            panel1.Controls.Add(lbl_HeureDebut);
+            panel1.Controls.Add(lbl_Frequence);
+            panel1.Controls.Add(dtpFrequence);
+            panel1.Controls.Add(dtpHeureDebut);
+            panel1.Controls.Add(dtpHeureFin);
+            panel1.Controls.Add(txtCouleur);
+            panel1.Controls.Add(txtStatusLigne);
+            panel1.Controls.Add(txtLongueurLigne);
+            panel1.Controls.Add(txtNomLigne);
+            panel1.Location = new Point(62, 172);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(322, 264);
+            panel1.TabIndex = 57;
+            // 
+            // lbl_HeureFin
+            // 
+            lbl_HeureFin.AutoSize = true;
+            lbl_HeureFin.Location = new Point(29, 221);
+            lbl_HeureFin.Name = "lbl_HeureFin";
+            lbl_HeureFin.Size = new Size(161, 20);
+            lbl_HeureFin.TabIndex = 77;
+            lbl_HeureFin.Text = "Heure de fin de service";
+            // 
+            // lbl_HeureDebut
+            // 
+            lbl_HeureDebut.AutoSize = true;
+            lbl_HeureDebut.Location = new Point(29, 188);
+            lbl_HeureDebut.Name = "lbl_HeureDebut";
+            lbl_HeureDebut.Size = new Size(162, 20);
+            lbl_HeureDebut.TabIndex = 76;
+            lbl_HeureDebut.Text = "Heure début de service";
+            // 
+            // lbl_Frequence
+            // 
+            lbl_Frequence.AutoSize = true;
+            lbl_Frequence.Location = new Point(29, 155);
+            lbl_Frequence.Name = "lbl_Frequence";
+            lbl_Frequence.Size = new Size(156, 20);
+            lbl_Frequence.TabIndex = 75;
+            lbl_Frequence.Text = "Fréquence de passage";
+            // 
+            // dtpFrequence
+            // 
+            dtpFrequence.CustomFormat = "HH:mm";
+            dtpFrequence.Format = DateTimePickerFormat.Custom;
+            dtpFrequence.Location = new Point(191, 150);
+            dtpFrequence.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtpFrequence.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
+            dtpFrequence.Name = "dtpFrequence";
+            dtpFrequence.ShowUpDown = true;
+            dtpFrequence.Size = new Size(124, 27);
+            dtpFrequence.TabIndex = 74;
+            dtpFrequence.Value = new DateTime(2025, 5, 31, 0, 0, 0, 0);
+            dtpFrequence.ValueChanged += Verif;
+            // 
+            // dtpHeureDebut
+            // 
+            dtpHeureDebut.CustomFormat = "HH:mm";
+            dtpHeureDebut.Format = DateTimePickerFormat.Custom;
+            dtpHeureDebut.Location = new Point(191, 183);
+            dtpHeureDebut.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtpHeureDebut.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
+            dtpHeureDebut.Name = "dtpHeureDebut";
+            dtpHeureDebut.ShowUpDown = true;
+            dtpHeureDebut.Size = new Size(124, 27);
+            dtpHeureDebut.TabIndex = 73;
+            dtpHeureDebut.Value = new DateTime(2025, 5, 31, 0, 0, 0, 0);
+            // 
+            // dtpHeureFin
+            // 
+            dtpHeureFin.CustomFormat = "HH:mm";
+            dtpHeureFin.Format = DateTimePickerFormat.Custom;
+            dtpHeureFin.Location = new Point(191, 216);
+            dtpHeureFin.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtpHeureFin.MinDate = new DateTime(2025, 1, 1, 0, 0, 0, 0);
+            dtpHeureFin.Name = "dtpHeureFin";
+            dtpHeureFin.ShowUpDown = true;
+            dtpHeureFin.Size = new Size(124, 27);
+            dtpHeureFin.TabIndex = 72;
+            dtpHeureFin.Value = new DateTime(2025, 5, 31, 0, 0, 0, 0);
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            label2.Location = new Point(67, 98);
+            label2.Name = "label2";
+            label2.Size = new Size(312, 71);
+            label2.TabIndex = 58;
+            label2.Text = "Ajouter  une ligne";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // AdminAjoutLigne
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
-            Controls.Add(btnAjouter);
-            Controls.Add(comboBox1);
-            Controls.Add(txtLongueurLigne);
-            Controls.Add(txtStatusLigne);
-            Controls.Add(txtZoneLigne);
-            Controls.Add(txtNomLigne);
             Controls.Add(label2);
+            Controls.Add(btnAjouter);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(btnRetour);
+            Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminAjoutLigne";
             StartPosition = FormStartPosition.CenterScreen;
@@ -286,8 +371,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -303,12 +389,18 @@
         private PictureBox pictureBox4;
         private Button btnRetour;
         private Label lblTitre;
-        private Label label2;
         private TextBox txtNomLigne;
-        private TextBox txtZoneLigne;
         private TextBox txtStatusLigne;
         private TextBox txtLongueurLigne;
-        private ComboBox comboBox1;
         private Button btnAjouter;
+        private TextBox txtCouleur;
+        private Panel panel1;
+        private Label lbl_HeureFin;
+        private Label lbl_HeureDebut;
+        private Label lbl_Frequence;
+        private DateTimePicker dtpFrequence;
+        private DateTimePicker dtpHeureDebut;
+        private DateTimePicker dtpHeureFin;
+        private Label label2;
     }
 }

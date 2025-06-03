@@ -17,12 +17,6 @@ namespace TUBAPP
             InitializeComponent();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "HH:mm";
-            dateTimePicker1.ShowUpDown = true;
-        }
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
@@ -36,6 +30,11 @@ namespace TUBAPP
             PageCarte page = new PageCarte();
             page.Show();
             this.Close();
+        }
+
+        private void cmbLigne_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
