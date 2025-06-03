@@ -74,11 +74,13 @@ namespace TUBAPP
         /// <param name="Zone"></param>
         /// <param name="Accessibilite"></param>
         /// <param name="Correspondance"></param>
-        public static void AjoutStationBase(int Id, string Nom, string Zone, bool Accessibilite, bool Correspondance)
+        public static int AjoutStationBase(string Nom, string Zone, bool Accessibilite, bool Correspondance)
         {
-            string reSQL = $"INSERT INTO Station(NomStation, Zone, Correspondance, Accessibilite) VALUES ({Id}, '{Nom}', '{Zone}', {Accessibilite}, {Correspondance})";
+            string reSQL = $"INSERT INTO Station(NomStation, Zone, Correspondance, Accessibilite) VALUES ('{Nom}', '{Zone}', {Accessibilite}, {Correspondance}); SELECT LAST_INSERT_ID();"; //On insert la station et récupère l'ID de la dernière insertion
             MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
-            cmd.ExecuteNonQuery();
+
+            int idStation = Convert.ToInt32(cmd.ExecuteScalar());
+            return idStation;
         }
 
         public static void AjouterDesservie(int idLigne, int idStation)
