@@ -186,6 +186,7 @@
             btnAjouter.TabIndex = 68;
             btnAjouter.Text = "Ajouter la Station";
             btnAjouter.UseVisualStyleBackColor = false;
+            btnAjouter.Click += btnAjouter_Click;
             // 
             // flowLayoutPanel2
             // 
@@ -224,17 +225,20 @@
             dtpTempsTrajet.ShowUpDown = true;
             dtpTempsTrajet.Size = new Size(163, 27);
             dtpTempsTrajet.TabIndex = 70;
-            dtpTempsTrajet.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
+            dtpTempsTrajet.Value = new DateTime(2025, 5, 31, 0, 0, 0, 0);
+            dtpTempsTrajet.ValueChanged += Verif;
             // 
             // cmbLigne
             // 
+            cmbLigne.DropDownHeight = 250;
             cmbLigne.FormattingEnabled = true;
+            cmbLigne.IntegralHeight = false;
             cmbLigne.Location = new Point(13, 44);
             cmbLigne.Name = "cmbLigne";
             cmbLigne.Size = new Size(281, 28);
             cmbLigne.TabIndex = 71;
             cmbLigne.Text = "Choix de la ligne";
-            cmbLigne.SelectedIndexChanged += cmbLigne_SelectedIndexChanged;
+            cmbLigne.SelectedIndexChanged += Verif;
             // 
             // lblArrivé
             // 
@@ -290,21 +294,27 @@
             // 
             // cmbStationDepart
             // 
+            cmbStationDepart.DropDownHeight = 250;
             cmbStationDepart.FormattingEnabled = true;
+            cmbStationDepart.IntegralHeight = false;
             cmbStationDepart.Location = new Point(13, 110);
             cmbStationDepart.Name = "cmbStationDepart";
             cmbStationDepart.Size = new Size(281, 28);
             cmbStationDepart.TabIndex = 75;
             cmbStationDepart.Text = "Choix de la Station de départ";
+            cmbStationDepart.SelectedIndexChanged += Verif;
             // 
             // cmbStationArriver
             // 
+            cmbStationArriver.DropDownHeight = 250;
             cmbStationArriver.FormattingEnabled = true;
+            cmbStationArriver.IntegralHeight = false;
             cmbStationArriver.Location = new Point(13, 172);
             cmbStationArriver.Name = "cmbStationArriver";
             cmbStationArriver.Size = new Size(281, 28);
             cmbStationArriver.TabIndex = 74;
             cmbStationArriver.Text = "Choix de la station d'arriver";
+            cmbStationArriver.SelectedIndexChanged += Verif;
             // 
             // label2
             // 

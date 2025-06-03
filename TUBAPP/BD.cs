@@ -90,7 +90,7 @@ namespace TUBAPP
             cmd.ExecuteNonQuery();
         }
 
-        public static void AjoutTrajetBase(int idLigne, int idStationDepart, int idStationArrivee, string tempsTrajets)
+        public static void AjoutTrajetBase(int idLigne, int idStationDepart, int idStationArrivee, TimeSpan tempsTrajets)
         {
             string reSQL = "INSERT INTO Trajet (IdLigne, IdStation, IdStation_1, TempsTrajet) VALUES (@IdLigne, @IdStationDepart, @IdStationArrivee, @TempsTrajets)";
             MySqlCommand cmd = new MySqlCommand(reSQL, Conn);

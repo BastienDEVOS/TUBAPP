@@ -41,7 +41,7 @@
             btnAjoutStation = new Button();
             btnAjoutLigne = new Button();
             lblTitre = new Label();
-            btnAjoutHoraire = new Button();
+            btnAjoutTrajet = new Button();
             btnRetour = new Button();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -204,19 +204,20 @@
             lblTitre.Text = "Option Administrateur Ajouter\r\n";
             lblTitre.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnAjoutHoraire
+            // btnAjoutTrajet
             // 
-            btnAjoutHoraire.BackColor = Color.FromArgb(209, 66, 54);
-            btnAjoutHoraire.FlatStyle = FlatStyle.Flat;
-            btnAjoutHoraire.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnAjoutHoraire.ForeColor = Color.White;
-            btnAjoutHoraire.Location = new Point(64, 380);
-            btnAjoutHoraire.Margin = new Padding(3, 4, 3, 4);
-            btnAjoutHoraire.Name = "btnAjoutHoraire";
-            btnAjoutHoraire.Size = new Size(313, 53);
-            btnAjoutHoraire.TabIndex = 40;
-            btnAjoutHoraire.Text = "Horaire";
-            btnAjoutHoraire.UseVisualStyleBackColor = false;
+            btnAjoutTrajet.BackColor = Color.FromArgb(209, 66, 54);
+            btnAjoutTrajet.FlatStyle = FlatStyle.Flat;
+            btnAjoutTrajet.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnAjoutTrajet.ForeColor = Color.White;
+            btnAjoutTrajet.Location = new Point(64, 380);
+            btnAjoutTrajet.Margin = new Padding(3, 4, 3, 4);
+            btnAjoutTrajet.Name = "btnAjoutTrajet";
+            btnAjoutTrajet.Size = new Size(313, 53);
+            btnAjoutTrajet.TabIndex = 40;
+            btnAjoutTrajet.Text = "Trajet";
+            btnAjoutTrajet.UseVisualStyleBackColor = false;
+            btnAjoutTrajet.Click += btnAjoutTrajet_Click;
             // 
             // btnRetour
             // 
@@ -239,7 +240,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
             Controls.Add(btnRetour);
-            Controls.Add(btnAjoutHoraire);
+            Controls.Add(btnAjoutTrajet);
             Controls.Add(lblTitre);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
@@ -276,7 +277,7 @@
         private Button btnAjoutStation;
         private Button btnAjoutLigne;
         private Label lblTitre;
-        private Button btnAjoutHoraire;
+        private Button btnAjoutTrajet;
         private Button btnRetour;
     }
 }

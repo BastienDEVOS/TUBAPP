@@ -63,7 +63,7 @@ namespace TUBAPP
         private void btnModif_Click(object sender, EventArgs e)
         {
             BD.SupprimerTrajet(TrajetModifier.IdLigne, TrajetModifier.IdStationDepart, TrajetModifier.IdStationArrivee);
-            BD.AjoutTrajetBase((int)cbLigne.SelectedValue, (int)cbStationDepart.SelectedValue, (int)cbStationArrivee.SelectedValue, dtp_TempsTrajet.Text);
+            BD.AjoutTrajetBase((int)cbLigne.SelectedValue, (int)cbStationDepart.SelectedValue, (int)cbStationArrivee.SelectedValue, dtp_TempsTrajet.Value.TimeOfDay);
             frmOptionAdminModif optionAdminModifier = new frmOptionAdminModif();
             optionAdminModifier.Show();
             this.Close();

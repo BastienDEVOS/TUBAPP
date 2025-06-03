@@ -317,7 +317,7 @@
             label2.Name = "label2";
             label2.Size = new Size(394, 114);
             label2.TabIndex = 64;
-            label2.Text = "Modifier Station";
+            label2.Text = "Ajouter une Station";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // AdminAjoutStation

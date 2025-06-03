@@ -251,7 +251,7 @@
             dtp_HeureFin.ShowUpDown = true;
             dtp_HeureFin.Size = new Size(156, 27);
             dtp_HeureFin.TabIndex = 75;
-            dtp_HeureFin.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
+            dtp_HeureFin.Value = new DateTime(2025, 5, 31, 0, 0, 0, 0);
             // 
             // dtp_HeureDebut
             // 
@@ -264,7 +264,7 @@
             dtp_HeureDebut.ShowUpDown = true;
             dtp_HeureDebut.Size = new Size(156, 27);
             dtp_HeureDebut.TabIndex = 74;
-            dtp_HeureDebut.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
+            dtp_HeureDebut.Value = new DateTime(2025, 5, 31, 0, 0, 0, 0);
             // 
             // lbl_HeureFin
             // 
@@ -295,7 +295,7 @@
             dtp_Frequence.ShowUpDown = true;
             dtp_Frequence.Size = new Size(156, 27);
             dtp_Frequence.TabIndex = 71;
-            dtp_Frequence.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
+            dtp_Frequence.Value = new DateTime(2025, 5, 31, 0, 0, 0, 0);
             // 
             // txtStatus
             // 
