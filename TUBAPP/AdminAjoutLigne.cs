@@ -70,5 +70,10 @@ namespace TUBAPP
 
             btnAjouter.Enabled = false; // Désactive le bouton après l'ajout
         }
+
+        private void AdminAjoutLigne_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

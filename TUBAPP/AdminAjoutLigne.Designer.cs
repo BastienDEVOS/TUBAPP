@@ -362,6 +362,7 @@
             Name = "AdminAjoutLigne";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminAjoutLigne";
+            Load += AdminAjoutLigne_Load;
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).EndInit();

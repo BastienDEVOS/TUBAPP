@@ -100,21 +100,16 @@ namespace TUBAPP
 
         private void AfficherInfosImportantes()
         {
-            InfoImportantes.Controls.Clear(); // Vide le panneau avant ajout
+            InfoImportantes.Controls.Clear();
 
-            List<string> infos = new List<string>
-            {
-                "Bakerloo : En travaux",
-                "Kenton : Retards possibles",
-                "Waterloo : Hors Service"
-            };
+            List<string> infos = BD.GetStatusLignes(); // Récupère depuis la BD
 
             foreach (string info in infos)
             {
                 Label lblInfo = new Label();
                 lblInfo.Text = info;
                 lblInfo.AutoSize = true;
-                lblInfo.Font = new Font("Segoe UI", 13, FontStyle.Bold);
+                lblInfo.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                 lblInfo.ForeColor = Color.DarkRed;
                 lblInfo.Margin = new Padding(5);
 

@@ -350,5 +350,27 @@ namespace TUBAPP
         }
 
         #endregion
+        public static List<string> GetStatusLignes()
+        {
+            List<string> statuts = new List<string>();
+
+            // S'assurer que la connexion est ouverte
+            MySqlConnection conn = GetConnection();
+
+            string query = "SELECT NomLigne, Statuts FROM Ligne";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string nom = reader.GetString(0);
+                    string statut = reader.GetString(1);
+                    statuts.Add($"{nom} : {statut}");
+                }
+            }
+
+            return statuts;
+        }
     }
 }
