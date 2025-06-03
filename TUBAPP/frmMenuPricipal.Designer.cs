@@ -57,10 +57,11 @@
             // 
             // InfoImportantes
             // 
-            InfoImportantes.Location = new Point(96, 382);
+            InfoImportantes.Location = new Point(58, 382);
             InfoImportantes.Name = "InfoImportantes";
-            InfoImportantes.Size = new Size(250, 183);
+            InfoImportantes.Size = new Size(319, 183);
             InfoImportantes.TabIndex = 21;
+            InfoImportantes.Paint += InfoImportantes_Paint;
             // 
             // label3
             // 
@@ -257,6 +258,7 @@
             Name = "frmMenuPricipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmMenuPricipal";
+            Load += frmMenuPricipal_Load;
             flpNavbarre.ResumeLayout(false);
             flpNavbarre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

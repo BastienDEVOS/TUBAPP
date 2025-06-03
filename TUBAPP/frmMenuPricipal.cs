@@ -21,7 +21,7 @@ namespace TUBAPP
 
             // récupère les stations depuis la BD
             List<Station> stationsDepart = BD.GetStation();
-            List<Station> stationsArrivee = BD.GetStation(); 
+            List<Station> stationsArrivee = BD.GetStation();
 
 
             // Ajoute une station "par défaut" tout en haut de la liste
@@ -38,7 +38,7 @@ namespace TUBAPP
             cmbStationArrivee.ValueMember = "IdStation";
             cmbStationArrivee.SelectedIndex = 0; // force la sélection par défaut
 
-            
+
         }
 
         private void VoirItineraire_Click(object sender, EventArgs e)
@@ -96,6 +96,39 @@ namespace TUBAPP
                 cmbStationDepart.SelectedIndex != cmbStationArrivee.SelectedIndex;
 
             btnVoirItineraire.Enabled = selectionsValides;
+        }
+
+        private void AfficherInfosImportantes()
+        {
+            InfoImportantes.Controls.Clear(); // Vide le panneau avant ajout
+
+            List<string> infos = new List<string>
+            {
+                "Bakerloo : En travaux",
+                "Kenton : Retards possibles",
+                "Waterloo : Hors Service"
+            };
+
+            foreach (string info in infos)
+            {
+                Label lblInfo = new Label();
+                lblInfo.Text = info;
+                lblInfo.AutoSize = true;
+                lblInfo.Font = new Font("Segoe UI", 13, FontStyle.Bold);
+                lblInfo.ForeColor = Color.DarkRed;
+                lblInfo.Margin = new Padding(5);
+
+                InfoImportantes.Controls.Add(lblInfo);
+            }
+        }
+        private void frmMenuPricipal_Load(object sender, EventArgs e)
+        {
+            AfficherInfosImportantes();
+        }
+
+        private void InfoImportantes_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
