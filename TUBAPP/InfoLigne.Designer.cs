@@ -73,6 +73,7 @@
             cmb_Ligne.Size = new Size(200, 38);
             cmb_Ligne.TabIndex = 55;
             cmb_Ligne.Text = "Ligne";
+            cmb_Ligne.SelectedIndexChanged += cmb_Ligne_SelectedIndexChanged;
             // 
             // flowLayoutPanel2
             // 
@@ -81,7 +82,7 @@
             flowLayoutPanel2.Controls.Add(BtnHome);
             flowLayoutPanel2.Controls.Add(pictureBox5);
             flowLayoutPanel2.Location = new Point(0, 594);
-            flowLayoutPanel2.Margin = new Padding(2, 2, 2, 2);
+            flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(446, 65);
             flowLayoutPanel2.TabIndex = 52;
@@ -130,7 +131,7 @@
             flowLayoutPanel1.Controls.Add(picIconeContact);
             flowLayoutPanel1.Controls.Add(pictureBox4);
             flowLayoutPanel1.Location = new Point(0, -1);
-            flowLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
+            flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(446, 95);
             flowLayoutPanel1.TabIndex = 51;
@@ -140,7 +141,7 @@
             pictureBox3.Image = Properties.Resources.logo1;
             pictureBox3.ImeMode = ImeMode.NoControl;
             pictureBox3.Location = new Point(2, 2);
-            pictureBox3.Margin = new Padding(2, 2, 2, 2);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(91, 92);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -300,11 +301,13 @@
             // flowLayoutPanel3
             // 
             flowLayoutPanel3.Anchor = AnchorStyles.None;
+            flowLayoutPanel3.AutoScroll = true;
             flowLayoutPanel3.BackColor = Color.White;
             flowLayoutPanel3.Location = new Point(26, 403);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Size = new Size(194, 182);
             flowLayoutPanel3.TabIndex = 57;
+            flowLayoutPanel3.Paint += flowLayoutPanel3_Paint;
             // 
             // panel1
             // 
