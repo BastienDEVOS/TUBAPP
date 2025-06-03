@@ -9,6 +9,7 @@ namespace TUBAPP
         public frmInfoLigne()
         {
             InitializeComponent();
+            cmb_Ligne.SelectedIndexChanged += cmb_Ligne_SelectedIndexChanged;
         }
 
         private void InfoLigne_Load(object sender, EventArgs e)
@@ -17,30 +18,31 @@ namespace TUBAPP
             {
                 using (var conn = BD.GetConnection())
                 {
-                    var cmd = new MySqlCommand("SELECT * FROM Ligne", conn);
-                    var adapter = new MySqlDataAdapter(cmd);
-                    var table = new DataTable();
-                    adapter.Fill(table);
+                    
 
-                    flowLayoutPanel3.Controls.Clear();
+                    var cmd = new MySqlCommand("SELECT IdLigne, NomLigne FROM Ligne", conn);
+                    var reader = cmd.ExecuteReader();
 
-                    foreach (DataRow row in table.Rows)
+                    cmb_Ligne.Items.Clear();
+
+                    while (reader.Read())
                     {
-                        var label = new Label
+                        cmb_Ligne.Items.Add(new ComboBoxItem
                         {
-                            AutoSize = true,
-                            Padding = new Padding(5),
-                            Text = string.Join(" | ", row.ItemArray.Select(item => item.ToString()))
-                        };
-                        flowLayoutPanel3.Controls.Add(label);
+                            Text = reader["NomLigne"].ToString(),
+                            Value = reader["IdLigne"]
+                        });
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur lors du chargement des lignes : " + ex.Message);
+                MessageBox.Show("Erreur chargement lignes : " + ex.Message);
             }
         }
+
+
+
 
 
         private void label4_Click(object sender, EventArgs e)
@@ -83,6 +85,61 @@ namespace TUBAPP
             PageCarte page = new PageCarte();
             page.Show();
             this.Close();
+        }
+
+        private void cmb_Ligne_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_Ligne.SelectedItem is ComboBoxItem selectedItem)
+            {
+                int idLigne = Convert.ToInt32(selectedItem.Value);
+
+                try
+                {
+                    using (var conn = BD.GetConnection())
+                    {
+                        if (conn.State != ConnectionState.Open)
+                            conn.Open();
+
+                        string query = @"
+                    SELECT S.NomStation
+                    FROM Desservie D
+                    JOIN Station S ON S.IdStation = D.IdStation
+                    WHERE D.IdLigne = @idLigne";
+
+                        var cmd = new MySqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@idLigne", idLigne);
+
+                        var reader = cmd.ExecuteReader();
+
+                        flowLayoutPanel3.Controls.Clear();
+
+                        while (reader.Read())
+                        {
+                            var label = new Label
+                            {
+                                AutoSize = true,
+                                Padding = new Padding(5),
+                                Font = new Font("Segoe UI", 10),
+                                Text = reader.GetString("NomStation")
+                            };
+                            flowLayoutPanel3.Controls.Add(label);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur chargement stations : " + ex.Message);
+                }
+            }
+        }
+
+
+
+
+
+        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
