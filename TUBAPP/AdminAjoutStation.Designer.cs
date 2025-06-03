@@ -50,7 +50,7 @@
             label3 = new Label();
             txtZoneStation = new TextBox();
             lbl_LignesDesservie = new Label();
-            checkedListBox1 = new CheckedListBox();
+            clbLigneDesservie = new CheckedListBox();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
@@ -70,6 +70,7 @@
             txtNomStation.PlaceholderText = "Nom de la station";
             txtNomStation.Size = new Size(282, 27);
             txtNomStation.TabIndex = 59;
+            txtNomStation.TextChanged += Verif;
             // 
             // btnRetour
             // 
@@ -221,6 +222,7 @@
             btnAjouter.TabIndex = 60;
             btnAjouter.Text = "Ajouter la Station";
             btnAjouter.UseVisualStyleBackColor = false;
+            btnAjouter.Click += btnAjouter_Click;
             // 
             // panel1
             // 
@@ -232,7 +234,7 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(txtZoneStation);
             panel1.Controls.Add(lbl_LignesDesservie);
-            panel1.Controls.Add(checkedListBox1);
+            panel1.Controls.Add(clbLigneDesservie);
             panel1.Controls.Add(txtNomStation);
             panel1.Location = new Point(66, 171);
             panel1.Name = "panel1";
@@ -265,6 +267,7 @@
             AccessibiliterNon.Size = new Size(18, 17);
             AccessibiliterNon.TabIndex = 67;
             AccessibiliterNon.UseVisualStyleBackColor = true;
+            AccessibiliterNon.CheckedChanged += Verif;
             // 
             // AccessibiliterOui
             // 
@@ -275,6 +278,7 @@
             AccessibiliterOui.TabIndex = 66;
             AccessibiliterOui.TextAlign = ContentAlignment.MiddleRight;
             AccessibiliterOui.UseVisualStyleBackColor = true;
+            AccessibiliterOui.CheckedChanged += Verif;
             // 
             // label3
             // 
@@ -292,6 +296,7 @@
             txtZoneStation.PlaceholderText = "Zone de facturation de la station";
             txtZoneStation.Size = new Size(277, 27);
             txtZoneStation.TabIndex = 64;
+            txtZoneStation.TextChanged += Verif;
             // 
             // lbl_LignesDesservie
             // 
@@ -302,13 +307,14 @@
             lbl_LignesDesservie.TabIndex = 63;
             lbl_LignesDesservie.Text = "Ligne(s) Desservie(s) :";
             // 
-            // checkedListBox1
+            // clbLigneDesservie
             // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(160, 143);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(147, 114);
-            checkedListBox1.TabIndex = 62;
+            clbLigneDesservie.FormattingEnabled = true;
+            clbLigneDesservie.Location = new Point(160, 143);
+            clbLigneDesservie.Name = "clbLigneDesservie";
+            clbLigneDesservie.Size = new Size(147, 114);
+            clbLigneDesservie.TabIndex = 62;
+            clbLigneDesservie.SelectedIndexChanged += Verif;
             // 
             // label2
             // 
@@ -365,7 +371,7 @@
         private Button btnAjouter;
         private Panel panel1;
         private Label lbl_LignesDesservie;
-        private CheckedListBox checkedListBox1;
+        private CheckedListBox clbLigneDesservie;
         private TextBox txtZoneStation;
         private Label label2;
         private Label label9;
