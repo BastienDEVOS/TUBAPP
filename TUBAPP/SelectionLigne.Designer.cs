@@ -25,12 +25,16 @@
             panelMain = new Panel();
             lblStations = new Label();
             panelHoraire = new Panel();
+            dtpDepartureTime = new DateTimePicker();
             lblHoraire = new Label();
-            lblHoraireSous = new Label();
             lstTrajets = new ListView();
+            Ligne = new ColumnHeader();
+            HeureDepart = new ColumnHeader();
+            HeureArrive = new ColumnHeader();
+            Durre = new ColumnHeader();
+            btnRetour = new Button();
             colLigne = new ColumnHeader();
             colDuree = new ColumnHeader();
-            btnRetour = new Button();
             panelNav = new Panel();
             btnCarte = new PictureBox();
             btnAccueil = new PictureBox();
@@ -106,7 +110,7 @@
             // 
             // panelMain
             // 
-            panelMain.BackColor = Color.FromArgb(224, 245, 196);
+            panelMain.BackColor = Color.White;
             panelMain.Controls.Add(lblTitre);
             panelMain.Controls.Add(lblStations);
             panelMain.Controls.Add(panelHoraire);
@@ -120,11 +124,12 @@
             // 
             // lblStations
             // 
+            lblStations.AutoEllipsis = true;
             lblStations.BackColor = Color.FromArgb(236, 99, 92);
             lblStations.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblStations.Location = new Point(80, 170);
             lblStations.Name = "lblStations";
-            lblStations.Size = new Size(280, 50);
+            lblStations.Size = new Size(280, 67);
             lblStations.TabIndex = 1;
             lblStations.Text = "Station 1 - Station 2";
             lblStations.TextAlign = ContentAlignment.MiddleLeft;
@@ -132,12 +137,21 @@
             // panelHoraire
             // 
             panelHoraire.BackColor = Color.FromArgb(236, 99, 92);
+            panelHoraire.Controls.Add(dtpDepartureTime);
             panelHoraire.Controls.Add(lblHoraire);
-            panelHoraire.Controls.Add(lblHoraireSous);
             panelHoraire.Location = new Point(370, 170);
             panelHoraire.Name = "panelHoraire";
-            panelHoraire.Size = new Size(130, 50);
+            panelHoraire.Size = new Size(130, 67);
             panelHoraire.TabIndex = 2;
+            // 
+            // dtpDepartureTime
+            // 
+            dtpDepartureTime.CustomFormat = "HH:mm";
+            dtpDepartureTime.Format = DateTimePickerFormat.Custom;
+            dtpDepartureTime.Location = new Point(0, 36);
+            dtpDepartureTime.Name = "dtpDepartureTime";
+            dtpDepartureTime.Size = new Size(131, 31);
+            dtpDepartureTime.TabIndex = 1;
             // 
             // lblHoraire
             // 
@@ -149,38 +163,43 @@
             lblHoraire.TabIndex = 0;
             lblHoraire.Text = "Horaire :";
             // 
-            // lblHoraireSous
-            // 
-            lblHoraireSous.AutoSize = true;
-            lblHoraireSous.Font = new Font("Segoe UI", 9F);
-            lblHoraireSous.Location = new Point(0, 28);
-            lblHoraireSous.Name = "lblHoraireSous";
-            lblHoraireSous.Size = new Size(96, 25);
-            lblHoraireSous.TabIndex = 1;
-            lblHoraireSous.Text = "H/M   Jour";
-            // 
             // lstTrajets
             // 
             lstTrajets.BackColor = Color.FromArgb(236, 99, 92);
             lstTrajets.BorderStyle = BorderStyle.None;
-            lstTrajets.Columns.AddRange(new ColumnHeader[] { colLigne, colDuree });
-            lstTrajets.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lstTrajets.Columns.AddRange(new ColumnHeader[] { Ligne, HeureDepart, HeureArrive, Durre });
+            lstTrajets.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lstTrajets.FullRowSelect = true;
-            lstTrajets.HeaderStyle = ColumnHeaderStyle.None;
+            lstTrajets.HeaderStyle = ColumnHeaderStyle.Nonclickable;
             lstTrajets.Location = new Point(80, 240);
             lstTrajets.Name = "lstTrajets";
             lstTrajets.Size = new Size(420, 300);
             lstTrajets.TabIndex = 3;
             lstTrajets.UseCompatibleStateImageBehavior = false;
             lstTrajets.View = View.Details;
+            lstTrajets.DrawColumnHeader += lstTrajets_DrawColumnHeader;
+            lstTrajets.DrawItem += lstTrajets_DrawItem;
+            lstTrajets.DrawSubItem += lstTrajets_DrawSubItem;
             // 
-            // colLigne
+            // Ligne
             // 
-            colLigne.Width = 280;
+            Ligne.Text = "Ligne";
+            Ligne.Width = 105;
             // 
-            // colDuree
+            // HeureDepart
             // 
-            colDuree.Width = 120;
+            HeureDepart.Text = "Depart";
+            HeureDepart.Width = 105;
+            // 
+            // HeureArrive
+            // 
+            HeureArrive.Text = "Arrive";
+            HeureArrive.Width = 105;
+            // 
+            // Durre
+            // 
+            Durre.Text = "Durre";
+            Durre.Width = 105;
             // 
             // btnRetour
             // 
@@ -195,6 +214,14 @@
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
             btnRetour.Click += btnRetour_Click;
+            // 
+            // colLigne
+            // 
+            colLigne.Width = 280;
+            // 
+            // colDuree
+            // 
+            colDuree.Width = 120;
             // 
             // panelNav
             // 
@@ -285,7 +312,6 @@
         private System.Windows.Forms.Label lblStations;
         private System.Windows.Forms.Panel panelHoraire;
         private System.Windows.Forms.Label lblHoraire;
-        private System.Windows.Forms.Label lblHoraireSous;
         private System.Windows.Forms.ListView lstTrajets;
         private System.Windows.Forms.ColumnHeader colLigne;
         private System.Windows.Forms.ColumnHeader colDuree;
@@ -294,5 +320,10 @@
         private System.Windows.Forms.PictureBox btnCarte;
         private System.Windows.Forms.PictureBox btnAccueil;
         private System.Windows.Forms.PictureBox btnReseau;
+        private DateTimePicker dtpDepartureTime;
+        private ColumnHeader Ligne;
+        private ColumnHeader Durre;
+        private ColumnHeader HeureDepart;
+        private ColumnHeader HeureArrive;
     }
 }

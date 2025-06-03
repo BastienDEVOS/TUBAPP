@@ -105,12 +105,12 @@ namespace TUBAPP
 
         public static void AjoutLigneBase(string nom, string couleur, int longueur, string status, TimeSpan frequence, TimeSpan heureFin, TimeSpan heureDebut)
         {
-            string reSQL = "INSERT INTO Ligne (NomLigne, Couleur, Longueur, Statuts, Frequence, HeureDebut ,HeureFin) VALUES (@NomLigne, @Couleur, @Longueur, @Statuts, @Frequence, @HeureDebut, @HeureFin)";
+            string reSQL = "INSERT INTO Ligne (NomLigne, Couleur, Longueur, Status, Frequence, HeureDebut ,HeureFin) VALUES (@NomLigne, @Couleur, @Longueur, @Status, @Frequence, @HeureDebut, @HeureFin)";
             MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
             cmd.Parameters.AddWithValue("@NomLigne", nom);
             cmd.Parameters.AddWithValue("@Couleur", couleur);
             cmd.Parameters.AddWithValue("@Longueur", longueur);
-            cmd.Parameters.AddWithValue("@Statuts", status);
+            cmd.Parameters.AddWithValue("@Status", status);
             cmd.Parameters.AddWithValue("@Frequence", frequence);
             cmd.Parameters.AddWithValue("@HeureFin", heureFin);
             cmd.Parameters.AddWithValue("@HeureDebut", heureDebut);
@@ -168,7 +168,7 @@ namespace TUBAPP
                         Nom = reader.GetString("NomLigne"),
                         Couleur = reader.GetString("Couleur"),
                         Longueur = reader.GetInt32("Longueur"),
-                        Status = reader.GetString("Statuts"),
+                        Status = reader.GetString("Status"),
                         Frequence = reader.GetTimeSpan("Frequence").ToString(@"hh\:mm"),
                         HeureFin = reader.GetTimeSpan("HeureFin").ToString(@"hh\:mm"),
                         HeureDebut = reader.GetTimeSpan("HeureDebut").ToString(@"hh\:mm"),
@@ -220,7 +220,7 @@ namespace TUBAPP
                         Nom = reader.GetString("NomLigne"),
                         Couleur = reader.GetString("Couleur"),
                         Longueur = reader.GetInt32("Longueur"),
-                        Status = reader.GetString("Statuts"),
+                        Status = reader.GetString("Status"),
                         Frequence = reader.GetTimeSpan("Frequence").ToString(@"hh\:mm"),
                         HeureFin = reader.GetTimeSpan("HeureFin").ToString(@"hh\:mm"),
                         HeureDebut = reader.GetTimeSpan("HeureDebut").ToString(@"hh\:mm"),
@@ -231,6 +231,43 @@ namespace TUBAPP
         }
 
         #endregion
+
+        public static List<Horaire> GetHorairesForStationAndLigne(int idLigne, int idStation, string sens)
+        {
+            List<Horaire> horaires = new List<Horaire>();
+            string reSQL = "SELECT * FROM Horaire WHERE IdLigne = @IdLigne AND IdStation = @IdStation AND SensCirculation = @SensCirculation";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
+            cmd.Parameters.AddWithValue("@IdStation", idStation);
+            cmd.Parameters.AddWithValue("@SensCirculation", sens);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Horaire h = new Horaire
+                    {
+                        IdLigne = reader.GetInt32("IdLigne"),
+                        IdStation = reader.GetInt32("IdStation"),
+                        Sens = reader.GetString("SensCirculation"),
+                        PassageTrain = reader.GetTimeSpan("PassageTrain")
+                    };
+                    horaires.Add(h);
+                }
+            }
+            return horaires;
+        }
+
+
+        public static TimeSpan? GetNextPassage(int idLigne, int idStation, TimeSpan afterTime, string sens)
+        {
+            var horaires = GetHorairesForStationAndLigne(idLigne, idStation, sens);
+            return horaires
+                .Where(h => h.PassageTrain > afterTime)
+                .OrderBy(h => h.PassageTrain)
+                .Select(h => h.PassageTrain)
+                .FirstOrDefault();
+        }
 
         public static List<Desservie> LigneDesservie(int idStation)
         {
@@ -271,7 +308,7 @@ namespace TUBAPP
 
         public static void ModifierLigne(int idLigne, string nom, string couleur, int longueur, string status, string frequence, string heureFin, string heureDebut)
         {
-            string reSQL = "UPDATE Ligne SET NomLigne = @Nom, Couleur = @Couleur, Longueur = @Longueur, Statuts = @Status, Frequence = @Frequence, HeureFin = @HeureFin, HeureDebut = @HeureDebut WHERE IdLigne = @IdLigne";
+            string reSQL = "UPDATE Ligne SET NomLigne = @Nom, Couleur = @Couleur, Longueur = @Longueur, Status = @Status, Frequence = @Frequence, HeureFin = @HeureFin, HeureDebut = @HeureDebut WHERE IdLigne = @IdLigne";
             MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
             cmd.Parameters.AddWithValue("@IdLigne", idLigne);
             cmd.Parameters.AddWithValue("@Nom", nom);
@@ -352,12 +389,12 @@ namespace TUBAPP
         #endregion
         public static List<string> GetStatusLignes()
         {
-            List<string> statuts = new List<string>();
+            List<string> status = new List<string>();
 
             // S'assurer que la connexion est ouverte
             MySqlConnection conn = GetConnection();
 
-            string query = "SELECT NomLigne, Statuts FROM Ligne";
+            string query = "SELECT NomLigne, Status FROM Ligne";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -366,11 +403,11 @@ namespace TUBAPP
                 {
                     string nom = reader.GetString(0);
                     string statut = reader.GetString(1);
-                    statuts.Add($"{nom} : {statut}");
+                    status.Add($"{nom} : {statut}");
                 }
             }
 
-            return statuts;
+            return status;
         }
     }
 }
