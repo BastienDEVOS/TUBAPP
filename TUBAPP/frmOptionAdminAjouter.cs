@@ -54,5 +54,12 @@ namespace TUBAPP
             page.Show();
             this.Close();
         }
+
+        private void btnAjoutTrajet_Click(object sender, EventArgs e)
+        {
+            AdminAjoutTrajet page = new AdminAjoutTrajet();
+            page.Show();
+            this.Close();
+        }
     }
 }

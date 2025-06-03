@@ -340,7 +340,7 @@
             dtp_TempsTrajet.ShowUpDown = true;
             dtp_TempsTrajet.Size = new Size(156, 27);
             dtp_TempsTrajet.TabIndex = 70;
-            dtp_TempsTrajet.Value = new DateTime(2025, 5, 31, 17, 5, 0, 0);
+            dtp_TempsTrajet.Value = new DateTime(2025, 5, 31, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -353,7 +353,9 @@
             // 
             // cbLigne
             // 
+            cbLigne.DropDownHeight = 250;
             cbLigne.FormattingEnabled = true;
+            cbLigne.IntegralHeight = false;
             cbLigne.Location = new Point(138, 18);
             cbLigne.Name = "cbLigne";
             cbLigne.Size = new Size(156, 28);
@@ -361,7 +363,9 @@
             // 
             // cbStationDepart
             // 
+            cbStationDepart.DropDownHeight = 250;
             cbStationDepart.FormattingEnabled = true;
+            cbStationDepart.IntegralHeight = false;
             cbStationDepart.Location = new Point(138, 65);
             cbStationDepart.Name = "cbStationDepart";
             cbStationDepart.Size = new Size(156, 28);
@@ -396,7 +400,9 @@
             // 
             // cbStationArrivee
             // 
+            cbStationArrivee.DropDownHeight = 250;
             cbStationArrivee.FormattingEnabled = true;
+            cbStationArrivee.IntegralHeight = false;
             cbStationArrivee.Location = new Point(138, 115);
             cbStationArrivee.Name = "cbStationArrivee";
             cbStationArrivee.Size = new Size(156, 28);
