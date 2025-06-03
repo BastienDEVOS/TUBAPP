@@ -57,6 +57,7 @@
             // 
             // InfoImportantes
             // 
+            InfoImportantes.AutoScroll = true;
             InfoImportantes.Location = new Point(58, 382);
             InfoImportantes.Name = "InfoImportantes";
             InfoImportantes.Size = new Size(319, 183);

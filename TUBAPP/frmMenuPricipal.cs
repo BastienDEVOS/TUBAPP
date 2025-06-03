@@ -102,7 +102,7 @@ namespace TUBAPP
         {
             InfoImportantes.Controls.Clear();
 
-            List<string> infos = BD.GetStatusLignes(); // Récupère depuis la BD
+            List<string> infos = BD.GetStatusLignes(); // Récupère le status depuis la BD
 
             foreach (string info in infos)
             {
