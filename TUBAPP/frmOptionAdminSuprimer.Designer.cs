@@ -49,9 +49,9 @@
             lblNaissanceValue = new Label();
             btnModifier = new Button();
             lblTitre = new Label();
-            Ligne = new ComboBox();
-            Station = new ComboBox();
-            Horaire = new ComboBox();
+            cmbLigne = new ComboBox();
+            cmbStation = new ComboBox();
+            cmbTrajet = new ComboBox();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).BeginInit();
@@ -92,6 +92,7 @@
             btnSuprimer.TabIndex = 44;
             btnSuprimer.Text = "Suprimer";
             btnSuprimer.UseVisualStyleBackColor = false;
+            btnSuprimer.Click += btnSupprimer_Click;
             // 
             // flowLayoutPanel2
             // 
@@ -100,7 +101,7 @@
             flowLayoutPanel2.Controls.Add(BtnHome);
             flowLayoutPanel2.Controls.Add(pictureBox5);
             flowLayoutPanel2.Location = new Point(0, 594);
-            flowLayoutPanel2.Margin = new Padding(2, 2, 2, 2);
+            flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(446, 65);
             flowLayoutPanel2.TabIndex = 43;
@@ -150,7 +151,7 @@
             flowLayoutPanel1.Controls.Add(picIconeContact);
             flowLayoutPanel1.Controls.Add(pictureBox4);
             flowLayoutPanel1.Location = new Point(0, -1);
-            flowLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
+            flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(446, 95);
             flowLayoutPanel1.TabIndex = 42;
@@ -160,7 +161,7 @@
             pictureBox3.Image = Properties.Resources.logo1;
             pictureBox3.ImeMode = ImeMode.NoControl;
             pictureBox3.Location = new Point(2, 2);
-            pictureBox3.Margin = new Padding(2, 2, 2, 2);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(91, 93);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -306,44 +307,53 @@
             lblTitre.Text = "Option Administrateur Suprimer";
             lblTitre.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // Ligne
+            // cmbLigne
             // 
-            Ligne.Font = new Font("Segoe UI", 15F);
-            Ligne.FormattingEnabled = true;
-            Ligne.Location = new Point(121, 240);
-            Ligne.Name = "Ligne";
-            Ligne.Size = new Size(200, 43);
-            Ligne.TabIndex = 46;
-            Ligne.Text = "Ligne";
+            cmbLigne.DropDownHeight = 250;
+            cmbLigne.Font = new Font("Segoe UI", 15F);
+            cmbLigne.FormattingEnabled = true;
+            cmbLigne.IntegralHeight = false;
+            cmbLigne.Location = new Point(90, 240);
+            cmbLigne.Name = "cmbLigne";
+            cmbLigne.Size = new Size(267, 43);
+            cmbLigne.TabIndex = 46;
+            cmbLigne.Text = "Ligne";
+            cmbLigne.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             // 
-            // Station
+            // cmbStation
             // 
-            Station.Font = new Font("Segoe UI", 15F);
-            Station.FormattingEnabled = true;
-            Station.Location = new Point(121, 309);
-            Station.Name = "Station";
-            Station.Size = new Size(200, 43);
-            Station.TabIndex = 47;
-            Station.Text = "Station";
+            cmbStation.DropDownHeight = 250;
+            cmbStation.Font = new Font("Segoe UI", 15F);
+            cmbStation.FormattingEnabled = true;
+            cmbStation.IntegralHeight = false;
+            cmbStation.Location = new Point(90, 309);
+            cmbStation.Name = "cmbStation";
+            cmbStation.Size = new Size(267, 43);
+            cmbStation.TabIndex = 47;
+            cmbStation.Text = "Station";
+            cmbStation.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             // 
-            // Horaire
+            // cmbTrajet
             // 
-            Horaire.Font = new Font("Segoe UI", 15F);
-            Horaire.FormattingEnabled = true;
-            Horaire.Location = new Point(121, 380);
-            Horaire.Name = "Horaire";
-            Horaire.Size = new Size(200, 43);
-            Horaire.TabIndex = 48;
-            Horaire.Text = "Horaire";
+            cmbTrajet.DropDownHeight = 250;
+            cmbTrajet.Font = new Font("Segoe UI", 15F);
+            cmbTrajet.FormattingEnabled = true;
+            cmbTrajet.IntegralHeight = false;
+            cmbTrajet.Location = new Point(90, 381);
+            cmbTrajet.Name = "cmbTrajet";
+            cmbTrajet.Size = new Size(267, 43);
+            cmbTrajet.TabIndex = 48;
+            cmbTrajet.Text = "Trajet";
+            cmbTrajet.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             // 
             // frmOptionAdminSuprimer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 659);
-            Controls.Add(Horaire);
-            Controls.Add(Station);
-            Controls.Add(Ligne);
+            Controls.Add(cmbTrajet);
+            Controls.Add(cmbStation);
+            Controls.Add(cmbLigne);
             Controls.Add(btnRetour);
             Controls.Add(btnSuprimer);
             Controls.Add(flowLayoutPanel2);
@@ -354,6 +364,7 @@
             Name = "frmOptionAdminSuprimer";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Option admin suprimer";
+            Load += frmOptionAdminSuppr_Load;
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).EndInit();
@@ -389,8 +400,8 @@
         private Label lblNaissanceValue;
         private Button btnModifier;
         private Label lblTitre;
-        private ComboBox Ligne;
-        private ComboBox Station;
-        private ComboBox Horaire;
+        private ComboBox cmbLigne;
+        private ComboBox cmbStation;
+        private ComboBox cmbTrajet;
     }
 }

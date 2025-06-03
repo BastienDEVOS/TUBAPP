@@ -292,18 +292,30 @@ namespace TUBAPP
 
         public static void SupprimerStation(int idStation)
         {
-            suprimerDesservieParStation(idStation);
-            string reSQL = "DELETE FROM Station WHERE IdStation = @IdStation";
-            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
-            cmd.Parameters.AddWithValue("@IdStation", idStation);
+            var cmd = Conn.CreateCommand();
+
+            cmd.CommandText = @"
+            DELETE FROM Trajet WHERE IdStation = @id OR IdStation_1 = @id;
+            DELETE FROM Desservie WHERE IdStation = @id;
+            DELETE FROM Station WHERE IdStation = @id;
+        ";
+
+            cmd.Parameters.AddWithValue("@id", idStation);
             cmd.ExecuteNonQuery();
         }
 
         public static void SupprimerLigne(int idLigne)
         {
-            string reSQL = "DELETE FROM Ligne WHERE IdLigne = @IdLigne";
-            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
-            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
+            var cmd = Conn.CreateCommand();
+
+            cmd.CommandText = @"
+            DELETE FROM Trajet WHERE IdLigne = @id;
+            DELETE FROM Desservie WHERE IdLigne = @id;
+            DELETE FROM Ligne_Favorite WHERE IdLigne = @id;
+            DELETE FROM Ligne WHERE IdLigne = @id;
+        ";
+
+            cmd.Parameters.AddWithValue("@id", idLigne);
             cmd.ExecuteNonQuery();
         }
 
