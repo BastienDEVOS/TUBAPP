@@ -13,6 +13,7 @@ namespace TUBAPP
         private Station _stationArrivee;
         private TimeSpan _selectedDepartureTime;
         private List<Trajet> _trajets;
+        private System.Windows.Forms.Timer _timer;
 
         public frmSelectionLigne(Station stationDepart, Station stationArrivee)
         {
@@ -27,13 +28,18 @@ namespace TUBAPP
             SetStationLabelText($"{_stationDepart.Nom} - {_stationArrivee.Nom}");
             _selectedDepartureTime = DateTime.Now.TimeOfDay;
 
+            _timer = new System.Windows.Forms.Timer();
+            _timer.Interval = 1000; 
+            _timer.Tick += Timer_Tick;
+            _timer.Start();
+            lblheure.Text = DateTime.Now.ToString("HH:mm");
+
 
             LoadTrajets();
         }
-        private void dtpDepartureTime_ValueChanged(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
-            _selectedDepartureTime = dtpDepartureTime.Value.TimeOfDay;
-            LoadTrajets();
+            lblheure.Text = DateTime.Now.ToString("HH:mm");
         }
 
         private void LoadTrajets()
@@ -41,7 +47,7 @@ namespace TUBAPP
             var allTrajets = BD.GetTrajet()
                 .Where(trajet =>
                 {
-                    var ligne = BD.GetLigneById(trajet.IdLigne);
+                    var ligne = BD.GetLigneById(trajet.IdLigne); // Renamed variable to 'ligne'
                     return ligne != null;
                 })
                 .ToList();
@@ -72,17 +78,14 @@ namespace TUBAPP
 
                 foreach (var trajet in trajetsFromCurrent)
                 {
-                    var ligne = BD.GetLigneById(trajet.IdLigne);
-                    if (ligne == null) continue;
+                    var Ligne = BD.GetLigneById(trajet.IdLigne);
+                    if (Ligne == null) continue;
 
-                    // Determine direction (sens)
                     string sens = trajet.IdStationDepart < trajet.IdStationArrivee ? "Aller" : "Retour";
 
-                    // Get the next real departure time from Horaire
                     TimeSpan? nextDeparture = BD.GetNextPassage(trajet.IdLigne, trajet.IdStationDepart, currentTime, sens);
                     if (nextDeparture == null) continue;
 
-                    // Parse travel time (TempsTrajets is a string like "00:02:00")
                     int trajetMinutes = 0;
                     if (TimeSpan.TryParse(trajet.TempsTrajets, out var tspan))
                         trajetMinutes = (int)tspan.TotalMinutes;
@@ -117,69 +120,36 @@ namespace TUBAPP
             {
                 var item = new ListViewItem("Aucun trajet trouvé");
                 lstTrajets.Items.Add(item);
-                ShowRouteSummary(new List<Trajet>());
                 return;
             }
+
+            TimeSpan accumulatedSegmentTime = TimeSpan.Zero;
+            TimeSpan? firstDeparture = path.FirstOrDefault().departureTime;
 
             foreach (var (trajet, depTime, arrTime) in path)
             {
-                var ligneObj = BD.GetLigneById(trajet.IdLigne);
-                string ligne = ligneObj != null
-                    ? $"Ligne {trajet.IdLigne}"
-                    : $"Ligne {trajet.IdLigne}";
-                string heureDepart = depTime.ToString(@"hh\:mm");
-                string heureArrivee = arrTime.ToString(@"hh\:mm");
-                string duree = (arrTime - depTime).TotalMinutes > 0 ? $"{(arrTime - depTime).TotalMinutes} min" : "Inconnu";
-
-                var item = new ListViewItem(ligne);
-                item.SubItems.Add(heureDepart);
-                item.SubItems.Add(heureArrivee);
-                item.SubItems.Add(duree);
-                lstTrajets.Items.Add(item);
+                TimeSpan segmentDuration = TimeSpan.Zero;
+                TimeSpan.TryParse(trajet.TempsTrajets, out segmentDuration);
+                accumulatedSegmentTime = accumulatedSegmentTime.Add(segmentDuration);
             }
-            ShowRouteSummary(path.Select(p => p.trajet).ToList());
-        }
 
-
-
-        private void ShowRouteSummary(List<Trajet> path)
-        {
-            if (path == null || path.Count == 0)
-            {
-                MessageBox.Show("No route found.");
-                return;
-            }
-            var firstTrajet = path.First();
             var lastTrajet = path.Last();
+            var ligneObj = BD.GetLigneById(lastTrajet.trajet.IdLigne);
+            string ligne = ligneObj != null
+               ? $"Ligne {lastTrajet.trajet.IdLigne}"
+               : $"Ligne {lastTrajet.trajet.IdLigne}";
+            string heureDepart = (firstDeparture ?? TimeSpan.Zero).ToString(@"hh\:mm");
+            string heureArrivee = (firstDeparture ?? TimeSpan.Zero).Add(accumulatedSegmentTime).ToString(@"hh\:mm");
+            string duree = accumulatedSegmentTime.TotalMinutes > 0 ? $"{accumulatedSegmentTime.TotalMinutes} min" : "Inconnu";
 
-            var ligne = BD.GetLigneById(firstTrajet.IdLigne);
-            if (ligne == null)
-            {
-                MessageBox.Show("Line information not found.");
-                return;
-            }
-
-            int totalMinutes = path.Sum(t => int.TryParse(t.TempsTrajets, out int m) ? m : 0);
-
-            TimeSpan departureTime;
-            if (TimeSpan.TryParse(ligne.HeureDebut, out departureTime))
-            {
-                TimeSpan arrivalTime = departureTime.Add(TimeSpan.FromMinutes(totalMinutes));
-
-                string summary = $"Route from {_stationDepart.Nom} to {_stationArrivee.Nom}:\n" +
-                                 $"- Take Line {ligne.IdLigne}\n" +
-                                 $"- Departure: {departureTime:hh\\:mm}\n" +
-                                 $"- Arrival: {arrivalTime:hh\\:mm}\n" +
-                                 $"- Total travel time: {totalMinutes} min";
-
-                MessageBox.Show(summary, "Route Summary");
-            }
-            else
-            {
-                MessageBox.Show("Invalid departure time format.", "Error");
-            }
-
+            var lastItem = new ListViewItem(ligne);
+            lastItem.SubItems.Add(heureDepart);
+            lastItem.SubItems.Add(heureArrivee);
+            lastItem.SubItems.Add(duree);
+            lstTrajets.Items.Add(lastItem);
         }
+
+
         private void SetStationLabelText(string text)
         {
             lblStations.Text = text;
