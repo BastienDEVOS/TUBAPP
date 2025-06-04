@@ -66,11 +66,13 @@
             // 
             // cmb_Ligne
             // 
+            cmb_Ligne.DropDownHeight = 200;
             cmb_Ligne.Font = new Font("Segoe UI", 13F);
             cmb_Ligne.FormattingEnabled = true;
-            cmb_Ligne.Location = new Point(121, 199);
+            cmb_Ligne.IntegralHeight = false;
+            cmb_Ligne.Location = new Point(64, 201);
             cmb_Ligne.Name = "cmb_Ligne";
-            cmb_Ligne.Size = new Size(200, 38);
+            cmb_Ligne.Size = new Size(318, 38);
             cmb_Ligne.TabIndex = 55;
             cmb_Ligne.Text = "Ligne";
             cmb_Ligne.SelectedIndexChanged += cmb_Ligne_SelectedIndexChanged;
@@ -307,7 +309,6 @@
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Size = new Size(194, 182);
             flowLayoutPanel3.TabIndex = 57;
-            flowLayoutPanel3.Paint += flowLayoutPanel3_Paint;
             // 
             // panel1
             // 

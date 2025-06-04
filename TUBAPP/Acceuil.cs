@@ -11,18 +11,18 @@ namespace TUBAPP
 
         private void frmAcceuil_Load(object sender, EventArgs e)
         {
-                BD.Connection();
-                try
+            BD.Connection();
+            try
+            {
+                using (var conn = BD.GetConnection())
                 {
-                    using (var conn = BD.GetConnection())
-                    {
-                        ConnecterOui.Visible = true;
-                    }
+                    ConnecterOui.Visible = true;
                 }
-                catch (Exception ex)
-                {
-                    ConnecterNon.Visible = true;
-                }
+            }
+            catch (Exception ex)
+            {
+                ConnecterNon.Visible = true;
+            }
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)

@@ -1,6 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
-using System.Windows.Forms;
+using Classes;
 
 namespace TUBAPP
 {
@@ -9,37 +9,51 @@ namespace TUBAPP
         public frmInfoLigne()
         {
             InitializeComponent();
+            ClassUtilitaire.ConfigurerComboBoxLignes(cmb_Ligne);
             cmb_Ligne.SelectedIndexChanged += cmb_Ligne_SelectedIndexChanged;
         }
 
-        private void InfoLigne_Load(object sender, EventArgs e)
-        {
-            try
+            private void InfoLigne_Load(object sender, EventArgs e)
             {
-                using (var conn = BD.GetConnection())
+                try
                 {
-                    
-
-                    var cmd = new MySqlCommand("SELECT IdLigne, NomLigne FROM Ligne", conn);
-                    var reader = cmd.ExecuteReader();
-
-                    cmb_Ligne.Items.Clear();
-
-                    while (reader.Read())
+                    using (var conn = BD.GetConnection())
                     {
-                        cmb_Ligne.Items.Add(new ComboBoxItem
+                        var cmd = new MySqlCommand("SELECT IdLigne, NomLigne, Couleur FROM Ligne", conn);
+                        var reader = cmd.ExecuteReader();
+
+                        cmb_Ligne.Items.Clear();
+
+                        cmb_Ligne.Items.Add(new Classes.ComboBoxItem
                         {
-                            Text = reader["NomLigne"].ToString(),
-                            Value = reader["IdLigne"]
+                            Text = "-- Sélectionner une ligne --",
+                            Value = -1,
+                            Color = Color.Empty // Couleur par défaut
                         });
+
+                        while (reader.Read())
+                        {
+                            string nomLigne = reader["NomLigne"].ToString();
+                            string nomCouleur = reader["Couleur"].ToString();
+
+                            cmb_Ligne.Items.Add(new Classes.ComboBoxItem
+                            {
+                                Text = nomLigne,
+                                Value = reader["IdLigne"],
+                                Color = ClassUtilitaire.ConvertirNomCouleur(nomCouleur)
+                            });
+                        }
+                        if (cmb_Ligne.Items.Count > 0)
+                        {
+                            cmb_Ligne.SelectedIndex = 0;
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur chargement lignes : " + ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur chargement lignes : " + ex.Message);
-            }
-        }
 
 
 
@@ -89,8 +103,17 @@ namespace TUBAPP
 
         private void cmb_Ligne_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmb_Ligne.SelectedItem is ComboBoxItem selectedItem)
+            if (cmb_Ligne.SelectedIndex == -1) return;
+
+            if (cmb_Ligne.SelectedItem is Classes.ComboBoxItem selectedItem)
             {
+                if (Convert.ToInt32(selectedItem.Value) == -1)
+                {
+                    // Premier élément, pas de ligne sélectionnée => on vide les stations
+                    flowLayoutPanel3.Controls.Clear();
+                    return;
+                }
+
                 int idLigne = Convert.ToInt32(selectedItem.Value);
 
                 try
@@ -106,23 +129,26 @@ namespace TUBAPP
                     JOIN Station S ON S.IdStation = D.IdStation
                     WHERE D.IdLigne = @idLigne";
 
-                        var cmd = new MySqlCommand(query, conn);
-                        cmd.Parameters.AddWithValue("@idLigne", idLigne);
-
-                        var reader = cmd.ExecuteReader();
-
-                        flowLayoutPanel3.Controls.Clear();
-
-                        while (reader.Read())
+                        using (var cmd = new MySqlCommand(query, conn))
                         {
-                            var label = new Label
+                            cmd.Parameters.AddWithValue("@idLigne", idLigne);
+
+                            using (var reader = cmd.ExecuteReader())
                             {
-                                AutoSize = true,
-                                Padding = new Padding(5),
-                                Font = new Font("Segoe UI", 10),
-                                Text = reader.GetString("NomStation")
-                            };
-                            flowLayoutPanel3.Controls.Add(label);
+                                flowLayoutPanel3.Controls.Clear();
+
+                                while (reader.Read())
+                                {
+                                    var label = new Label
+                                    {
+                                        AutoSize = true,
+                                        Padding = new Padding(5),
+                                        Font = new Font("Segoe UI", 10),
+                                        Text = reader.GetString("NomStation")
+                                    };
+                                    flowLayoutPanel3.Controls.Add(label);
+                                }
+                            }
                         }
                     }
                 }
@@ -131,15 +157,6 @@ namespace TUBAPP
                     MessageBox.Show("Erreur chargement stations : " + ex.Message);
                 }
             }
-        }
-
-
-
-
-
-        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
