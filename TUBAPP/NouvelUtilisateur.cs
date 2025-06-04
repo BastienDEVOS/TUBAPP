@@ -41,7 +41,7 @@ namespace TUBAPP
                 {
                     BD.AjoutUtilisateurBase(nom, prenom, email, mdp, Status, DateNaissance);
 
-                    MessageBox.Show("Compte créé avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Compte créé avec succès ! \nPour modifier vos informatiosn personnel (nom, prénom date de naissance veuiller vous rendre dans votre espace profil", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     if (BD.AuthentifierUtilisateur(email, mdp, conn))
                     {
