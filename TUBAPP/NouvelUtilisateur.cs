@@ -23,7 +23,7 @@ namespace TUBAPP
         {
             string nom = "Default"; // Nom par défaut, peut être modifié plus tard
             string prenom = "Default"; // Prénom par défaut, peut être modifié plus tard
-            string Status = "Utilisateur"; // Statut par défaut, peut être modifié plus tard
+            string Status = "Client"; // Statut par défaut, peut être modifié plus tard
             DateTime DateNaissance = new DateTime(2000, 1, 1); // Date de naissance par défaut, peut être modifié plus tard
             string email = txtAdresseMail.Text.Trim();
             string mdp = txtMDP.Text;
@@ -32,6 +32,12 @@ namespace TUBAPP
                 string.IsNullOrWhiteSpace(mdp))
             {
                 MessageBox.Show("Veuillez remplir tous les champs.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (BD.VerifierEmailExiste(email))
+            {
+                MessageBox.Show("L'adresse e-mail existe déjà. Veuillez en choisir une autre.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

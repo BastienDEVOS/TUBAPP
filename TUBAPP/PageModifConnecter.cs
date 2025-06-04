@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Classes;
 using MySql.Data.MySqlClient;
 
 namespace TUBAPP
@@ -18,6 +19,24 @@ namespace TUBAPP
         public frmPageModifConnecter(string email)
         {
             InitializeComponent();
+
+            List<Ligne> lignes = BD.GetLigne(); // récupère les lignes depuis la BD
+            int ClientId = BD.GetIdClientByMail(email);
+
+            lignes.Insert(0, new Ligne { IdLigne = -1, Nom = "-- Ligne favorite ? --" });
+            cmbLigneFav.DataSource = lignes;
+            cmbLigneFav.DisplayMember = "Nom";
+            cmbLigneFav.ValueMember = "IdLigne";
+
+            if (BD.GetLigneFavorite(ClientId) != -1)
+            {
+                cmbLigneFav.SelectedIndex = BD.GetLigneFavorite(ClientId);
+            }
+            else
+            {
+                cmbLigneFav.SelectedIndex = 0; 
+            }
+            
             userEmail = email;
         }
 
@@ -49,24 +68,21 @@ namespace TUBAPP
             }
         }
 
-
-        private void lblNomPrenom_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnModifier_Click(object sender, EventArgs e)
         {
+            Utilisateur? currentUser = SessionManager.CurrentUser;
+
             try
             {
                 using (var conn = BD.GetConnection())
                 {
                     var cmd = new MySql.Data.MySqlClient.MySqlCommand(
-                        "UPDATE Client SET NomClient=@Nom, PrenomClient=@Prenom, DateNaissanceClient=@DateNaissance WHERE MailClient=@Mail", conn);
+                        "UPDATE Client SET NomClient=@Nom, PrenomClient=@Prenom, DateNaissanceClient=@DateNaissance, MailClient=@NouvelMail WHERE MailClient=@Mail", conn);
                     cmd.Parameters.AddWithValue("@Nom", txtNom.Text);
                     cmd.Parameters.AddWithValue("@Prenom", txtPrenom.Text);
                     cmd.Parameters.AddWithValue("@DateNaissance", dtpNaissance.Value.Date);
                     cmd.Parameters.AddWithValue("@Mail", userEmail);
+                    cmd.Parameters.AddWithValue("@NouvelMail", txtEmail.Text);
 
                     int rows = cmd.ExecuteNonQuery();
                     if (rows > 0)
@@ -74,9 +90,28 @@ namespace TUBAPP
                     else
                         MessageBox.Show("Aucune modification effectuée.");
 
-                    frmPageProfilConnecter pageProfil = new frmPageProfilConnecter(userEmail);
-                    pageProfil.Show();
-                    this.Close();
+                    if (cmbLigneFav.SelectedIndex != 0)
+                    {
+                        if (BD.GetLigneFavorite(BD.GetIdClientByMail(userEmail)) != -1)
+                        {
+                            BD.SupprimerLigneFavorite(BD.GetIdClientByMail(userEmail));
+                        }
+                        int ClientId = BD.GetIdClientByMail(userEmail);
+                        BD.AjoutLigneFavorite(ClientId, (int)(cmbLigneFav.SelectedValue) -1);
+                    }
+                    
+
+                    if (currentUser.EstAdmin)
+                    {
+                        frmPageProfilAdmin pageProfilAdmin = new frmPageProfilAdmin();
+                        pageProfilAdmin.Show();
+
+                    }
+                    else
+                    {
+                        frmPageProfilConnecter pageProfilConnecter = new frmPageProfilConnecter(currentUser.Email);
+                        pageProfilConnecter.Show();
+                    }
                 }
             }
             catch (Exception ex)
@@ -85,23 +120,30 @@ namespace TUBAPP
             }
         }
 
-
-
-        private void llbPrenom_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             PageCarte page = new PageCarte();
             page.Show();
             this.Close();
+        }
+
+        private void btnAnnulModifier_Click(object sender, EventArgs e)
+        {
+            Utilisateur? currentUser = SessionManager.CurrentUser;
+
+            if (currentUser.EstAdmin)
+            {
+                frmPageProfilAdmin pageProfilAdmin = new frmPageProfilAdmin();
+                pageProfilAdmin.Show();
+                this.Close();  
+
+            }
+            else
+            {
+                frmPageProfilConnecter pageProfilConnecter = new frmPageProfilConnecter(currentUser.Email);
+                pageProfilConnecter.Show();
+                this.Close();
+            }
         }
     }
 }

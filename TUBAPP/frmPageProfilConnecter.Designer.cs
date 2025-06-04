@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPageProfilConnecter));
             flowLayoutPanel2 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             BtnHome = new PictureBox();
@@ -176,14 +177,14 @@
             // 
             pnlCard.BackColor = Color.White;
             pnlCard.BorderStyle = BorderStyle.FixedSingle;
-            pnlCard.Controls.Add(lblNomPrenom);
             pnlCard.Controls.Add(label2);
+            pnlCard.Controls.Add(lblMailValue);
+            pnlCard.Controls.Add(lblNaissanceValue);
+            pnlCard.Controls.Add(lblNomPrenom);
             pnlCard.Controls.Add(linkLabel1);
             pnlCard.Controls.Add(lblInvite);
             pnlCard.Controls.Add(llbMail);
-            pnlCard.Controls.Add(lblMailValue);
             pnlCard.Controls.Add(llbNaissance);
-            pnlCard.Controls.Add(lblNaissanceValue);
             pnlCard.Controls.Add(btnModifier);
             pnlCard.Location = new Point(67, 162);
             pnlCard.Margin = new Padding(3, 4, 3, 4);
@@ -194,38 +195,39 @@
             // lblNomPrenom
             // 
             lblNomPrenom.AutoSize = true;
-            lblNomPrenom.Location = new Point(107, 47);
+            lblNomPrenom.Font = new Font("Segoe UI", 12F);
+            lblNomPrenom.Location = new Point(91, 47);
             lblNomPrenom.Margin = new Padding(2, 0, 2, 0);
             lblNomPrenom.Name = "lblNomPrenom";
-            lblNomPrenom.Size = new Size(97, 20);
+            lblNomPrenom.Size = new Size(129, 28);
             lblNomPrenom.TabIndex = 10;
             lblNomPrenom.Text = "Nom Prenom";
             // 
             // label2
             // 
             label2.Font = new Font("Segoe UI", 9F);
-            label2.Location = new Point(50, 212);
+            label2.Location = new Point(145, 162);
             label2.Name = "label2";
-            label2.Size = new Size(199, 27);
+            label2.Size = new Size(149, 27);
             label2.TabIndex = 8;
             label2.Text = "Ligne 1";
             // 
             // linkLabel1
             // 
-            linkLabel1.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            linkLabel1.Font = new Font("Segoe UI", 10F, FontStyle.Underline);
             linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(39, 185);
+            linkLabel1.Location = new Point(13, 162);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(112, 27);
+            linkLabel1.Size = new Size(133, 27);
             linkLabel1.TabIndex = 7;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Ligne Favorite :";
             // 
             // lblInvite
             // 
-            lblInvite.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            lblInvite.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             lblInvite.ForeColor = Color.Lime;
-            lblInvite.Location = new Point(50, 1);
+            lblInvite.Location = new Point(44, 1);
             lblInvite.Name = "lblInvite";
             lblInvite.Size = new Size(222, 46);
             lblInvite.TabIndex = 0;
@@ -234,11 +236,11 @@
             // 
             // llbMail
             // 
-            llbMail.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            llbMail.Font = new Font("Segoe UI", 10F, FontStyle.Underline);
             llbMail.LinkColor = Color.Black;
-            llbMail.Location = new Point(39, 87);
+            llbMail.Location = new Point(13, 91);
             llbMail.Name = "llbMail";
-            llbMail.Size = new Size(103, 27);
+            llbMail.Size = new Size(120, 27);
             llbMail.TabIndex = 2;
             llbMail.TabStop = true;
             llbMail.Text = "Adresse mail :";
@@ -246,19 +248,19 @@
             // lblMailValue
             // 
             lblMailValue.Font = new Font("Segoe UI", 9F);
-            lblMailValue.Location = new Point(142, 87);
+            lblMailValue.Location = new Point(129, 91);
             lblMailValue.Name = "lblMailValue";
-            lblMailValue.Size = new Size(96, 27);
+            lblMailValue.Size = new Size(179, 27);
             lblMailValue.TabIndex = 3;
             lblMailValue.Text = "Invité";
             // 
             // llbNaissance
             // 
-            llbNaissance.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            llbNaissance.Font = new Font("Segoe UI", 10F, FontStyle.Underline);
             llbNaissance.LinkColor = Color.Black;
-            llbNaissance.Location = new Point(39, 120);
+            llbNaissance.Location = new Point(13, 124);
             llbNaissance.Name = "llbNaissance";
-            llbNaissance.Size = new Size(149, 27);
+            llbNaissance.Size = new Size(164, 27);
             llbNaissance.TabIndex = 4;
             llbNaissance.TabStop = true;
             llbNaissance.Text = "Date de naissance :";
@@ -266,18 +268,19 @@
             // lblNaissanceValue
             // 
             lblNaissanceValue.Font = new Font("Segoe UI", 9F);
-            lblNaissanceValue.Location = new Point(39, 147);
+            lblNaissanceValue.Location = new Point(169, 126);
             lblNaissanceValue.Name = "lblNaissanceValue";
-            lblNaissanceValue.Size = new Size(199, 27);
+            lblNaissanceValue.Size = new Size(139, 27);
             lblNaissanceValue.TabIndex = 5;
             lblNaissanceValue.Text = "Jours/Mois/Années";
+            lblNaissanceValue.Click += lblNaissanceValue_Click;
             // 
             // btnModifier
             // 
             btnModifier.BackColor = Color.LightGray;
             btnModifier.FlatStyle = FlatStyle.Flat;
             btnModifier.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnModifier.Location = new Point(86, 257);
+            btnModifier.Location = new Point(87, 244);
             btnModifier.Margin = new Padding(3, 4, 3, 4);
             btnModifier.Name = "btnModifier";
             btnModifier.Size = new Size(137, 40);
@@ -302,7 +305,7 @@
             btnSeConnecter.FlatStyle = FlatStyle.Flat;
             btnSeConnecter.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnSeConnecter.ForeColor = Color.White;
-            btnSeConnecter.Location = new Point(64, 507);
+            btnSeConnecter.Location = new Point(67, 507);
             btnSeConnecter.Margin = new Padding(3, 4, 3, 4);
             btnSeConnecter.Name = "btnSeConnecter";
             btnSeConnecter.Size = new Size(313, 53);
@@ -321,6 +324,7 @@
             Controls.Add(btnSeConnecter);
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmPageProfilConnecter";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Page profil connecter";

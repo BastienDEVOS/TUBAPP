@@ -66,5 +66,12 @@ namespace TUBAPP
             page.Show();
             this.Close();
         }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            frmPageModifConnecter pageModif = new frmPageModifConnecter(SessionManager.CurrentUser.Email);
+            pageModif.Show();
+            this.Close(); // Masquer le formulaire de profil admin
+        }
     }
 }

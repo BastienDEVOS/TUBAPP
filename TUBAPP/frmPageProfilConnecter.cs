@@ -52,7 +52,7 @@ namespace TUBAPP
         {
             frmPageModifConnecter pageModif = new frmPageModifConnecter(userEmail);
             pageModif.Show();
-            this.Close(); // Masquer le formulaire de profil
+            this.Close(); // Masquer le formulaire de profil connecté
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -75,6 +75,11 @@ namespace TUBAPP
             PageCarte page = new PageCarte();
             page.Show();
             this.Close();
+        }
+
+        private void lblNaissanceValue_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

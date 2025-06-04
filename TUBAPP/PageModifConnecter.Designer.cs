@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPageModifConnecter));
-            btnConfirmer = new Button();
+            btnModifConfirmer = new Button();
             pnlCard = new Panel();
-            comboBox1 = new ComboBox();
+            txtPrenom = new TextBox();
+            cmbLigneFav = new ComboBox();
             dtpNaissance = new DateTimePicker();
             llbPrenom = new LinkLabel();
             linkLabel2 = new LinkLabel();
-            txtPrenom = new TextBox();
             txtNom = new TextBox();
             txtEmail = new TextBox();
             linkLabel1 = new LinkLabel();
             lblInvite = new Label();
             llbMail = new LinkLabel();
             llbNaissance = new LinkLabel();
-            btnModifier = new Button();
+            btnAnnulModifier = new Button();
             lblTitre = new Label();
             label1 = new Label();
             picIconeContact = new PictureBox();
@@ -64,110 +64,109 @@
             flowLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
-            // btnConfirmer
+            // btnModifConfirmer
             // 
-            btnConfirmer.BackColor = Color.FromArgb(209, 66, 54);
-            btnConfirmer.FlatStyle = FlatStyle.Flat;
-            btnConfirmer.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnConfirmer.ForeColor = Color.White;
-            btnConfirmer.Location = new Point(64, 508);
-            btnConfirmer.Margin = new Padding(3, 4, 3, 4);
-            btnConfirmer.Name = "btnConfirmer";
-            btnConfirmer.Size = new Size(313, 53);
-            btnConfirmer.TabIndex = 32;
-            btnConfirmer.Text = "Confirmer les modifications";
-            btnConfirmer.UseVisualStyleBackColor = false;
+            btnModifConfirmer.BackColor = Color.FromArgb(209, 66, 54);
+            btnModifConfirmer.FlatStyle = FlatStyle.Flat;
+            btnModifConfirmer.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnModifConfirmer.ForeColor = Color.White;
+            btnModifConfirmer.Location = new Point(64, 508);
+            btnModifConfirmer.Margin = new Padding(3, 4, 3, 4);
+            btnModifConfirmer.Name = "btnModifConfirmer";
+            btnModifConfirmer.Size = new Size(313, 53);
+            btnModifConfirmer.TabIndex = 32;
+            btnModifConfirmer.Text = "Confirmer les modifications";
+            btnModifConfirmer.UseVisualStyleBackColor = false;
+            btnModifConfirmer.Click += btnModifier_Click;
             // 
             // pnlCard
             // 
             pnlCard.BackColor = Color.White;
             pnlCard.BorderStyle = BorderStyle.FixedSingle;
-            pnlCard.Controls.Add(comboBox1);
+            pnlCard.Controls.Add(txtPrenom);
+            pnlCard.Controls.Add(cmbLigneFav);
             pnlCard.Controls.Add(dtpNaissance);
             pnlCard.Controls.Add(llbPrenom);
             pnlCard.Controls.Add(linkLabel2);
-            pnlCard.Controls.Add(txtPrenom);
             pnlCard.Controls.Add(txtNom);
             pnlCard.Controls.Add(txtEmail);
             pnlCard.Controls.Add(linkLabel1);
             pnlCard.Controls.Add(lblInvite);
             pnlCard.Controls.Add(llbMail);
             pnlCard.Controls.Add(llbNaissance);
-            pnlCard.Controls.Add(btnModifier);
+            pnlCard.Controls.Add(btnAnnulModifier);
             pnlCard.Location = new Point(64, 163);
             pnlCard.Margin = new Padding(3, 4, 3, 4);
             pnlCard.Name = "pnlCard";
             pnlCard.Size = new Size(313, 312);
             pnlCard.TabIndex = 31;
             // 
-            // comboBox1
+            // txtPrenom
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(141, 203);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 15;
+            txtPrenom.Location = new Point(103, 62);
+            txtPrenom.Name = "txtPrenom";
+            txtPrenom.Size = new Size(189, 27);
+            txtPrenom.TabIndex = 11;
+            // 
+            // cmbLigneFav
+            // 
+            cmbLigneFav.FormattingEnabled = true;
+            cmbLigneFav.Location = new Point(120, 203);
+            cmbLigneFav.Name = "cmbLigneFav";
+            cmbLigneFav.Size = new Size(172, 28);
+            cmbLigneFav.TabIndex = 15;
             // 
             // dtpNaissance
             // 
             dtpNaissance.Location = new Point(141, 167);
-            dtpNaissance.MaxDate = new DateTime(2025, 12, 31, 0, 0, 0, 0);
-            dtpNaissance.MinDate = new DateTime(2001, 1, 1, 0, 0, 0, 0);
+            dtpNaissance.MaxDate = new DateTime(5000, 12, 31, 0, 0, 0, 0);
+            dtpNaissance.MinDate = new DateTime(1800, 1, 1, 0, 0, 0, 0);
             dtpNaissance.Name = "dtpNaissance";
             dtpNaissance.Size = new Size(151, 27);
             dtpNaissance.TabIndex = 14;
             dtpNaissance.Value = new DateTime(2004, 1, 17, 0, 0, 0, 0);
-            dtpNaissance.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // llbPrenom
             // 
             llbPrenom.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
             llbPrenom.LinkColor = Color.Black;
-            llbPrenom.Location = new Point(19, 62);
+            llbPrenom.Location = new Point(5, 62);
             llbPrenom.Name = "llbPrenom";
-            llbPrenom.Size = new Size(103, 27);
+            llbPrenom.Size = new Size(81, 27);
             llbPrenom.TabIndex = 13;
             llbPrenom.TabStop = true;
             llbPrenom.Text = "Prenom :";
-            llbPrenom.LinkClicked += llbPrenom_LinkClicked;
             // 
             // linkLabel2
             // 
             linkLabel2.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
             linkLabel2.LinkColor = Color.Black;
-            linkLabel2.Location = new Point(19, 95);
+            linkLabel2.Location = new Point(5, 95);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(103, 27);
+            linkLabel2.Size = new Size(81, 27);
             linkLabel2.TabIndex = 12;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Nom :";
             // 
-            // txtPrenom
-            // 
-            txtPrenom.Location = new Point(141, 62);
-            txtPrenom.Name = "txtPrenom";
-            txtPrenom.Size = new Size(151, 27);
-            txtPrenom.TabIndex = 11;
-            // 
             // txtNom
             // 
-            txtNom.Location = new Point(141, 95);
+            txtNom.Location = new Point(103, 95);
             txtNom.Name = "txtNom";
-            txtNom.Size = new Size(151, 27);
+            txtNom.Size = new Size(189, 27);
             txtNom.TabIndex = 10;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(141, 128);
+            txtEmail.Location = new Point(114, 128);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(151, 27);
+            txtEmail.Size = new Size(178, 27);
             txtEmail.TabIndex = 9;
             // 
             // linkLabel1
             // 
             linkLabel1.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
             linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(19, 204);
+            linkLabel1.Location = new Point(5, 203);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(112, 27);
             linkLabel1.TabIndex = 7;
@@ -177,19 +176,19 @@
             // lblInvite
             // 
             lblInvite.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            lblInvite.ForeColor = Color.Lime;
+            lblInvite.ForeColor = Color.Fuchsia;
             lblInvite.Location = new Point(50, -5);
             lblInvite.Name = "lblInvite";
             lblInvite.Size = new Size(222, 46);
             lblInvite.TabIndex = 0;
-            lblInvite.Text = "CONNECTER";
+            lblInvite.Text = "Modification";
             lblInvite.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // llbMail
             // 
             llbMail.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
             llbMail.LinkColor = Color.Black;
-            llbMail.Location = new Point(19, 131);
+            llbMail.Location = new Point(5, 131);
             llbMail.Name = "llbMail";
             llbMail.Size = new Size(103, 27);
             llbMail.TabIndex = 2;
@@ -207,19 +206,19 @@
             llbNaissance.TabStop = true;
             llbNaissance.Text = "Date de naissance :";
             // 
-            // btnModifier
+            // btnAnnulModifier
             // 
-            btnModifier.BackColor = Color.LightGray;
-            btnModifier.FlatStyle = FlatStyle.Flat;
-            btnModifier.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnModifier.Location = new Point(39, 257);
-            btnModifier.Margin = new Padding(3, 4, 3, 4);
-            btnModifier.Name = "btnModifier";
-            btnModifier.Size = new Size(222, 40);
-            btnModifier.TabIndex = 6;
-            btnModifier.Text = "Annuler la modification";
-            btnModifier.UseVisualStyleBackColor = false;
-            btnModifier.Click += btnModifier_Click;
+            btnAnnulModifier.BackColor = Color.LightGray;
+            btnAnnulModifier.FlatStyle = FlatStyle.Flat;
+            btnAnnulModifier.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAnnulModifier.Location = new Point(39, 257);
+            btnAnnulModifier.Margin = new Padding(3, 4, 3, 4);
+            btnAnnulModifier.Name = "btnAnnulModifier";
+            btnAnnulModifier.Size = new Size(222, 40);
+            btnAnnulModifier.TabIndex = 6;
+            btnAnnulModifier.Text = "Annuler la modification";
+            btnAnnulModifier.UseVisualStyleBackColor = false;
+            btnAnnulModifier.Click += btnAnnulModifier_Click;
             // 
             // lblTitre
             // 
@@ -277,7 +276,7 @@
             flowLayoutPanel1.Controls.Add(picIconeContact);
             flowLayoutPanel1.Controls.Add(pictureBox4);
             flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
+            flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(446, 95);
             flowLayoutPanel1.TabIndex = 33;
@@ -287,7 +286,7 @@
             pictureBox3.Image = Properties.Resources.logo1;
             pictureBox3.ImeMode = ImeMode.NoControl;
             pictureBox3.Location = new Point(2, 2);
-            pictureBox3.Margin = new Padding(2, 2, 2, 2);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(91, 93);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -336,7 +335,7 @@
             flowLayoutPanel2.Controls.Add(BtnHome);
             flowLayoutPanel2.Controls.Add(pictureBox5);
             flowLayoutPanel2.Location = new Point(0, 599);
-            flowLayoutPanel2.Margin = new Padding(2, 2, 2, 2);
+            flowLayoutPanel2.Margin = new Padding(2);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(446, 65);
             flowLayoutPanel2.TabIndex = 34;
@@ -346,7 +345,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(449, 659);
-            Controls.Add(btnConfirmer);
+            Controls.Add(btnModifConfirmer);
             Controls.Add(pnlCard);
             Controls.Add(lblTitre);
             Controls.Add(flowLayoutPanel1);
@@ -372,13 +371,13 @@
 
         #endregion
 
-        private Button btnConfirmer;
+        private Button btnModifConfirmer;
         private Panel pnlCard;
         private LinkLabel linkLabel1;
         private Label lblInvite;
         private LinkLabel llbMail;
         private LinkLabel llbNaissance;
-        private Button btnModifier;
+        private Button btnAnnulModifier;
         private Label lblTitre;
         private Label label1;
         private PictureBox picIconeContact;
@@ -395,6 +394,6 @@
         private LinkLabel llbPrenom;
         private LinkLabel linkLabel2;
         private DateTimePicker dtpNaissance;
-        private ComboBox comboBox1;
+        private ComboBox cmbLigneFav;
     }
 }

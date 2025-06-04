@@ -101,7 +101,14 @@ namespace TUBAPP
             return false;
         }
 
-
+        public static bool VerifierEmailExiste(string email)
+        {
+            string reSQL = "SELECT COUNT(*) FROM Client WHERE MailClient = @MailClient";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@MailClient", email);
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            return count > 0; // Retourne true si l'email existe déjà
+        }
 
         #region AjoutDonnée
         /// <summary>
@@ -168,6 +175,15 @@ namespace TUBAPP
             cmd.ExecuteNonQuery();
         }
 
+        public static void AjoutLigneFavorite(int idClient, int idLigne)
+        {
+            string reSQL = "INSERT INTO Ligne_Favorite (IdLigne, IdClient) VALUES (@IdLigne, @IdClient)";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdClient", idClient);
+            cmd.Parameters.AddWithValue("@IdLigne", idLigne);
+            cmd.ExecuteNonQuery();
+        }
+
         #endregion
 
 
@@ -208,6 +224,8 @@ namespace TUBAPP
         {
             List<Ligne> lignes = new List<Ligne>();
             string reSQL = "SELECT * FROM Ligne";
+
+            MySqlConnection Conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
@@ -281,7 +299,18 @@ namespace TUBAPP
             return null;
         }
 
-        
+        public static int GetIdClientByMail(string mailClient)
+        {
+            string reSQL = "SELECT IdClient FROM Client WHERE MailClient = @MailClient";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@MailClient", mailClient);
+            object result = cmd.ExecuteScalar();
+            if (result != null && result != DBNull.Value)
+            {
+                return Convert.ToInt32(result);
+            }
+            return -1; // Retourne -1 si aucun client trouvé
+        }
 
         public static List<Horaire> GetHorairesForStationAndLigne(int idLigne, int idStation, string sens)
         {
@@ -309,6 +338,18 @@ namespace TUBAPP
             return horaires;
         }
 
+        public static int GetLigneFavorite(int idClient)
+        {
+            string reSQL = "SELECT IdLigne FROM Ligne_Favorite WHERE IdClient = @IdClient LIMIT 1";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdClient", idClient);
+            object result = cmd.ExecuteScalar();
+            if (result != null && result != DBNull.Value)
+            {
+                return Convert.ToInt32(result);
+            }
+            return -1; // Retourne -1 si aucune ligne favorite trouvée
+        }
 
         public static TimeSpan? GetNextPassage(int idLigne, int idStation, TimeSpan afterTime, string sens)
         {
@@ -462,7 +503,23 @@ namespace TUBAPP
             cmd.ExecuteNonQuery();
         }
 
+        public static void SupprimerLigneFavorite(int idClient)
+        {
+            string reSQL = "DELETE FROM Ligne_Favorite WHERE IdClient = @IdClient";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdClient", idClient);
+            cmd.ExecuteNonQuery();
+        }
+
+        public static void SupprimerUtilisateur(string email)
+        {
+            string reSQL = "DELETE FROM Client WHERE MailClient = @MailClient";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@MailClient", email);
+            cmd.ExecuteNonQuery();
+        }
+
         #endregion
-        
+
     }
 }

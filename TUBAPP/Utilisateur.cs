@@ -18,6 +18,6 @@ namespace TUBAPP
             EstInvite = estInvite;
         }
         public Utilisateur() { }
-        public DateTime? DateNaissance { get; set; } // Added this property
+        public DateTime? DateNaissance { get; set; }
     }
 }
