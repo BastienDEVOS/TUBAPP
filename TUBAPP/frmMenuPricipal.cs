@@ -109,7 +109,7 @@ namespace TUBAPP
                 Label lblInfo = new Label();
                 lblInfo.Text = info;
                 lblInfo.AutoSize = true;
-                lblInfo.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                lblInfo.Font = new Font("Segoe UI", 15, FontStyle.Bold);
                 lblInfo.ForeColor = Color.DarkRed;
                 lblInfo.Margin = new Padding(5);
 
