@@ -21,6 +21,10 @@ namespace TUBAPP
 
         private void btn_Connecter_Click(object sender, EventArgs e)
         {
+            string nom = "Default"; // Nom par défaut, peut être modifié plus tard
+            string prenom = "Default"; // Prénom par défaut, peut être modifié plus tard
+            string Status = "Utilisateur"; // Statut par défaut, peut être modifié plus tard
+            DateTime DateNaissance = new DateTime(2000, 1, 1); // Date de naissance par défaut, peut être modifié plus tard
             string email = txtAdresseMail.Text.Trim();
             string mdp = txtMDP.Text;
 
@@ -35,23 +39,15 @@ namespace TUBAPP
             {
                 using (var conn = BD.GetConnection())
                 {
-                    var cmd = new MySql.Data.MySqlClient.MySqlCommand(
-                        "INSERT INTO Client (MailClient, MotDePasse) " +
-                        "VALUES (@Mail, @Mdp)", conn);
-                    cmd.Parameters.AddWithValue("@Mail", email);
-                    cmd.Parameters.AddWithValue("@Mdp", mdp);
+                    BD.AjoutUtilisateurBase(nom, prenom, email, mdp, Status, DateNaissance);
 
-                    int rows = cmd.ExecuteNonQuery();
-                    if (rows > 0)
+                    MessageBox.Show("Compte créé avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (BD.AuthentifierUtilisateur(email, mdp, conn))
                     {
-                        MessageBox.Show("Compte créé avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
                         FrmMenuPrincipal.Show();
                         this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erreur lors de la création du compte.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

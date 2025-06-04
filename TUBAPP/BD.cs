@@ -64,6 +64,44 @@ namespace TUBAPP
             return Conn!;
         }
 
+        public static bool AuthentifierUtilisateur(string email, string password, MySqlConnection conn)
+        {
+            var cmd = new MySqlCommand(
+                "SELECT COUNT(*) FROM Client WHERE MailClient = @Email AND MotDePasse = @Password", conn);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Password", password);
+
+            int userCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (userCount > 0)
+            {
+                var userCmd = new MySqlCommand(
+                    "SELECT NomClient, PrenomClient, MailClient, DateNaissanceClient, StatutsClient FROM Client WHERE MailClient = @Email", conn);
+                userCmd.Parameters.AddWithValue("@Email", email);
+
+                using (var reader = userCmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        var user = new Utilisateur
+                        {
+                            Nom = reader["NomClient"].ToString(),
+                            Prenom = reader["PrenomClient"].ToString(),
+                            Email = reader["MailClient"].ToString(),
+                            DateNaissance = reader["DateNaissanceClient"] as DateTime?,
+                            EstAdmin = reader["StatutsClient"].ToString() == "Admin"
+                        };
+
+                        SessionManager.CurrentUser = user;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+
 
         #region AjoutDonnée
         /// <summary>
@@ -114,6 +152,19 @@ namespace TUBAPP
             cmd.Parameters.AddWithValue("@Frequence", frequence);
             cmd.Parameters.AddWithValue("@HeureFin", heureFin);
             cmd.Parameters.AddWithValue("@HeureDebut", heureDebut);
+            cmd.ExecuteNonQuery();
+        }
+
+        public static void AjoutUtilisateurBase(string nom, string prenom, string email, string motDePasse, string StatusClient, DateTime DateNaissance)
+        {
+            string reSQL = "INSERT INTO Client (NomClient, PrenomClient, MailClient, MotDePasse, StatutsClient, DateNaissanceClient) VALUES (@Nom, @Prenom, @Email, @MotDePasse, @StatusClient, @DateNaissance)";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@Nom", nom);
+            cmd.Parameters.AddWithValue("@Prenom", prenom);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@MotDePasse", motDePasse);
+            cmd.Parameters.AddWithValue("@StatusClient", StatusClient);
+            cmd.Parameters.AddWithValue("@DateNaissance", DateNaissance);
             cmd.ExecuteNonQuery();
         }
 
@@ -230,7 +281,7 @@ namespace TUBAPP
             return null;
         }
 
-        #endregion
+        
 
         public static List<Horaire> GetHorairesForStationAndLigne(int idLigne, int idStation, string sens)
         {
@@ -268,6 +319,31 @@ namespace TUBAPP
                 .Select(h => h.PassageTrain)
                 .FirstOrDefault();
         }
+
+        public static List<string> GetStatusLignes()
+        {
+            List<string> status = new List<string>();
+
+            // S'assurer que la connexion est ouverte
+            MySqlConnection conn = GetConnection();
+
+            string query = "SELECT NomLigne, Status FROM Ligne";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string nom = reader.GetString(0);
+                    string statut = reader.GetString(1);
+                    status.Add($"{nom} : {statut}");
+                }
+            }
+
+            return status;
+        }
+
+        #endregion
 
         public static List<Desservie> LigneDesservie(int idStation)
         {
@@ -387,27 +463,6 @@ namespace TUBAPP
         }
 
         #endregion
-        public static List<string> GetStatusLignes()
-        {
-            List<string> status = new List<string>();
-
-            // S'assurer que la connexion est ouverte
-            MySqlConnection conn = GetConnection();
-
-            string query = "SELECT NomLigne, Status FROM Ligne";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-
-            using (MySqlDataReader reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    string nom = reader.GetString(0);
-                    string statut = reader.GetString(1);
-                    status.Add($"{nom} : {statut}");
-                }
-            }
-
-            return status;
-        }
+        
     }
 }

@@ -32,41 +32,15 @@ namespace TUBAPP
             {
                 using (var conn = BD.GetConnection())
                 {
-                    var cmd = new MySql.Data.MySqlClient.MySqlCommand(
-                        "SELECT COUNT(*) FROM Client WHERE MailClient = @Email AND MotDePasse = @Password", conn);
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Password", password);
-
-                    int userCount = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    if (userCount > 0)
+                    if (BD.AuthentifierUtilisateur(email, password, conn))
                     {
-                        var userCmd = new MySql.Data.MySqlClient.MySqlCommand(
-                            "SELECT NomClient, PrenomClient, MailClient, DateNaissanceClient, StatutsClient FROM Client WHERE MailClient = @Email", conn);
-                        userCmd.Parameters.AddWithValue("@Email", email);
-                        using (var reader = userCmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                var user = new Utilisateur
-                                {
-                                    Nom = reader["NomClient"].ToString(),
-                                    Prenom = reader["PrenomClient"].ToString(),
-                                    Email = reader["MailClient"].ToString(),
-                                    DateNaissance = reader["DateNaissanceClient"] as DateTime?,
-                                    EstAdmin = reader["StatutsClient"].ToString() == "Admin"
-                                };
-                                SessionManager.CurrentUser = user;
-                            }
-                        }
-
                         frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
                         FrmMenuPrincipal.Show();
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Identifiants invalides.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Email ou mot de passe incorrect.");
                     }
                 }
             }
