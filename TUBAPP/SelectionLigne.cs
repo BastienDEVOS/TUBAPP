@@ -257,11 +257,6 @@ namespace TUBAPP
             this.Close();
         }
 
-        // Gestion du bouton réseau (vide ici, peut être implémenté plus tard)
-        private void btnReseau_Click(object sender, EventArgs e)
-        {
-        }
-
         // Affichage de la page de profil selon le type d’utilisateur
         private void btnProfil_Click(object sender, EventArgs e)
         {

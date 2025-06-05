@@ -54,8 +54,8 @@ namespace TUBAPP
             SessionManager.CurrentUser = null;
 
             // Redirect to the login form
-            frmConnexion frmConnexion = new frmConnexion();
-            frmConnexion.Show();
+            frmAcceuil loginForm = new frmAcceuil();
+            loginForm.Show();
 
             this.Close();
         }
