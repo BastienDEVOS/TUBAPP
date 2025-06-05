@@ -1,7 +1,9 @@
-﻿using System;
+﻿// Importation des bibliothèques nécessaires
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Classes;
 
@@ -9,177 +11,208 @@ namespace TUBAPP
 {
     public partial class frmSelectionLigne : Form
     {
+        // Déclarations des champs privés pour stocker les données de la sélection
         private Station _stationDepart;
         private Station _stationArrivee;
         private TimeSpan _selectedDepartureTime;
         private List<Trajet> _trajets;
         private System.Windows.Forms.Timer _timer;
 
-        // Constructeur du formulaire de sélection de ligne
+        // Constructeur du formulaire : initialise les stations et démarre le processus de recherche
         public frmSelectionLigne(Station stationDepart, Station stationArrivee)
         {
-            InitializeComponent(); // Initialise les composants graphiques du formulaire
+            InitializeComponent();
 
             _stationDepart = stationDepart;
             _stationArrivee = stationArrivee;
 
-            lblTitre.Text = "Sélectionnez\nvotre ligne"; // Texte du titre
-            lblTitre.ForeColor = Color.FromArgb(33, 150, 243); // Couleur du titre (bleu)
+            lblTitre.Text = "Sélectionnez\nvotre ligne";
+            lblTitre.ForeColor = Color.FromArgb(33, 150, 243);
 
-            // Affiche les noms des stations dans le label, avec ajustement automatique de la taille de police
+            // Affiche les noms des stations
             SetStationLabelText($"{_stationDepart.Nom} - {_stationArrivee.Nom}");
 
-            _selectedDepartureTime = DateTime.Now.TimeOfDay; // Heure actuelle comme heure de départ
+            // Heure de départ sélectionnée : l'heure actuelle
+            _selectedDepartureTime = DateTime.Now.TimeOfDay;
 
-            // Initialisation du timer pour mettre à jour l'heure chaque seconde
+            // Mise en place d’un minuteur pour actualiser l’heure affichée
             _timer = new System.Windows.Forms.Timer();
             _timer.Interval = 1000;
             _timer.Tick += Timer_Tick;
             _timer.Start();
 
-            lblheure.Text = DateTime.Now.ToString("HH:mm"); // Affiche l'heure actuelle
+            lblheure.Text = DateTime.Now.ToString("HH:mm");
 
-            // Charge les trajets disponibles
-            LoadTrajets();
+            // Lancement de la recherche de trajets de manière asynchrone
+            _ = LoadTrajetsAsync();
         }
 
-        // Met à jour l'heure affichée chaque seconde
+        // Met à jour l’heure affichée chaque seconde
         private void Timer_Tick(object sender, EventArgs e)
         {
             lblheure.Text = DateTime.Now.ToString("HH:mm");
         }
 
-        // Charge les trajets disponibles et détermine le chemin optimal
-        private void LoadTrajets()
+        // Méthode principale de chargement des trajets avec algorithme de type Dijkstra
+        private async Task LoadTrajetsAsync()
         {
-            // Récupère tous les trajets disponibles dont la ligne est valide
-            var allTrajets = BD.GetTrajet()
-                .Where(trajet =>
-                {
-                    var ligne = BD.GetLigneById(trajet.IdLigne); // Récupère la ligne associée
-                    return ligne != null;
-                })
-                .ToList();
+            // Affichage d’un message pendant le chargement
+            lstTrajets.Items.Clear();
+            lstTrajets.Items.Add(new ListViewItem("Recherche de l'itinéraire..."));
 
-            // Initialisation de la file de priorité pour Dijkstra
-            var queue = new PriorityQueue<int, TimeSpan>();
-            var arrivalTimes = new Dictionary<int, TimeSpan>(); // Heure d'arrivée la plus rapide par station
-            var previous = new Dictionary<int, (Trajet trajet, TimeSpan departureTime)?>();
-
-            // Initialisation des heures d'arrivée à l'infini
-            foreach (var trajet in allTrajets)
+            // Exécute le traitement dans un thread séparé
+            var resultItems = await Task.Run(() =>
             {
-                arrivalTimes[trajet.IdStationDepart] = TimeSpan.MaxValue;
-                arrivalTimes[trajet.IdStationArrivee] = TimeSpan.MaxValue;
-            }
-
-            // Heure de départ de la station de départ
-            arrivalTimes[_stationDepart.IdStation] = _selectedDepartureTime;
-            queue.Enqueue(_stationDepart.IdStation, _selectedDepartureTime);
-
-            // Algorithme de Dijkstra adapté aux horaires
-            while (queue.Count > 0)
-            {
-                int current = queue.Dequeue();
-                TimeSpan currentTime = arrivalTimes[current];
-
-                // Si on est arrivé à destination, on arrête
-                if (current == _stationArrivee.IdStation)
-                    break;
-
-                // Trajets disponibles à partir de la station actuelle
-                var trajetsFromCurrent = allTrajets
-                    .Where(t => t.IdStationDepart == current)
+                // 1. Récupération de tous les trajets et des lignes associées
+                var allTrajets = BD.GetTrajet()
+                    .Where(trajet => BD.GetLigneById(trajet.IdLigne) != null)
                     .ToList();
 
-                foreach (var trajet in trajetsFromCurrent)
+                // 2. Groupement des trajets par station de départ pour faciliter la recherche
+                var trajetsByDepart = allTrajets
+                    .GroupBy(t => t.IdStationDepart)
+                    .ToDictionary(g => g.Key, g => g.ToList());
+
+                // 3. Mise en cache des objets Ligne pour éviter des appels répétitifs à la base de données
+                var ligneCache = allTrajets
+                    .Select(t => t.IdLigne)
+                    .Distinct()
+                    .ToDictionary(id => id, id => BD.GetLigneById(id));
+
+                // 4. Conversion des durées des trajets en TimeSpan
+                var trajetDurations = allTrajets.ToDictionary(
+                    t => t,
+                    t => TimeSpan.TryParse(t.TempsTrajets, out var ts) ? ts : TimeSpan.Zero
+                );
+
+                // 5. Préchargement de tous les horaires pour chaque ligne/station/sens
+                var allHoraires = BD.GetAllHoraires();
+                var horairesDict = allHoraires
+                    .GroupBy(h => (h.IdLigne, h.IdStation, h.Sens))
+                    .ToDictionary(
+                        g => g.Key,
+                        g => g.Select(h => h.PassageTrain).OrderBy(t => t).ToList()
+                    );
+
+                // Méthode locale pour obtenir le prochain passage à une station donnée
+                TimeSpan? GetNextPassage(int idLigne, int idStation, TimeSpan after, string sens)
                 {
-                    var Ligne = BD.GetLigneById(trajet.IdLigne);
-                    if (Ligne == null) continue;
-
-                    // Détermine le sens (Aller ou Retour) en comparant les IDs
-                    string sens = trajet.IdStationDepart < trajet.IdStationArrivee ? "Aller" : "Retour";
-
-                    // Récupère la prochaine heure de passage à la station courante
-                    TimeSpan? nextDeparture = BD.GetNextPassage(trajet.IdLigne, trajet.IdStationDepart, currentTime, sens);
-                    if (nextDeparture == null) continue;
-
-                    // Récupère la durée du trajet
-                    int trajetMinutes = 0;
-                    if (TimeSpan.TryParse(trajet.TempsTrajets, out var tspan))
-                        trajetMinutes = (int)tspan.TotalMinutes;
-
-                    // Calcule l'heure d'arrivée si on prend ce trajet
-                    TimeSpan arrivalTime = nextDeparture.Value.Add(TimeSpan.FromMinutes(trajetMinutes));
-                    int neighbor = trajet.IdStationArrivee;
-
-                    // Si on trouve un meilleur chemin, on met à jour
-                    if (arrivalTime < arrivalTimes[neighbor])
+                    if (horairesDict.TryGetValue((idLigne, idStation, sens), out var horaires))
                     {
-                        arrivalTimes[neighbor] = arrivalTime;
-                        previous[neighbor] = (trajet, nextDeparture.Value);
-                        queue.Enqueue(neighbor, arrivalTime);
+                        foreach (var passage in horaires)
+                        {
+                            if (passage >= after)
+                                return passage;
+                        }
+                    }
+                    return null;
+                }
+
+                // Initialisation de l’algorithme de Dijkstra
+                var queue = new PriorityQueue<int, TimeSpan>();
+                var arrivalTimes = new Dictionary<int, TimeSpan>();
+                var previous = new Dictionary<int, (Trajet trajet, TimeSpan departureTime)?>();
+
+                foreach (var trajet in allTrajets)
+                {
+                    arrivalTimes[trajet.IdStationDepart] = TimeSpan.MaxValue;
+                    arrivalTimes[trajet.IdStationArrivee] = TimeSpan.MaxValue;
+                }
+
+                arrivalTimes[_stationDepart.IdStation] = _selectedDepartureTime;
+                queue.Enqueue(_stationDepart.IdStation, _selectedDepartureTime);
+
+                // Boucle principale de l’algorithme de Dijkstra
+                while (queue.Count > 0)
+                {
+                    int current = queue.Dequeue();
+                    TimeSpan currentTime = arrivalTimes[current];
+
+                    // Arrêt si on a atteint la station d’arrivée
+                    if (current == _stationArrivee.IdStation)
+                        break;
+
+                    // Aucun trajet disponible depuis cette station
+                    if (!trajetsByDepart.TryGetValue(current, out var trajetsFromCurrent))
+                        continue;
+
+                    // Parcours des trajets possibles depuis la station actuelle
+                    foreach (var trajet in trajetsFromCurrent)
+                    {
+                        if (!ligneCache.TryGetValue(trajet.IdLigne, out var Ligne) || Ligne == null)
+                            continue;
+
+                        // Sens fixé à "Aller" ici, à adapter selon contexte réel
+                        string sens = "Aller";
+                        TimeSpan? nextDeparture = GetNextPassage(trajet.IdLigne, trajet.IdStationDepart, currentTime, sens);
+                        if (nextDeparture == null) continue;
+
+                        TimeSpan trajetDuration = trajetDurations[trajet];
+                        TimeSpan arrivalTime = nextDeparture.Value.Add(trajetDuration);
+                        int neighbor = trajet.IdStationArrivee;
+
+                        // Mise à jour si un trajet plus rapide est trouvé
+                        if (arrivalTime < arrivalTimes[neighbor])
+                        {
+                            arrivalTimes[neighbor] = arrivalTime;
+                            previous[neighbor] = (trajet, nextDeparture.Value);
+                            queue.Enqueue(neighbor, arrivalTime);
+                        }
                     }
                 }
-            }
 
-            // Reconstitution du chemin optimal à partir des données "previous"
-            var path = new List<(Trajet trajet, TimeSpan departureTime, TimeSpan arrivalTime)>();
-            int? step = _stationArrivee.IdStation;
+                // Reconstruction du chemin le plus court trouvé
+                var path = new List<(Trajet trajet, TimeSpan departureTime, TimeSpan arrivalTime)>();
+                int? step = _stationArrivee.IdStation;
+                while (step != null && previous.ContainsKey(step.Value) && previous[step.Value] != null)
+                {
+                    var (trajet, depTime) = previous[step.Value].Value;
+                    TimeSpan trajetDuration = trajetDurations[trajet];
+                    TimeSpan arrTime = depTime.Add(trajetDuration);
+                    path.Insert(0, (trajet, depTime, arrTime));
+                    step = trajet.IdStationDepart;
+                }
 
-            while (step != null && previous.ContainsKey(step.Value) && previous[step.Value] != null)
-            {
-                var (trajet, depTime) = previous[step.Value].Value;
+                // Préparation de l’affichage du trajet dans la liste
+                var items = new List<ListViewItem>();
+                if (path.Count == 0)
+                {
+                    items.Add(new ListViewItem("Aucun trajet trouvé"));
+                    return items;
+                }
 
-                int trajetMinutes = 0;
-                if (TimeSpan.TryParse(trajet.TempsTrajets, out var tspan))
-                    trajetMinutes = (int)tspan.TotalMinutes;
+                // Calcul des horaires et durée totale
+                TimeSpan accumulatedSegmentTime = TimeSpan.Zero;
+                TimeSpan? firstDeparture = path.FirstOrDefault().departureTime;
+                foreach (var (trajet, depTime, arrTime) in path)
+                {
+                    accumulatedSegmentTime = accumulatedSegmentTime.Add(trajetDurations[trajet]);
+                }
 
-                TimeSpan arrTime = depTime.Add(TimeSpan.FromMinutes(trajetMinutes));
-                path.Insert(0, (trajet, depTime, arrTime));
-                step = trajet.IdStationDepart;
-            }
+                var lastTrajet = path.Last();
+                var ligneObj = ligneCache[lastTrajet.trajet.IdLigne];
+                string ligne = ligneObj != null
+                    ? $"Ligne {lastTrajet.trajet.IdLigne}"
+                    : $"Ligne {lastTrajet.trajet.IdLigne}";
+                string heureDepart = (firstDeparture ?? TimeSpan.Zero).ToString(@"hh\:mm");
+                string heureArrivee = (firstDeparture ?? TimeSpan.Zero).Add(accumulatedSegmentTime).ToString(@"hh\:mm");
+                string duree = accumulatedSegmentTime.TotalMinutes > 0 ? $"{accumulatedSegmentTime.TotalMinutes} min" : "Inconnu";
 
-            // Affichage des trajets dans la liste
+                var lastItem = new ListViewItem(ligne);
+                lastItem.SubItems.Add(heureDepart);
+                lastItem.SubItems.Add(heureArrivee);
+                lastItem.SubItems.Add(duree);
+                items.Add(lastItem);
+
+                return items;
+            });
+
+            // Mise à jour de la liste dans l’interface utilisateur
             lstTrajets.Items.Clear();
-            if (path.Count == 0)
-            {
-                // Aucun trajet trouvé
-                var item = new ListViewItem("Aucun trajet trouvé");
-                lstTrajets.Items.Add(item);
-                return;
-            }
-
-            // Calcul de la durée totale
-            TimeSpan accumulatedSegmentTime = TimeSpan.Zero;
-            TimeSpan? firstDeparture = path.FirstOrDefault().departureTime;
-
-            foreach (var (trajet, depTime, arrTime) in path)
-            {
-                TimeSpan segmentDuration = TimeSpan.Zero;
-                TimeSpan.TryParse(trajet.TempsTrajets, out segmentDuration);
-                accumulatedSegmentTime = accumulatedSegmentTime.Add(segmentDuration);
-            }
-
-            // Préparation de l'affichage
-            var lastTrajet = path.Last();
-            var ligneObj = BD.GetLigneById(lastTrajet.trajet.IdLigne);
-            string ligne = ligneObj != null
-                ? $"Ligne {lastTrajet.trajet.IdLigne}"
-                : $"Ligne {lastTrajet.trajet.IdLigne}";
-            string heureDepart = (firstDeparture ?? TimeSpan.Zero).ToString(@"hh\:mm");
-            string heureArrivee = (firstDeparture ?? TimeSpan.Zero).Add(accumulatedSegmentTime).ToString(@"hh\:mm");
-            string duree = accumulatedSegmentTime.TotalMinutes > 0 ? $"{accumulatedSegmentTime.TotalMinutes} min" : "Inconnu";
-
-            // Ajout de l’élément final dans la liste
-            var lastItem = new ListViewItem(ligne);
-            lastItem.SubItems.Add(heureDepart);
-            lastItem.SubItems.Add(heureArrivee);
-            lastItem.SubItems.Add(duree);
-            lstTrajets.Items.Add(lastItem);
+            lstTrajets.Items.AddRange(resultItems.ToArray());
         }
 
-        // Ajuste dynamiquement la taille de police si le texte dépasse le label
+        // Ajuste dynamiquement la taille de police pour que le texte rentre dans le label
         private void SetStationLabelText(string text)
         {
             lblStations.Text = text;
@@ -200,57 +233,7 @@ namespace TUBAPP
             }
         }
 
-        // Dessin personnalisé (non utilisé ici, mais peut être utile pour design avancé)
-        private void lstTrajets_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e) { }
-
-        private void lstTrajets_DrawItem(object sender, DrawListViewItemEventArgs e) { }
-
-        // Dessin personnalisé d'un sous-élément (trajet) dans la liste
-        private void lstTrajets_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
-        {
-            var g = e.Graphics;
-            var bounds = e.Bounds;
-            var isSelected = e.Item.Selected;
-
-            // Dessine un rectangle arrondi de fond pour l’item
-            var cardRect = new Rectangle(bounds.X + 2, bounds.Y + 4, bounds.Width - 4, bounds.Height - 8);
-            using (var bgBrush = new SolidBrush(Color.White))
-            using (var borderPen = new Pen(Color.FromArgb(236, 99, 92), 2))
-            {
-                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                g.FillRoundedRectangle(bgBrush, cardRect, 15);
-                g.DrawRoundedRectangle(borderPen, cardRect, 15);
-            }
-
-            // Styles de texte
-            var textColor = Color.Black;
-            var fontBold = new Font("Segoe UI", 11F, FontStyle.Bold);
-            var fontRegular = new Font("Segoe UI", 10F, FontStyle.Regular);
-
-            if (e.ColumnIndex == 0)
-            {
-                var parts = e.SubItem.Text.Split('\n');
-                if (parts.Length == 2)
-                {
-                    // Affichage du nom de ligne sur deux lignes
-                    g.DrawString(parts[0], fontBold, Brushes.Black, cardRect.X + 10, cardRect.Y + 4);
-                    g.DrawString(parts[1], fontRegular, Brushes.Black, cardRect.X + 10, cardRect.Y + 28);
-                }
-                else
-                {
-                    g.DrawString(e.SubItem.Text, fontBold, Brushes.Black, cardRect.X + 10, cardRect.Y + 14);
-                }
-            }
-            else if (e.ColumnIndex == 1)
-            {
-                // Alignement à droite pour l'heure
-                var size = g.MeasureString(e.SubItem.Text, fontBold);
-                g.DrawString(e.SubItem.Text, fontBold, Brushes.Black, cardRect.Right - size.Width - 10, cardRect.Y + 18);
-            }
-        }
-
-
-
+        // Gestion du bouton retour
         private void btnRetour_Click(object sender, EventArgs e)
         {
             frmMenuPricipal menu = new frmMenuPricipal();
@@ -258,6 +241,7 @@ namespace TUBAPP
             this.Close();
         }
 
+        // Affiche la carte
         private void btnCarte_Click(object sender, EventArgs e)
         {
             PageCarte page = new PageCarte();
@@ -265,6 +249,7 @@ namespace TUBAPP
             this.Close();
         }
 
+        // Retour à l’accueil
         private void btnAccueil_Click(object sender, EventArgs e)
         {
             frmMenuPricipal menu = new frmMenuPricipal();
@@ -272,10 +257,12 @@ namespace TUBAPP
             this.Close();
         }
 
+        // Gestion du bouton réseau (vide ici, peut être implémenté plus tard)
         private void btnReseau_Click(object sender, EventArgs e)
         {
         }
 
+        // Affichage de la page de profil selon le type d’utilisateur
         private void btnProfil_Click(object sender, EventArgs e)
         {
             Utilisateur? currentUser = SessionManager.CurrentUser;
@@ -298,6 +285,5 @@ namespace TUBAPP
 
             this.Close();
         }
-
     }
 }

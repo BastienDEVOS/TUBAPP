@@ -361,6 +361,29 @@ namespace TUBAPP
                 .FirstOrDefault();
         }
 
+        public static List<Horaire> GetAllHoraires()
+        {
+            List<Horaire> horaires = new List<Horaire>();
+            string reSQL = "SELECT IdLigne, IdStation, SensCirculation, PassageTrain FROM Horaire";
+            MySqlCommand cmd = new MySqlCommand(reSQL, GetConnection());
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Horaire h = new Horaire
+                    {
+                        IdLigne = reader.GetInt32("IdLigne"),
+                        IdStation = reader.GetInt32("IdStation"),
+                        Sens = reader.GetString("SensCirculation"),
+                        PassageTrain = reader.GetTimeSpan("PassageTrain")
+                    };
+                    horaires.Add(h);
+                }
+            }
+            return horaires;
+        }
+
         public static List<string> GetStatusLignes()
         {
             List<string> status = new List<string>();
