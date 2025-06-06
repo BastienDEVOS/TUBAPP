@@ -172,6 +172,20 @@ namespace TUBAPP
                     path.Insert(0, (trajet, depTime, arrTime));
                     step = trajet.IdStationDepart;
                 }
+                var uniqueLigneIds = path.Select(p => p.trajet.IdLigne).Distinct().ToList();
+                string ligne;
+                if (uniqueLigneIds.Count == 1)
+                {
+                    var singleLigne = ligneCache[uniqueLigneIds[0]];
+                    ligne = singleLigne != null ? singleLigne.Nom : $"Ligne {uniqueLigneIds[0]}";
+                }
+                else
+                {
+                    var ligneNames = uniqueLigneIds
+                        .Select(id => ligneCache.ContainsKey(id) && ligneCache[id] != null ? ligneCache[id].Nom : $"Ligne {id}")
+                        .ToList();
+                    ligne = string.Join(" + ", ligneNames);
+                }
 
                 // Préparation de l’affichage du trajet dans la liste
                 var items = new List<ListViewItem>();
@@ -189,11 +203,6 @@ namespace TUBAPP
                     accumulatedSegmentTime = accumulatedSegmentTime.Add(trajetDurations[trajet]);
                 }
 
-                var lastTrajet = path.Last();
-                var ligneObj = ligneCache[lastTrajet.trajet.IdLigne];
-                string ligne = ligneObj != null
-                    ? $"Ligne {lastTrajet.trajet.IdLigne}"
-                    : $"Ligne {lastTrajet.trajet.IdLigne}";
                 string heureDepart = (firstDeparture ?? TimeSpan.Zero).ToString(@"hh\:mm");
                 string heureArrivee = (firstDeparture ?? TimeSpan.Zero).Add(accumulatedSegmentTime).ToString(@"hh\:mm");
                 string duree = accumulatedSegmentTime.TotalMinutes > 0 ? $"{accumulatedSegmentTime.TotalMinutes} min" : "Inconnu";
