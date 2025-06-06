@@ -305,6 +305,7 @@
             flowLayoutPanel3.Anchor = AnchorStyles.None;
             flowLayoutPanel3.AutoScroll = true;
             flowLayoutPanel3.BackColor = Color.White;
+            flowLayoutPanel3.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel3.Location = new Point(26, 403);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Size = new Size(194, 182);
