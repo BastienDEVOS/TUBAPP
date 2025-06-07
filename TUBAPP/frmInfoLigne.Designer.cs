@@ -329,7 +329,6 @@
             label4.TabIndex = 0;
             label4.Text = "Toutes les stations de notre réseau ont un train roulant de 5h00 a minuit du lundi au samedi et de 7h00 a minuit le dimanche avec une fréquence moyenne de 6 minutes";
             label4.TextAlign = ContentAlignment.MiddleCenter;
-            label4.Click += label4_Click;
             // 
             // frmInfoLigne
             // 

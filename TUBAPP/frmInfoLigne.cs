@@ -54,16 +54,10 @@ namespace TUBAPP
                 {
                     MessageBox.Show("Erreur chargement lignes : " + ex.Message);
                 }
+            flowLayoutPanel3.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel3.WrapContents = false; // Empêche le retour automatique
             }
 
-
-
-
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void picIconeContact_Click(object sender, EventArgs e)
         {
@@ -125,10 +119,12 @@ namespace TUBAPP
                             conn.Open();
                         // Récupère les stations associées à la ligne
                         string query = @"
-                    SELECT S.NomStation
-                    FROM Desservie D
-                    JOIN Station S ON S.IdStation = D.IdStation
-                    WHERE D.IdLigne = @idLigne";
+                        SELECT S.NomStation, S.IdStation, COUNT(D2.IdLigne) AS NbLignes
+                        FROM Desservie D
+                        JOIN Station S ON S.IdStation = D.IdStation
+                        JOIN Desservie D2 ON D2.IdStation = S.IdStation
+                        WHERE D.IdLigne = @idLigne
+                        GROUP BY S.IdStation, S.NomStation";
 
                         using (var cmd = new MySqlCommand(query, conn))
                         {
@@ -140,12 +136,17 @@ namespace TUBAPP
                                 // Affiche chaque station sous forme de label
                                 while (reader.Read())
                                 {
+
+                                    string nomStation = reader.GetString("NomStation");
+                                    int nbLignes = reader.GetInt32("NbLignes");
+
                                     var label = new Label
                                     {
                                         AutoSize = true,
                                         Padding = new Padding(5),
-                                        Font = new Font("Segoe UI", 10),
-                                        Text = reader.GetString("NomStation")
+                                        Font = new Font("Segoe UI", 10, nbLignes > 1 ? FontStyle.Bold : FontStyle.Regular),
+                                        Text = nomStation
+
                                     };
                                     flowLayoutPanel3.Controls.Add(label);
                                 }

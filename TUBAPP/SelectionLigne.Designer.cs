@@ -17,6 +17,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectionLigne));
             panelHeader = new Panel();
             picLogo = new PictureBox();
             lblAppName = new Label();
@@ -303,6 +304,7 @@
             Controls.Add(panelHeader);
             Controls.Add(panelNav);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
