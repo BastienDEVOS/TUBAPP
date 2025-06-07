@@ -9,7 +9,7 @@ namespace TUBAPP
         public frmInfoLigne()
         {
             InitializeComponent();
-            ClassUtilitaire.ConfigurerComboBoxLignes(cmb_Ligne);
+            ClassUtilitaire.ConfigurerComboBoxLignes(cmb_Ligne); // Configure la comboBox des lignes
             cmb_Ligne.SelectedIndexChanged += cmb_Ligne_SelectedIndexChanged;
         }
 
@@ -19,7 +19,8 @@ namespace TUBAPP
                 {
                     using (var conn = BD.GetConnection())
                     {
-                        var cmd = new MySqlCommand("SELECT IdLigne, NomLigne, Couleur FROM Ligne", conn);
+                    // Récupère les lignes (id, nom, couleur) depuis la BDD
+                    var cmd = new MySqlCommand("SELECT IdLigne, NomLigne, Couleur FROM Ligne", conn);
                         var reader = cmd.ExecuteReader();
 
                         cmb_Ligne.Items.Clear();
@@ -101,7 +102,7 @@ namespace TUBAPP
             this.Close();
         }
 
-        private void cmb_Ligne_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmb_Ligne_SelectedIndexChanged(object sender, EventArgs e)  // Gère l'affichage des stations selon la ligne sélectionnée
         {
             if (cmb_Ligne.SelectedIndex == -1) return;
 
@@ -122,7 +123,7 @@ namespace TUBAPP
                     {
                         if (conn.State != ConnectionState.Open)
                             conn.Open();
-
+                        // Récupère les stations associées à la ligne
                         string query = @"
                     SELECT S.NomStation
                     FROM Desservie D
@@ -136,7 +137,7 @@ namespace TUBAPP
                             using (var reader = cmd.ExecuteReader())
                             {
                                 flowLayoutPanel3.Controls.Clear();
-
+                                // Affiche chaque station sous forme de label
                                 while (reader.Read())
                                 {
                                     var label = new Label

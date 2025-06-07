@@ -64,5 +64,15 @@ namespace TUBAPP
 
             this.Close();
         }
+
+        private void lblRame_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PageCarte_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

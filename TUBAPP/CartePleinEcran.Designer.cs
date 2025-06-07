@@ -44,6 +44,7 @@
             PicBoxCartePleineEcran.SizeMode = PictureBoxSizeMode.Zoom;
             PicBoxCartePleineEcran.TabIndex = 55;
             PicBoxCartePleineEcran.TabStop = false;
+            PicBoxCartePleineEcran.Click += PicBoxCartePleineEcran_Click;
             // 
             // btnQuitter
             // 

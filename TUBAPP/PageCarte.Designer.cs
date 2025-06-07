@@ -44,6 +44,7 @@
             BtnHome = new PictureBox();
             pictureBox5 = new PictureBox();
             btnAgrandirCarte = new Button();
+            picMetro = new PictureBox();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picMetro).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -141,7 +143,7 @@
             btnEstimation.Name = "btnEstimation";
             btnEstimation.Size = new Size(316, 90);
             btnEstimation.TabIndex = 45;
-            btnEstimation.Text = "Estimation de la capacité";
+            btnEstimation.Text = "Estimation de la capacité : 0%";
             btnEstimation.UseVisualStyleBackColor = false;
             // 
             // lblRame
@@ -153,7 +155,8 @@
             lblRame.Name = "lblRame";
             lblRame.Size = new Size(98, 35);
             lblRame.TabIndex = 46;
-            lblRame.Text = "Rame 2";
+            lblRame.Text = "Rame 1";
+            lblRame.Click += lblRame_Click;
             // 
             // lblPosition
             // 
@@ -234,11 +237,23 @@
             btnAgrandirCarte.UseVisualStyleBackColor = true;
             btnAgrandirCarte.Click += button1_Click;
             // 
+            // picMetro
+            // 
+            picMetro.Image = Properties.Resources.imageMetro1;
+            picMetro.Location = new Point(47, 191);
+            picMetro.Name = "picMetro";
+            picMetro.Size = new Size(363, 90);
+            picMetro.SizeMode = PictureBoxSizeMode.StretchImage;
+            picMetro.TabIndex = 56;
+            picMetro.TabStop = false;
+            // 
             // PageCarte
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(446, 659);
+            Controls.Add(picMetro);
             Controls.Add(btnAgrandirCarte);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(picBoxCarte);
@@ -251,6 +266,7 @@
             Name = "PageCarte";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PageCarte";
+            Load += PageCarte_Load;
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -261,6 +277,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picMetro).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -282,5 +299,6 @@
         private PictureBox BtnHome;
         private PictureBox pictureBox5;
         private Button btnAgrandirCarte;
+        private PictureBox picMetro;
     }
 }
