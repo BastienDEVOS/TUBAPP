@@ -21,9 +21,10 @@ namespace TUBAPP
         {
             if (pictureBox1.Image != null)
             {
-                CartePleinEcran fenetre = new CartePleinEcran();
-                fenetre.ShowDialog();
+                CartePleinEcran cartePleinEcran = new CartePleinEcran();
+                cartePleinEcran.Show();
             }
+
         }
 
         private void picIconeContact_Click(object sender, EventArgs e)

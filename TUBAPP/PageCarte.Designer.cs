@@ -38,7 +38,7 @@
             btnEstimation = new Button();
             lblRame = new Label();
             lblPosition = new Label();
-            picBoxCarte = new PictureBox();
+            picCarte = new PictureBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             BtnHome = new PictureBox();
@@ -49,7 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picBoxCarte).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picCarte).BeginInit();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).BeginInit();
@@ -169,15 +169,15 @@
             lblPosition.TabIndex = 47;
             lblPosition.Text = "Ma position en direct";
             // 
-            // picBoxCarte
+            // picCarte
             // 
-            picBoxCarte.Image = Properties.Resources.plan_metro_londres;
-            picBoxCarte.Location = new Point(47, 438);
-            picBoxCarte.Name = "picBoxCarte";
-            picBoxCarte.Size = new Size(354, 152);
-            picBoxCarte.SizeMode = PictureBoxSizeMode.StretchImage;
-            picBoxCarte.TabIndex = 48;
-            picBoxCarte.TabStop = false;
+            picCarte.Image = Properties.Resources.plan_metro_londres;
+            picCarte.Location = new Point(47, 438);
+            picCarte.Name = "picCarte";
+            picCarte.Size = new Size(354, 152);
+            picCarte.SizeMode = PictureBoxSizeMode.StretchImage;
+            picCarte.TabIndex = 48;
+            picCarte.TabStop = false;
             // 
             // flowLayoutPanel2
             // 
@@ -256,7 +256,7 @@
             Controls.Add(picMetro);
             Controls.Add(btnAgrandirCarte);
             Controls.Add(flowLayoutPanel2);
-            Controls.Add(picBoxCarte);
+            Controls.Add(picCarte);
             Controls.Add(lblPosition);
             Controls.Add(lblRame);
             Controls.Add(btnEstimation);
@@ -272,7 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)picIconeContact).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picBoxCarte).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picCarte).EndInit();
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnHome).EndInit();
@@ -293,7 +293,7 @@
         private Button btnEstimation;
         private Label lblRame;
         private Label lblPosition;
-        private PictureBox picBoxCarte;
+        private PictureBox picCarte;
         private FlowLayoutPanel flowLayoutPanel2;
         private PictureBox pictureBox1;
         private PictureBox BtnHome;
