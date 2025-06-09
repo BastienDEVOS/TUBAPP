@@ -52,7 +52,7 @@
             btnInvité.ForeColor = Color.White;
             btnInvité.Name = "btnInvité";
             btnInvité.UseVisualStyleBackColor = false;
-            btnInvité.Click += btnInvité_Click;
+            btnInvité.Click += btnInvite_Click;
             // 
             // btnNvCompt
             // 

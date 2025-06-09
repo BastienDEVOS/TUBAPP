@@ -63,7 +63,7 @@
             panelHeader.Location = new Point(0, 0);
             panelHeader.Margin = new Padding(2);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(449, 95);
+            panelHeader.Size = new Size(393, 71);
             panelHeader.TabIndex = 0;
             // 
             // picLogo
@@ -72,7 +72,7 @@
             picLogo.Location = new Point(2, 2);
             picLogo.Margin = new Padding(2);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(91, 93);
+            picLogo.Size = new Size(80, 70);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
@@ -82,10 +82,10 @@
             lblAppName.AutoSize = true;
             lblAppName.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             lblAppName.ForeColor = Color.White;
-            lblAppName.Location = new Point(144, 26);
+            lblAppName.Location = new Point(126, 20);
             lblAppName.Margin = new Padding(2, 0, 2, 0);
             lblAppName.Name = "lblAppName";
-            lblAppName.Size = new Size(189, 57);
+            lblAppName.Size = new Size(153, 46);
             lblAppName.TabIndex = 1;
             lblAppName.Text = "TUBAPP";
             // 
@@ -94,10 +94,10 @@
             btnProfil.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnProfil.Cursor = Cursors.Hand;
             btnProfil.Image = Properties.Resources.icone_profil;
-            btnProfil.Location = new Point(350, 4);
+            btnProfil.Location = new Point(306, 3);
             btnProfil.Margin = new Padding(2);
             btnProfil.Name = "btnProfil";
-            btnProfil.Size = new Size(63, 91);
+            btnProfil.Size = new Size(55, 68);
             btnProfil.SizeMode = PictureBoxSizeMode.Zoom;
             btnProfil.TabIndex = 2;
             btnProfil.TabStop = false;
@@ -108,10 +108,10 @@
             lblTitre.AutoSize = true;
             lblTitre.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
             lblTitre.ForeColor = Color.FromArgb(33, 150, 243);
-            lblTitre.Location = new Point(120, 23);
+            lblTitre.Location = new Point(105, 17);
             lblTitre.Margin = new Padding(2, 0, 2, 0);
             lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(242, 100);
+            lblTitre.Size = new Size(195, 82);
             lblTitre.TabIndex = 0;
             lblTitre.Text = "Sélectionnez\nvotre ligne";
             lblTitre.TextAlign = ContentAlignment.MiddleCenter;
@@ -125,10 +125,10 @@
             panelMain.Controls.Add(btnRetour);
             panelMain.Controls.Add(panel1);
             panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(0, 95);
+            panelMain.Location = new Point(0, 71);
             panelMain.Margin = new Padding(2);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(449, 499);
+            panelMain.Size = new Size(393, 374);
             panelMain.TabIndex = 1;
             // 
             // panelHoraire
@@ -136,19 +136,19 @@
             panelHoraire.BackColor = Color.FromArgb(236, 99, 92);
             panelHoraire.Controls.Add(lblheure);
             panelHoraire.Controls.Add(lblHoraire);
-            panelHoraire.Location = new Point(296, 136);
+            panelHoraire.Location = new Point(259, 102);
             panelHoraire.Margin = new Padding(2);
             panelHoraire.Name = "panelHoraire";
-            panelHoraire.Size = new Size(123, 54);
+            panelHoraire.Size = new Size(108, 40);
             panelHoraire.TabIndex = 2;
             // 
             // lblheure
             // 
             lblheure.AutoSize = true;
-            lblheure.Location = new Point(7, 26);
+            lblheure.Location = new Point(6, 20);
             lblheure.Margin = new Padding(2, 0, 2, 0);
             lblheure.Name = "lblheure";
-            lblheure.Size = new Size(60, 20);
+            lblheure.Size = new Size(50, 15);
             lblheure.TabIndex = 1;
             lblheure.Text = "HH:mm";
             // 
@@ -159,7 +159,7 @@
             lblHoraire.Location = new Point(0, 0);
             lblHoraire.Margin = new Padding(2, 0, 2, 0);
             lblHoraire.Name = "lblHoraire";
-            lblHoraire.Size = new Size(94, 28);
+            lblHoraire.Size = new Size(75, 21);
             lblHoraire.TabIndex = 0;
             lblHoraire.Text = "Horaire :";
             // 
@@ -171,10 +171,10 @@
             lstTrajets.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lstTrajets.FullRowSelect = true;
             lstTrajets.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-            lstTrajets.Location = new Point(30, 192);
+            lstTrajets.Location = new Point(26, 144);
             lstTrajets.Margin = new Padding(2);
             lstTrajets.Name = "lstTrajets";
-            lstTrajets.Size = new Size(389, 240);
+            lstTrajets.Size = new Size(340, 180);
             lstTrajets.TabIndex = 3;
             lstTrajets.UseCompatibleStateImageBehavior = false;
             lstTrajets.View = View.Details;
@@ -182,22 +182,22 @@
             // Ligne
             // 
             Ligne.Text = "Ligne";
-            Ligne.Width = 121;
+            Ligne.Width = 145;
             // 
             // HeureDepart
             // 
             HeureDepart.Text = "Depart";
-            HeureDepart.Width = 121;
+            HeureDepart.Width = 65;
             // 
             // HeureArrive
             // 
             HeureArrive.Text = "Arrive";
-            HeureArrive.Width = 121;
+            HeureArrive.Width = 65;
             // 
             // Durre
             // 
             Durre.Text = "Durre";
-            Durre.Width = 123;
+            Durre.Width = 65;
             // 
             // btnRetour
             // 
@@ -205,10 +205,10 @@
             btnRetour.FlatStyle = FlatStyle.Flat;
             btnRetour.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             btnRetour.ForeColor = Color.White;
-            btnRetour.Location = new Point(126, 437);
+            btnRetour.Location = new Point(110, 328);
             btnRetour.Margin = new Padding(2);
             btnRetour.Name = "btnRetour";
-            btnRetour.Size = new Size(224, 48);
+            btnRetour.Size = new Size(196, 36);
             btnRetour.TabIndex = 4;
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = false;
@@ -218,9 +218,10 @@
             // 
             panel1.AutoScroll = true;
             panel1.Controls.Add(lblStations);
-            panel1.Location = new Point(30, 136);
+            panel1.Location = new Point(26, 102);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(258, 54);
+            panel1.Size = new Size(226, 40);
             panel1.TabIndex = 5;
             // 
             // lblStations
@@ -231,7 +232,7 @@
             lblStations.Location = new Point(0, 0);
             lblStations.Margin = new Padding(2, 0, 2, 0);
             lblStations.Name = "lblStations";
-            lblStations.Size = new Size(258, 54);
+            lblStations.Size = new Size(226, 40);
             lblStations.TabIndex = 1;
             lblStations.Text = "Station 1 - Station 2";
             lblStations.TextAlign = ContentAlignment.MiddleLeft;
@@ -251,20 +252,20 @@
             panelNav.Controls.Add(btnAccueil);
             panelNav.Controls.Add(btnReseau);
             panelNav.Dock = DockStyle.Bottom;
-            panelNav.Location = new Point(0, 594);
+            panelNav.Location = new Point(0, 445);
             panelNav.Margin = new Padding(2);
             panelNav.Name = "panelNav";
-            panelNav.Size = new Size(449, 65);
+            panelNav.Size = new Size(393, 49);
             panelNav.TabIndex = 2;
             // 
             // btnCarte
             // 
             btnCarte.Cursor = Cursors.Hand;
             btnCarte.Image = Properties.Resources.GPS;
-            btnCarte.Location = new Point(70, 5);
+            btnCarte.Location = new Point(61, 4);
             btnCarte.Margin = new Padding(2);
             btnCarte.Name = "btnCarte";
-            btnCarte.Size = new Size(45, 56);
+            btnCarte.Size = new Size(39, 42);
             btnCarte.SizeMode = PictureBoxSizeMode.Zoom;
             btnCarte.TabIndex = 0;
             btnCarte.TabStop = false;
@@ -274,10 +275,10 @@
             // 
             btnAccueil.Cursor = Cursors.Hand;
             btnAccueil.Image = Properties.Resources.homepng;
-            btnAccueil.Location = new Point(186, 0);
+            btnAccueil.Location = new Point(163, 0);
             btnAccueil.Margin = new Padding(2);
             btnAccueil.Name = "btnAccueil";
-            btnAccueil.Size = new Size(79, 65);
+            btnAccueil.Size = new Size(69, 49);
             btnAccueil.SizeMode = PictureBoxSizeMode.Zoom;
             btnAccueil.TabIndex = 1;
             btnAccueil.TabStop = false;
@@ -287,19 +288,19 @@
             // 
             btnReseau.Cursor = Cursors.Hand;
             btnReseau.Image = Properties.Resources.network;
-            btnReseau.Location = new Point(330, 3);
+            btnReseau.Location = new Point(289, 2);
             btnReseau.Margin = new Padding(2);
             btnReseau.Name = "btnReseau";
-            btnReseau.Size = new Size(59, 58);
+            btnReseau.Size = new Size(52, 44);
             btnReseau.SizeMode = PictureBoxSizeMode.Zoom;
             btnReseau.TabIndex = 2;
             btnReseau.TabStop = false;
             // 
             // frmSelectionLigne
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(449, 659);
+            ClientSize = new Size(393, 494);
             Controls.Add(panelMain);
             Controls.Add(panelHeader);
             Controls.Add(panelNav);

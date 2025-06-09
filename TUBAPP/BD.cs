@@ -298,6 +298,27 @@ namespace TUBAPP
             }
             return null;
         }
+        public static Station? GetStationById(int idStation)
+        {
+            string reSQL = "SELECT * FROM Station WHERE IdStation = @IdStation";
+            MySqlCommand cmd = new MySqlCommand(reSQL, Conn);
+            cmd.Parameters.AddWithValue("@IdStation", idStation);
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    return new Station
+                    {
+                        IdStation = reader.GetInt32("IdStation"),
+                        Nom = reader.GetString("NomStation"),
+                        Zone = reader.GetString("Zone"),
+                        Accessibilite = reader.GetBoolean("Accessibilite"),
+                        CorrespondanceStation = reader.GetBoolean("Correspondance")
+                    };
+                }
+            }
+            return null;
+        }
 
         public static int GetIdClientByMail(string mailClient)
         {
