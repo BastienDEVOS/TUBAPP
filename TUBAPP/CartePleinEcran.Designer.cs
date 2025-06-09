@@ -39,12 +39,16 @@
             PicBoxCartePleineEcran.Dock = DockStyle.Fill;
             PicBoxCartePleineEcran.Image = Properties.Resources.plan_metro_londres;
             PicBoxCartePleineEcran.Location = new Point(0, 0);
+            PicBoxCartePleineEcran.Margin = new Padding(0);
             PicBoxCartePleineEcran.Name = "PicBoxCartePleineEcran";
             PicBoxCartePleineEcran.Size = new Size(446, 659);
             PicBoxCartePleineEcran.SizeMode = PictureBoxSizeMode.Zoom;
             PicBoxCartePleineEcran.TabIndex = 55;
             PicBoxCartePleineEcran.TabStop = false;
             PicBoxCartePleineEcran.Click += PicBoxCartePleineEcran_Click;
+            PicBoxCartePleineEcran.MouseDown += PicBoxCartePleineEcran_MouseDown;
+            PicBoxCartePleineEcran.MouseMove += PicBoxCartePleineEcran_MouseMove;
+            PicBoxCartePleineEcran.MouseUp += PicBoxCartePleineEcran_MouseUp;
             // 
             // btnQuitter
             // 
@@ -53,8 +57,9 @@
             btnQuitter.Name = "btnQuitter";
             btnQuitter.Size = new Size(94, 29);
             btnQuitter.TabIndex = 56;
-            btnQuitter.Text = "<>";
+            btnQuitter.Text = "quitter";
             btnQuitter.UseVisualStyleBackColor = true;
+            btnQuitter.Click += BtnQuitter_click;
             // 
             // CartePleinEcran
             // 

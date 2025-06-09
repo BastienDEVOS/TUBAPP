@@ -21,8 +21,9 @@ namespace TUBAPP
         {
             if (pictureBox1.Image != null)
             {
-                CartePleinEcran cartePleinEcran = new CartePleinEcran();
-                cartePleinEcran.Show();
+                CartePleinEcran carte = new CartePleinEcran(this);
+                carte.Show();
+                this.Hide();
             }
 
         }
