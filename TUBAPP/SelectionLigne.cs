@@ -172,6 +172,34 @@ namespace TUBAPP
                     path.Insert(0, (trajet, depTime, arrTime));
                     step = trajet.IdStationDepart;
                 }
+
+                string BuildStationLabel()
+                {
+                    if (path.Count == 0)
+                        return $"{_stationDepart.Nom} - {_stationArrivee.Nom}";
+
+                    List<string> parts = new List<string>();
+                    // Départ
+                    parts.Add(_stationDepart.Nom);
+
+                    int? prevLigne = null;
+                    for (int i = 0; i < path.Count; i++)
+                    {
+                        var (trajet, _, _) = path[i];
+                        if (i > 0 && trajet.IdLigne != prevLigne)
+                        {
+                            // Changement de ligne à la station de départ de ce segment
+                            string stationChangement = BD.GetStationById(trajet.IdStationDepart)?.Nom ?? $"Station {trajet.IdStationDepart}";
+                            parts.Add($"(changement à {stationChangement})");
+                        }
+                        prevLigne = trajet.IdLigne;
+                    }
+
+                    // Arrivée
+                    parts.Add(_stationArrivee.Nom);
+
+                    return string.Join(" - ", parts);
+                }
                 var uniqueLigneIds = path.Select(p => p.trajet.IdLigne).Distinct().ToList();
                 string ligne;
                 if (uniqueLigneIds.Count == 1)
@@ -192,6 +220,11 @@ namespace TUBAPP
                 if (path.Count == 0)
                 {
                     items.Add(new ListViewItem("Aucun trajet trouvé"));
+                    // Mettre à jour le label même si aucun trajet trouvé
+                    this.Invoke(new Action(() =>
+                    {
+                        SetStationLabelText($"{_stationDepart.Nom} - {_stationArrivee.Nom}");
+                    }));
                     return items;
                 }
 
@@ -206,6 +239,11 @@ namespace TUBAPP
                 string heureDepart = (firstDeparture ?? TimeSpan.Zero).ToString(@"hh\:mm");
                 string heureArrivee = (firstDeparture ?? TimeSpan.Zero).Add(accumulatedSegmentTime).ToString(@"hh\:mm");
                 string duree = accumulatedSegmentTime.TotalMinutes > 0 ? $"{accumulatedSegmentTime.TotalMinutes} min" : "Inconnu";
+                string stationLabel = BuildStationLabel();
+                this.Invoke(new Action(() =>
+                {
+                    SetStationLabelText(stationLabel);
+                }));
 
                 var lastItem = new ListViewItem(ligne);
                 lastItem.SubItems.Add(heureDepart);

@@ -46,7 +46,7 @@ namespace TUBAPP
             this.Hide();
         }
 
-        private void btnInvité_Click(object sender, EventArgs e)
+        private void btnInvite_Click(object sender, EventArgs e)
         {
             frmMenuPricipal FrmMenuPrincipal = new frmMenuPricipal();
             FrmMenuPrincipal.Show();
