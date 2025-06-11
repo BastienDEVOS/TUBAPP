@@ -191,6 +191,7 @@ namespace TUBAPP
                             // Changement de ligne à la station de départ de ce segment
                             string stationChangement = BD.GetStationById(trajet.IdStationDepart)?.Nom ?? $"Station {trajet.IdStationDepart}";
                             parts.Add($"(changement à {stationChangement})");
+
                         }
                         prevLigne = trajet.IdLigne;
                     }

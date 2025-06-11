@@ -52,8 +52,8 @@ namespace TUBAPP
                 int.Parse(txtLongueurLigne.Text), //Conversion de string à int
                 txtStatusLigne.Text,
                 dtpFrequence.Value.TimeOfDay,
-                dtpHeureDebut.Value.TimeOfDay,
-                dtpHeureFin.Value.TimeOfDay
+                dtpHeureFin.Value.TimeOfDay,
+                dtpHeureDebut.Value.TimeOfDay
             );
 
             MessageBox.Show("Ligne ajoutée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);

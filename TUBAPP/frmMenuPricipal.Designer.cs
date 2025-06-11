@@ -64,6 +64,7 @@
             InfoImportantes.Name = "InfoImportantes";
             InfoImportantes.Size = new Size(319, 183);
             InfoImportantes.TabIndex = 21;
+            InfoImportantes.WrapContents = false;
             InfoImportantes.Paint += InfoImportantes_Paint;
             // 
             // label3

@@ -28,7 +28,7 @@ namespace TUBAPP
             cbLigne.DataSource = lignes;
             cbLigne.DisplayMember = "Nom";
             cbLigne.ValueMember = "IdLigne";
-            cbLigne.SelectedIndex = Trajet.IdLigne; // force la sélection par défaut
+            cbLigne.SelectedValue = Trajet.IdLigne; // force la sélection par défaut
 
             List<Station> stationsDepart = BD.GetStation(); // récupère les stations depuis la BD
             List<Station> stationsArrivee = BD.GetStation();
@@ -36,12 +36,12 @@ namespace TUBAPP
             cbStationDepart.DataSource = stationsDepart;
             cbStationDepart.DisplayMember = "Nom";
             cbStationDepart.ValueMember = "IdStation";
-            cbStationDepart.SelectedIndex = Trajet.IdStationDepart; // force la sélection par défaut
+            cbStationDepart.SelectedValue = Trajet.IdStationDepart; // force la sélection par défaut
 
             cbStationArrivee.DataSource = stationsArrivee;
             cbStationArrivee.DisplayMember = "Nom";
             cbStationArrivee.ValueMember = "IdStation";
-            cbStationArrivee.SelectedIndex = Trajet.IdStationArrivee; // force la sélection par défaut
+            cbStationArrivee.SelectedValue = Trajet.IdStationArrivee; // force la sélection par défaut
 
             dtp_TempsTrajet.Text = Trajet.TempsTrajets;
         }
